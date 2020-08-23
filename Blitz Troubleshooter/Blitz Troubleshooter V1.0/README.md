@@ -1,3 +1,1 @@
-# IPostWeirdStuffHere
-
-Removed
+# Removed
