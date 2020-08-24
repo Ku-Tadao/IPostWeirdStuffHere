@@ -1,0 +1,10 @@
+C:\Users\Maruf Shah\Source\Repos\IPostWeirdStuffHere\BTCustomControls\bin\Debug\BTCustomControls.dll
+C:\Users\Maruf Shah\Source\Repos\IPostWeirdStuffHere\BTCustomControls\bin\Debug\BTCustomControls.pdb
+C:\Users\Maruf Shah\Source\Repos\IPostWeirdStuffHere\BTCustomControls\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Maruf Shah\Source\Repos\IPostWeirdStuffHere\BTCustomControls\obj\Debug\BTCustomControls_MarkupCompile.cache
+C:\Users\Maruf Shah\Source\Repos\IPostWeirdStuffHere\BTCustomControls\obj\Debug\BTCustomControls_MarkupCompile.lref
+C:\Users\Maruf Shah\Source\Repos\IPostWeirdStuffHere\BTCustomControls\obj\Debug\Themes\Generic.baml
+C:\Users\Maruf Shah\Source\Repos\IPostWeirdStuffHere\BTCustomControls\obj\Debug\BTCustomControls.g.resources
+C:\Users\Maruf Shah\Source\Repos\IPostWeirdStuffHere\BTCustomControls\obj\Debug\BTCustomControls.csproj.CoreCompileInputs.cache
+C:\Users\Maruf Shah\Source\Repos\IPostWeirdStuffHere\BTCustomControls\obj\Debug\BTCustomControls.dll
+C:\Users\Maruf Shah\Source\Repos\IPostWeirdStuffHere\BTCustomControls\obj\Debug\BTCustomControls.pdb
