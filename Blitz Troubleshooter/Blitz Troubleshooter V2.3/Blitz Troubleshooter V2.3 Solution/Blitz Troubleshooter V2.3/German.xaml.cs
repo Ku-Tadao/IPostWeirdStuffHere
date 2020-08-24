@@ -70,7 +70,10 @@ namespace Blitz_Troubleshooter_V2._3
             {
                 foreach (var path in paths)
                 {
-                    Directory.Delete(path, true);
+                    if (Directory.Exists(path))
+                    {
+                        Directory.Delete(path, true);
+                    }
                 }
             }
             catch { }
@@ -93,7 +96,10 @@ namespace Blitz_Troubleshooter_V2._3
             {
                 foreach (var path in paths)
                 {
-                    Directory.Delete(path, true);
+                    if (Directory.Exists(path))
+                    {
+                        Directory.Delete(path, true);
+                    }
                 }
             }
             catch { }

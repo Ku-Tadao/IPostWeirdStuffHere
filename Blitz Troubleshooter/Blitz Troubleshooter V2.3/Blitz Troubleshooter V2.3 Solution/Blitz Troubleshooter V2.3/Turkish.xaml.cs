@@ -74,10 +74,15 @@ namespace Blitz_Troubleshooter_V2._3
             {
                 foreach (var path in paths)
                 {
-                    Directory.Delete(path, true);
+                    if (Directory.Exists(path))
+                    {
+                        Directory.Delete(path, true);
+                    }
                 }
             }
             catch { }
+
+
 
             MessageBox.Show("Blitz kaldırıldı ", " Blitz Kaldırma", MessageBoxButton.OK, MessageBoxImage.Information);
         }
@@ -97,7 +102,10 @@ namespace Blitz_Troubleshooter_V2._3
             {
                 foreach (var path in paths)
                 {
-                    Directory.Delete(path, true);
+                    if (Directory.Exists(path))
+                    {
+                        Directory.Delete(path, true);
+                    }
                 }
             }
             catch { }

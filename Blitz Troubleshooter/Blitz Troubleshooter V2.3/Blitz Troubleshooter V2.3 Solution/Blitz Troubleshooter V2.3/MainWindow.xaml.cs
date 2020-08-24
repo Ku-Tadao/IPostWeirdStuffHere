@@ -7,7 +7,7 @@ namespace Blitz_Troubleshooter_V2._3
     /// </summary>
     public partial class MainWindow : Window
     {
-        readonly string Version = "2.2";
+        readonly string Version = "2.3";
         public MainWindow()
         {
             InitializeComponent();
