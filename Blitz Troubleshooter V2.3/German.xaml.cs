@@ -1,21 +1,22 @@
-﻿using System;
+﻿using BTCustomControls;
+using System;
 using System.Diagnostics;
 using System.IO;
 using System.Net;
 using System.Windows;
+
 
 namespace Blitz_Troubleshooter_V2._3
 {
     /// <summary>
     /// Interaction logic for German.xaml
     /// </summary>
-    public partial class German : Window
+    public partial class German : CustomWindow
     {
-        public German(string version)
+        public German()
         {
             InitializeComponent();
 
-            w1.Title = "Blitz Troubleshooter V" + version;
         }
 
         public void DownloadVSRDST()

@@ -1,6 +1,5 @@
-﻿using System;
+﻿using BTCustomControls;
 using System.Windows;
-using BTCustomControls;
 
 namespace Blitz_Troubleshooter_V2._3
 {
@@ -9,30 +8,28 @@ namespace Blitz_Troubleshooter_V2._3
     /// </summary>
     public partial class MainWindow : CustomWindow
     {
-        readonly string Version = "2.5";
         public MainWindow()
         {
             InitializeComponent();
-            //w1.Title = "Blitz Troubleshooter V" + Version;
         }
 
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Window English = new English(Version);
+            Window English = new English();
             English.Show();
             Close();
 
         }
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            Window German = new German(Version);
+            Window German = new German();
             German.Show();
             Close();
         }
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            Window Turkish = new Turkish(Version);
+            Window Turkish = new Turkish();
             Turkish.Show();
             Close();
         }

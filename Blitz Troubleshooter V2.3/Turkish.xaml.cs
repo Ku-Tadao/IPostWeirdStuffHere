@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BTCustomControls;
+using System;
 using System.Diagnostics;
 using System.IO;
 using System.Net;
@@ -9,13 +10,12 @@ namespace Blitz_Troubleshooter_V2._3
     /// <summary>
     /// Interaction logic for Turkish.xaml
     /// </summary>
-    public partial class Turkish : Window
+    public partial class Turkish : CustomWindow
     {
-        public Turkish(string version)
+        public Turkish()
         {
             InitializeComponent();
 
-            w1.Title = "Blitz Troubleshooter V" + version;
         }
 
         public void DownloadVSRDST()
