@@ -70,17 +70,13 @@ namespace Blitz_Troubleshooter_V2._3
             Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\Programs\\Blitz"
            };
 
-            try
+            foreach (var path in paths)
             {
-                foreach (var path in paths)
+                if (Directory.Exists(path))
                 {
-                    if (Directory.Exists(path))
-                    {
-                        Directory.Delete(path, true);
-                    }
+                    Directory.Delete(path, true);
                 }
             }
-            catch { }
 
             MessageBox.Show("Blitz has been uninstalled", "Blitz Uninstallation", MessageBoxButton.OK, MessageBoxImage.Information);
         }
