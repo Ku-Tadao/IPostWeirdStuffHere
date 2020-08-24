@@ -1,18 +1,22 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
+using BTCustomControls;
 
 namespace Blitz_Troubleshooter_V2._3
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow : CustomWindow
     {
         readonly string Version = "2.5";
         public MainWindow()
         {
             InitializeComponent();
-            w1.Title = "Blitz Troubleshooter V" + Version;
+            //w1.Title = "Blitz Troubleshooter V" + Version;
         }
+
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Window English = new English(Version);

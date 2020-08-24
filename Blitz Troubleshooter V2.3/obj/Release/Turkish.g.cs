@@ -9,6 +9,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using BTCustomControls;
 using Blitz_Troubleshooter_V2._3;
 using System;
 using System.Diagnostics;
