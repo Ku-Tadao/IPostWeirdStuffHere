@@ -32,7 +32,7 @@
         </Setter>
         <Setter Property="Background" Value="Transparent"/>
         <Setter Property="FontFamily" Value="Webdings"/>
-        <Setter Property="FontSize" Value="20" />
+        <Setter Property="FontSize" Value="15" />
         <Setter Property="Foreground" Value="White" />
         <Setter Property="Margin" Value="0,5,3,5"/>
         <Style.Triggers>
@@ -58,12 +58,12 @@
                         <Grid>
                             <Grid>
                                 <TextBlock Text="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Title}" 
-                               VerticalAlignment="top" HorizontalAlignment="Center" FontSize="18" Foreground="white"
-                               Margin="0,2,0,0"/>
+                               VerticalAlignment="top" HorizontalAlignment="Left" FontSize="18" Foreground="white"
+                               Margin="5,2,0,0"/>
                                 <Image Source="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Icon}"
-                                  VerticalAlignment="Top" HorizontalAlignment="Left"
-                                       Margin="20"
-                                       Width="20"
+                                  VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,0,0,0"
+                                       Height="100"
+                                       Width="100"
                                        IsHitTestVisible="True"/>
                             </Grid>
                             <Grid>
