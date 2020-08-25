@@ -72,7 +72,7 @@ namespace BTCustomControls
             }
 
 
-            Grid resizeGrid = GetTemplateChild("resizeGrid") as Grid;
+           /* Grid resizeGrid = GetTemplateChild("resizeGrid") as Grid;
             if (resizeGrid != null)
             {
                 foreach (UIElement element in resizeGrid.Children)
@@ -86,7 +86,7 @@ namespace BTCustomControls
                 }
             }
 
-            base.OnApplyTemplate();
+            base.OnApplyTemplate();*/
         }
 
         private void moveRectangle_PreviewMouseDown(object sender, MouseButtonEventArgs e)
@@ -96,7 +96,7 @@ namespace BTCustomControls
         }
 
 
-        protected void ResizeRectangle_MouseMove(Object sender, MouseEventArgs e)
+       /* protected void ResizeRectangle_MouseMove(Object sender, MouseEventArgs e)
         {
             Rectangle rectangle = sender as Rectangle;
             switch (rectangle.Name)
@@ -128,7 +128,7 @@ namespace BTCustomControls
                 default:
                     break;
             }
-        }
+        }*/
 
         [DllImport("user32.dll", CharSet = CharSet.Auto)]
         private static extern IntPtr SendMessage(IntPtr hWnd, UInt32 msg, IntPtr wParam, IntPtr lParam);
