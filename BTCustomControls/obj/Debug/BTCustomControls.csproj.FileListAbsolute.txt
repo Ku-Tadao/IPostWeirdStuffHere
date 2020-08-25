@@ -11,7 +11,6 @@ C:\Users\kubil\Documents\GitHub\IPostWeirdStuffHere\BTCustomControls\obj\Debug\B
 C:\Users\kubil\Documents\GitHub\IPostWeirdStuffHere\BTCustomControls\obj\Debug\BTCustomControls.pdb
 C:\Users\Maruf Shah\Source\Repos\IPostWeirdStuffHere\BTCustomControls\bin\Debug\BTCustomControls.dll
 C:\Users\Maruf Shah\Source\Repos\IPostWeirdStuffHere\BTCustomControls\bin\Debug\BTCustomControls.pdb
-C:\Users\Maruf Shah\Source\Repos\IPostWeirdStuffHere\BTCustomControls\obj\Debug\BTCustomControls.csprojAssemblyReference.cache
 C:\Users\Maruf Shah\Source\Repos\IPostWeirdStuffHere\BTCustomControls\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Users\Maruf Shah\Source\Repos\IPostWeirdStuffHere\BTCustomControls\obj\Debug\BTCustomControls_MarkupCompile.cache
 C:\Users\Maruf Shah\Source\Repos\IPostWeirdStuffHere\BTCustomControls\obj\Debug\BTCustomControls_MarkupCompile.lref

@@ -4,7 +4,7 @@
         xmlns:control="clr-namespace:BTCustomControls;assembly=BTCustomControls"
         xmlns:shared="http://schemas.actiprosoftware.com/winfx/xaml/shared" xmlns:ribbon="http://schemas.actiprosoftware.com/winfx/xaml/ribbon" x:Name="w1" x:Class="Blitz_Troubleshooter_V2._3.English"
         ResizeMode="NoResize"
-        Title="MainWindow" Height="450" Width="450" >
+        Title="Blitz Troubleshooter" Height="450" Width="450" >
     <Grid Background="#09101F">
 
         <StackPanel Margin="100" >
@@ -13,12 +13,13 @@
             <Button x:Name="btn3" Background="#E03F54" Foreground="White" Content="Clear Cache" Height="27" Margin="0,0,0,5" Click="Button_Click_2"/>
 
             <Button x:Name="btn4" Background="#E03F54" Foreground="White" Content="Uninstall Blitz" Height="27" Margin="0,0,0,5" Click="Button_Click_4"/>
-            <TextBlock Height="23" TextWrapping="Wrap" HorizontalAlignment="Left" Text="Progress Bar:" Width="100" Margin="0,0,0,5" Foreground="White"/>
-            <ProgressBar x:Name="progressBar1" HorizontalAlignment="Left" Height="27" Margin="0,0,0,5" VerticalAlignment="Top" Width="244"/>
         </StackPanel>
 
         <Image Source="Troubleshooter logo.png" Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="35" />
-        <TextBlock HorizontalAlignment="Left" Margin="267,397,0,0" VerticalAlignment="Top" Width="161" Foreground="white" Text="Made with Love by: kubi#2468"/>
+        <TextBlock HorizontalAlignment="Left" Margin="274,396,0,0" VerticalAlignment="Top" Width="161" Foreground="white" Text="Made with Love by: kubi#2468"/>
+        <ProgressBar x:Name="progressBar1" HorizontalAlignment="Left" Height="27" Margin="26,349,0,0" VerticalAlignment="Top" Width="394"/>
+        <TextBlock TextWrapping="Wrap" HorizontalAlignment="Left" Text="Progress Bar:" Width="100" Margin="27,321,0,77" Foreground="White"/>
+        <TextBlock x:Name="input_text" HorizontalAlignment="Left" Margin="100,321,0,0" TextWrapping="Wrap" Text="Wainting for input..." VerticalAlignment="Top" Foreground="White"/>
 
     </Grid>
 </control:CustomWindow>

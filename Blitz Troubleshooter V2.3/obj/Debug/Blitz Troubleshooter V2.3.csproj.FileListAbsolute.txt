@@ -84,6 +84,15 @@ C:\Users\kubil\Documents\GitHub\IPostWeirdStuffHere\Blitz Troubleshooter V2.3\ob
 C:\Users\kubil\Documents\GitHub\IPostWeirdStuffHere\Blitz Troubleshooter V2.3\obj\Debug\Blitz Troubleshooter V2.3.csproj.CopyComplete
 C:\Users\kubil\Documents\GitHub\IPostWeirdStuffHere\Blitz Troubleshooter V2.3\obj\Debug\Blitz Troubleshooter V2.3.exe
 C:\Users\kubil\Documents\GitHub\IPostWeirdStuffHere\Blitz Troubleshooter V2.3\obj\Debug\Blitz Troubleshooter V2.3.pdb
+C:\Users\Maruf Shah\Source\Repos\IPostWeirdStuffHere\Blitz Troubleshooter V2.3\bin\Debug\Blitz Troubleshooter V2.3.exe.config
+C:\Users\Maruf Shah\Source\Repos\IPostWeirdStuffHere\Blitz Troubleshooter V2.3\bin\Debug\Blitz Troubleshooter V2.3.exe
+C:\Users\Maruf Shah\Source\Repos\IPostWeirdStuffHere\Blitz Troubleshooter V2.3\bin\Debug\Blitz Troubleshooter V2.3.pdb
+C:\Users\Maruf Shah\Source\Repos\IPostWeirdStuffHere\Blitz Troubleshooter V2.3\bin\Debug\ActiproSoftware.Ribbon.Wpf.dll
+C:\Users\Maruf Shah\Source\Repos\IPostWeirdStuffHere\Blitz Troubleshooter V2.3\bin\Debug\ActiproSoftware.Shared.Wpf.dll
+C:\Users\Maruf Shah\Source\Repos\IPostWeirdStuffHere\Blitz Troubleshooter V2.3\bin\Debug\BTCustomControls.dll
+C:\Users\Maruf Shah\Source\Repos\IPostWeirdStuffHere\Blitz Troubleshooter V2.3\bin\Debug\BTCustomControls.pdb
+C:\Users\Maruf Shah\Source\Repos\IPostWeirdStuffHere\Blitz Troubleshooter V2.3\bin\Debug\ActiproSoftware.Ribbon.Wpf.xml
+C:\Users\Maruf Shah\Source\Repos\IPostWeirdStuffHere\Blitz Troubleshooter V2.3\bin\Debug\ActiproSoftware.Shared.Wpf.xml
 C:\Users\Maruf Shah\Source\Repos\IPostWeirdStuffHere\Blitz Troubleshooter V2.3\obj\Debug\Blitz Troubleshooter V2.3.csprojAssemblyReference.cache
 C:\Users\Maruf Shah\Source\Repos\IPostWeirdStuffHere\Blitz Troubleshooter V2.3\obj\Debug\English.baml
 C:\Users\Maruf Shah\Source\Repos\IPostWeirdStuffHere\Blitz Troubleshooter V2.3\obj\Debug\German.baml
@@ -99,15 +108,6 @@ C:\Users\Maruf Shah\Source\Repos\IPostWeirdStuffHere\Blitz Troubleshooter V2.3\o
 C:\Users\Maruf Shah\Source\Repos\IPostWeirdStuffHere\Blitz Troubleshooter V2.3\obj\Debug\Blitz_Troubleshooter_V2._3.Properties.Resources.resources
 C:\Users\Maruf Shah\Source\Repos\IPostWeirdStuffHere\Blitz Troubleshooter V2.3\obj\Debug\Blitz Troubleshooter V2.3.csproj.GenerateResource.cache
 C:\Users\Maruf Shah\Source\Repos\IPostWeirdStuffHere\Blitz Troubleshooter V2.3\obj\Debug\Blitz Troubleshooter V2.3.csproj.CoreCompileInputs.cache
-C:\Users\Maruf Shah\Source\Repos\IPostWeirdStuffHere\Blitz Troubleshooter V2.3\bin\Debug\Blitz Troubleshooter V2.3.exe.config
-C:\Users\Maruf Shah\Source\Repos\IPostWeirdStuffHere\Blitz Troubleshooter V2.3\bin\Debug\Blitz Troubleshooter V2.3.exe
-C:\Users\Maruf Shah\Source\Repos\IPostWeirdStuffHere\Blitz Troubleshooter V2.3\bin\Debug\Blitz Troubleshooter V2.3.pdb
-C:\Users\Maruf Shah\Source\Repos\IPostWeirdStuffHere\Blitz Troubleshooter V2.3\bin\Debug\ActiproSoftware.Shared.Wpf.dll
-C:\Users\Maruf Shah\Source\Repos\IPostWeirdStuffHere\Blitz Troubleshooter V2.3\bin\Debug\BTCustomControls.dll
-C:\Users\Maruf Shah\Source\Repos\IPostWeirdStuffHere\Blitz Troubleshooter V2.3\bin\Debug\BTCustomControls.pdb
-C:\Users\Maruf Shah\Source\Repos\IPostWeirdStuffHere\Blitz Troubleshooter V2.3\bin\Debug\ActiproSoftware.Shared.Wpf.xml
 C:\Users\Maruf Shah\Source\Repos\IPostWeirdStuffHere\Blitz Troubleshooter V2.3\obj\Debug\Blitz Troubleshooter V2.3.csproj.CopyComplete
 C:\Users\Maruf Shah\Source\Repos\IPostWeirdStuffHere\Blitz Troubleshooter V2.3\obj\Debug\Blitz Troubleshooter V2.3.exe
 C:\Users\Maruf Shah\Source\Repos\IPostWeirdStuffHere\Blitz Troubleshooter V2.3\obj\Debug\Blitz Troubleshooter V2.3.pdb
-C:\Users\Maruf Shah\Source\Repos\IPostWeirdStuffHere\Blitz Troubleshooter V2.3\bin\Debug\ActiproSoftware.Ribbon.Wpf.dll
-C:\Users\Maruf Shah\Source\Repos\IPostWeirdStuffHere\Blitz Troubleshooter V2.3\bin\Debug\ActiproSoftware.Ribbon.Wpf.xml
