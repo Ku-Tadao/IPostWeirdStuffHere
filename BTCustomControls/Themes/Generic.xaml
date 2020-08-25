@@ -9,6 +9,7 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type ButtonBase}">
+                    
                     <Border
                             x:Name="Chrome"
                             BorderBrush="{TemplateBinding BorderBrush}"
@@ -25,6 +26,7 @@
                                 SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
                                 VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
                     </Border>
+                    
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
@@ -32,7 +34,7 @@
         <Setter Property="FontFamily" Value="Webdings"/>
         <Setter Property="FontSize" Value="20" />
         <Setter Property="Foreground" Value="White" />
-        <Setter Property="Margin" Value="0,2,3,0"/>
+        <Setter Property="Margin" Value="0,5,3,5"/>
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
                 <Setter Property="Foreground" Value="#E03F54" />
@@ -52,7 +54,18 @@
                 <ControlTemplate TargetType="{x:Type local:CustomWindow}">
                     <Border BorderThickness="{TemplateBinding BorderThickness}"
                             BorderBrush="{TemplateBinding BorderBrush}" Background="#060C19">
+                        
                         <Grid>
+                            <Grid>
+                                <TextBlock Text="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Title}" 
+                               VerticalAlignment="top" HorizontalAlignment="Center" FontSize="18" Foreground="white"
+                               Margin="0,2,0,0"/>
+                                <Image Source="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Icon}"
+                                  VerticalAlignment="Top" HorizontalAlignment="Left"
+                                       Margin="20"
+                                       Width="20"
+                                       IsHitTestVisible="True"/>
+                            </Grid>
                             <Grid>
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="Auto"/>
@@ -65,6 +78,8 @@
                                 <Rectangle x:Name="moveRectangle" Fill="Transparent"
                                            Grid.Row="0" Grid.Column="0"/>
                                 <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal">
+                                    <Button x:Name="minimizeButton" Style="{StaticResource WindowButtonStyle}"
+                                            Content="0" />
                                     <Button x:Name="closeButton" Style="{StaticResource WindowButtonStyle}"
                                             Content="r" />
                                 </StackPanel>

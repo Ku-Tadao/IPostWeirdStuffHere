@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:control="clr-namespace:BTCustomControls;assembly=BTCustomControls"
         ResizeMode="NoResize"
-        Title="MainWindow" Height="450" Width="450">
+        Title="Blitz Troubleshooter" Height="450" Width="450">
     <Grid Background="#09101F">
 
         <StackPanel Margin="100" >
