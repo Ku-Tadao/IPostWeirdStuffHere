@@ -26,6 +26,7 @@
         </StackPanel>
        
         <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,5,5" Foreground="white" Text="Made with Love by: kubi#2468 and Huntsmango#5698"/>
+        <TextBlock x:Name="labelspeed" HorizontalAlignment="Left" Margin="175,354,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Foreground="Wheat"/>
 
 
     </Grid>

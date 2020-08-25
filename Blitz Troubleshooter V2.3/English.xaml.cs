@@ -58,44 +58,54 @@ namespace Blitz_Troubleshooter_V2._3
 
             MessageBox.Show("Blitz has been uninstalled", "Blitz Uninstallation", MessageBoxButton.OK, MessageBoxImage.Information);
         }
-
+        Stopwatch sw = new Stopwatch();
         void client_DownloadProgressChanged(object sender, DownloadProgressChangedEventArgs e)
         {
             double bytesIn = double.Parse(e.BytesReceived.ToString());
             double totalBytes = double.Parse(e.TotalBytesToReceive.ToString());
             double percentage = bytesIn / totalBytes * 100;
-
+            labelspeed.Text = string.Format("{0} kb/s", (e.BytesReceived / 1024d / sw.Elapsed.TotalSeconds).ToString("0.00"));
             progressBar1.Value = int.Parse(Math.Truncate(percentage).ToString());
+        }
+        public void enableBtn()
+        {
+            btnStartDownload.IsEnabled = true;
+            btn3.IsEnabled = true;
+            btn4.IsEnabled = true;
+            btn1.IsEnabled = true;
+        }
+        public void disableBtn()
+        {
+            btnStartDownload.IsEnabled = false;
+            btn1.IsEnabled = false;
+            btn3.IsEnabled = false;
+            btn4.IsEnabled = false;
         }
 
         void client_DownloadFileCompleted(object sender, AsyncCompletedEventArgs e)
         {
             MessageBox.Show("Download Completed");
             input_text.Text = "Waiting for input";
-            btnStartDownload.IsEnabled = true;
-            btn3.IsEnabled = true;
-            btn4.IsEnabled = true;
-            btn1.IsEnabled = true;
+            enableBtn();
             Process.Start(path + "temp.exe");
+            sw.Reset();
         }
-
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
 
             KillBlitz();
+            System.Threading.Thread.Sleep(2000);
             Uninstall();
             WebClient client = new WebClient();
             client.DownloadProgressChanged += new DownloadProgressChangedEventHandler(client_DownloadProgressChanged);
             client.DownloadFileCompleted += new AsyncCompletedEventHandler(client_DownloadFileCompleted);
 
             // Starts the download
+            sw.Start();
             client.DownloadFileAsync(new Uri("https://blitz.gg/download/win"), path + "temp.exe");
             input_text.Text = "Downloading Blitz.exe";
-            btnStartDownload.IsEnabled = false;
-            btn1.IsEnabled = false;
-            btn3.IsEnabled = false;
-            btn4.IsEnabled = false;
+            disableBtn();
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
@@ -105,12 +115,10 @@ namespace Blitz_Troubleshooter_V2._3
             client.DownloadFileCompleted += new AsyncCompletedEventHandler(client_DownloadFileCompleted);
 
             // Starts the download
+            sw.Start();
             client.DownloadFileAsync(new Uri("https://aka.ms/vs/16/release/vc_redist.x86.exe"), path + "temp.exe");
             input_text.Text = "Downloading vc_redist.x86.exe";
-            btnStartDownload.IsEnabled = false;
-            btn1.IsEnabled = false;
-            btn3.IsEnabled = false;
-            btn4.IsEnabled = false;
+            disableBtn();
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
