@@ -1,0 +1,1 @@
+This is version 2.3 where i've made sure that it works with the `.NET Framework` instead of `.NET Core` so that it can be ran without requiring anything else.
