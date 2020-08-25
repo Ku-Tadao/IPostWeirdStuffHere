@@ -18,7 +18,6 @@ namespace Blitz_Troubleshooter_V2._3
             InitializeComponent();
 
         }
-
         public void DownloadVSRDST()
         {
             using (var client = new WebClient())

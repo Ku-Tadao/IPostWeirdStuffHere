@@ -1,10 +1,10 @@
 ﻿using BTCustomControls;
 using System;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
 using System.Net;
 using System.Windows;
-
 
 namespace Blitz_Troubleshooter_V2._3
 {
@@ -19,27 +19,18 @@ namespace Blitz_Troubleshooter_V2._3
 
         }
 
-        public void DownloadVSRDST()
-        {
-            using (var client = new WebClient())
-            {
+        public static string appdata = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+        public static string localappdata = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
+        public string[] paths = new String[] {
+        localappdata + "\\blitz-updater",
+        localappdata + "\\Programs\\blitz-core",
+        appdata + "\\Blitz",
+        appdata + "\\blitz-core",
+        appdata + "\\Blitz-helpers",
+        localappdata + "\\Programs\\Blitz"
+      };
 
-                try
-                {
-                    client.DownloadFile("https://aka.ms/vs/16/release/vc_redist.x86.exe", System.IO.Path.GetTempPath() + "vc_redist.x86.exe");
-                }
-                catch (Exception e)
-                {
-                    MessageBox.Show(e.Message);
-                    System.Windows.Application.Current.Shutdown();
-                }
-                finally
-                {
-                    Process.Start(System.IO.Path.GetTempPath() + "vc_redist.x86.exe");
-                }
-            }
-
-        }
+        public string path = Path.GetTempPath() + "vc_redist.x86.exe";
         public void KillBlitz()
         {
             foreach (Process proc in Process.GetProcessesByName("Blitz"))
@@ -58,15 +49,6 @@ namespace Blitz_Troubleshooter_V2._3
         }
         public void Uninstall()
         {
-            var paths = new String[] {
-        Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\blitz-updater",
-        Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\Programs\\blitz-core",
-        Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\Blitz",
-        Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\blitz-core",
-        Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\Blitz-helpers",
-        Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\Programs\\Blitz"
-      };
-
             foreach (var path in paths)
             {
                 if (Directory.Exists(path))
@@ -80,15 +62,6 @@ namespace Blitz_Troubleshooter_V2._3
 
         public void CleanReinstall()
         {
-            var paths = new String[] {
-        Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\blitz-updater",
-        Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\Programs\\blitz-core",
-        Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\Blitz",
-        Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\blitz-core",
-        Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\Blitz-helpers",
-        Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\Programs\\Blitz"
-      };
-
             foreach (var path in paths)
             {
                 if (Directory.Exists(path))
@@ -117,7 +90,8 @@ namespace Blitz_Troubleshooter_V2._3
                 }
             }
         }
-
+        
+        
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             KillBlitz();
@@ -127,10 +101,27 @@ namespace Blitz_Troubleshooter_V2._3
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            KillBlitz();
-            DownloadVSRDST();
-            MessageBox.Show("Please proceed to the other Window, and finish the installation, press the OK button to continue.", "vc_redist.x86 installation", MessageBoxButton.OK, MessageBoxImage.Information);
+            WebClient client = new WebClient();
+            client.DownloadProgressChanged += new DownloadProgressChangedEventHandler(client_DownloadProgressChanged);
+            client.DownloadFileCompleted += new AsyncCompletedEventHandler(client_DownloadFileCompleted);
+
+            // Starts the download
+            client.DownloadFileAsync(new Uri("https://aka.ms/vs/16/release/vc_redist.x86.exe"), "path");
+
+            btnStartDownload.Content = "Download In Process";
+            btnStartDownload.IsEnabled = false;
         }
+
+        void client_DownloadProgressChanged(object sender, DownloadProgressChangedEventArgs e)
+        {
+            double bytesIn = double.Parse(e.BytesReceived.ToString());
+            double totalBytes = double.Parse(e.TotalBytesToReceive.ToString());
+            double percentage = bytesIn / totalBytes * 100;
+
+            progressBar1.Value = int.Parse(Math.Truncate(percentage).ToString());
+        }
+
+        void client_DownloadFileCompleted(object sender, AsyncCompletedEventArgs e) { MessageBox.Show("Download Completed"); btnStartDownload.Content = "Start Download"; btnStartDownload.IsEnabled = true; }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
