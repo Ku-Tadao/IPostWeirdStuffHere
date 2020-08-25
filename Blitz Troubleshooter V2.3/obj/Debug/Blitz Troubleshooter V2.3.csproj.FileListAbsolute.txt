@@ -111,3 +111,5 @@ C:\Users\Maruf Shah\Source\Repos\IPostWeirdStuffHere\Blitz Troubleshooter V2.3\o
 C:\Users\Maruf Shah\Source\Repos\IPostWeirdStuffHere\Blitz Troubleshooter V2.3\obj\Debug\Blitz Troubleshooter V2.3.csproj.CopyComplete
 C:\Users\Maruf Shah\Source\Repos\IPostWeirdStuffHere\Blitz Troubleshooter V2.3\obj\Debug\Blitz Troubleshooter V2.3.exe
 C:\Users\Maruf Shah\Source\Repos\IPostWeirdStuffHere\Blitz Troubleshooter V2.3\obj\Debug\Blitz Troubleshooter V2.3.pdb
+C:\Users\kubil\Documents\GitHub\IPostWeirdStuffHere\Blitz Troubleshooter V2.3\bin\Debug\ActiproSoftware.Ribbon.Wpf.xml
+C:\Users\kubil\Documents\GitHub\IPostWeirdStuffHere\Blitz Troubleshooter V2.3\bin\Debug\ActiproSoftware.Shared.Wpf.xml

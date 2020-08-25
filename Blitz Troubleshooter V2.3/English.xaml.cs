@@ -103,7 +103,7 @@ namespace Blitz_Troubleshooter_V2._3
             btn1.IsEnabled = false;
             btn3.IsEnabled = false;
             btn4.IsEnabled = false;
-        } 
+        }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {

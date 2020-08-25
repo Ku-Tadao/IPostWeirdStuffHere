@@ -8,7 +8,7 @@
 
         <StackPanel Margin="100" >
             <Button x:Name="btn1" Background="#E03F54" Foreground="White" Content="Tüm Genel Sorunları Düzeltin" Height="27" Margin="0,0,0,5" Click="Button_Click" />
-            <Button x:Name="btn2" Background="#E03F54" Foreground="White" Content="Yer Paylaşımını Düzelt (TFT - LoL)" Height="27" Margin="0,0,0,5" Click="Button_Click_1" />
+            <Button x:Name="btn2" Background="#E03F54" Foreground="White" Content="Arayüz Sorunlarını Düzelt (TFT - LoL)" Height="27" Margin="0,0,0,5" Click="Button_Click_1" />
             <Button x:Name="btn3" Background="#E03F54" Foreground="White" Content="Önbelleği Temizle" Height="27" Margin="0,0,0,5" Click="Button_Click_2"/>
             <Button x:Name="btn4" Background="#E03F54" Foreground="White" Content="Blitz'i Kaldır" Height="27" Margin="0,0,0,5" Click="Button_Click_4"/>
         </StackPanel>
