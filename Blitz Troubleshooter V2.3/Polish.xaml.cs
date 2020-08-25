@@ -9,11 +9,11 @@ using System.Windows;
 namespace Blitz_Troubleshooter_V2._3
 {
     /// <summary>
-    /// Interaction logic for Turkish.xaml
+    /// Interaction logic for Polish.xaml
     /// </summary>
-    public partial class Turkish : CustomWindow
+    public partial class Polish : CustomWindow
     {
-        public Turkish()
+        public Polish()
         {
             InitializeComponent();
 
@@ -57,7 +57,7 @@ namespace Blitz_Troubleshooter_V2._3
                 }
             }
 
-            MessageBox.Show("Blitz has been uninstalled", "Blitz Uninstallation", MessageBoxButton.OK, MessageBoxImage.Information);
+            MessageBox.Show("Blitz został odinstalowany", " odinstalowywanie Blitza", MessageBoxButton.OK, MessageBoxImage.Information);
         }
 
         void client_DownloadProgressChanged(object sender, DownloadProgressChangedEventArgs e)
@@ -71,8 +71,8 @@ namespace Blitz_Troubleshooter_V2._3
 
         void client_DownloadFileCompleted(object sender, AsyncCompletedEventArgs e)
         {
-            MessageBox.Show("Download Completed");
-            input_text.Text = "Waiting for input";
+            MessageBox.Show("Pobieranie zakończone");
+            input_text.Text = "Czekam na wejście";
             btnStartDownload.IsEnabled = true;
             btn3.IsEnabled = true;
             btn4.IsEnabled = true;
@@ -92,7 +92,7 @@ namespace Blitz_Troubleshooter_V2._3
 
             // Starts the download
             client.DownloadFileAsync(new Uri("https://blitz.gg/download/win"), path + "temp.exe");
-            input_text.Text = "Downloading Blitz.exe";
+            input_text.Text = "Pobranie pliku Blitz.exe";
             btnStartDownload.IsEnabled = false;
             btn1.IsEnabled = false;
             btn3.IsEnabled = false;
@@ -107,7 +107,7 @@ namespace Blitz_Troubleshooter_V2._3
 
             // Starts the download
             client.DownloadFileAsync(new Uri("https://aka.ms/vs/16/release/vc_redist.x86.exe"), path + "temp.exe");
-            input_text.Text = "Downloading vc_redist.x86.exe";
+            input_text.Text = "ZostaniePobieraine pliku vc_redist.x86.exe";
             btnStartDownload.IsEnabled = false;
             btn1.IsEnabled = false;
             btn3.IsEnabled = false;
@@ -119,7 +119,7 @@ namespace Blitz_Troubleshooter_V2._3
             KillBlitz();
             System.Threading.Thread.Sleep(1000);
             AppdataBlitz();
-            MessageBox.Show("Cache successfully cleared");
+            MessageBox.Show("Pamięć podręczna została pomyślnie wyczyszczona");
         }
         private void Button_Click_4(object sender, RoutedEventArgs e)
         {

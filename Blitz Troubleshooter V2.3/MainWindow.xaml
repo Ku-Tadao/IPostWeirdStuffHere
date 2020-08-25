@@ -10,6 +10,7 @@
             <Button x:Name="btn1" Background="#E03F54" Foreground="White" Content="English" Height="27" Margin="0,0,0,5" Click="Button_Click" />
             <Button x:Name="btn2" Background="#E03F54" Foreground="White" Content="Deutsch" Height="27" Margin="0,0,0,5" Click="Button_Click_1" />
             <Button x:Name="btn3" Background="#E03F54" Foreground="White" Content="Türkçe" Height="27" Margin="0,0,0,5" Click="Button_Click_2"/>
+            <Button x:Name="btn4" Background="#E03F54" Foreground="White" Content="Polskie" Height="27" Margin="0,0,0,5" Click="btn4_Click" />
         </StackPanel>
 
         <Image Source="Troubleshooter logo.png" Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="35" />

@@ -70,14 +70,14 @@ namespace Blitz_Troubleshooter_V2._3
         }
 
         void client_DownloadFileCompleted(object sender, AsyncCompletedEventArgs e)
-        { 
+        {
             MessageBox.Show("Download Completed");
             input_text.Text = "Waiting for input";
             btnStartDownload.IsEnabled = true;
             btn3.IsEnabled = true;
             btn4.IsEnabled = true;
             btn1.IsEnabled = true;
-            Process.Start(path + "temp.exe"); 
+            Process.Start(path + "temp.exe");
         }
 
 
