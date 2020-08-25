@@ -1,5 +1,4 @@
-﻿using BTCustomControls;
-using System;
+﻿using System;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
@@ -11,7 +10,7 @@ namespace Blitz_Troubleshooter_V2._3
     /// <summary>
     /// Interaction logic for Polish.xaml
     /// </summary>
-    public partial class Polish : CustomWindow
+    public partial class Polish : Window
     {
         public Polish()
         {
