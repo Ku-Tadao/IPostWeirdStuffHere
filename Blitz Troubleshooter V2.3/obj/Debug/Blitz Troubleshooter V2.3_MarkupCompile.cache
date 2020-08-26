@@ -4,16 +4,28 @@
 winexe
 C#
 .cs
+<<<<<<< HEAD
 C:\Users\Maruf Shah\Source\Repos\IPostWeirdStuffHere\Blitz Troubleshooter V2.3\obj\Debug\
+=======
+C:\Users\kubil\Documents\GitHub\IPostWeirdStuffHere\Blitz Troubleshooter V2.3\obj\Debug\
+>>>>>>> 2.5
 Blitz_Troubleshooter_V2._3
 none
 false
 DEBUG;TRACE
+<<<<<<< HEAD
 C:\Users\Maruf Shah\Source\Repos\IPostWeirdStuffHere\Blitz Troubleshooter V2.3\App.xaml
 51909127805
 
 9155529691
 15981595486
+=======
+C:\Users\kubil\Documents\GitHub\IPostWeirdStuffHere\Blitz Troubleshooter V2.3\App.xaml
+51909127805
+
+9155529691
+18338291806
+>>>>>>> 2.5
 English.xaml;German.xaml;MainWindow.xaml;Polish.xaml;Turkish.xaml;
 
 False
