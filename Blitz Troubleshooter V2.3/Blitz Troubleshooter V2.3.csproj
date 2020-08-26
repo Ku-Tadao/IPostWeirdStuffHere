@@ -164,14 +164,5 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-<<<<<<< HEAD
-=======
-  <ItemGroup>
-    <ProjectReference Include="..\BTCustomControls\BTCustomControls.csproj">
-      <Project>{2ACB1838-73BA-40F2-9F30-E673B3316E7E}</Project>
-      <Name>BTCustomControls</Name>
-    </ProjectReference>
-  </ItemGroup>
->>>>>>> 2.5
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
