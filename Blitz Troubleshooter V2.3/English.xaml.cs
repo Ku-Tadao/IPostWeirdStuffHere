@@ -15,7 +15,6 @@ namespace Blitz_Troubleshooter_V2._3
         public English()
         {
             InitializeComponent();
-
         }
 
         public static string appdata = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
@@ -54,9 +53,7 @@ namespace Blitz_Troubleshooter_V2._3
                 {
                     Directory.Delete(path, true);
                 }
-            }
-
-            MessageBox.Show("Blitz has been uninstalled", "Blitz Uninstallation", MessageBoxButton.OK, MessageBoxImage.Information);
+            }  
         }
         Stopwatch sw = new Stopwatch();
         void client_DownloadProgressChanged(object sender, DownloadProgressChangedEventArgs e)
@@ -81,16 +78,15 @@ namespace Blitz_Troubleshooter_V2._3
             btn3.IsEnabled = false;
             btn4.IsEnabled = false;
         }
-
         void client_DownloadFileCompleted(object sender, AsyncCompletedEventArgs e)
         {
-            MessageBox.Show("Download Completed");
-            input_text.Text = "Waiting for input";
+            MessageBox.Show("Download Completed, Pleaase press OK and continue on installation window.", "Download Completed", MessageBoxButton.OK, MessageBoxImage.Information);
+            input_text.Text = "Download Completed";
+            labelspeed.Text = null;
             enableBtn();
             Process.Start(path + "temp.exe");
             sw.Reset();
         }
-
         private void Button_Click(object sender, RoutedEventArgs e)
         {
 
@@ -107,7 +103,6 @@ namespace Blitz_Troubleshooter_V2._3
             input_text.Text = "Downloading Blitz.exe";
             disableBtn();
         }
-
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             WebClient client = new WebClient();
@@ -120,7 +115,6 @@ namespace Blitz_Troubleshooter_V2._3
             input_text.Text = "Downloading vc_redist.x86.exe";
             disableBtn();
         }
-
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
             KillBlitz();
@@ -133,6 +127,7 @@ namespace Blitz_Troubleshooter_V2._3
             KillBlitz();
             System.Threading.Thread.Sleep(1000);
             Uninstall();
+            MessageBox.Show("Blitz has been uninstalled", "Blitz Uninstallation", MessageBoxButton.OK, MessageBoxImage.Information);
         }
     }
 }
