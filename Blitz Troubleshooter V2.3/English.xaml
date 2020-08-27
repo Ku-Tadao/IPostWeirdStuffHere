@@ -16,6 +16,7 @@
                 <Button x:Name="btn3" Background="#E03F54" Foreground="White" Content="Clear Cache" Height="27" Margin="0,0,0,5" Click="Button_Click_2"/>
                 <Button x:Name="btn4" Background="#E03F54" Foreground="White" Content="Uninstall Blitz" Height="27" Margin="0,0,0,5" Click="Button_Click_4"/>
             </StackPanel>
+            <Button Content="Button" Click="Button_Click_3"/>
             <StackPanel Margin="0,50,0,0" >
                 <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
                     <TextBlock TextWrapping="Wrap" Text="Progress Bar: " Foreground="White"/>
@@ -24,7 +25,7 @@
                 <ProgressBar x:Name="progressBar1" Height="27" />
             </StackPanel>
         </StackPanel>
-       
+
         <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,5,5" Foreground="white" Text="Made with Love by: kubi#2468 and Huntsmango#5698"/>
         <TextBlock x:Name="labelspeed" HorizontalAlignment="Left" Margin="375,238,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Foreground="Wheat"/>
 

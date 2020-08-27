@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
+using System.Linq;
 using System.Net;
 using System.Windows;
 
@@ -16,7 +18,6 @@ namespace Blitz_Troubleshooter_V2._3
         {
             InitializeComponent();
         }
-
         public static string appdata = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
         public static string localappdata = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
         public string[] paths = new String[] {
@@ -26,9 +27,36 @@ namespace Blitz_Troubleshooter_V2._3
         appdata + "\\blitz-core",
         appdata + "\\Blitz-helpers",
         localappdata + "\\Programs\\Blitz"
-      };
-
+        };
         public string path = Path.GetTempPath();
+        //Is league client running
+        public static bool IsRunning(string processName)
+        {
+            try
+            {
+                var retVal = Process.GetProcesses().Any(p => p.ProcessName.Contains(processName));
+                return retVal;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+        //Get league clinet path
+        public static string getClientPath(string processName)
+        {
+            List<string> mainPaths = new List<string>();
+            Process[] leagueClient = Process.GetProcessesByName(processName);
+            string leaguePath = leagueClient[0].MainModule.FileName;
+            string[] pathStrings = leaguePath.Split('\\');
+
+            for (var i = 0; i < pathStrings.Length - 1; i++)
+            {
+                mainPaths.Add(pathStrings[i]);
+            }
+            var mainPath = string.Join<string>("\\", mainPaths);
+            return mainPath;
+        }
         public void KillBlitz()
         {
             foreach (Process proc in Process.GetProcessesByName("Blitz"))
@@ -128,6 +156,23 @@ namespace Blitz_Troubleshooter_V2._3
             System.Threading.Thread.Sleep(1000);
             Uninstall();
             MessageBox.Show("Blitz has been uninstalled", "Blitz Uninstallation", MessageBoxButton.OK, MessageBoxImage.Information);
+        }
+        //Removes Champions folder
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            if (IsRunning("LeagueClient"))
+            {
+                var path = getClientPath("LeagueClient") + @"\Config\Champions";
+                if (Directory.Exists(path))
+                {
+                    Directory.Delete(path, true);
+                }
+                MessageBox.Show("All Build has been cleared", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            else
+            {
+                MessageBox.Show("League Client is not running. You need to have league client running in order to clear builds.", "League Client", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
         }
     }
 }
