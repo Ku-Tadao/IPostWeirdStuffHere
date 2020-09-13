@@ -84,6 +84,7 @@
     <Compile Include="English.xaml.cs">
       <DependentUpon>English.xaml</DependentUpon>
     </Compile>
+    <Compile Include="LocUtil.cs" />
     <Compile Include="Polish.xaml.cs">
       <DependentUpon>Polish.xaml</DependentUpon>
     </Compile>
@@ -95,6 +96,22 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="German.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="i18N\MainWindow.po-PO.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="i18N\MainWindow.tr-TR.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="i18N\MainWindow.ge-GE.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="i18N\MainWindow.en-US.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -1,0 +1,12 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+    <sys:String x:Key="ResourceDictionaryName">Loc-en-US</sys:String>
+    <sys:String x:Key="FixAllCommonIssues">Fix All Common Issues</sys:String>
+    <sys:String x:Key="FixOverlay(TFT-LoL)">Fix Overlay (TFT - LoL)</sys:String>
+    <sys:String x:Key="ClearCache">Clear Cache</sys:String>
+    <sys:String x:Key="UninstallBlitz">Uninstall Blitz</sys:String>
+    <sys:String x:Key="ClearBlitzbuildfromLeague">Clear Blitz build from League</sys:String>
+    <sys:String x:Key="Credit">Made with Love by: kubi#2468 and Huntsmango#5698</sys:String>
+</ResourceDictionary>
