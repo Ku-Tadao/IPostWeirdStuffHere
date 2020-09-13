@@ -1,0 +1,14 @@
+C:\Users\kubil\Documents\GitHub\IPostWeirdStuffHere\Blitz Unofficial State Checker\Blitz Unofficial State Checker\bin\Release\Blitz Unofficial State Checker.exe.config
+C:\Users\kubil\Documents\GitHub\IPostWeirdStuffHere\Blitz Unofficial State Checker\Blitz Unofficial State Checker\bin\Release\Blitz Unofficial State Checker.exe
+C:\Users\kubil\Documents\GitHub\IPostWeirdStuffHere\Blitz Unofficial State Checker\Blitz Unofficial State Checker\bin\Release\Blitz Unofficial State Checker.pdb
+C:\Users\kubil\Documents\GitHub\IPostWeirdStuffHere\Blitz Unofficial State Checker\Blitz Unofficial State Checker\obj\Release\Blitz Unofficial State Checker.csprojAssemblyReference.cache
+C:\Users\kubil\Documents\GitHub\IPostWeirdStuffHere\Blitz Unofficial State Checker\Blitz Unofficial State Checker\obj\Release\MainWindow.baml
+C:\Users\kubil\Documents\GitHub\IPostWeirdStuffHere\Blitz Unofficial State Checker\Blitz Unofficial State Checker\obj\Release\MainWindow.g.cs
+C:\Users\kubil\Documents\GitHub\IPostWeirdStuffHere\Blitz Unofficial State Checker\Blitz Unofficial State Checker\obj\Release\App.g.cs
+C:\Users\kubil\Documents\GitHub\IPostWeirdStuffHere\Blitz Unofficial State Checker\Blitz Unofficial State Checker\obj\Release\Blitz Unofficial State Checker_MarkupCompile.cache
+C:\Users\kubil\Documents\GitHub\IPostWeirdStuffHere\Blitz Unofficial State Checker\Blitz Unofficial State Checker\obj\Release\Blitz Unofficial State Checker.g.resources
+C:\Users\kubil\Documents\GitHub\IPostWeirdStuffHere\Blitz Unofficial State Checker\Blitz Unofficial State Checker\obj\Release\Blitz_Unofficial_State_Checker.Properties.Resources.resources
+C:\Users\kubil\Documents\GitHub\IPostWeirdStuffHere\Blitz Unofficial State Checker\Blitz Unofficial State Checker\obj\Release\Blitz Unofficial State Checker.csproj.GenerateResource.cache
+C:\Users\kubil\Documents\GitHub\IPostWeirdStuffHere\Blitz Unofficial State Checker\Blitz Unofficial State Checker\obj\Release\Blitz Unofficial State Checker.csproj.CoreCompileInputs.cache
+C:\Users\kubil\Documents\GitHub\IPostWeirdStuffHere\Blitz Unofficial State Checker\Blitz Unofficial State Checker\obj\Release\Blitz Unofficial State Checker.exe
+C:\Users\kubil\Documents\GitHub\IPostWeirdStuffHere\Blitz Unofficial State Checker\Blitz Unofficial State Checker\obj\Release\Blitz Unofficial State Checker.pdb

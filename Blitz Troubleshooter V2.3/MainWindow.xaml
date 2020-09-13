@@ -8,16 +8,114 @@
         Title="" Height="450" Width="450">
     <Grid Background="#09101F">
 
-        <StackPanel Margin="100" >
-            <Label Background="#E03F54" Foreground="White" Content="Choose a language" HorizontalContentAlignment="Center" Margin="0,0,0,5"  />
-            <Button x:Name="btn1" Background="#E03F54" Foreground="White" Content="English" Height="27" Margin="0,0,0,5" Click="Button_Click" />
-            <Button x:Name="btn2" Background="#E03F54" Foreground="White" Content="Deutsch" Height="27" Margin="0,0,0,5" Click="Button_Click_1" />
-            <Button x:Name="btn3" Background="#E03F54" Foreground="White" Content="Türkçe" Height="27" Margin="0,0,0,5" Click="Button_Click_2"/>
-            <Button x:Name="btn4" Background="#E03F54" Foreground="White" Content="Polskie" Height="27" Margin="0,0,0,5" Click="btn4_Click" />
-        </StackPanel>
+        <Grid x:Name="GridEnglish" Visibility="Collapsed" Background="#09101F">
+
+            <StackPanel Margin="20,60,20,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  >
+                <StackPanel >
+                    <Button x:Name="ENbtn1" Background="#E03F54" Foreground="White" Content="Fix All Common Issues" Height="27" Margin="0,0,0,5" Click="ENButton_Click" />
+                    <Button x:Name="ENbtnStartDownload" Background="#E03F54" Foreground="White" Content="Fix Overlay (TFT - LoL)" Height="27" Margin="0,0,0,5" Click="ENButton_Click_1" />
+                    <Button x:Name="ENbtn3" Background="#E03F54" Foreground="White" Content="Clear Cache" Height="27" Margin="0,0,0,5" Click="ENButton_Click_2"/>
+                    <Button x:Name="ENbtn4" Background="#E03F54" Foreground="White" Content="Uninstall Blitz" Height="27" Margin="0,0,0,5" Click="ENButton_Click_4"/>
+                </StackPanel>
+                <Button Content="Button" Click="ENButton_Click_3"/>
+                <StackPanel Margin="0,50,0,0" >
+                    <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                        <TextBlock TextWrapping="Wrap" Text="Progress Bar: " Foreground="White"/>
+                        <TextBlock x:Name="ENinput_text" TextWrapping="Wrap" Text="Waiting for input..." Foreground="White"/>
+                    </StackPanel>
+                    <ProgressBar x:Name="ENprogressBar1" Height="27" />
+                </StackPanel>
+            </StackPanel>
+
+            <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,5,5" Foreground="white" Text="Made with Love by: kubi#2468 and Huntsmango#5698"/>
+            <TextBlock x:Name="ENlabelspeed" HorizontalAlignment="Left" Margin="375,238,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Foreground="Wheat"/>
+
+
+        </Grid>
+        <Grid x:Name="GridGerman" Visibility="Collapsed" Background="#09101F">
+
+            <StackPanel Margin="20,60,20,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  >
+                <StackPanel >
+                    <Button x:Name="DEbtn1" Background="#E03F54" Foreground="White" Content="Beheben Sie alle gängigen Probleme" Height="27" Margin="0,0,0,5" Click="DEButton_Click" />
+                    <Button x:Name="DEbtnStartDownload" Background="#E03F54" Foreground="White" Content="Fix Overlay (TFT - LoL)" Height="27" Margin="0,0,0,5" Click="DEButton_Click_1" />
+                    <Button x:Name="DEbtn3" Background="#E03F54" Foreground="White" Content="Cache leeren" Height="27" Margin="0,0,0,5" Click="DEButton_Click_2"/>
+                    <Button x:Name="DEbtn4" Background="#E03F54" Foreground="White" Content="Blitz entfernen" Height="27" Margin="0,0,0,5" Click="DEButton_Click_4"/>
+                </StackPanel>
+                <StackPanel Margin="0,50,0,0" >
+                    <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                        <TextBlock TextWrapping="Wrap" Text="Fortschrittsanzeige: " Foreground="White"/>
+                        <TextBlock x:Name="DEinput_text" TextWrapping="Wrap" Text="Warten auf Eingabe..." Foreground="White"/>
+                    </StackPanel>
+                    <ProgressBar x:Name="DEprogressBar1" Height="27" />
+                </StackPanel>
+            </StackPanel>
+
+            <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,5,5" Foreground="white" Text="mit Liebe gemacht von Kubi2468 und Huntsmango#5698."/>
+
+
+        </Grid>
+        <Grid Background="#09101F" x:Name="GridPolish" Visibility="Collapsed">
+            <Image Source="Troubleshooter logo.png" Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="35" />
+
+            <StackPanel Margin="20,60,20,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  >
+                <StackPanel >
+                    <Button x:Name="PLbtn1" Background="#E03F54" Foreground="White" Content="Napraw wszystkie typowe problemy" Height="27" Margin="0,0,0,5" Click="PLButton_Click" />
+                    <Button x:Name="PLbtnStartDownload" Background="#E03F54" Foreground="White" Content="Napraw nakładkę (TFT - LoL)" Height="27" Margin="0,0,0,5" Click="PLButton_Click_1" />
+                    <Button x:Name="PLbtn3" Background="#E03F54" Foreground="White" Content="Wyczyść pamięć podręczną" Height="27" Margin="0,0,0,5" Click="PLButton_Click_2"/>
+                    <Button x:Name="PLbtn4" Background="#E03F54" Foreground="White" Content="Odinstaluj Blitz" Height="27" Margin="0,0,0,5" Click="PLButton_Click_4"/>
+                </StackPanel>
+                <StackPanel Margin="0,50,0,0" >
+                    <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                        <TextBlock TextWrapping="Wrap" Text="Pasek postępu: " Foreground="White"/>
+                        <TextBlock x:Name="PLinput_text" TextWrapping="Wrap" Text="Czekam na wejście..." Foreground="White"/>
+                    </StackPanel>
+                    <ProgressBar x:Name="PLprogressBar1" Height="27" />
+                </StackPanel>
+            </StackPanel>
+
+            <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,5,5" Foreground="white" Text="Wykonane z miłością przez: kubi#2468 i Huntsmango#5698"/>
+
+
+        </Grid>
+        <Grid Visibility="Collapsed" x:Name="GridTurkish" Background="#09101F">
+            <Image Source="Troubleshooter logo.png" Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="35" />
+
+            <StackPanel Margin="20,60,20,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  >
+                <StackPanel >
+                    <Button x:Name="TRbtn1" Background="#E03F54" Foreground="White" Content="Tüm Genel Sorunları Düzeltin" Height="27" Margin="0,0,0,5" Click="TRButton_Click" />
+                    <Button x:Name="TRbtnStartDownload" Background="#E03F54" Foreground="White" Content="Arayüz Sorunlarını Düzelt (TFT - LoL)" Height="27" Margin="0,0,0,5" Click="TRButton_Click_1" />
+                    <Button x:Name="TRbtn3" Background="#E03F54" Foreground="White" Content="Önbelleği Temizle" Height="27" Margin="0,0,0,5" Click="TRButton_Click_2"/>
+                    <Button x:Name="TRbtn4" Background="#E03F54" Foreground="White" Content="Blitz'i Kaldır" Height="27" Margin="0,0,0,5" Click="TRButton_Click_4"/>
+                </StackPanel>
+                <StackPanel Margin="0,50,0,0" >
+                    <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                        <TextBlock TextWrapping="Wrap" Text="İlerleme çubuğu: " Foreground="White"/>
+                        <TextBlock x:Name="TRinput_text" TextWrapping="Wrap" Text="Giriş bekleniyor..." Foreground="White"/>
+                    </StackPanel>
+                    <ProgressBar x:Name="TRprogressBar1" Height="27" />
+                </StackPanel>
+            </StackPanel>
+
+            <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,5,5" Foreground="white" Text="kubi#2468 ve Huntsmango#5698 tarafından sevgiyle hazırlandı.
+"/>
+
+
+        </Grid>
+        
+        
 
         <Image Source="Troubleshooter logo.png" Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="35" />
 
         <Button x:Name="btn5" Content="Information" Background="Transparent" BorderBrush="Transparent" Foreground="White" Height="25" Width="75" HorizontalAlignment="Left"  VerticalAlignment="Bottom" Margin="15,0,0,15" Click="Button_Click_3"/>
+        
+        <StackPanel x:Name="StpLanguage" HorizontalAlignment="Center" VerticalAlignment="Center" >
+            <Label HorizontalAlignment="Center" Foreground="White" Content="Language:"/>
+            <ComboBox x:Name="cblang" HorizontalAlignment="Right" Width="120" SelectionChanged="cblang_SelectionChanged" SelectedValuePath="Content">
+            <ComboBoxItem Content="English"></ComboBoxItem>
+            <ComboBoxItem Content="German"></ComboBoxItem>
+            <ComboBoxItem Content="Polish"></ComboBoxItem>
+            <ComboBoxItem Content="Turkish"></ComboBoxItem>
+        </ComboBox>
+        </StackPanel>
     </Grid>
 </Window>
