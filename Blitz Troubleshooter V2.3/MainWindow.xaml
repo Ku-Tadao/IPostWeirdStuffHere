@@ -19,8 +19,8 @@
         <Menu HorizontalAlignment="Left" Height="26" Margin="324,10,0,0" VerticalAlignment="Top" Width="100">
             <MenuItem Name="menuItemLanguages" Header="Language">
                 <MenuItem Header="English" Tag="en-US" IsCheckable="True" Click="MenuItem_Click"/>
-                <MenuItem Header="German" Tag="ge-GE" IsCheckable="True" Click="MenuItem_Click"/>
-                <MenuItem Header="Polish" Tag="po-PO" IsCheckable="True" Click="MenuItem_Click"/>
+                <MenuItem Header="German" Tag="de-DE" IsCheckable="True" Click="MenuItem_Click"/>
+                <MenuItem Header="Polish" Tag="pl-PL" IsCheckable="True" Click="MenuItem_Click"/>
                 <MenuItem Header="Turkish" Tag="tr-TR" IsCheckable="True" Click="MenuItem_Click"/>
             </MenuItem>
         </Menu>
@@ -34,8 +34,8 @@
             </StackPanel>
             <StackPanel Margin="0,50,0,0" >
                 <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Width="404">
-                    <TextBlock TextWrapping="Wrap" Margin="5,0,0,0" Text="Progress Bar: " Foreground="White" Width="70"/>
-                    <TextBlock x:Name="input_text" TextWrapping="Wrap" Text="Waiting for input..." Foreground="White"/>
+                    <TextBlock TextWrapping="Wrap" Margin="5,0,0,0" Text="{DynamicResource ResourceKey=ProgressBar}" Foreground="White" Width="70"/>
+                    <TextBlock x:Name="input_text" TextWrapping="Wrap" Text="{DynamicResource ResourceKey=input_text}" Foreground="White"/>
                     <TextBlock x:Name="labelspeed" Margin="100,0,0,0" HorizontalAlignment="Right" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Foreground="Wheat" Width="130"/>
                 </StackPanel>
                 <ProgressBar x:Name="progressBar1" Height="27" />

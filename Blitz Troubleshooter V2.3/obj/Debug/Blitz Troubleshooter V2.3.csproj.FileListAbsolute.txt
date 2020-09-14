@@ -123,7 +123,7 @@ C:\Users\Maruf Shah\Source\Repos\IPostWeirdStuffHere\Blitz Troubleshooter V2.3\o
 C:\Users\Maruf Shah\Source\Repos\IPostWeirdStuffHere\Blitz Troubleshooter V2.3\obj\Debug\Blitz Troubleshooter V2.3.csproj.CoreCompileInputs.cache
 C:\Users\Maruf Shah\Source\Repos\IPostWeirdStuffHere\Blitz Troubleshooter V2.3\obj\Debug\Blitz Troubleshooter V2.3.exe
 C:\Users\Maruf Shah\Source\Repos\IPostWeirdStuffHere\Blitz Troubleshooter V2.3\obj\Debug\Blitz Troubleshooter V2.3.pdb
-C:\Users\Maruf Shah\Source\Repos\IPostWeirdStuffHere\Blitz Troubleshooter V2.3\obj\Debug\i18N\MainWindow.po-PO.baml
 C:\Users\Maruf Shah\Source\Repos\IPostWeirdStuffHere\Blitz Troubleshooter V2.3\obj\Debug\i18N\MainWindow.tr-TR.baml
-C:\Users\Maruf Shah\Source\Repos\IPostWeirdStuffHere\Blitz Troubleshooter V2.3\obj\Debug\i18N\MainWindow.ge-GE.baml
 C:\Users\Maruf Shah\Source\Repos\IPostWeirdStuffHere\Blitz Troubleshooter V2.3\obj\Debug\Blitz Troubleshooter V2.3.csprojAssemblyReference.cache
+C:\Users\Maruf Shah\Source\Repos\IPostWeirdStuffHere\Blitz Troubleshooter V2.3\obj\Debug\i18N\MainWindow.pl-PL.baml
+C:\Users\Maruf Shah\Source\Repos\IPostWeirdStuffHere\Blitz Troubleshooter V2.3\obj\Debug\i18N\MainWindow.de-DE.baml

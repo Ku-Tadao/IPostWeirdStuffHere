@@ -2,13 +2,13 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:sys="clr-namespace:System;assembly=mscorlib">
 
-    <sys:String x:Key="ResourceDictionaryName">Loc-tr-TR</sys:String>
-    <sys:String x:Key="FixAllCommonIssues">Tüm Genel Sorunları Düzeltin</sys:String>
-    <sys:String x:Key="FixOverlay(TFT-LoL)">Arayüz Sorunlarını Düzelt (TFT - LoL)</sys:String>
-    <sys:String x:Key="ClearCache">Önbelleği Temizle</sys:String>
-    <sys:String x:Key="UninstallBlitz">Blitz'i Kaldır</sys:String>
+    <sys:String x:Key="ResourceDictionaryName">Loc-de-DE</sys:String>
+    <sys:String x:Key="FixAllCommonIssues">Beheben Sie alle gängigen Probleme</sys:String>
+    <sys:String x:Key="FixOverlay(TFT-LoL)">Fix Overlay (TFT - LoL)</sys:String>
+    <sys:String x:Key="ClearCache">Cache leeren</sys:String>
+    <sys:String x:Key="UninstallBlitz">Blitz entfernen</sys:String>
     <sys:String x:Key="ClearBlitzbuildfromLeague">Clear Blitz build from League</sys:String>
-    <sys:String x:Key="Credit">Madekubi#2468 ve Huntsmango#5698 tarafından sevgiyle hazırlandı.</sys:String>
+    <sys:String x:Key="Credit">mit Liebe gemacht von Kubi2468 und Huntsmango#5698.</sys:String>
     <sys:String x:Key="ProgressBar">Progress Bar: </sys:String>
     <sys:String x:Key="input_text">Waiting for input...</sys:String>
     <sys:String x:Key="lang">Language</sys:String>

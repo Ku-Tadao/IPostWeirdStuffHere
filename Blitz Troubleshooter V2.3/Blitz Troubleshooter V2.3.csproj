@@ -82,7 +82,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="LocUtil.cs" />
-    <Page Include="i18N\MainWindow.po-PO.xaml">
+    <Page Include="i18N\MainWindow.pl-PL.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -90,7 +90,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="i18N\MainWindow.ge-GE.xaml">
+    <Page Include="i18N\MainWindow.de-DE.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

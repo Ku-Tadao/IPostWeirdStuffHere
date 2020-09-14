@@ -9,4 +9,7 @@
     <sys:String x:Key="UninstallBlitz">Uninstall Blitz</sys:String>
     <sys:String x:Key="ClearBlitzbuildfromLeague">Clear Blitz build from League</sys:String>
     <sys:String x:Key="Credit">Made with Love by: kubi#2468 and Huntsmango#5698</sys:String>
+    <sys:String x:Key="ProgressBar">Progress Bar: </sys:String>
+    <sys:String x:Key="input_text">Waiting for input...</sys:String>
+    <sys:String x:Key="lang">Language</sys:String>
 </ResourceDictionary>
