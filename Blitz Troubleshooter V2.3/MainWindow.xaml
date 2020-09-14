@@ -41,8 +41,17 @@
                 <ProgressBar x:Name="progressBar1" Height="27" />
             </StackPanel>
         </StackPanel>
-
+        <!-- Dynamic contents -->
         <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,5,5" Foreground="white" Text="{DynamicResource ResourceKey=Credit}"/>
+        <TextBlock x:Name="DownloadComplete" HorizontalAlignment="Left" Margin="106,361,0,0" TextWrapping="Wrap" Text="{DynamicResource ResourceKey=DownloadComplete}" VerticalAlignment="Top" Visibility="Hidden" />
+        <TextBlock x:Name="DownloadBlitz" Margin="106,361,0,0" TextWrapping="Wrap" Text="{DynamicResource ResourceKey=DownloadBlitz}" VerticalAlignment="Top" Visibility="Hidden" />
+        <TextBlock x:Name="DownloadVC" HorizontalAlignment="Left" Margin="106,361,0,0" TextWrapping="Wrap" Text="{DynamicResource ResourceKey=DownloadVC}" VerticalAlignment="Top" Visibility="Hidden" />
+        <TextBlock x:Name="CacheClear" HorizontalAlignment="Left" Margin="106,361,0,0" TextWrapping="Wrap" Text="{DynamicResource ResourceKey=CacheClear}" VerticalAlignment="Top" Visibility="Hidden" />
+        <TextBlock x:Name="BlitzUninstalled" HorizontalAlignment="Left" Margin="106,361,0,0" TextWrapping="Wrap" Text="{DynamicResource ResourceKey=BlitzUninstalled}" VerticalAlignment="Top" Visibility="Hidden" />
+        <TextBlock x:Name="BuildClearSucess" HorizontalAlignment="Left" Margin="106,361,0,0" TextWrapping="Wrap" Text="{DynamicResource ResourceKey=BuildClearSucess}" VerticalAlignment="Top" Visibility="Hidden" />
+        <TextBlock x:Name="BuildClearFailed" HorizontalAlignment="Left" Margin="106,361,0,0" TextWrapping="Wrap" Text="{DynamicResource ResourceKey=BuildClearFailed}" VerticalAlignment="Top" Visibility="Hidden" />
+
+
 
 
     </Grid>

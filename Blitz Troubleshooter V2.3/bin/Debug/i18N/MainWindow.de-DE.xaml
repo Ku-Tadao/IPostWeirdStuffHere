@@ -12,4 +12,11 @@
     <sys:String x:Key="ProgressBar">Progress Bar: </sys:String>
     <sys:String x:Key="input_text">Waiting for input...</sys:String>
     <sys:String x:Key="lang">Language</sys:String>
+    <sys:String x:Key="DownloadComplete">DEDownload Completed, Pleaase press OK and continue on installation window.</sys:String>
+    <sys:String x:Key="DownloadBlitz">Downloading Blitz.exe</sys:String>
+    <sys:String x:Key="DownloadVC">Downloading vc_redist.x86.exe</sys:String>
+    <sys:String x:Key="CacheClear">Cache successfully cleared</sys:String>
+    <sys:String x:Key="BlitzUninstalled">Blitz has been uninstalled</sys:String>
+    <sys:String x:Key="BuildClearSucess">All Build has been cleared</sys:String>
+    <sys:String x:Key="BuildClearFailed">DELeague Client is not running. You need to have league client running in order to clear builds.</sys:String>
 </ResourceDictionary>

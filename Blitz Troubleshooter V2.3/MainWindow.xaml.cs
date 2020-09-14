@@ -131,7 +131,7 @@ namespace Blitz_Troubleshooter_V2._3
         }
         void client_DownloadFileCompleted(object sender, AsyncCompletedEventArgs e)
         {
-            MessageBox.Show("Download Completed, Pleaase press OK and continue on installation window.", "Download Completed", MessageBoxButton.OK, MessageBoxImage.Information);
+            MessageBox.Show(DownloadComplete.Text, "Download Completed", MessageBoxButton.OK, MessageBoxImage.Information);
             input_text.Text = "Download Completed";
             labelspeed.Text = null;
             enableBtn();
@@ -151,7 +151,7 @@ namespace Blitz_Troubleshooter_V2._3
             // Starts the download
             sw.Start();
             client.DownloadFileAsync(new Uri("https://blitz.gg/download/win"), path + "temp.exe");
-            input_text.Text = "Downloading Blitz.exe";
+            input_text.Text = DownloadBlitz.Text;
             disableBtn();
         }
         private void Button_Click_1(object sender, RoutedEventArgs e)
@@ -163,7 +163,7 @@ namespace Blitz_Troubleshooter_V2._3
             // Starts the download
             sw.Start();
             client.DownloadFileAsync(new Uri("https://aka.ms/vs/16/release/vc_redist.x86.exe"), path + "temp.exe");
-            input_text.Text = "Downloading vc_redist.x86.exe";
+            input_text.Text = DownloadVC.Text;
             disableBtn();
         }
         private void Button_Click_2(object sender, RoutedEventArgs e)
@@ -171,14 +171,14 @@ namespace Blitz_Troubleshooter_V2._3
             KillBlitz();
             System.Threading.Thread.Sleep(1000);
             AppdataBlitz();
-            MessageBox.Show("Cache successfully cleared");
+            MessageBox.Show(CacheClear.Text);
         }
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
             KillBlitz();
             System.Threading.Thread.Sleep(1000);
             Uninstall();
-            MessageBox.Show("Blitz has been uninstalled", "Blitz Uninstallation", MessageBoxButton.OK, MessageBoxImage.Information);
+            MessageBox.Show(BlitzUninstalled.Text, "Blitz Uninstallation", MessageBoxButton.OK, MessageBoxImage.Information);
         }
         //Removes Champions folder
         private void Button_Click_4(object sender, RoutedEventArgs e)
@@ -190,11 +190,11 @@ namespace Blitz_Troubleshooter_V2._3
                 {
                     Directory.Delete(path, true);
                 }
-                MessageBox.Show("All Build has been cleared", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show(BuildClearSucess.Text, "Success", MessageBoxButton.OK, MessageBoxImage.Information);
             }
             else
             {
-                MessageBox.Show("League Client is not running. You need to have league client running in order to clear builds.", "League Client", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show(BuildClearFailed.Text, "League Client", MessageBoxButton.OK, MessageBoxImage.Information);
             }
         }
     }
