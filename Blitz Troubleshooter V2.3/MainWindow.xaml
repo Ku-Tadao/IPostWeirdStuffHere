@@ -30,7 +30,7 @@
                 <Button x:Name="btnStartDownload" Background="#E03F54" Foreground="White" Content="{DynamicResource ResourceKey=FixOverlay(TFT-LoL)}" Height="27" Margin="0,0,0,5" Click="Button_Click_1" />
                 <Button x:Name="btn3" Background="#E03F54" Foreground="White" Content="{DynamicResource ResourceKey=ClearCache}" Height="27" Margin="0,0,0,5" Click="Button_Click_2"/>
                 <Button x:Name="btn4" Background="#E03F54" Foreground="White" Content="{DynamicResource ResourceKey=UninstallBlitz}" Height="27" Margin="0,0,0,5" Click="Button_Click_3"/>
-                <Button x:Name="Button" Background="#E03F54" Foreground="White" Content="{DynamicResource ResourceKey=ClearBlitzbuildfromLeague}" Height="27" Margin="0,0,0,5" Click="Button_Click_4"/>
+                <Button x:Name="btn2" Background="#E03F54" Foreground="White" Content="{DynamicResource ResourceKey=ClearBlitzbuildfromLeague}" Height="27" Margin="0,0,0,5" Click="Button_Click_4"/>
             </StackPanel>
             <StackPanel Margin="0,50,0,0" >
                 <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Width="404">

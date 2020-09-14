@@ -119,6 +119,7 @@ namespace Blitz_Troubleshooter_V2._3
             btn3.IsEnabled = true;
             btn4.IsEnabled = true;
             btn1.IsEnabled = true;
+            btn2.IsEnabled = true;
         }
         public void disableBtn()
         {
@@ -126,6 +127,7 @@ namespace Blitz_Troubleshooter_V2._3
             btn1.IsEnabled = false;
             btn3.IsEnabled = false;
             btn4.IsEnabled = false;
+            btn2.IsEnabled = false;
         }
         void client_DownloadFileCompleted(object sender, AsyncCompletedEventArgs e)
         {
