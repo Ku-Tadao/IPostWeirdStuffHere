@@ -1,7 +1,6 @@
 import discord
 import os
 from discord.ext import commands, tasks
-from discord import File
 import datetime
 
 client = commands.Bot(command_prefix=".")
