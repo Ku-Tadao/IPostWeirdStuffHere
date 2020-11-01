@@ -1,8 +1,6 @@
 import discord
 from discord.ext import commands
 import requests
-import bs4 
-from bs4 import BeautifulSoup as bs
 import urllib
 
 class League_of_Legends(commands.Cog, name="League of Legends"):
