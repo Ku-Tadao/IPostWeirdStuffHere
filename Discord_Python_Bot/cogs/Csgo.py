@@ -45,7 +45,6 @@ class Csgo(commands.Cog, name="CS:GO"):
             await message.delete()
             await ctx.channel.send(embed=embed)
         except:
-
                 website = requests.get("https://tracker.gg/csgo/profile/steam/"+steamid+"/overview", headers=headers)
                 websitestring = "https://tracker.gg/csgo/profile/steam/"+steamid+"/overview"
                 parser = bs4.BeautifulSoup(website.text, 'lxml')
