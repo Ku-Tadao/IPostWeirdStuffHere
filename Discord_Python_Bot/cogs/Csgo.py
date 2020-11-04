@@ -14,8 +14,6 @@ class Csgo(commands.Cog, name="CS:GO"):
     
     @commands.command()
     async def csgo(self, ctx, *, steamid):
-        headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:82.0) Gecko/20100101 Firefox/82.0'}
-
         message = await ctx.channel.send("Loading")
         headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:82.0) Gecko/20100101 Firefox/82.0'}
         try:
@@ -64,20 +62,6 @@ class Csgo(commands.Cog, name="CS:GO"):
                 await message.edit(content="Grabbing completed, preparing message!")
                 await message.delete()
                 await ctx.channel.send(embed=embed)
-
- 
-
-        
-
-
-           
-
-
-
-       
-
-
-
     
 def setup(client):
     client.add_cog(Csgo(client))
