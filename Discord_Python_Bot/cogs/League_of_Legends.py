@@ -129,7 +129,6 @@ class League_of_Legends(commands.Cog, name="League of Legends"):
                     tftaverage = gettftaverage[5].getText().strip()
                     if tftaverage == "":
                         tftaverage = "N/A"
-    
                 except:
                     tftaverage = "N/A"
                 try:
@@ -153,7 +152,7 @@ class League_of_Legends(commands.Cog, name="League of Legends"):
                 embed.add_field(name="Top4 Rate", value=tfttop4rate, inline=True)
                 embed.add_field(name="Played", value=tftgamesplayed, inline=True)
                 embed.add_field(name="Avg. Rank", value=tftaverage, inline=True)
-                embed.set_footer(text="If the data is inaccurate, press the 'Last Updated' and manually update it.")
+                embed.set_footer(text="If the data is inaccurate, press the <"+getupdated+"> and manually update it.")
     
                 await message.delete()
                 await ctx.channel.send(embed=embed)
@@ -162,13 +161,6 @@ class League_of_Legends(commands.Cog, name="League of Legends"):
                 await ctx.channel.send("<"+websitesend+">")
         else:
             await ctx.channel.send("*Error, use command as followed: `.TFT Region SummonerName`*")
-        
 
-    
 def setup(client):
     client.add_cog(League_of_Legends(client))
-
-
-
-
-
