@@ -110,3 +110,25 @@ C:\Users\Maruf Shah\Source\Repos\IPostWeirdStuffHere\Blitz Troubleshooter V2.3\o
 C:\Users\Maruf Shah\Source\Repos\IPostWeirdStuffHere\Blitz Troubleshooter V2.3\obj\Debug\Blitz Troubleshooter V2.3.exe
 C:\Users\Maruf Shah\Source\Repos\IPostWeirdStuffHere\Blitz Troubleshooter V2.3\obj\Debug\Blitz Troubleshooter V2.3.pdb
 C:\Users\Maruf Shah\Source\Repos\IPostWeirdStuffHere\Blitz Troubleshooter V2.3\obj\Debug\Blitz Troubleshooter V2.3.csprojAssemblyReference.cache
+C:\Users\kubil\RiderProjects\IPostWeirdStuffHere\Blitz Troubleshooter\Blitz Troubleshooter V2.3\bin\Debug\Blitz Troubleshooter V2.5.exe.config
+C:\Users\kubil\RiderProjects\IPostWeirdStuffHere\Blitz Troubleshooter\Blitz Troubleshooter V2.3\bin\Debug\Blitz Troubleshooter V2.5.exe
+C:\Users\kubil\RiderProjects\IPostWeirdStuffHere\Blitz Troubleshooter\Blitz Troubleshooter V2.3\bin\Debug\Blitz Troubleshooter V2.5.pdb
+C:\Users\kubil\RiderProjects\IPostWeirdStuffHere\Blitz Troubleshooter\Blitz Troubleshooter V2.3\obj\Debug\Blitz Troubleshooter V2.3.csprojAssemblyReference.cache
+C:\Users\kubil\RiderProjects\IPostWeirdStuffHere\Blitz Troubleshooter\Blitz Troubleshooter V2.3\obj\Debug\English.baml
+C:\Users\kubil\RiderProjects\IPostWeirdStuffHere\Blitz Troubleshooter\Blitz Troubleshooter V2.3\obj\Debug\German.baml
+C:\Users\kubil\RiderProjects\IPostWeirdStuffHere\Blitz Troubleshooter\Blitz Troubleshooter V2.3\obj\Debug\MainWindow.baml
+C:\Users\kubil\RiderProjects\IPostWeirdStuffHere\Blitz Troubleshooter\Blitz Troubleshooter V2.3\obj\Debug\Polish.baml
+C:\Users\kubil\RiderProjects\IPostWeirdStuffHere\Blitz Troubleshooter\Blitz Troubleshooter V2.3\obj\Debug\Turkish.baml
+C:\Users\kubil\RiderProjects\IPostWeirdStuffHere\Blitz Troubleshooter\Blitz Troubleshooter V2.3\obj\Debug\English.g.cs
+C:\Users\kubil\RiderProjects\IPostWeirdStuffHere\Blitz Troubleshooter\Blitz Troubleshooter V2.3\obj\Debug\German.g.cs
+C:\Users\kubil\RiderProjects\IPostWeirdStuffHere\Blitz Troubleshooter\Blitz Troubleshooter V2.3\obj\Debug\MainWindow.g.cs
+C:\Users\kubil\RiderProjects\IPostWeirdStuffHere\Blitz Troubleshooter\Blitz Troubleshooter V2.3\obj\Debug\Polish.g.cs
+C:\Users\kubil\RiderProjects\IPostWeirdStuffHere\Blitz Troubleshooter\Blitz Troubleshooter V2.3\obj\Debug\Turkish.g.cs
+C:\Users\kubil\RiderProjects\IPostWeirdStuffHere\Blitz Troubleshooter\Blitz Troubleshooter V2.3\obj\Debug\App.g.cs
+C:\Users\kubil\RiderProjects\IPostWeirdStuffHere\Blitz Troubleshooter\Blitz Troubleshooter V2.3\obj\Debug\Blitz Troubleshooter V2.5_MarkupCompile.cache
+C:\Users\kubil\RiderProjects\IPostWeirdStuffHere\Blitz Troubleshooter\Blitz Troubleshooter V2.3\obj\Debug\Blitz Troubleshooter V2.5.g.resources
+C:\Users\kubil\RiderProjects\IPostWeirdStuffHere\Blitz Troubleshooter\Blitz Troubleshooter V2.3\obj\Debug\Blitz_Troubleshooter_V2._3.Properties.Resources.resources
+C:\Users\kubil\RiderProjects\IPostWeirdStuffHere\Blitz Troubleshooter\Blitz Troubleshooter V2.3\obj\Debug\Blitz Troubleshooter V2.3.csproj.GenerateResource.cache
+C:\Users\kubil\RiderProjects\IPostWeirdStuffHere\Blitz Troubleshooter\Blitz Troubleshooter V2.3\obj\Debug\Blitz Troubleshooter V2.3.csproj.CoreCompileInputs.cache
+C:\Users\kubil\RiderProjects\IPostWeirdStuffHere\Blitz Troubleshooter\Blitz Troubleshooter V2.3\obj\Debug\Blitz Troubleshooter V2.5.exe
+C:\Users\kubil\RiderProjects\IPostWeirdStuffHere\Blitz Troubleshooter\Blitz Troubleshooter V2.3\obj\Debug\Blitz Troubleshooter V2.5.pdb

@@ -1,4 +1,4 @@
-﻿<Window x:Name="w1" x:Class="Blitz_Troubleshooter_V2._3.English"
+﻿<Window x:Name="W1" x:Class="Blitz_Troubleshooter_V2._3.English"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -7,25 +7,32 @@
         ResizeMode="NoResize"
         Title="" Height="450" Width="450">
     <Grid Background="#09101F">
-        <Image Source="Troubleshooter logo.png" Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="35" />
+        <Image Source="Troubleshooter logo.png" Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"
+               Height="35" />
 
         <StackPanel Margin="20,60,20,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
             <StackPanel>
-                <Button x:Name="btn1" Background="#E03F54" Foreground="White" Content="Fix All Common Issues" Height="27" Margin="0,0,0,5" Click="Button_Click" />
-                <Button x:Name="btnStartDownload" Background="#E03F54" Foreground="White" Content="Fix Overlay (TFT - LoL)" Height="27" Margin="0,0,0,5" Click="Button_Click_1" />
-                <Button x:Name="btn3" Background="#E03F54" Foreground="White" Content="Clear Cache" Height="27" Margin="0,0,0,5" Click="Button_Click_2" />
-                <Button x:Name="btn4" Background="#E03F54" Foreground="White" Content="Uninstall Blitz" Height="27" Margin="0,0,0,5" Click="Button_Click_4" />
+                <Button x:Name="Btn1" Background="#E03F54" Foreground="White" Content="Fix All Common Issues"
+                        Height="27" Margin="0,0,0,5" Click="Button_Click" />
+                <Button x:Name="BtnStartDownload" Background="#E03F54" Foreground="White"
+                        Content="Fix Overlay (TFT - LoL)" Height="27" Margin="0,0,0,5" Click="Button_Click_1" />
+                <Button x:Name="Btn3" Background="#E03F54" Foreground="White" Content="Clear Cache" Height="27"
+                        Margin="0,0,0,5" Click="Button_Click_2" />
+                <Button x:Name="Btn4" Background="#E03F54" Foreground="White" Content="Uninstall Blitz" Height="27"
+                        Margin="0,0,0,5" Click="Button_Click_4" />
             </StackPanel>
             <StackPanel Margin="0,50,0,0">
                 <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
                     <TextBlock TextWrapping="Wrap" Text="Progress Bar: " Foreground="White" />
-                    <TextBlock x:Name="input_text" TextWrapping="Wrap" Text="Waiting for input..." Foreground="White" />
+                    <TextBlock x:Name="InputText" TextWrapping="Wrap" Text="Waiting for input..." Foreground="White" />
                 </StackPanel>
-                <ProgressBar x:Name="progressBar1" Height="27" />
+                <ProgressBar x:Name="ProgressBar1" Height="27" />
             </StackPanel>
         </StackPanel>
 
-        <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,5,5" Foreground="white" Text="Made with Love by: kubi#2468 and Huntsmango#5698" />
-        <TextBlock x:Name="labelspeed" HorizontalAlignment="Left" Margin="375,238,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Foreground="Wheat" />
+        <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,5,5" Foreground="white"
+                   Text="Made with Love by: kubi#2468 and Huntsmango#5698" />
+        <TextBlock x:Name="Labelspeed" HorizontalAlignment="Left" Margin="375,238,0,0" TextWrapping="Wrap" Text=""
+                   VerticalAlignment="Top" Foreground="Wheat" />
     </Grid>
 </Window>

@@ -7,8 +7,8 @@
     <ProjectGuid>{3BDDB5A3-B89D-45B0-8A90-8EAB2B8B46B2}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>Blitz_Troubleshooter_V2._3</RootNamespace>
-    <AssemblyName>Blitz Troubleshooter V2.3</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <AssemblyName>Blitz Troubleshooter V2.5</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
