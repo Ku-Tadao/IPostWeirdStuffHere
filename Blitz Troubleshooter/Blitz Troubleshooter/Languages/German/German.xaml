@@ -1,4 +1,4 @@
-<Window x:Name="W1" x:Class="Blitz_Troubleshooter.Languages.German.German"
+<Window x:Name="W1" x:Class="Blitz_Troubleshooter.German"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -7,8 +7,7 @@
         ResizeMode="NoResize"
         Title="" Height="450" Width="450">
     <Grid Background="#09101F">
-        <Image Source="../../Troubleshooter logo.png" Margin="10,10,0,0" HorizontalAlignment="Left"
-               VerticalAlignment="Top"
+        <Image Source="../../Troubleshooter logo.png" Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"
                Height="35" />
 
         <StackPanel Margin="20,60,20,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">

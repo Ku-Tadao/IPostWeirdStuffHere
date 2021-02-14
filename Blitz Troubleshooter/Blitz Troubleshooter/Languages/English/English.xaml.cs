@@ -3,13 +3,11 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.Globalization;
 using System.IO;
-using System.Linq;
 using System.Net;
 using System.Threading;
 using System.Windows;
-using Microsoft.Win32;
 
-namespace Blitz_Troubleshooter.Languages.English
+namespace Blitz_Troubleshooter
 {
     /// <summary>
     ///     Interaction logic for English.xaml
@@ -17,9 +15,7 @@ namespace Blitz_Troubleshooter.Languages.English
     public partial class English
     {
         private static readonly string Appdata = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-
-        private static readonly string Localappdata =
-            Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
+        private static readonly string Localappdata = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
 
         private readonly string _path = Path.GetTempPath();
 
@@ -34,8 +30,6 @@ namespace Blitz_Troubleshooter.Languages.English
         };
 
         private readonly Stopwatch _sw = new Stopwatch();
-        private string _path1;
-        private string _path2;
 
         public English()
         {
@@ -65,7 +59,7 @@ namespace Blitz_Troubleshooter.Languages.English
             var bytesIn = double.Parse(e.BytesReceived.ToString());
             var totalBytes = double.Parse(e.TotalBytesToReceive.ToString());
             var percentage = bytesIn / totalBytes * 100;
-            Labelspeed.Text = $"{e.BytesReceived / 1024d / _sw.Elapsed.TotalSeconds:0.00} kb/s";
+            Labelspeed.Text = $"{(e.BytesReceived / 1024d / _sw.Elapsed.TotalSeconds):0.00} kb/s";
             ProgressBar1.Value = int.Parse(Math.Truncate(percentage).ToString(CultureInfo.InvariantCulture));
         }
 
@@ -114,23 +108,15 @@ namespace Blitz_Troubleshooter.Languages.English
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            var process1 = Process.GetProcessesByName("LeagueClient").First();
-            if (process1.MainModule != null) _path1 = process1.MainModule.FileName;
-            else MessageBox.Show("League is not running, ensure your League client is started");
-            var process2 = Process.GetProcessesByName("Blitz").First();
-            if (process2.MainModule != null) _path2 = process2.MainModule.FileName;
-            else MessageBox.Show("Blitz is not running, ensure your Blitz is started");
-            var key = Registry.CurrentUser.OpenSubKey(
-                @"SOFTWARE\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Layers", true);
-            if (key == null)
-            {
-                MessageBox.Show("I can't do this, can you ask Ku Tadao#8642 for help D:");
-            }
-            else
-            {
-                key.SetValue(_path1, "RUNASADMIN");
-                key.SetValue(_path2, "RUNASADMIN");
-            }
+            var client = new WebClient();
+            client.DownloadProgressChanged += client_DownloadProgressChanged;
+            client.DownloadFileCompleted += client_DownloadFileCompleted;
+
+            // Starts the download
+            _sw.Start();
+            client.DownloadFileAsync(new Uri("https://aka.ms/vs/16/release/vc_redist.x86.exe"), _path + "temp.exe");
+            InputText.Text = "Downloading vc_redist.x86.exe";
+            DisableBtn();
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)

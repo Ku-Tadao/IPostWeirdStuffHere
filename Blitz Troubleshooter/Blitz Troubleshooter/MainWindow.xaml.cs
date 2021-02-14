@@ -1,17 +1,15 @@
 using System.Windows;
-using Blitz_Troubleshooter.Languages.English;
-using Blitz_Troubleshooter.Languages.German;
-using Blitz_Troubleshooter.Languages.Polish;
-using Blitz_Troubleshooter.Languages.Turkish;
 
 namespace Blitz_Troubleshooter
 {
+    /// <summary>
+    ///     Interaction logic for MainWindow.xaml
+    /// </summary>
     public partial class MainWindow
     {
         public MainWindow()
         {
             InitializeComponent();
-            W1.Title = "V2.6";
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

@@ -3,13 +3,11 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.Globalization;
 using System.IO;
-using System.Linq;
 using System.Net;
 using System.Threading;
 using System.Windows;
-using Microsoft.Win32;
 
-namespace Blitz_Troubleshooter.Languages.German
+namespace Blitz_Troubleshooter
 {
     /// <summary>
     ///     Interaction logic for German.xaml
@@ -17,11 +15,7 @@ namespace Blitz_Troubleshooter.Languages.German
     public partial class German
     {
         private static readonly string Appdata = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-
-        private static readonly string Localappdata =
-            Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
-
-        private readonly string _path = Path.GetTempPath();
+        private static readonly string Localappdata = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
 
         private readonly string[] _paths =
         {
@@ -33,8 +27,7 @@ namespace Blitz_Troubleshooter.Languages.German
             Localappdata + "\\Programs\\Blitz"
         };
 
-        private string _path1;
-        private string _path2;
+        private readonly string _path = Path.GetTempPath();
 
         public German()
         {
@@ -101,23 +94,17 @@ namespace Blitz_Troubleshooter.Languages.German
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            var process1 = Process.GetProcessesByName("LeagueClient").First();
-            if (process1.MainModule != null) _path1 = process1.MainModule.FileName;
-            else MessageBox.Show("League is not running, ensure your League client is started");
-            var process2 = Process.GetProcessesByName("Blitz").First();
-            if (process2.MainModule != null) _path2 = process2.MainModule.FileName;
-            else MessageBox.Show("Blitz is not running, ensure your Blitz is started");
-            var key = Registry.CurrentUser.OpenSubKey(
-                @"SOFTWARE\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Layers", true);
-            if (key == null)
-            {
-                MessageBox.Show("I can't do this, can you ask Ku Tadao#8642 for help D:");
-            }
-            else
-            {
-                key.SetValue(_path1, "RUNASADMIN");
-                key.SetValue(_path2, "RUNASADMIN");
-            }
+            var client = new WebClient();
+            client.DownloadProgressChanged += client_DownloadProgressChanged;
+            client.DownloadFileCompleted += client_DownloadFileCompleted;
+
+            // Starts the download
+            client.DownloadFileAsync(new Uri("https://aka.ms/vs/16/release/vc_redist.x86.exe"), _path + "temp.exe");
+            InputText.Text = "vc_redist.x86.exe wird heruntergeladen";
+            BtnStartDownload.IsEnabled = false;
+            Btn1.IsEnabled = false;
+            Btn3.IsEnabled = false;
+            Btn4.IsEnabled = false;
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
