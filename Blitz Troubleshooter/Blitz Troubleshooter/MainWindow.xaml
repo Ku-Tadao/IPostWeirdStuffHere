@@ -11,13 +11,13 @@
         <StackPanel Margin="100">
             <Label Background="#E03F54" Foreground="White" Content="Choose a language"
                    HorizontalContentAlignment="Center" Margin="0,0,0,5" />
-            <Button x:Name="Btn1" Background="#E03F54" Foreground="White" Content="English" Height="27"
+            <Button Background="#E03F54" Foreground="White" Content="English" Height="27"
                     Margin="0,0,0,5" Click="Button_Click" />
-            <Button x:Name="Btn2" Background="#E03F54" Foreground="White" Content="Deutsch" Height="27"
+            <Button Background="#E03F54" Foreground="White" Content="Deutsch" Height="27"
                     Margin="0,0,0,5" Click="Button_Click_1" />
-            <Button x:Name="Btn3" Background="#E03F54" Foreground="White" Content="Türkçe" Height="27" Margin="0,0,0,5"
+            <Button Background="#E03F54" Foreground="White" Content="Türkçe" Height="27" Margin="0,0,0,5"
                     Click="Button_Click_2" />
-            <Button x:Name="Btn4" Background="#E03F54" Foreground="White" Content="Polskie" Height="27"
+            <Button Background="#E03F54" Foreground="White" Content="Polskie" Height="27"
                     Margin="0,0,0,5" Click="btn4_Click" />
         </StackPanel>
 

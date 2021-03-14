@@ -1,4 +1,4 @@
-<Window x:Name="W1" x:Class="Blitz_Troubleshooter.German"
+<Window x:Name="W1" x:Class="Blitz_Troubleshooter.Languages.German.German"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -7,24 +7,41 @@
         ResizeMode="NoResize"
         Title="" Height="450" Width="450">
     <Grid Background="#09101F">
-        <Image Source="../../Troubleshooter logo.png" Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"
+        <Image Source="../../Troubleshooter logo.png" Margin="10,10,0,0" HorizontalAlignment="Left"
+               VerticalAlignment="Top"
                Height="35" />
 
         <StackPanel Margin="20,60,20,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
             <StackPanel>
-                <Button x:Name="Btn1" Background="#E03F54" Foreground="White"
-                        Content="Beheben Sie alle gängigen Probleme" Height="27" Margin="0,0,0,5" Click="Button_Click" />
-                <Button x:Name="BtnStartDownload" Background="#E03F54" Foreground="White"
-                        Content="Fix Overlay (TFT - LoL)" Height="27" Margin="0,0,0,5" Click="Button_Click_1" />
-                <Button x:Name="Btn3" Background="#E03F54" Foreground="White" Content="Cache leeren" Height="27"
+                <Button x:Name="Btn1" Background="#E03F54" Foreground="White" Content="Alle gängigen Probleme beheben"
+                        Height="27" Margin="0,0,0,5" Click="Button_Click" />
+                <DockPanel HorizontalAlignment="stretch" Margin="0,0,0,5">
+                    <Button x:Name="Btn2" Click="BtnFixOverlayClick" Background="#E03F54" HorizontalAlignment="Center"
+                            Foreground="White" Content="Overlay Probleme beheben (TFT - LoL)" Height="27" Width="335" />
+                    <Button x:Name="Btn3" Click="BtnRemoveOverlayFixClick" Background="#E03F54"
+                            HorizontalAlignment="Right" Foreground="White" Content="Fix entfernen" Height="27"
+                            Width="68.5" />
+                </DockPanel>
+                <DockPanel HorizontalAlignment="stretch" Margin="0,0,0,5">
+                    <Button x:Name="Btn4" Click="BtnFixBootClick" Background="#E03F54" HorizontalAlignment="Center"
+                            Foreground="White" Content="Behebung, dass Blitz beim PC-Start nicht startet" Height="27"
+                            Width="335" />
+                    <Button x:Name="Btn5" Click="BtnRemoveBootFixClick" Background="#E03F54"
+                            HorizontalAlignment="Right" Foreground="White" Content="Fix entfernen" Height="27"
+                            Width="68.5" />
+                </DockPanel>
+                <Button x:Name="Btn6" Background="#E03F54" Foreground="White" Content="Cache leeren" Height="27"
                         Margin="0,0,0,5" Click="Button_Click_2" />
-                <Button x:Name="Btn4" Background="#E03F54" Foreground="White" Content="Blitz entfernen" Height="27"
+                <Button x:Name="Btn7" Background="#E03F54" Foreground="White" Content="Blitz Deinstallieren"
+                        Height="27"
                         Margin="0,0,0,5" Click="Button_Click_4" />
+
+
             </StackPanel>
             <StackPanel Margin="0,50,0,0">
                 <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
-                    <TextBlock TextWrapping="Wrap" Text="Fortschrittsanzeige: " Foreground="White" />
-                    <TextBlock x:Name="InputText" TextWrapping="Wrap" Text="Warten auf Eingabe..." Foreground="White" />
+                    <TextBlock TextWrapping="Wrap" Text="Progress Bar: " Foreground="White" />
+                    <TextBlock x:Name="InputText" TextWrapping="Wrap" Text="Waiting for input..." Foreground="White" />
                 </StackPanel>
                 <ProgressBar x:Name="ProgressBar1" Height="27" />
             </StackPanel>
@@ -32,5 +49,7 @@
 
         <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,5,5" Foreground="white"
                    Text="mit Liebe gemacht von Ku Tadao#8642 und Huntsmango#5698." />
+        <TextBlock x:Name="Labelspeed" HorizontalAlignment="Left" Margin="375,238,0,0" TextWrapping="Wrap" Text=""
+                   VerticalAlignment="Top" Foreground="Wheat" />
     </Grid>
 </Window>

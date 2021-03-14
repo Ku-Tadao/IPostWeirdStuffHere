@@ -1,4 +1,8 @@
 using System.Windows;
+using Blitz_Troubleshooter.Languages.English;
+using Blitz_Troubleshooter.Languages.German;
+using Blitz_Troubleshooter.Languages.Polish;
+using Blitz_Troubleshooter.Languages.Turkish;
 
 namespace Blitz_Troubleshooter
 {
@@ -10,6 +14,7 @@ namespace Blitz_Troubleshooter
         public MainWindow()
         {
             InitializeComponent();
+            W1.Title = "Version 2.7";
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -39,7 +44,7 @@ namespace Blitz_Troubleshooter
                 "Welcome to my Unofficial Troubleshooter for the Blitz application, if you've pressed this button it means you've probably been in the need of some information regarding the program." +
                 "\n\n" + "There are currently 4 options to choose from in order to solve your issues" + "\n\n" +
                 "If you'd like some detailed information regarding these options, please message me on Discord:" +
-                "\n" + "Kubi#2468", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+                "\n" + "Ku Tadao#8642", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
         }
 
         private void btn4_Click(object sender, RoutedEventArgs e)
