@@ -2,6 +2,7 @@ using System.Windows;
 using Blitz_Troubleshooter.Languages.English;
 using Blitz_Troubleshooter.Languages.German;
 using Blitz_Troubleshooter.Languages.Polish;
+using Blitz_Troubleshooter.Languages.Portuguese;
 using Blitz_Troubleshooter.Languages.Turkish;
 
 namespace Blitz_Troubleshooter
@@ -50,6 +51,13 @@ namespace Blitz_Troubleshooter
         private void btn4_Click(object sender, RoutedEventArgs e)
         {
             Window polish = new Polish();
+            polish.Show();
+            Close();
+        }
+
+        private void btn6_Click(object sender, RoutedEventArgs e)
+        {
+            Window portuguese = new Portuguese();
             polish.Show();
             Close();
         }

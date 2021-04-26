@@ -19,6 +19,8 @@
                     Click="Button_Click_2" />
             <Button Background="#E03F54" Foreground="White" Content="Polskie" Height="27"
                     Margin="0,0,0,5" Click="btn4_Click" />
+            <Button Background="#E03F54" Foreground="White" Content="Português" Height="27" Margin="0,0,0,5"
+                    Click="btn6_Click" />
         </StackPanel>
 
         <Image Source="Troubleshooter logo.png" Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"
