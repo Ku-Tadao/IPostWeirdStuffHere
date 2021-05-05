@@ -44,6 +44,10 @@ namespace Blitz_Troubleshooter.Languages.German
             foreach (var proc in Process.GetProcessesByName("Blitz")) proc.Kill();
         }
 
+        private static void KillLeague()
+        {
+            foreach (var proc in Process.GetProcessesByName("LeagueClient")) proc.Kill();
+        }
         private static void AppdataBlitz()
         {
             var path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\Blitz";
@@ -99,7 +103,7 @@ namespace Blitz_Troubleshooter.Languages.German
             _sw.Reset();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Btn_CommonIssues(object sender, RoutedEventArgs e)
         {
             try
             {
@@ -123,7 +127,7 @@ namespace Blitz_Troubleshooter.Languages.German
             }
         }
 
-        private void BtnFixOverlayClick(object sender, RoutedEventArgs e)
+        private void Btn_FixOverlay(object sender, RoutedEventArgs e)
         {
             var isleagueclientopen = 0;
             var isblitzclientopen = 0;
@@ -162,50 +166,78 @@ namespace Blitz_Troubleshooter.Languages.German
             if (isblitzclientopen == 0) MessageBox.Show("Stellen Sie sicher, dass Blitz geöffnet ist");
 
             if (isblitzclientopen > 0 && isleagueclientopen > 0) MessageBox.Show("Fixed!");
+            KillBlitz();
+            KillLeague();
         }
 
-        private void BtnRemoveOverlayFixClick(object sender, RoutedEventArgs e)
+        private void Btn_UnFixOverlay(object sender, RoutedEventArgs e)
         {
             var isleagueclientopen = 0;
             var isblitzclientopen = 0;
             var taskBarProcesses = Process.GetProcesses();
             foreach (var proc in taskBarProcesses)
-                try
-                {
-                    if (proc.ProcessName.ToLower().Contains("leagueclient"))
-                    {
-                        var filepath = proc.MainModule?.FileName;
-                        if (proc.MainModule != null)
-                        {
-                            isleagueclientopen++;
-                            if (filepath != null && !filepath.ToLower().Contains("garena")) RemoveRunAsAdmin(filepath);
-                        }
-                    }
-                    else if (proc.ProcessName.ToLower().Contains("blitz") &&
-                             !proc.ProcessName.ToLower().Contains("troubleshooter"))
-                    {
-                        var filepath = proc.MainModule?.FileName;
-                        if (proc.MainModule != null)
-                        {
-                            isblitzclientopen++;
-                            RemoveRunAsAdmin(filepath);
-                            MessageBox.Show("Entfernt!");
+                if (proc.ProcessName.ToLower().Contains("leagueclient"))
+                    isleagueclientopen++;
+                else if (proc.ProcessName.ToLower().Contains("blitz") &&
+                         !proc.ProcessName.ToLower().Contains("troubleshooter"))
+                    isblitzclientopen++;
 
+            if (isblitzclientopen > 0 && isleagueclientopen > 0)
+            {
+                var counter = 0;
+                var shh = 0;
+                foreach (var proc in taskBarProcesses)
+                    try
+                    {
+                        if (proc.ProcessName.ToLower().Contains("leagueclient"))
+                        {
+                            var filepath = proc.MainModule?.FileName;
+                            if (proc.MainModule != null)
+                            {
+                                if (filepath != null && !filepath.ToLower().Contains("garena"))
+                                    RemoveRunAsAdmin(filepath);
+                                if (shh == 0)
+                                {
+                                    MessageBox.Show("Entfernt!");
+                                    shh++;
+                                }
+                            }
+                        }
+                        else if (proc.ProcessName.ToLower().Contains("blitz") &&
+                                 !proc.ProcessName.ToLower().Contains("troubleshooter"))
+                        {
+                            var filepath = proc.MainModule?.FileName;
+                            if (proc.MainModule != null)
+                            {
+                                RemoveRunAsAdmin(filepath);
+                                if (shh == 0)
+                                {
+                                    MessageBox.Show("Entfernt!");
+                                    shh++;
+                                }
+                            }
                         }
                     }
-                }
-                catch (Exception exception)
+                    catch (Exception exception)
+                    {
+                        counter++;
+                        MessageBox.Show(
+                            $"Es ist ein Fehler aufgetreten. Senden Sie einen Screenshot der folgenden Fehlermeldung an den Discord-Benutzer: \nKu Tadao#8642\n\n{exception}");
+                    }
+
+                if (counter == 0)
                 {
-                    MessageBox.Show(
-                        $"Es ist ein Fehler aufgetreten. Senden Sie einen Screenshot der folgenden Fehlermeldung an den Discord-Benutzer: \nKu Tadao#8642\n\n{exception}");
+                    KillBlitz();
+                    KillLeague();
                 }
+            }
 
             if (isleagueclientopen == 0) MessageBox.Show("Stellen Sie sicher, dass League of Legends geöffnet ist");
 
             if (isblitzclientopen == 0) MessageBox.Show("Stellen Sie sicher, dass Blitz geöffnet ist");
         }
 
-        private void BtnFixBootClick(object sender, RoutedEventArgs e)
+        private void Btn_FixBoot(object sender, RoutedEventArgs e)
         {
             var isblitzclientopen = 0;
             var taskBarProcesses = Process.GetProcesses();
@@ -235,7 +267,7 @@ namespace Blitz_Troubleshooter.Languages.German
             if (isblitzclientopen > 0) MessageBox.Show("Fixed!");
         }
 
-        private void BtnRemoveBootFixClick(object sender, RoutedEventArgs e)
+        private void Btn_UnFixBoot(object sender, RoutedEventArgs e)
         {
             try
             {
@@ -303,7 +335,7 @@ namespace Blitz_Troubleshooter.Languages.German
             }
         }
 
-        private void Button_Click_2(object sender, RoutedEventArgs e)
+        private void Btn_ClearCache(object sender, RoutedEventArgs e)
         {
             try
             {
@@ -319,7 +351,7 @@ namespace Blitz_Troubleshooter.Languages.German
             }
         }
 
-        private void Button_Click_4(object sender, RoutedEventArgs e)
+        private void Btn_UninstallBlitz(object sender, RoutedEventArgs e)
         {
             try
             {

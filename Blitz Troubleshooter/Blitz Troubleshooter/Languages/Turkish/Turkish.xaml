@@ -14,26 +14,26 @@
         <StackPanel Margin="20,60,20,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
             <StackPanel>
                 <Button x:Name="Btn1" Background="#E03F54" Foreground="White" Content="Tüm Genel Sorunları Düzeltin"
-                        Height="27" Margin="0,0,0,5" Click="Button_Click" />
+                        Height="27" Margin="0,0,0,5" Click="Btn_CommonIssues" />
                 <DockPanel HorizontalAlignment="stretch" Margin="0,0,0,5">
-                    <Button x:Name="Btn2" Click="BtnFixOverlayClick" Background="#E03F54" HorizontalAlignment="Center"
+                    <Button x:Name="Btn2" Click="Btn_FixOverlay" Background="#E03F54" HorizontalAlignment="Center"
                             Foreground="White" Content="Arayüz Sorunlarını Düzelt (TFT - LoL)" Height="27" Width="305" />
-                    <Button x:Name="Btn3" Click="BtnRemoveOverlayFixClick" Background="#E03F54"
+                    <Button x:Name="Btn3" Click="Btn_UnFixOverlay" Background="#E03F54"
                             HorizontalAlignment="Right" Foreground="White" Content="düzeltmeyi kaldır" Height="27"
                             Width="98.5" />
                 </DockPanel>
                 <DockPanel HorizontalAlignment="stretch" Margin="0,0,0,5">
-                    <Button x:Name="Btn4" Click="BtnFixBootClick" Background="#E03F54" HorizontalAlignment="Center"
+                    <Button x:Name="Btn4" Click="Btn_FixBoot" Background="#E03F54" HorizontalAlignment="Center"
                             Foreground="White" Content="Blitz'in bilgisayar başlangıcında başlamamasını düzelt"
                             Height="27" Width="305" />
-                    <Button x:Name="Btn5" Click="BtnRemoveBootFixClick" Background="#E03F54"
+                    <Button x:Name="Btn5" Click="Btn_UnFixBoot" Background="#E03F54"
                             HorizontalAlignment="Right" Foreground="White" Content="düzeltmeyi kaldır" Height="27"
                             Width="98.5" />
                 </DockPanel>
                 <Button x:Name="Btn6" Background="#E03F54" Foreground="White" Content="Önbelleği Temizle" Height="27"
-                        Margin="0,0,0,5" Click="Button_Click_2" />
+                        Margin="0,0,0,5" Click="Btn_ClearCache" />
                 <Button x:Name="Btn7" Background="#E03F54" Foreground="White" Content="Blitz'i Kaldır" Height="27"
-                        Margin="0,0,0,5" Click="Button_Click_4" />
+                        Margin="0,0,0,5" Click="Btn_UninstallBlitz" />
             </StackPanel>
             <StackPanel />
             <StackPanel Margin="0,50,0,0">
