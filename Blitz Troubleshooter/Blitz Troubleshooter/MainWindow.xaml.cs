@@ -15,7 +15,7 @@ namespace Blitz_Troubleshooter
         public MainWindow()
         {
             InitializeComponent();
-            W1.Title = "Version 2.7";
+            W1.Title = "Version 2.8";
         }
 
         private void Btn_English(object sender, RoutedEventArgs e)
