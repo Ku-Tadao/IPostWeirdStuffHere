@@ -1,4 +1,4 @@
-![Blitz.gg Logo](https://i.imgur.com/aEOISa0.png)
+![Blitz.gg Logo](https://i.imgur.com/q7t8fzT.png)
 This is my Blitz troubleshooter for [Blitz.gg](https://blitz.gg/)
 
 **features:**
