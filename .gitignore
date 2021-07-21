@@ -2,7 +2,7 @@
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
-/.vs
+.vs
 /Blitz Troubleshooter/.vs/Blitz Troubleshooter/v16
 /Blitz Troubleshooter/Blitz Troubleshooter/obj
 /Blitz Troubleshooter/Blitz Troubleshooter/bin
