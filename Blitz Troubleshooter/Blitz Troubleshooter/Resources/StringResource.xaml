@@ -1,0 +1,13 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib">
+    <system:String x:Key="clearcache">Clear Cache</system:String>
+    <system:String x:Key="credits">Made with Love by: Ku Tadao#8642 and Maruf#5698</system:String>
+    <system:String x:Key="fixboot">Fix Blitz not starting up on boot</system:String>
+    <system:String x:Key="fixcommon">Fix All Common Issues</system:String>
+    <system:String x:Key="fixoverlay">Fix Overlay (TFT - LoL)</system:String>
+    <system:String x:Key="progressbar">Progress Bar: </system:String>
+    <system:String x:Key="unfix"> Remove fix </system:String>
+    <system:String x:Key="uninstall">Uninstall Blitz</system:String>
+    <system:String x:Key="waitinginput">Waiting for input...</system:String>
+</ResourceDictionary>
