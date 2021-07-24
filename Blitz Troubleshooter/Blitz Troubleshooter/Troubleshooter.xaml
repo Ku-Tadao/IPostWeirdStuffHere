@@ -6,7 +6,7 @@
         mc:Ignorable="d"
         ResizeMode="NoResize"
         Title="" Height="450" >
-    <Grid x:Name="Grid" Background="#09101F" HorizontalAlignment="Left" >
+    <Grid x:Name="Grid" Background="#0E1015" HorizontalAlignment="Left" >
         <Image Source="Troubleshooter logo.png" Margin="10,10,0,0" HorizontalAlignment="Left"
                VerticalAlignment="Top"
                Height="35" />
