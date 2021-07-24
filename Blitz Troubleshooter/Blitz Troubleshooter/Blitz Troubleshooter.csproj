@@ -96,6 +96,10 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Resources\StringResource.fr-FR.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Resources\StringResource.pt-PT.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
