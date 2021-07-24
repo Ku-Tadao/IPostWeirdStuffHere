@@ -34,48 +34,49 @@ namespace Blitz_Troubleshooter
 
         private readonly Stopwatch _sw = new Stopwatch();
 
-        private void SetLanguageDictionary()
+        ResourceDictionary dict = new ResourceDictionary();
+
+        public void SetLanguageDictionary(ResourceDictionary resourceDictionary)
         {
-            ResourceDictionary dict = new ResourceDictionary();
             switch (Thread.CurrentThread.CurrentCulture.ToString())
             {
                 case "en-US":
-                    dict.Source = new Uri("..\\Resources\\StringResource.xaml",
+                    resourceDictionary.Source = new Uri("..\\Resources\\StringResource.xaml",
                         UriKind.Relative);
                     break;
                 case "pl-PL":
-                    dict.Source = new Uri("..\\Resources\\StringResource.pl-PL.xaml",
+                    resourceDictionary.Source = new Uri("..\\Resources\\StringResource.pl-PL.xaml",
                         UriKind.Relative);
                     break;
                 case "de-DE":
-                    dict.Source = new Uri("..\\Resources\\StringResource.de-DE.xaml",
+                    resourceDictionary.Source = new Uri("..\\Resources\\StringResource.de-DE.xaml",
                         UriKind.Relative);
                     break;
                 case "pt-PT":
-                    dict.Source = new Uri("..\\Resources\\StringResource.pt-PT.xaml",
+                    resourceDictionary.Source = new Uri("..\\Resources\\StringResource.pt-PT.xaml",
                         UriKind.Relative);
                     break;
                 case "tr-TR":
-                    dict.Source = new Uri("..\\Resources\\StringResource.tr-TR.xaml",
+                    resourceDictionary.Source = new Uri("..\\Resources\\StringResource.tr-TR.xaml",
                         UriKind.Relative);
                     break;
                 case "fr-FR":
-                    dict.Source = new Uri("..\\Resources\\StringResource.fr-FR.xaml",
+                    resourceDictionary.Source = new Uri("..\\Resources\\StringResource.fr-FR.xaml",
                         UriKind.Relative);
                     break;
                 default:
-                    dict.Source = new Uri("..\\Resources\\StringResource.xaml",
+                    resourceDictionary.Source = new Uri("..\\Resources\\StringResource.xaml",
                         UriKind.Relative);
                     break;
             }
-            Resources.MergedDictionaries.Add(dict);
+            Resources.MergedDictionaries.Add(resourceDictionary);
         }
 
         public Troubleshooter()
         {
             InitializeComponent();
             Window1.Title = "Version 2.9";
-            SetLanguageDictionary();
+            SetLanguageDictionary(dict);
             Loaded += Window_Loaded;
         }
 
@@ -137,9 +138,9 @@ namespace Blitz_Troubleshooter
 
         private void client_DownloadFileCompleted(object sender, AsyncCompletedEventArgs e)
         {
-            MessageBox.Show("Download Completed, Please press OK and continue on installation window.",
-                "Download Completed", MessageBoxButton.OK, MessageBoxImage.Information);
-            InputText.Text = "Download Completed";
+            MessageBox.Show((string)dict["download"],
+                (string)dict["dloadcompleted"], MessageBoxButton.OK, MessageBoxImage.Information);
+            InputText.Text = (string)dict["dloadcompleted"];
             Labelspeed.Text = null;
             EnableBtn();
             Process.Start(_path + "temp.exe");
@@ -160,13 +161,12 @@ namespace Blitz_Troubleshooter
                 // Starts the download
                 _sw.Start();
                 client.DownloadFileAsync(new Uri("https://blitz.gg/download/win"), _path + "temp.exe");
-                InputText.Text = "Downloading Blitz.exe";
+                InputText.Text = (string)dict["dloading"];
                 DisableBtn();
             }
             catch (Exception exception)
             {
-                MessageBox.Show(
-                    $"An error occurred, send a screenshot of the following error message to Discord user: \nKu Tadao#8642\n\n{exception}");
+                MessageBox.Show($"{dict["error"]}\nKu Tadao#8642\n\n{exception}");
             }
         }
 
@@ -200,15 +200,14 @@ namespace Blitz_Troubleshooter
                 }
                 catch (Exception exception)
                 {
-                    MessageBox.Show(
-                        $"An error occurred, send a screenshot of the following error message to Discord user: \nKu Tadao#8642\n\n{exception}");
+                    MessageBox.Show($"{dict["error"]}\nKu Tadao#8642\n\n{exception}");
                 }
 
-            if (isleagueclientopen == 0) MessageBox.Show("Ensure that League of Legends is open");
+            if (isleagueclientopen == 0) MessageBox.Show((string)dict["leaguemsg"]);
 
-            if (isblitzclientopen == 0) MessageBox.Show("Ensure that Blitz is open");
+            if (isblitzclientopen == 0) MessageBox.Show((string)dict["blitzmsg"]);
 
-            if (isblitzclientopen > 0 && isleagueclientopen > 0) MessageBox.Show("Fixed!");
+            if (isblitzclientopen > 0 && isleagueclientopen > 0) MessageBox.Show((string)dict["fixedmsg"]);
         }
 
         private void BtnRemoveOverlayFixClick(object sender, RoutedEventArgs e)
@@ -236,20 +235,19 @@ namespace Blitz_Troubleshooter
                         {
                             isblitzclientopen++;
                             RemoveRunAsAdmin(filepath);
-                            MessageBox.Show("Removed!");
+                            MessageBox.Show((string)dict["removedmsg"]);
 
                         }
                     }
                 }
                 catch (Exception exception)
                 {
-                    MessageBox.Show(
-                        $"An error occurred, send a screenshot of the following error message to Discord user: \nKu Tadao#8642\n\n{exception}");
+                    MessageBox.Show($"{dict["error"]}\nKu Tadao#8642\n\n{exception}");
                 }
 
-            if (isleagueclientopen == 0) MessageBox.Show("Ensure that League of Legends is open");
+            if (isleagueclientopen == 0) MessageBox.Show((string)dict["leaguemsg"]);
 
-            if (isblitzclientopen == 0) MessageBox.Show("Ensure that Blitz is open");
+            if (isblitzclientopen == 0) MessageBox.Show((string)dict["blitzmsg"]);
         }
 
         private void BtnFixBootClick(object sender, RoutedEventArgs e)
@@ -272,14 +270,13 @@ namespace Blitz_Troubleshooter
                 }
                 catch (Exception exception)
                 {
-                    MessageBox.Show(
-                        $"An error occurred, send a screenshot of the following error message to Discord user: \nKu Tadao#8642\n\n{exception}");
+                    MessageBox.Show($"{dict["error"]}\nKu Tadao#8642\n\n{exception}");
                 }
 
 
-            if (isblitzclientopen == 0) MessageBox.Show("Ensure that Blitz is open");
+            if (isblitzclientopen == 0) MessageBox.Show((string)dict["blitzmsg"]);
 
-            if (isblitzclientopen > 0) MessageBox.Show("Fixed!");
+            if (isblitzclientopen > 0) MessageBox.Show((string)dict["fixedmsg"]);
         }
 
         private void BtnRemoveBootFixClick(object sender, RoutedEventArgs e)
@@ -287,7 +284,7 @@ namespace Blitz_Troubleshooter
             try
             {
                 RemoveStartup();
-                MessageBox.Show("Removed!");
+                MessageBox.Show((string)dict["removedmsg"]);
             }
             catch (Exception)
             {
@@ -357,12 +354,11 @@ namespace Blitz_Troubleshooter
                 KillBlitz();
                 Thread.Sleep(1000);
                 AppdataBlitz();
-                MessageBox.Show("Cache successfully cleared");
+                MessageBox.Show((string)dict["cachemsg"]);
             }
             catch (Exception exception)
             {
-                MessageBox.Show(
-                    $"An error occurred, send a screenshot of the following error message to Discord user: \nKu Tadao#8642\n\n{exception}");
+                MessageBox.Show($"{dict["error"]}\nKu Tadao#8642\n\n{exception}");
             }
         }
 
@@ -370,17 +366,18 @@ namespace Blitz_Troubleshooter
         {
             try
             {
-                KillBlitz();
-                Thread.Sleep(1000);
-                Uninstall();
-                MessageBox.Show("Blitz has been uninstalled", "Blitz Un-installation", MessageBoxButton.OK,
-                    MessageBoxImage.Information);
+                throw new IndexOutOfRangeException();
+                //KillBlitz();
+                //Thread.Sleep(1000);
+                //Uninstall();
+                //MessageBox.Show("Blitz has been uninstalled", "Blitz Un-installation", MessageBoxButton.OK,
+                //    MessageBoxImage.Information);
             }
             catch (Exception exception)
             {
-                MessageBox.Show(
-                    $"An error occurred, send a screenshot of the following error message to Discord user: \nKu Tadao#8642\n\n{exception}");
+                MessageBox.Show($"{dict["error"]}\nKu Tadao#8642\n\n{exception}");
             }
         }
+
     }
 }
