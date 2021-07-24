@@ -59,6 +59,10 @@ namespace Blitz_Troubleshooter
                     dict.Source = new Uri("..\\Resources\\StringResource.tr-TR.xaml",
                         UriKind.Relative);
                     break;
+                case "fr-FR":
+                    dict.Source = new Uri("..\\Resources\\StringResource.fr-FR.xaml",
+                        UriKind.Relative);
+                    break;
                 default:
                     dict.Source = new Uri("..\\Resources\\StringResource.xaml",
                         UriKind.Relative);
