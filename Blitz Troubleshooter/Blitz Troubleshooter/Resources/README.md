@@ -1,10 +1,10 @@
 Current added languages:
 
-English = en-US
-German = de-DE
-French = fr-FR
-Polish = pl-PL
-Portuguese = pt-PT
-Turkish = tr-TR
+English = en-US<br/>
+German = de-DE<br/>
+French = fr-FR<br/>
+Polish = pl-PL<br/>
+Portuguese = pt-PT<br/>
+Turkish = tr-TR<br/>
 
 feel free to contribute *DO NOT CHANGE KEY NAMES, ONLY THEIR CONTENTS*
