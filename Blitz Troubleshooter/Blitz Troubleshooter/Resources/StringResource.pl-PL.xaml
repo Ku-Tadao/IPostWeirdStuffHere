@@ -10,4 +10,14 @@
     <system:String x:Key="unfix"> Usuń naprawę </system:String>
     <system:String x:Key="uninstall">Odinstaluj Blitz</system:String>
     <system:String x:Key="waitinginput">Czekam na informacje...</system:String>
+
+    <system:String x:Key="error">An error occurred, please send a screenshot of the following error message to Discord user:</system:String>
+    <system:String x:Key="dloading">Downloading Blitz.exe</system:String>
+    <system:String x:Key="dload">Download Completed, Please press OK and continue on installation window.</system:String>
+    <system:String x:Key="dloadcompleted">Download Completed</system:String>
+    <system:String x:Key="leaguemsg">Ensure that League of Legends is open</system:String>
+    <system:String x:Key="blitzmsg">Ensure that Blitz is open</system:String>
+    <system:String x:Key="cache">Cache successfully cleared</system:String>
+    <system:String x:Key="fixedmsg">Fixed!</system:String>
+    <system:String x:Key="removedmsg">Removed!</system:String>
 </ResourceDictionary>
