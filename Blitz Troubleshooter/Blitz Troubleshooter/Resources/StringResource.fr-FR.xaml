@@ -2,6 +2,7 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:system="clr-namespace:System;assembly=mscorlib">
     <system:String x:Key="clearcache">Nettoyer le cache</system:String>
+    <system:String x:Key="warningclose">Cela fermera l'application Blitz et League, Continue?</system:String>
     <system:String x:Key="credits">Fait avec Amour par : Ku Tadao#8642 et Maruf#5698</system:String>
     <system:String x:Key="fixboot">Correction de Blitz ne démarrant pas au démarrage</system:String>
     <system:String x:Key="fixcommon">Correction de tout les problèmes connues</system:String>
@@ -10,14 +11,13 @@
     <system:String x:Key="unfix"> Suppression des corrections </system:String>
     <system:String x:Key="uninstall">Déinstallation de Blitz</system:String>
     <system:String x:Key="waitinginput">En attente d'une entrée...</system:String>
-
-    <system:String x:Key="error">An error occurred, please send a screenshot of the following error message to Discord user:</system:String>
-    <system:String x:Key="dloading">Downloading Blitz.exe</system:String>
-    <system:String x:Key="dload">Download Completed, Please press OK and continue on installation window.</system:String>
-    <system:String x:Key="dloadcompleted">Download Completed</system:String>
-    <system:String x:Key="leaguemsg">Ensure that League of Legends is open</system:String>
-    <system:String x:Key="blitzmsg">Ensure that Blitz is open</system:String>
-    <system:String x:Key="cache">Cache successfully cleared</system:String>
-    <system:String x:Key="fixedmsg">Fixed!</system:String>
-    <system:String x:Key="removedmsg">Removed!</system:String>
+    <system:String x:Key="error">Une erreur s'est produite, veuillez envoyer une capture d'écran du message d'erreur suivant à l'utilisateur Discord :</system:String>
+    <system:String x:Key="dloading">Téléchargement de Blitz.exe</system:String>
+    <system:String x:Key="dload">Le téléchargement est terminé, veuillez appuyer sur OK et continuer sur la fenêtre d'installation.</system:String>
+    <system:String x:Key="dloadcompleted">Téléchargement terminé</system:String>
+    <system:String x:Key="leaguemsg">Assurez-vous que League of Legends est ouvert</system:String>
+    <system:String x:Key="blitzmsg">S'assurer que le Blitz est ouvert</system:String>
+    <system:String x:Key="cache">Cache effacé avec succès</system:String>
+    <system:String x:Key="fixedmsg">Fixé!</system:String>
+    <system:String x:Key="removedmsg">Supprimé!</system:String>
 </ResourceDictionary>

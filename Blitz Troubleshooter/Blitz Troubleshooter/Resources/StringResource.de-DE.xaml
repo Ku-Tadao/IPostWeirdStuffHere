@@ -2,6 +2,7 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:system="clr-namespace:System;assembly=mscorlib">
     <system:String x:Key="clearcache">Cache leeren</system:String>
+    <system:String x:Key="warningclose">Die Blitz- und League-Bewerbung wird geschlossen, Continue?</system:String>
     <system:String x:Key="credits">Mit Liebe gemacht von: Ku Tadao#8642 und Maruf#5698</system:String>
     <system:String x:Key="fixboot">Behebung, dass Blitz beim PC-Start nicht startet</system:String>
     <system:String x:Key="fixcommon">Alle gängigen Probleme beheben</system:String>
