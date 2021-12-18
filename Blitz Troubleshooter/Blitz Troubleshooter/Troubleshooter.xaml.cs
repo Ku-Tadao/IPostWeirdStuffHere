@@ -92,6 +92,11 @@ namespace Blitz_Troubleshooter
             foreach (Process proc in Process.GetProcessesByName("Blitz")) proc.Kill();
         }
 
+        private static void KillLeague()
+        {
+            foreach (Process proc in Process.GetProcessesByName("LeagueClient")) proc.Kill();
+        }
+
         private static void AppdataBlitz()
         {
             string path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\Blitz";
@@ -138,8 +143,7 @@ namespace Blitz_Troubleshooter
 
         private void client_DownloadFileCompleted(object sender, AsyncCompletedEventArgs e)
         {
-            MessageBox.Show((string)dict["download"],
-                (string)dict["dloadcompleted"], MessageBoxButton.OK, MessageBoxImage.Information);
+            MessageBox.Show((string)dict["dload"], (string)dict["dloadcompleted"], MessageBoxButton.OK, MessageBoxImage.Information);
             InputText.Text = (string)dict["dloadcompleted"];
             Labelspeed.Text = null;
             EnableBtn();
@@ -151,18 +155,29 @@ namespace Blitz_Troubleshooter
         {
             try
             {
-                KillBlitz();
-                Thread.Sleep(2000);
-                Uninstall();
-                WebClient client = new WebClient();
-                client.DownloadProgressChanged += client_DownloadProgressChanged;
-                client.DownloadFileCompleted += client_DownloadFileCompleted;
+                MessageBoxResult result = MessageBox.Show((string)dict["warningclose"], "Warning!", MessageBoxButton.YesNo);
+                switch (result)
+                {
+                    case MessageBoxResult.Yes:
+                        KillLeague();
+                        Thread.Sleep(1000);
+                        KillBlitz();
+                        Thread.Sleep(2000);
+                        Uninstall();
+                        WebClient client = new WebClient();
+                        client.DownloadProgressChanged += client_DownloadProgressChanged;
+                        client.DownloadFileCompleted += client_DownloadFileCompleted;
 
-                // Starts the download
-                _sw.Start();
-                client.DownloadFileAsync(new Uri("https://blitz.gg/download/win"), _path + "temp.exe");
-                InputText.Text = (string)dict["dloading"];
-                DisableBtn();
+                        // Starts the download
+                        _sw.Start();
+                        client.DownloadFileAsync(new Uri("https://blitz.gg/download/win"), _path + "temp.exe");
+                        InputText.Text = (string)dict["dloading"];
+                        DisableBtn();
+
+                        break;
+                    case MessageBoxResult.No:
+                        break;
+                }
             }
             catch (Exception exception)
             {
