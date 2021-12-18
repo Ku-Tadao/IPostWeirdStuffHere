@@ -75,7 +75,7 @@ namespace Blitz_Troubleshooter
         public Troubleshooter()
         {
             InitializeComponent();
-            Window1.Title = "Version 2.9";
+            Window1.Title = "Version 2.10";
             SetLanguageDictionary(dict);
             Loaded += Window_Loaded;
         }
