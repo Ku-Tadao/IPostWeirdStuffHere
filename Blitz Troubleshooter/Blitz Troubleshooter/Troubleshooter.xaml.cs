@@ -81,12 +81,9 @@ namespace Blitz_Troubleshooter
         {
             InitializeComponent();
             Grid.Background = DarkColor;
-            Window1.Title = "Version 2.20";
+            Window1.Title = "Version 2.21";
             SetLanguageDictionary(dict);
             Loaded += Window_Loaded;
-
-            MessageBox.Show(Btn1.FontFamily.ToString());
-
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
