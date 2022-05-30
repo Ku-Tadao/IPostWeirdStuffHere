@@ -7,6 +7,7 @@ using System.IO;
 using System.Net;
 using System.Threading;
 using System.Windows;
+using System.Windows.Media;
 
 namespace Blitz_Troubleshooter
 {
@@ -15,6 +16,11 @@ namespace Blitz_Troubleshooter
     /// </summary>
     public partial class Troubleshooter
     {
+        private readonly SolidColorBrush DarkColor = new SolidColorBrush(Color.FromRgb(14, 16, 21));
+        private readonly SolidColorBrush DarkBGColor = new SolidColorBrush(Color.FromRgb(39, 42, 48));
+        private readonly SolidColorBrush BlueColor = new SolidColorBrush(Color.FromRgb(18, 26, 43));
+        private readonly SolidColorBrush BlueBGColor = new SolidColorBrush(Color.FromRgb(38, 52, 80));
+
         private static readonly string Appdata = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
 
         private static readonly string Localappdata =
@@ -26,58 +32,61 @@ namespace Blitz_Troubleshooter
         {
             Localappdata + "\\blitz-updater",
             Localappdata + "\\Programs\\blitz-core",
+            Localappdata + "\\Programs\\Blitz",
+            Localappdata + "\\Blitz",
             Appdata + "\\Blitz",
             Appdata + "\\blitz-core",
-            Appdata + "\\Blitz-helpers",
-            Localappdata + "\\Programs\\Blitz"
+            Appdata + "\\Blitz-helpers",           
         };
 
         private readonly Stopwatch _sw = new Stopwatch();
+        private readonly ResourceDictionary dict = new ResourceDictionary();
 
-        ResourceDictionary dict = new ResourceDictionary();
-
-        public void SetLanguageDictionary(ResourceDictionary resourceDictionary)
+        public Uri GetLang(ResourceDictionary resourceDictionary, string lang = "")
         {
-            switch (Thread.CurrentThread.CurrentCulture.ToString())
+            string text = lang == "" ? Thread.CurrentThread.CurrentCulture.ToString() : lang;
+
+            switch (text)
             {
                 case "en-US":
-                    resourceDictionary.Source = new Uri("..\\Resources\\StringResource.xaml",
+                    return resourceDictionary.Source = new Uri("..\\Resources\\StringResource.xaml",
                         UriKind.Relative);
-                    break;
                 case "pl-PL":
-                    resourceDictionary.Source = new Uri("..\\Resources\\StringResource.pl-PL.xaml",
+                    return resourceDictionary.Source = new Uri("..\\Resources\\StringResource.pl-PL.xaml",
                         UriKind.Relative);
-                    break;
                 case "de-DE":
-                    resourceDictionary.Source = new Uri("..\\Resources\\StringResource.de-DE.xaml",
+                    return resourceDictionary.Source = new Uri("..\\Resources\\StringResource.de-DE.xaml",
                         UriKind.Relative);
-                    break;
                 case "pt-PT":
-                    resourceDictionary.Source = new Uri("..\\Resources\\StringResource.pt-PT.xaml",
+                    return resourceDictionary.Source = new Uri("..\\Resources\\StringResource.pt-PT.xaml",
                         UriKind.Relative);
-                    break;
                 case "tr-TR":
-                    resourceDictionary.Source = new Uri("..\\Resources\\StringResource.tr-TR.xaml",
+                    return resourceDictionary.Source = new Uri("..\\Resources\\StringResource.tr-TR.xaml",
                         UriKind.Relative);
-                    break;
                 case "fr-FR":
-                    resourceDictionary.Source = new Uri("..\\Resources\\StringResource.fr-FR.xaml",
+                    return resourceDictionary.Source = new Uri("..\\Resources\\StringResource.fr-FR.xaml",
                         UriKind.Relative);
-                    break;
                 default:
-                    resourceDictionary.Source = new Uri("..\\Resources\\StringResource.xaml",
+                    return resourceDictionary.Source = new Uri("..\\Resources\\StringResource.xaml",
                         UriKind.Relative);
-                    break;
             }
+        }
+        public void SetLanguageDictionary(ResourceDictionary resourceDictionary)
+        {
+            GetLang(dict);
             Resources.MergedDictionaries.Add(resourceDictionary);
         }
 
         public Troubleshooter()
         {
             InitializeComponent();
-            Window1.Title = "Version 2.10";
+            Grid.Background = DarkColor;
+            Window1.Title = "Version 2.20";
             SetLanguageDictionary(dict);
             Loaded += Window_Loaded;
+
+            MessageBox.Show(Btn1.FontFamily.ToString());
+
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -95,6 +104,13 @@ namespace Blitz_Troubleshooter
         private static void KillLeague()
         {
             foreach (Process proc in Process.GetProcessesByName("LeagueClient")) proc.Kill();
+        }
+
+        private static int DetectWeGame()
+        {
+            int Number = 0;
+            foreach (Process proc in Process.GetProcessesByName("wegame")) Number++;
+            return Number;
         }
 
         private static void AppdataBlitz()
@@ -164,15 +180,21 @@ namespace Blitz_Troubleshooter
                         KillBlitz();
                         Thread.Sleep(2000);
                         Uninstall();
-                        WebClient client = new WebClient();
-                        client.DownloadProgressChanged += client_DownloadProgressChanged;
-                        client.DownloadFileCompleted += client_DownloadFileCompleted;
+                        if (DetectWeGame() >= 1)
+                        {
 
-                        // Starts the download
-                        _sw.Start();
-                        client.DownloadFileAsync(new Uri("https://blitz.gg/download/win"), _path + "temp.exe");
-                        InputText.Text = (string)dict["dloading"];
-                        DisableBtn();
+                        }
+                        else
+                        {
+                            WebClient client = new WebClient();
+                            client.DownloadProgressChanged += client_DownloadProgressChanged;
+                            client.DownloadFileCompleted += client_DownloadFileCompleted;
+                            // Starts the download
+                            _sw.Start();
+                            client.DownloadFileAsync(new Uri("https://blitz.gg/download/win"), _path + "temp.exe");
+                            InputText.Text = (string)dict["dloading"];
+                            DisableBtn();
+                        }
 
                         break;
                     case MessageBoxResult.No:
@@ -381,16 +403,56 @@ namespace Blitz_Troubleshooter
         {
             try
             {
-                throw new IndexOutOfRangeException();
-                //KillBlitz();
-                //Thread.Sleep(1000);
-                //Uninstall();
-                //MessageBox.Show("Blitz has been uninstalled", "Blitz Un-installation", MessageBoxButton.OK,
-                //    MessageBoxImage.Information);
+                KillBlitz();
+                Thread.Sleep(1000);
+                Uninstall();
+                MessageBox.Show("Blitz has been uninstalled", "Blitz Un-installation", MessageBoxButton.OK,
+                MessageBoxImage.Information);
             }
             catch (Exception exception)
             {
                 MessageBox.Show($"{dict["error"]}\nKu Tadao#8642\n\n{exception}");
+            }
+        }
+
+        private void ComboBox_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        {
+            Resources.MergedDictionaries.Remove(dict);
+            GetLang(dict, CbLang.SelectedValue.ToString());
+            Resources.MergedDictionaries.Add(dict);
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            var bgcolo = Grid.Background;
+
+            if (Grid.Background != BlueColor)
+            {
+                BtnColor.Content = "Blue";
+                BtnColor.Background = BlueBGColor;
+                Grid.Background = BlueColor;
+
+                Btn1.Background = BlueBGColor;
+                Btn2.Background = BlueBGColor;
+                Btn3.Background = BlueBGColor;
+                Btn4.Background = BlueBGColor;
+                Btn5.Background = BlueBGColor;
+                Btn6.Background = BlueBGColor;
+                Btn7.Background = BlueBGColor;
+            }
+            else
+            {
+                BtnColor.Content = "Dark";
+                BtnColor.Background = DarkBGColor;
+                Grid.Background = DarkColor;
+
+                Btn1.Background = DarkBGColor;
+                Btn2.Background = DarkBGColor;
+                Btn3.Background = DarkBGColor;
+                Btn4.Background = DarkBGColor;
+                Btn5.Background = DarkBGColor;
+                Btn6.Background = DarkBGColor;
+                Btn7.Background = DarkBGColor;
             }
         }
 

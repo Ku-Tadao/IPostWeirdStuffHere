@@ -154,6 +154,7 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Blitz Icon.ico" />
+    <Resource Include="Font\Inter-Regular.ttf" />
     <Resource Include="Troubleshooter logo.png" />
   </ItemGroup>
   <ItemGroup>
