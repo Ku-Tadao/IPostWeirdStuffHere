@@ -20,4 +20,5 @@
     <system:String x:Key="cache">Önbellek düzgün şekilde temizlendi</system:String>
     <system:String x:Key="fixedmsg">Düzeltildi!</system:String>
     <system:String x:Key="removedmsg">Kaldırıldı!</system:String>
+    <system:String x:Key="downloadcn">Lütfen siteden son sürümü indirip kurun.</system:String>
 </ResourceDictionary>

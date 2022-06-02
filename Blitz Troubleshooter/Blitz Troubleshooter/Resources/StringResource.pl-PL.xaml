@@ -20,4 +20,5 @@
     <system:String x:Key="cache">Pomyślnie wyczyszczono cache</system:String>
     <system:String x:Key="fixedmsg">Naprawione!</system:String>
     <system:String x:Key="removedmsg">Usunięte!</system:String>
+    <system:String x:Key="downloadcn">proszę pobrać i zainstalować najnowszą wersję ze strony internetowej.</system:String>
 </ResourceDictionary>
