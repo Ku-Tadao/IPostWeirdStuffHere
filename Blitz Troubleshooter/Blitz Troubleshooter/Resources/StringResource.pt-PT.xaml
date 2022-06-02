@@ -6,7 +6,7 @@
     <system:String x:Key="credits">Feito com Amor por: Ku Tadao#8642 e Maruf#5698</system:String>
     <system:String x:Key="fixboot">Corrigir o Blitz não é executado na inicialização</system:String>
     <system:String x:Key="fixcommon">Corrigir todos os problemas comuns</system:String>
-    <system:String x:Key="fixoverlay">Corrigir sobreposição (TFT - LoL)</system:String>
+    <system:String x:Key="runasadmin">Execute o Blitz como Administrador</system:String>
     <system:String x:Key="progressbar">Barra de progresso: </system:String>
     <system:String x:Key="unfix"> Remover correção </system:String>
     <system:String x:Key="uninstall">Desinstalar o Blitz</system:String>

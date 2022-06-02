@@ -6,7 +6,7 @@
     <system:String x:Key="credits">Wykonane z miłością przez: Ku Tadao#8642 i Maruf#5698</system:String>
     <system:String x:Key="fixboot">Naprawa uruchomienia Blitz przy starcie systemu</system:String>
     <system:String x:Key="fixcommon">Naprawa najczęstszych problemów</system:String>
-    <system:String x:Key="fixoverlay">Naprawa nakładki (TFT - LoL)</system:String>
+    <system:String x:Key="runasadmin">Uruchom Blitz jako administrator</system:String>
     <system:String x:Key="progressbar">Postępu: </system:String>
     <system:String x:Key="unfix"> Usuń naprawę </system:String>
     <system:String x:Key="uninstall">Odinstaluj Blitz</system:String>

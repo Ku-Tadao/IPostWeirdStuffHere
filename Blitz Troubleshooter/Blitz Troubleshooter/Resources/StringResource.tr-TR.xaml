@@ -6,7 +6,7 @@
     <system:String x:Key="credits">Ku Tadao#8642 ve Maruf#5698 tarafından sevgiyle hazırlandı.</system:String>
     <system:String x:Key="fixboot">Blitz'in bilgisayar başlangıcında başlamamasını düzelt</system:String>
     <system:String x:Key="fixcommon">Tüm Genel Sorunları Düzeltin</system:String>
-    <system:String x:Key="fixoverlay">Arayüz Sorunlarını Düzelt (TFT - LoL)</system:String>
+    <system:String x:Key="runasadmin">Blitz'i yönetici olarak çalıştır.</system:String>
     <system:String x:Key="progressbar">İlerleme çubuğu: </system:String>
     <system:String x:Key="unfix"> düzeltmeyi kaldır </system:String>
     <system:String x:Key="uninstall">Blitz'i Kaldır</system:String>

@@ -38,7 +38,7 @@
                         Height="27" Width="335" HorizontalAlignment="Left" Margin="0,0,0,5" Click="Button_Click" FontFamily="Segoe UI" />
                 <DockPanel x:Name="DpSize" HorizontalAlignment="Left" Margin="0,0,0,5">
                     <Button x:Name="Btn2" Click="BtnFixOverlayClick" Background="#272a30" HorizontalAlignment="Center"
-                             Content="{DynamicResource fixoverlay}" Height="27" Width="335" />
+                             Content="{DynamicResource runasadmin}" Height="27" Width="335" />
                     <Button x:Name="Btn3" Padding="5,0,5,0" Margin="3,0,0,0" Click="BtnRemoveOverlayFixClick" Background="#272a30"
                             HorizontalAlignment="Left"  Content="{DynamicResource unfix }" Height="27"
                              />

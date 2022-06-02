@@ -6,7 +6,7 @@
     <system:String x:Key="credits">Mit Liebe gemacht von: Ku Tadao#8642 und Maruf#5698</system:String>
     <system:String x:Key="fixboot">Behebung, dass Blitz beim PC-Start nicht startet</system:String>
     <system:String x:Key="fixcommon">Alle gängigen Probleme beheben</system:String>
-    <system:String x:Key="fixoverlay">Overlay Probleme beheben (TFT - LoL)</system:String>
+    <system:String x:Key="runasadmin">Blitz als Administrator ausführen</system:String>
     <system:String x:Key="progressbar">Fortschrittsbalken: </system:String>
     <system:String x:Key="unfix"> Fix entfernen </system:String>
     <system:String x:Key="uninstall">Blitz Deinstallieren</system:String>

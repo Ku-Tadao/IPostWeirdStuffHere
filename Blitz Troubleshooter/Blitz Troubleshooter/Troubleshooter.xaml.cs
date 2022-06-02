@@ -81,7 +81,7 @@ namespace Blitz_Troubleshooter
         {
             InitializeComponent();
             Grid.Background = DarkColor;
-            Window1.Title = "Version 2.22";
+            Window1.Title = "Version 2.23";
             SetLanguageDictionary(dict);
             Loaded += Window_Loaded;
         }

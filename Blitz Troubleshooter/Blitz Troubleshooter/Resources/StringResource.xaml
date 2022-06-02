@@ -6,7 +6,7 @@
     <system:String x:Key="credits">Made with Love by: Ku Tadao#8642 and Maruf#5698</system:String>
     <system:String x:Key="fixboot">Fix Blitz not starting up on boot</system:String>
     <system:String x:Key="fixcommon">Fix All Common Issues</system:String>
-    <system:String x:Key="fixoverlay">Fix Overlay (TFT - LoL)</system:String>
+    <system:String x:Key="runasadmin">Run Blitz as Administrator</system:String>
     <system:String x:Key="progressbar">Progress Bar: </system:String>
     <system:String x:Key="unfix"> Remove fix </system:String>
     <system:String x:Key="uninstall">Uninstall Blitz</system:String>
