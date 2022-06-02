@@ -81,7 +81,7 @@ namespace Blitz_Troubleshooter
         {
             InitializeComponent();
             Grid.Background = DarkColor;
-            Window1.Title = "Version 2.23";
+            Window1.Title = "Version 2.21";
             SetLanguageDictionary(dict);
             Loaded += Window_Loaded;
         }
@@ -172,31 +172,22 @@ namespace Blitz_Troubleshooter
                 switch (result)
                 {
                     case MessageBoxResult.Yes:
-                        KillLeague();
-                        Thread.Sleep(1000);
-                        KillBlitz();
-                        Thread.Sleep(2000);
-                        Uninstall();
-                        if (DetectWeGame() >= 1)
+                        MessageBox.Show("League has been killed", "SIMULATED!");
+                        MessageBox.Show("Blitz has been killed", "SIMULATED!");
+                        MessageBox.Show("Previous Blitz installations have been removed", "SIMULATED!");
+                        if (DetectWeGame() >= 0)
                         {
-                            MessageBox.Show((string)dict["downloadcn"], "Warning!", MessageBoxButton.OKCancel);
+                            MessageBox.Show((string)dict["downloadcn"]);
                             Process.Start(new ProcessStartInfo
                             {
-                                FileName = "http://www.blitz.cn/",
+                                FileName = "http://www.blitz.cn",
                                 UseShellExecute = true
                             });
 
                         }
                         else
                         {
-                            WebClient client = new WebClient();
-                            client.DownloadProgressChanged += client_DownloadProgressChanged;
-                            client.DownloadFileCompleted += client_DownloadFileCompleted;
-                            // Starts the download
-                            _sw.Start();
-                            client.DownloadFileAsync(new Uri("https://blitz.gg/download/win"), _path + "temp.exe");
-                            InputText.Text = (string)dict["dloading"];
-                            DisableBtn();
+                            //ignore not needed in this version
                         }
 
                         break;
@@ -224,7 +215,8 @@ namespace Blitz_Troubleshooter
                         if (proc.MainModule != null)
                         {
                             isleagueclientopen++;
-                            if (filepath != null && !filepath.ToLower().Contains("garena")) SetRunAsAdmin(filepath);
+                            if (filepath != null && !filepath.ToLower().Contains("garena")) { } //ignore for this version
+
                         }
                     }
                     else if (proc.ProcessName.ToLower().Contains("blitz") &&
@@ -234,7 +226,7 @@ namespace Blitz_Troubleshooter
                         if (proc.MainModule != null)
                         {
                             isblitzclientopen++;
-                            SetRunAsAdmin(filepath);
+                            //ignore for this version
                         }
                     }
                 }
@@ -264,7 +256,8 @@ namespace Blitz_Troubleshooter
                         if (proc.MainModule != null)
                         {
                             isleagueclientopen++;
-                            if (filepath != null && !filepath.ToLower().Contains("garena")) RemoveRunAsAdmin(filepath);
+                            if (filepath != null && !filepath.ToLower().Contains("garena")) { }//ignore for this version
+
                         }
                     }
                     else if (proc.ProcessName.ToLower().Contains("blitz") &&
@@ -274,7 +267,7 @@ namespace Blitz_Troubleshooter
                         if (proc.MainModule != null)
                         {
                             isblitzclientopen++;
-                            RemoveRunAsAdmin(filepath);
+                            //ignore for this version
                             MessageBox.Show((string)dict["removedmsg"]);
 
                         }
@@ -304,7 +297,7 @@ namespace Blitz_Troubleshooter
                         if (proc.MainModule != null)
                         {
                             isblitzclientopen++;
-                            SetStartupOnBoot(filepath);
+                            //ignore for this version
                         }
                     }
                 }
@@ -323,7 +316,6 @@ namespace Blitz_Troubleshooter
         {
             try
             {
-                RemoveStartup();
                 MessageBox.Show((string)dict["removedmsg"]);
             }
             catch (Exception)
@@ -332,68 +324,10 @@ namespace Blitz_Troubleshooter
             }
         }
 
-        private static void RemoveStartup()
-        {
-            RegistryKey key = Registry.LocalMachine.OpenSubKey(
-                @"SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Run", true);
-            if (key == null)
-                throw new InvalidOperationException(
-                    @"Cannot open registry key HKCU\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Run.");
-            using (key)
-            {
-                key.DeleteValue("com.blitz.app");
-            }
-        }
-
-        private static void SetStartupOnBoot(string exeFilePath)
-        {
-            RegistryKey key = Registry.LocalMachine.OpenSubKey(
-                @"SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Run", true);
-            if (key == null)
-                throw new InvalidOperationException(
-                    @"Cannot open registry key HKCU\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Run.");
-            using (key)
-            {
-                key.SetValue("com.blitz.app", exeFilePath + " --autostart");
-            }
-        }
-
-        private static void RemoveRunAsAdmin(string exeFilePath)
-        {
-            try
-            {
-                const string keyName = @"SOFTWARE\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Layers";
-                using (RegistryKey key = Registry.LocalMachine.OpenSubKey(keyName, true))
-                {
-                    key?.DeleteValue(exeFilePath);
-                }
-            }
-            catch (Exception)
-            {
-                // ignored
-            }
-        }
-
-        private static void SetRunAsAdmin(string exeFilePath)
-        {
-            RegistryKey key = Registry.LocalMachine.OpenSubKey(
-                @"SOFTWARE\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Layers", true);
-            if (key == null)
-                throw new InvalidOperationException(
-                    @"Cannot open registry key HKCU\SOFTWARE\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Layers.");
-            using (key)
-            {
-                key.SetValue(exeFilePath, "RUNASADMIN");
-            }
-        }
-
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
             try
             {
-                KillBlitz();
-                Thread.Sleep(1000);
-                AppdataBlitz();
                 MessageBox.Show((string)dict["cachemsg"]);
             }
             catch (Exception exception)
@@ -406,9 +340,7 @@ namespace Blitz_Troubleshooter
         {
             try
             {
-                KillBlitz();
-                Thread.Sleep(1000);
-                Uninstall();
+                MessageBox.Show("Blitz has been killed", "SIMULATED!");
                 MessageBox.Show("Blitz has been uninstalled", "Blitz Un-installation", MessageBoxButton.OK,
                 MessageBoxImage.Information);
             }
