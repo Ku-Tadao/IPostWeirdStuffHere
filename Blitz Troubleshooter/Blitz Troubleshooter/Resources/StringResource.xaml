@@ -20,4 +20,5 @@
     <system:String x:Key="cache">Cache successfully cleared</system:String>
     <system:String x:Key="fixedmsg">Fixed!</system:String>
     <system:String x:Key="removedmsg">Removed!</system:String>
+    <system:String x:Key="downloadcn">please download and install the latest version from the website.</system:String>
 </ResourceDictionary>

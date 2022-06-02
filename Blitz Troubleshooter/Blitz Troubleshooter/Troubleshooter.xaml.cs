@@ -81,7 +81,7 @@ namespace Blitz_Troubleshooter
         {
             InitializeComponent();
             Grid.Background = DarkColor;
-            Window1.Title = "Version 2.21";
+            Window1.Title = "Version 2.22";
             SetLanguageDictionary(dict);
             Loaded += Window_Loaded;
         }
@@ -179,6 +179,12 @@ namespace Blitz_Troubleshooter
                         Uninstall();
                         if (DetectWeGame() >= 1)
                         {
+                            MessageBox.Show((string)dict["downloadcn"], "Warning!", MessageBoxButton.OKCancel);
+                            Process.Start(new ProcessStartInfo
+                            {
+                                FileName = "http://www.blitz.cn/",
+                                UseShellExecute = true
+                            });
 
                         }
                         else
