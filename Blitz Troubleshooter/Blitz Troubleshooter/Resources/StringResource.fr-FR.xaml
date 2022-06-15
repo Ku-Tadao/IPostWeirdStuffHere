@@ -3,7 +3,6 @@
                     xmlns:system="clr-namespace:System;assembly=mscorlib">
     <system:String x:Key="clearcache">Nettoyer le cache</system:String>
     <system:String x:Key="warningclose">Cela fermera l'application Blitz et League, Continue?</system:String>
-    <system:String x:Key="credits">Fait avec Amour par: Ku Tadao#8642 et Maruf#5698</system:String>
     <system:String x:Key="fixboot">Correction de Blitz ne démarrant pas au démarrage</system:String>
     <system:String x:Key="fixcommon">Correction de tout les problèmes connues</system:String>
     <system:String x:Key="runasadmin">Exécuter Blitz en tant qu'administrateur</system:String>

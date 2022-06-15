@@ -3,7 +3,6 @@
                     xmlns:system="clr-namespace:System;assembly=mscorlib">
     <system:String x:Key="clearcache">Wyczyść pamięć podręczną</system:String>
     <system:String x:Key="warningclose">To spowoduje zamknięcie aplikacji Blitz i Ligi, Kontynuuj?</system:String>
-    <system:String x:Key="credits">Wykonane z miłością przez: Ku Tadao#8642 i Maruf#5698</system:String>
     <system:String x:Key="fixboot">Naprawa uruchomienia Blitz przy starcie systemu</system:String>
     <system:String x:Key="fixcommon">Naprawa najczęstszych problemów</system:String>
     <system:String x:Key="runasadmin">Uruchom Blitz jako administrator</system:String>

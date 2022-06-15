@@ -66,8 +66,6 @@
             </StackPanel>
         </StackPanel>
 
-        <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Center" 
-                   Text="{DynamicResource credits}" />
         <TextBlock x:Name="Labelspeed" HorizontalAlignment="Left" Margin="375,238,0,0" TextWrapping="Wrap" Text=""
                    VerticalAlignment="Top" Foreground="Wheat" />
     </Grid>
