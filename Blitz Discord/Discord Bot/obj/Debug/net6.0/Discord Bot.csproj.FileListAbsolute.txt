@@ -1,0 +1,28 @@
+C:\Users\kubil\source\repos\Ku-Tadao\IPostWeirdStuffHere\Blitz Discord\Discord Bot\bin\Debug\net6.0\Discord Bot.exe
+C:\Users\kubil\source\repos\Ku-Tadao\IPostWeirdStuffHere\Blitz Discord\Discord Bot\bin\Debug\net6.0\Discord Bot.deps.json
+C:\Users\kubil\source\repos\Ku-Tadao\IPostWeirdStuffHere\Blitz Discord\Discord Bot\bin\Debug\net6.0\Discord Bot.runtimeconfig.json
+C:\Users\kubil\source\repos\Ku-Tadao\IPostWeirdStuffHere\Blitz Discord\Discord Bot\bin\Debug\net6.0\Discord Bot.dll
+C:\Users\kubil\source\repos\Ku-Tadao\IPostWeirdStuffHere\Blitz Discord\Discord Bot\bin\Debug\net6.0\ref\Discord Bot.dll
+C:\Users\kubil\source\repos\Ku-Tadao\IPostWeirdStuffHere\Blitz Discord\Discord Bot\bin\Debug\net6.0\Discord Bot.pdb
+C:\Users\kubil\source\repos\Ku-Tadao\IPostWeirdStuffHere\Blitz Discord\Discord Bot\bin\Debug\net6.0\Discord.Net.Commands.dll
+C:\Users\kubil\source\repos\Ku-Tadao\IPostWeirdStuffHere\Blitz Discord\Discord Bot\bin\Debug\net6.0\Discord.Net.Core.dll
+C:\Users\kubil\source\repos\Ku-Tadao\IPostWeirdStuffHere\Blitz Discord\Discord Bot\bin\Debug\net6.0\Discord.Net.Interactions.dll
+C:\Users\kubil\source\repos\Ku-Tadao\IPostWeirdStuffHere\Blitz Discord\Discord Bot\bin\Debug\net6.0\Discord.Net.Rest.dll
+C:\Users\kubil\source\repos\Ku-Tadao\IPostWeirdStuffHere\Blitz Discord\Discord Bot\bin\Debug\net6.0\Discord.Net.Webhook.dll
+C:\Users\kubil\source\repos\Ku-Tadao\IPostWeirdStuffHere\Blitz Discord\Discord Bot\bin\Debug\net6.0\Discord.Net.WebSocket.dll
+C:\Users\kubil\source\repos\Ku-Tadao\IPostWeirdStuffHere\Blitz Discord\Discord Bot\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\kubil\source\repos\Ku-Tadao\IPostWeirdStuffHere\Blitz Discord\Discord Bot\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\kubil\source\repos\Ku-Tadao\IPostWeirdStuffHere\Blitz Discord\Discord Bot\bin\Debug\net6.0\System.Interactive.Async.dll
+C:\Users\kubil\source\repos\Ku-Tadao\IPostWeirdStuffHere\Blitz Discord\Discord Bot\bin\Debug\net6.0\System.Linq.Async.dll
+C:\Users\kubil\source\repos\Ku-Tadao\IPostWeirdStuffHere\Blitz Discord\Discord Bot\bin\Debug\net6.0\System.Reactive.dll
+C:\Users\kubil\source\repos\Ku-Tadao\IPostWeirdStuffHere\Blitz Discord\Discord Bot\obj\Debug\net6.0\Discord Bot.csproj.AssemblyReference.cache
+C:\Users\kubil\source\repos\Ku-Tadao\IPostWeirdStuffHere\Blitz Discord\Discord Bot\obj\Debug\net6.0\Discord Bot.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kubil\source\repos\Ku-Tadao\IPostWeirdStuffHere\Blitz Discord\Discord Bot\obj\Debug\net6.0\Discord Bot.AssemblyInfoInputs.cache
+C:\Users\kubil\source\repos\Ku-Tadao\IPostWeirdStuffHere\Blitz Discord\Discord Bot\obj\Debug\net6.0\Discord Bot.AssemblyInfo.cs
+C:\Users\kubil\source\repos\Ku-Tadao\IPostWeirdStuffHere\Blitz Discord\Discord Bot\obj\Debug\net6.0\Discord Bot.csproj.CoreCompileInputs.cache
+C:\Users\kubil\source\repos\Ku-Tadao\IPostWeirdStuffHere\Blitz Discord\Discord Bot\obj\Debug\net6.0\Discord Bot.csproj.CopyComplete
+C:\Users\kubil\source\repos\Ku-Tadao\IPostWeirdStuffHere\Blitz Discord\Discord Bot\obj\Debug\net6.0\Discord Bot.dll
+C:\Users\kubil\source\repos\Ku-Tadao\IPostWeirdStuffHere\Blitz Discord\Discord Bot\obj\Debug\net6.0\ref\Discord Bot.dll
+C:\Users\kubil\source\repos\Ku-Tadao\IPostWeirdStuffHere\Blitz Discord\Discord Bot\obj\Debug\net6.0\Discord Bot.pdb
+C:\Users\kubil\source\repos\Ku-Tadao\IPostWeirdStuffHere\Blitz Discord\Discord Bot\obj\Debug\net6.0\Discord Bot.genruntimeconfig.cache
+C:\Users\kubil\source\repos\Ku-Tadao\IPostWeirdStuffHere\Blitz Discord\Discord Bot\bin\Debug\net6.0\token.txt
