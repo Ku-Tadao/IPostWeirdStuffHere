@@ -6,8 +6,8 @@
     <system:String x:Key="fixboot">Correction de Blitz ne démarrant pas au démarrage</system:String>
     <system:String x:Key="fixcommon">Correction de tout les problèmes connues</system:String>
     <system:String x:Key="runasadmin">Exécuter Blitz en tant qu'administrateur</system:String>
-    <system:String x:Key="progressbar">Barre de progression : </system:String>
-    <system:String x:Key="unfix"> Suppression des corrections </system:String>
+    <system:String x:Key="progressbar">Barre de progression :</system:String>
+    <system:String x:Key="unfix">Suppression des corrections</system:String>
     <system:String x:Key="uninstall">Déinstallation de Blitz</system:String>
     <system:String x:Key="waitinginput">En attente d'une entrée...</system:String>
     <system:String x:Key="error">Une erreur s'est produite, veuillez envoyer une capture d'écran du message d'erreur suivant à l'utilisateur Discord :</system:String>

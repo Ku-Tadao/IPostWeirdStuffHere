@@ -3,7 +3,6 @@
                     xmlns:system="clr-namespace:System;assembly=mscorlib">
     <system:String x:Key="clearcache">Clear Cache</system:String>
     <system:String x:Key="warningclose">The Blitz and League application will be closed, Continue?</system:String>
-    <system:String x:Key="credits">Made with Love by: Ku Tadao#8642 and Maruf#5698</system:String>
     <system:String x:Key="fixboot">Fix Blitz not starting up on boot</system:String>
     <system:String x:Key="fixcommon">Fix All Common Issues</system:String>
     <system:String x:Key="runasadmin">Run Blitz as Administrator</system:String>
