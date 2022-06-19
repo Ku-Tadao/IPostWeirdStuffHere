@@ -11,9 +11,7 @@ using System.Windows.Media;
 
 namespace Blitz_Troubleshooter
 {
-    /// <summary>
-    /// Interaction logic for Troubleshooter.xaml
-    /// </summary>
+
     public partial class Troubleshooter
     {
         private readonly SolidColorBrush DarkColor = new SolidColorBrush(Color.FromRgb(14, 16, 21));
@@ -36,7 +34,7 @@ namespace Blitz_Troubleshooter
             Localappdata + "\\Blitz",
             Appdata + "\\Blitz",
             Appdata + "\\blitz-core",
-            Appdata + "\\Blitz-helpers",           
+            Appdata + "\\Blitz-helpers",
         };
 
         private readonly Stopwatch _sw = new Stopwatch();
@@ -192,7 +190,6 @@ namespace Blitz_Troubleshooter
                             WebClient client = new WebClient();
                             client.DownloadProgressChanged += client_DownloadProgressChanged;
                             client.DownloadFileCompleted += client_DownloadFileCompleted;
-                            // Starts the download
                             _sw.Start();
                             client.DownloadFileAsync(new Uri("https://blitz.gg/download/win"), _path + "temp.exe");
                             InputText.Text = (string)dict["dloading"];
@@ -250,40 +247,33 @@ namespace Blitz_Troubleshooter
             if (isblitzclientopen > 0 && isleagueclientopen > 0) MessageBox.Show((string)dict["fixedmsg"]);
         }
 
-        private void BtnRemoveOverlayFixClick(object sender, RoutedEventArgs e)
+        private void BtnRemoveAdminClick(object sender, RoutedEventArgs e)
         {
+            //Optimize someday
+
             int isleagueclientopen = 0;
             int isblitzclientopen = 0;
             Process[] taskBarProcesses = Process.GetProcesses();
             foreach (Process proc in taskBarProcesses)
-                try
-                {
-                    if (proc.ProcessName.ToLower().Contains("leagueclient"))
+                    if (proc.ProcessName.ToLower().Contains("leagueclient") && isleagueclientopen < 1)
                     {
                         string filepath = proc.MainModule?.FileName;
                         if (proc.MainModule != null)
                         {
                             isleagueclientopen++;
-                            if (filepath != null && !filepath.ToLower().Contains("garena")) RemoveRunAsAdmin(filepath);
+                            if (filepath != null && !filepath.ToLower().Contains("garena") ) RemoveRunAsAdmin(filepath); 
                         }
                     }
                     else if (proc.ProcessName.ToLower().Contains("blitz") &&
-                             !proc.ProcessName.ToLower().Contains("troubleshooter"))
+                             !proc.ProcessName.ToLower().Contains("troubleshooter") && isblitzclientopen < 1)
                     {
                         string filepath = proc.MainModule?.FileName;
                         if (proc.MainModule != null)
                         {
                             isblitzclientopen++;
                             RemoveRunAsAdmin(filepath);
-                            MessageBox.Show((string)dict["removedmsg"]);
-
                         }
                     }
-                }
-                catch (Exception exception)
-                {
-                    MessageBox.Show($"{dict["error"]}\nKu Tadao#8642\n\n{exception}");
-                }
 
             if (isleagueclientopen == 0) MessageBox.Show((string)dict["leaguemsg"]);
 
@@ -326,9 +316,9 @@ namespace Blitz_Troubleshooter
                 RemoveStartup();
                 MessageBox.Show((string)dict["removedmsg"]);
             }
-            catch (Exception)
+            catch (Exception exception)
             {
-                // ignored
+                MessageBox.Show($"{dict["error"]}\nKu Tadao#8642\n\n{exception}", "Already removed / Non existent?");
             }
         }
 
@@ -358,7 +348,7 @@ namespace Blitz_Troubleshooter
             }
         }
 
-        private static void RemoveRunAsAdmin(string exeFilePath)
+        private void RemoveRunAsAdmin(string exeFilePath)
         {
             try
             {
@@ -368,9 +358,9 @@ namespace Blitz_Troubleshooter
                     key?.DeleteValue(exeFilePath);
                 }
             }
-            catch (Exception)
+            catch (Exception exception)
             {
-                // ignored
+                MessageBox.Show($"{dict["error"]}\nKu Tadao#8642\n\n{exception}", "Already removed / Non existent?");
             }
         }
 
