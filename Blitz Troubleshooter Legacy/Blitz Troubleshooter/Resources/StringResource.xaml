@@ -1,0 +1,26 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib">
+    <system:String x:Key="clearcache">Clear Cache</system:String>
+    <system:String x:Key="warningclose">Please close all running games before proceeding. Continue?</system:String>
+    <system:String x:Key="fixboot">Fix Blitz not starting up on boot</system:String>
+    <system:String x:Key="fixcommon">Fix All Common Issues</system:String>
+    <system:String x:Key="runasadmin">Run Blitz as Administrator</system:String>
+    <system:String x:Key="progressbar">Progress Bar: </system:String>
+    <system:String x:Key="unfix"> Remove fix </system:String>
+    <system:String x:Key="uninstall">Uninstall Blitz</system:String>
+    <system:String x:Key="waitinginput">Waiting for input...</system:String>
+    <system:String x:Key="error">An error occurred, please send a screenshot of the following error message to Discord user:</system:String>
+    <system:String x:Key="dloading">Downloading Blitz.exe</system:String>
+    <system:String x:Key="dload">Download Completed, Please press OK and continue on installation window.</system:String>
+    <system:String x:Key="dloadcompleted">Download Completed</system:String>
+    <system:String x:Key="leaguemsg">Ensure that League of Legends is open</system:String>
+    <system:String x:Key="blitzmsg">Ensure that Blitz is open</system:String>
+    <system:String x:Key="cache">Cache successfully cleared</system:String>
+    <system:String x:Key="fixedmsg">Fixed!</system:String>
+    <system:String x:Key="removedmsg">Removed!</system:String>
+    <system:String x:Key="downloadcn">please download and install the latest version from the website.</system:String>
+    <system:String x:Key="notinstalled">Blitz is not installed on this system</system:String>
+    <system:String x:Key="gamesareopen">The following games are still open:</system:String>
+    <system:String x:Key="closegames">Please close all games before proceeding.</system:String>
+</ResourceDictionary>

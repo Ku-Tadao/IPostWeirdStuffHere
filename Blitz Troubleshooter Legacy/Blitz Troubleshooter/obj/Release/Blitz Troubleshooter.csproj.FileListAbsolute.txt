@@ -1,0 +1,22 @@
+C:\Users\User\Documents\IPostWeirdStuffHere\Blitz Troubleshooter Legacy\Blitz Troubleshooter\bin\Release\Blitz Troubleshooter.exe.config
+C:\Users\User\Documents\IPostWeirdStuffHere\Blitz Troubleshooter Legacy\Blitz Troubleshooter\bin\Release\Blitz Troubleshooter.exe
+C:\Users\User\Documents\IPostWeirdStuffHere\Blitz Troubleshooter Legacy\Blitz Troubleshooter\bin\Release\Blitz Troubleshooter.pdb
+C:\Users\User\Documents\IPostWeirdStuffHere\Blitz Troubleshooter Legacy\Blitz Troubleshooter\obj\Release\Blitz Troubleshooter.csproj.AssemblyReference.cache
+C:\Users\User\Documents\IPostWeirdStuffHere\Blitz Troubleshooter Legacy\Blitz Troubleshooter\obj\Release\Blitz Troubleshooter.csproj.SuggestedBindingRedirects.cache
+C:\Users\User\Documents\IPostWeirdStuffHere\Blitz Troubleshooter Legacy\Blitz Troubleshooter\obj\Release\Resources\StringResource.fr-FR.baml
+C:\Users\User\Documents\IPostWeirdStuffHere\Blitz Troubleshooter Legacy\Blitz Troubleshooter\obj\Release\Resources\StringResource.pt-PT.baml
+C:\Users\User\Documents\IPostWeirdStuffHere\Blitz Troubleshooter Legacy\Blitz Troubleshooter\obj\Release\Resources\StringResource.pl-PL.baml
+C:\Users\User\Documents\IPostWeirdStuffHere\Blitz Troubleshooter Legacy\Blitz Troubleshooter\obj\Release\Resources\StringResource.de-DE.baml
+C:\Users\User\Documents\IPostWeirdStuffHere\Blitz Troubleshooter Legacy\Blitz Troubleshooter\obj\Release\Resources\StringResource.ru-RU.baml
+C:\Users\User\Documents\IPostWeirdStuffHere\Blitz Troubleshooter Legacy\Blitz Troubleshooter\obj\Release\Resources\StringResource.tr-TR.baml
+C:\Users\User\Documents\IPostWeirdStuffHere\Blitz Troubleshooter Legacy\Blitz Troubleshooter\obj\Release\Resources\StringResource.baml
+C:\Users\User\Documents\IPostWeirdStuffHere\Blitz Troubleshooter Legacy\Blitz Troubleshooter\obj\Release\Troubleshooter.baml
+C:\Users\User\Documents\IPostWeirdStuffHere\Blitz Troubleshooter Legacy\Blitz Troubleshooter\obj\Release\Troubleshooter.g.cs
+C:\Users\User\Documents\IPostWeirdStuffHere\Blitz Troubleshooter Legacy\Blitz Troubleshooter\obj\Release\App.g.cs
+C:\Users\User\Documents\IPostWeirdStuffHere\Blitz Troubleshooter Legacy\Blitz Troubleshooter\obj\Release\Blitz Troubleshooter_MarkupCompile.cache
+C:\Users\User\Documents\IPostWeirdStuffHere\Blitz Troubleshooter Legacy\Blitz Troubleshooter\obj\Release\Blitz Troubleshooter.g.resources
+C:\Users\User\Documents\IPostWeirdStuffHere\Blitz Troubleshooter Legacy\Blitz Troubleshooter\obj\Release\Blitz_Troubleshooter.Properties.Resources.resources
+C:\Users\User\Documents\IPostWeirdStuffHere\Blitz Troubleshooter Legacy\Blitz Troubleshooter\obj\Release\Blitz Troubleshooter.csproj.GenerateResource.cache
+C:\Users\User\Documents\IPostWeirdStuffHere\Blitz Troubleshooter Legacy\Blitz Troubleshooter\obj\Release\Blitz Troubleshooter.csproj.CoreCompileInputs.cache
+C:\Users\User\Documents\IPostWeirdStuffHere\Blitz Troubleshooter Legacy\Blitz Troubleshooter\obj\Release\Blitz Troubleshooter.exe
+C:\Users\User\Documents\IPostWeirdStuffHere\Blitz Troubleshooter Legacy\Blitz Troubleshooter\obj\Release\Blitz Troubleshooter.pdb

@@ -1,0 +1,27 @@
+﻿Todo:
+
+-Regchecker, catch cached games
+-- ensure game has been started once (tabbed out aswell)
+
+- Blitz troubleshooting
+-- Check network performance
+-- Check Read Write permissions
+-- Check Network Connectivity (DNS)
+-- Check Elavation
+-- Fix for not starting up
+
+- League + TFT 1:1
+-- League Elavation check Both ingame and outside
+--- Logic that scans installation path rather than running proccess.
+
+
+- Valorant = permissions check (elevation control 1:1)
+-- Option to both elavate or none
+
+- Fortnite = check elevation
+-- scan for Epic Games
+
+For Later:
+- CS:GO = Check Elevation
+-- Scan for Steam
+-- Scan for arguments given ingame

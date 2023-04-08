@@ -1,0 +1,75 @@
+﻿<Window x:Name="Window1" x:Class="Blitz_Troubleshooter_2._0.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        ResizeMode="NoResize"
+        Title="" Height="250" Width="600">
+    <Grid Background="#0e1015">
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,2,0,35">
+            <Label FontSize="24" Foreground="#e2e4e9">Choose one of the available options</Label>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,2">
+                <Button Background="#272a30" Foreground="#e2e4e9" x:Name="General" Margin="8,4,8,4" Height="64" Width="64" Click="Option_Click">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="2"/>
+                    </Style>
+                </Button.Resources>
+                    <Image Source="Assets/BlitzIcon.png" Height="48"></Image>
+            </Button>
+                <Button Background="#272a30" Foreground="#e2e4e9" x:Name="League" Margin="8,4,8,4" Height="64" Width="64" Click="Option_Click">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="2"/>
+                    </Style>
+                </Button.Resources>
+                    <Image Source="Assets/League.png" Height="48"></Image>
+            </Button>
+                <Button Background="#272a30" Foreground="#e2e4e9" x:Name="Tft" Margin="8,4,8,4" Height="64" Width="64" Click="Option_Click">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="2"/>
+                    </Style>
+                </Button.Resources>
+                <Image Source="Assets/Tft.png" Width="48"></Image>
+            </Button>
+                <Button Background="#272a30" Foreground="#e2e4e9" x:Name="Valorant" Margin="8,4,8,4" Height="64" Width="64" Click="Option_Click">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="2"/>
+                    </Style>
+                </Button.Resources>
+                    <Image Source="Assets/valLogo.png" Width="48"></Image>
+            </Button>
+                <Button Background="#272a30" Foreground="#e2e4e9" x:Name="Fortnite" Margin="8,4,8,4" Height="64" Width="64" Click="Option_Click">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="2"/>
+                    </Style>
+                </Button.Resources>
+                    <Image Source="Assets/Fortnite.png" Width="48"></Image>
+            </Button>
+                <Button Background="#272a30" Foreground="#e2e4e9" x:Name="Apex" Margin="8,4,8,4" Height="64" Width="64" Click="Option_Click">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="2"/>
+                    </Style>
+                </Button.Resources>
+                    <Image Source="Assets/Apex.png" Width="48"></Image>
+            </Button>
+                <Button Background="#272a30" Foreground="#e2e4e9" x:Name="Csgo" Margin="8,4,8,4" Height="64" Width="64" Click="Option_Click">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="2"/>
+                    </Style>
+                </Button.Resources>
+                    <Image Source="Assets/Csgo.png" Width="48"></Image>
+            </Button>
+            
+        </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

@@ -1,0 +1,26 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib">
+    <system:String x:Key="clearcache">Cache leeren</system:String>
+    <system:String x:Key="warningclose">Die Blitz- und League-Bewerbung wird geschlossen, Continue?</system:String>
+    <system:String x:Key="fixboot">Behebung, dass Blitz beim PC-Start nicht startet</system:String>
+    <system:String x:Key="fixcommon">Alle gängigen Probleme beheben</system:String>
+    <system:String x:Key="runasadmin">Blitz als Administrator ausführen</system:String>
+    <system:String x:Key="progressbar">Fortschrittsbalken: </system:String>
+    <system:String x:Key="unfix"> Fix entfernen </system:String>
+    <system:String x:Key="uninstall">Blitz Deinstallieren</system:String>
+    <system:String x:Key="waitinginput">Warten auf Input...</system:String>
+    <system:String x:Key="error">Ein Fehler ist aufgetreten, bitte sende einen Screenshot der folgenden Fehlermeldung an den Discord Benutzer:</system:String>
+    <system:String x:Key="dloading">Blitz.exe herunterladen</system:String>
+    <system:String x:Key="dload">Download Abgeschlossen, bitte drücke OK und fahre fort im Installationsfenster.</system:String>
+    <system:String x:Key="dloadcompleted">Download Abgeschlossen</system:String>
+    <system:String x:Key="leaguemsg">Stellen sie sich sicher, dass League of Legends geöffnet ist</system:String>
+    <system:String x:Key="blitzmsg">Stellen sie sich sicher, dass Blitz geöffnet ist</system:String>
+    <system:String x:Key="cache">Cache erfolgreich geleert</system:String>
+    <system:String x:Key="fixedmsg">Behoben!</system:String>
+    <system:String x:Key="removedmsg">Entfernt!</system:String>
+    <system:String x:Key="downloadcn">laden Sie bitte die neueste Version von der Website herunter und installieren Sie sie</system:String>
+    <system:String x:Key="notinstalled">Blitz ist auf diesem System nicht installiert</system:String>
+    <system:String x:Key="gamesareopen">Die folgenden Spiele sind noch offen:</system:String>
+    <system:String x:Key="closegames">Bitte schließen Sie alle Spiele, bevor Sie fortfahren.</system:String>
+</ResourceDictionary>

@@ -1,0 +1,36 @@
+﻿<Window x:Class="Blitz_Troubleshooter_2._0.TroubleshootPage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="TroubleshootPage" Height="450" Width="800" Background="#0e1015" ResizeMode="NoResize">
+    <Grid>
+        <Label Foreground="White" x:Name="testlabelbruv"></Label>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button x:Name="Btn1" Background="#272a30"  
+                    Height="27" Width="335" HorizontalAlignment="Left" Margin="0,0,0,5"/>
+            <DockPanel x:Name="DpSize" HorizontalAlignment="Left" Margin="0,0,0,5">
+                <Button x:Name="Btn2"  Background="#272a30" HorizontalAlignment="Center"
+                         Height="27" Width="335" />
+                <Button x:Name="Btn3" Padding="5,0,5,0" Margin="3,0,0,0" Background="#272a30"
+                        HorizontalAlignment="Left" Height="27"
+                />
+            </DockPanel>
+            <DockPanel HorizontalAlignment="Left" Margin="0,0,0,5">
+                <Button x:Name="Btn4"  Background="#272a30" HorizontalAlignment="Center"
+                         Height="27" Width="335" />
+                <Button x:Name="Btn5" Padding="5,0,5,0" Margin="3,0,0,0" Background="#272a30"
+                        HorizontalAlignment="Left"  Height="27"
+                />
+            </DockPanel>
+            <Button x:Name="Btn6" Background="#272a30"  Content="" Height="27" Width="335" HorizontalAlignment="Left"
+                    Margin="0,0,0,5"  />
+            <Button x:Name="Btn7" Background="#272a30" Content="" Height="27" Width="335" HorizontalAlignment="Left"
+                    Margin="0,0,0,5" />
+
+
+        </StackPanel>
+
+    </Grid>
+</Window>
