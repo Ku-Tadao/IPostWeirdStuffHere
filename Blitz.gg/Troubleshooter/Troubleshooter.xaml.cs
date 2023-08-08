@@ -8,8 +8,12 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Threading;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Media;
+using System.Net.Http;
+using System.Text.Json;
+using System.IO.Compression;
 
 namespace Blitz_Troubleshooter
 {
@@ -110,8 +114,12 @@ namespace Blitz_Troubleshooter
         private void Uninstall()
         {
             foreach (var path in _paths)
+            {
                 if (Directory.Exists(path))
+                {
                     Directory.Delete(path, true);
+                }
+            }
         }
 
         private void Client_DownloadProgressChanged(object sender, DownloadProgressChangedEventArgs e)
@@ -156,27 +164,24 @@ namespace Blitz_Troubleshooter
         }
 
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private async void Button_Click(object sender, RoutedEventArgs e)
         {
             try
             {
-
                 KillBlitz();
-
-                Thread.Sleep(2000);
+                await Task.Delay(2000);
                 Uninstall();
 
                 var client = new WebClient();
                 client.DownloadProgressChanged += Client_DownloadProgressChanged;
-                client.DownloadFileCompleted += Client_DownloadFileCompleted;
                 _sw.Start();
-                client.DownloadFileAsync(new Uri("https://blitz.gg/download/win"), _path + "temp.exe");
+                await client.DownloadFileTaskAsync(new Uri("https://blitz.gg/download/win"), _path + "temp.exe");
                 InputText.Text = (string)dict["dloading"];
                 DisableBtn();
             }
             catch (Exception exception)
             {
-                MessageBox.Show($"{dict["error"]}\nKu Tadao#8642\n\n{exception}");
+                MessageBox.Show($"{dict["error"]}\nku_tadao\n\n{exception}");
             }
         }
 
@@ -232,7 +237,7 @@ namespace Blitz_Troubleshooter
                 }
                 catch (Exception exception)
                 {
-                    MessageBox.Show($"{dict["error"]}\nKu Tadao#8642\n\n{exception}");
+                    MessageBox.Show($"{dict["error"]}\nku_tadao\n\n{exception}");
                 }
             }
 
@@ -338,7 +343,7 @@ namespace Blitz_Troubleshooter
                 }
                 catch (Exception exception)
                 {
-                    MessageBox.Show($"{dict["error"]}\nKu Tadao#8642\n\n{exception}");
+                    MessageBox.Show($"{dict["error"]}\nku_tadao\n\n{exception}");
                 }
 
 
@@ -356,7 +361,7 @@ namespace Blitz_Troubleshooter
             }
             catch (Exception exception)
             {
-                MessageBox.Show($"{dict["error"]}\nKu Tadao#8642\n\n{exception}", "Already removed / Non existent?");
+                MessageBox.Show($"{dict["error"]}\nku_tadao\n\n{exception}", "Already removed / Non existent?");
             }
         }
 
@@ -395,7 +400,7 @@ namespace Blitz_Troubleshooter
             }
             catch (Exception exception)
             {
-                MessageBox.Show($"{dict["error"]}\nKu Tadao#8642\n\n{exception}", "Already removed / Non existent?");
+                MessageBox.Show($"{dict["error"]}\nku_tadao\n\n{exception}", "Already removed / Non existent?");
             }
         }
 
@@ -419,11 +424,12 @@ namespace Blitz_Troubleshooter
                 AppdataBlitz();
                 MessageBox.Show((string)dict["cachemsg"]);
             }
-            catch (Exception exception)
+            catch (IOException exception)
             {
-                MessageBox.Show($"{dict["error"]}\nKu Tadao#8642\n\n{exception}");
+                MessageBox.Show($"{dict["error"]}\nku_tadao\n\n{exception.Message}");
             }
         }
+
 
         private bool IsBlitzInstalled()
         {
@@ -474,7 +480,7 @@ namespace Blitz_Troubleshooter
             }
             catch (Exception exception)
             {
-                MessageBox.Show($"{dict["error"]}\nKu Tadao#8642\n\n{exception}");
+                MessageBox.Show($"{dict["error"]}\nku_tadao\n\n{exception}");
             }
         }
 
@@ -528,5 +534,73 @@ namespace Blitz_Troubleshooter
             }
         }
 
-    }
+
+        private static readonly HttpClient client = new HttpClient();
+
+        private async Task<List<string>> GetPortableFileNamesAsync()
+        {
+            var response = await client.GetAsync("https://api.github.com/repos/Ku-Tadao/IPostWeirdStuffHere/contents/Blitz.gg/Portable");
+            response.EnsureSuccessStatusCode();
+            var responseContent = await response.Content.ReadAsStringAsync();
+            var contents = JsonSerializer.Deserialize<List<GitHubContent>>(responseContent);
+            var fileNames = new List<string>();
+            foreach (var content in contents)
+            {
+                if (content.Type == "file")
+                {
+                    fileNames.Add(content.Name);
+                }
+            }
+            return fileNames;
+        }
+
+        private class GitHubContent
+        {
+            public string Name { get; set; }
+            public string Type { get; set; }
+        }
+
+        
+
+
+
+        private const string localAppDataPath = @"%localappdata%\programs\blitz";
+        private const string portableFileUrl = "https://github.com/Ku-Tadao/IPostWeirdStuffHere/raw/master/Blitz.gg/Portable/blitzportable.zip";
+
+        private async Task DownloadAndExtractPortableFileAsync()
+        {
+            var localFilePath = Path.Combine(localAppDataPath, "blitzportable.zip");
+            using (var client = new WebClient())
+            {
+                await client.DownloadFileTaskAsync(portableFileUrl, localFilePath);
+            }
+            ZipFile.ExtractToDirectory(localFilePath, localAppDataPath);
+        }
+
+
+
+
+    private void EnsureBlitzFolderExists(object sender, RoutedEventArgs routedEventArgs)
+        {
+            if (!Directory.Exists(localAppDataPath))
+            {
+                Directory.CreateDirectory(localAppDataPath);
+            }
+            else
+            {
+                KillBlitz();
+
+                Directory.Delete(localAppDataPath, true);
+                Directory.CreateDirectory(localAppDataPath);
+
+                _ = DownloadAndExtractPortableFileAsync();
+
+                MessageBox.Show("Complete!");
+            }
+        }
+
+
+
+
+}
 }

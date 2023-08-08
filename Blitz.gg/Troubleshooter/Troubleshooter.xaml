@@ -46,6 +46,7 @@
                 </Grid>
                 <Button Foreground="#e2e4e9" x:Name="Btn6" Content="{DynamicResource clearcache}" Height="27"  Margin="0,0,0,5" Click="Button_Click_2" Background="#272a30" />
                 <Button Foreground="#e2e4e9" x:Name="Btn7" Content="{DynamicResource uninstall}" Height="27"  Margin="0,0,0,5" Click="Button_Click_4" Background="#272a30" />
+                <Button Foreground="#e2e4e9" x:Name="Btn8" Content="MANUAL INSTALL BLITZ [TEST]" Height="27"  Margin="0,0,0,5" Click="EnsureBlitzFolderExists" Background="#272a30" />
             </StackPanel>
             <StackPanel Margin="0,50,0,0">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
