@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30413.136
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blitz Troubleshooter", "Blitz Troubleshooter\Blitz Troubleshooter.csproj", "{3BDDB5A3-B89D-45B0-8A90-8EAB2B8B46B2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blitz Troubleshooter", "Blitz Troubleshooter.csproj", "{3BDDB5A3-B89D-45B0-8A90-8EAB2B8B46B2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
