@@ -172,6 +172,7 @@ namespace Blitz_Troubleshooter
         {
             try
             {
+                DisableBtn();
                 KillBlitz();
                 await Task.Delay(2000);
                 Uninstall();
@@ -201,10 +202,10 @@ namespace Blitz_Troubleshooter
                 }
 
                 InputText.Text = (string)dict["dloading"];
-                DisableBtn();
 
                 // Open the downloaded file
                 Process.Start(_path + "temp.exe");
+                EnableBtn();
             }
             catch (Exception exception)
             {
