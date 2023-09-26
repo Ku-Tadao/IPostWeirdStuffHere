@@ -177,6 +177,7 @@ namespace Blitz_Troubleshooter
                 await Task.Delay(2000);
                 Uninstall();
 
+                InputText.Text = (string)dict["dloading"];
                 var client = new HttpClient();
 
                 using (var response = await client.GetAsync("https://blitz.gg/download/win", HttpCompletionOption.ResponseHeadersRead))
@@ -201,8 +202,7 @@ namespace Blitz_Troubleshooter
                     }
                 }
 
-                InputText.Text = (string)dict["dloading"];
-
+                InputText.Text = (string)dict["dloadcompleted"];
                 // Open the downloaded file
                 Process.Start(_path + "temp.exe");
                 EnableBtn();
