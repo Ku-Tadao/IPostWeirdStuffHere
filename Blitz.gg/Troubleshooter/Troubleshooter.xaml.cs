@@ -14,6 +14,7 @@ using System.Windows.Media;
 using System.Net.Http;
 using System.Text.Json;
 using System.IO.Compression;
+using System.Net.Http.Handlers;
 
 namespace Blitz_Troubleshooter
 {
@@ -80,7 +81,7 @@ namespace Blitz_Troubleshooter
         {
             InitializeComponent();
             Grid.Background = DarkColor;
-            Window1.Title = "Version 2.24";
+            Window1.Title = "Version 2.25";
             SetLanguageDictionary(dict);
             this.Loaded += Troubleshooter_Loaded;
 
@@ -140,6 +141,7 @@ namespace Blitz_Troubleshooter
             Btn5.IsEnabled = true;
             Btn6.IsEnabled = true;
             Btn7.IsEnabled = true;
+            Btn8.IsEnabled = true;
         }
 
         private void DisableBtn()
@@ -151,6 +153,8 @@ namespace Blitz_Troubleshooter
             Btn5.IsEnabled = false;
             Btn6.IsEnabled = false;
             Btn7.IsEnabled = false;
+            Btn8.IsEnabled = false;
+
         }
 
         private void Client_DownloadFileCompleted(object sender, AsyncCompletedEventArgs e)
@@ -172,12 +176,35 @@ namespace Blitz_Troubleshooter
                 await Task.Delay(2000);
                 Uninstall();
 
-                var client = new WebClient();
-                client.DownloadProgressChanged += Client_DownloadProgressChanged;
-                _sw.Start();
-                await client.DownloadFileTaskAsync(new Uri("https://blitz.gg/download/win"), _path + "temp.exe");
+                var client = new HttpClient();
+
+                using (var response = await client.GetAsync("https://blitz.gg/download/win", HttpCompletionOption.ResponseHeadersRead))
+                using (var fileStream = new FileStream(_path + "temp.exe", FileMode.Create, FileAccess.Write, FileShare.None))
+                {
+                    // Get the total size of the file from the Content-Length header
+                    var totalBytes = response.Content.Headers.ContentLength.GetValueOrDefault();
+
+                    var buffer = new byte[8192];
+                    var bytesRead = 0L;
+
+                    using (var downloadStream = await response.Content.ReadAsStreamAsync())
+                    {
+                        while ((bytesRead = await downloadStream.ReadAsync(buffer, 0, buffer.Length)) > 0)
+                        {
+                            await fileStream.WriteAsync(buffer, 0, (int)bytesRead);
+
+                            // Calculate the progress as a percentage and update the ProgressBar
+                            var progressPercentage = (double)fileStream.Length / totalBytes * 100;
+                            ProgressBar1.Value = progressPercentage;
+                        }
+                    }
+                }
+
                 InputText.Text = (string)dict["dloading"];
                 DisableBtn();
+
+                // Open the downloaded file
+                Process.Start(_path + "temp.exe");
             }
             catch (Exception exception)
             {
@@ -365,14 +392,21 @@ namespace Blitz_Troubleshooter
             }
         }
 
-        private static void RemoveStartup()
+        private void RemoveStartup()
         {
-            var key = Registry.LocalMachine.OpenSubKey(
-                @"SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Run", true) ?? throw new InvalidOperationException(
-                    @"Cannot open registry key HKCU\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Run.");
-            using (key)
+            try
             {
-                key.DeleteValue("com.blitz.app");
+                using (var key = Registry.CurrentUser.OpenSubKey(@"SOFTWARE\Microsoft\Windows\CurrentVersion\Run", true))
+                {
+                    if (key != null && key.GetValue("com.blitz.app") != null)
+                    {
+                        key.DeleteValue("com.blitz.app");
+                    }
+                }
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show($"{dict["error"]}\nku_tadao\n\n{exception}", "Already removed / Non existent?");
             }
         }
 
@@ -392,10 +426,12 @@ namespace Blitz_Troubleshooter
         {
             try
             {
-                const string keyName = @"SOFTWARE\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Layers";
-                using (var key = Registry.LocalMachine.OpenSubKey(keyName, true))
+                using (var key = Registry.CurrentUser.OpenSubKey(@"SOFTWARE\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Layers", true))
                 {
-                    key?.DeleteValue(exeFilePath);
+                    if (key != null && key.GetValue(exeFilePath) != null)
+                    {
+                        key.DeleteValue(exeFilePath);
+                    }
                 }
             }
             catch (Exception exception)
@@ -404,23 +440,71 @@ namespace Blitz_Troubleshooter
             }
         }
 
-        private static void SetRunAsAdmin(string exeFilePath)
+        private void SetRunAsAdmin(string exeFilePath)
         {
-            var key = Registry.LocalMachine.OpenSubKey(
-                @"SOFTWARE\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Layers", true) ?? throw new InvalidOperationException(
-                    @"Cannot open registry key HKCU\SOFTWARE\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Layers.");
-            using (key)
+            try
             {
-                key.SetValue(exeFilePath, "RUNASADMIN");
+                using (var key = Registry.CurrentUser.OpenSubKey(@"SOFTWARE\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Layers", true))
+                {
+                    if (key != null)
+                    {
+                        key.SetValue(exeFilePath, "RUNASADMIN");
+                    }
+                }
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show($"{dict["error"]}\nku_tadao\n\n{exception}");
             }
         }
 
-        private void Button_Click_2(object sender, RoutedEventArgs e)
+        private async void Btn8_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                var localAppDataPath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
+                var blitzFolderPath = Path.Combine(localAppDataPath, "programs", "blitz");
+
+                // Ensure the Blitz folder exists
+                Directory.CreateDirectory(blitzFolderPath);
+
+                var progressHandler = new ProgressMessageHandler();
+                var client = HttpClientFactory.Create(progressHandler);
+
+                // Update the progress bar as the file is downloaded
+                progressHandler.HttpReceiveProgress += (s, args) =>
+                {
+                    Dispatcher.Invoke(() =>
+                    {
+                        ProgressBar1.Value = args.ProgressPercentage;
+                    });
+                };
+
+                using (var response = await client.GetAsync("https://github.com/Ku-Tadao/IPostWeirdStuffHere/raw/master/Blitz.gg/Portable/blitzportable.zip", HttpCompletionOption.ResponseHeadersRead))
+                using (var fileStream = new FileStream(Path.Combine(blitzFolderPath, "blitzportable.zip"), FileMode.Create, FileAccess.Write, FileShare.None))
+                {
+                    // Download the file
+                    await response.Content.CopyToAsync(fileStream);
+                }
+
+                ZipFile.ExtractToDirectory(Path.Combine(blitzFolderPath, "blitzportable.zip"), blitzFolderPath);
+                string blitzExePath = Path.Combine(blitzFolderPath, "blitz.exe");
+                Process.Start(blitzExePath);
+
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show($"{dict["error"]}\nku_tadao\n\n{exception}");
+            }
+        }
+
+
+        private async void Button_Click_2(object sender, RoutedEventArgs e)
         {
             try
             {
                 KillBlitz();
-                Thread.Sleep(1000);
+                await Task.Delay(1000);
                 AppdataBlitz();
                 MessageBox.Show((string)dict["cachemsg"]);
             }
@@ -460,14 +544,14 @@ namespace Blitz_Troubleshooter
         }
 
 
-        private void Button_Click_4(object sender, RoutedEventArgs e)
+        private async void Button_Click_4(object sender, RoutedEventArgs e)
         {
             try
             {
                 if (IsBlitzInstalled())
                 {
                     KillBlitz();
-                    Thread.Sleep(1000);
+                    await Task.Delay(1000);
                     Uninstall();
                     MessageBox.Show((string)dict["removedmsg"], "Blitz Un-installation", MessageBoxButton.OK,
                         MessageBoxImage.Information);
@@ -570,9 +654,13 @@ namespace Blitz_Troubleshooter
         private async Task DownloadAndExtractPortableFileAsync()
         {
             var localFilePath = Path.Combine(localAppDataPath, "blitzportable.zip");
-            using (var client = new WebClient())
+            using (var client = new HttpClient())
             {
-                await client.DownloadFileTaskAsync(portableFileUrl, localFilePath);
+                var response = await client.GetAsync("https://blitz.gg/download/win");
+                using (var fileStream = new FileStream(_path + "temp.exe", FileMode.Create, FileAccess.Write, FileShare.None))
+                {
+                    await response.Content.CopyToAsync(fileStream);
+                }
             }
             ZipFile.ExtractToDirectory(localFilePath, localAppDataPath);
         }
