@@ -81,28 +81,41 @@ namespace Blitz_Troubleshooter
         {
             InitializeComponent();
             Grid.Background = DarkColor;
-            Window1.Title = "Version 2.25";
+            Window1.Title = "Version 2.30";
             SetLanguageDictionary(dict);
-            this.Loaded += Troubleshooter_Loaded;
+            Loaded += Troubleshooter_Loaded;
 
         }
 
         private void Troubleshooter_Loaded(object sender, RoutedEventArgs e)
         {
-            Btn2.Measure(new Size(Double.PositiveInfinity, Double.PositiveInfinity));
-            Btn4.Measure(new Size(Double.PositiveInfinity, Double.PositiveInfinity));
+            Btn2.Measure(new Size(double.PositiveInfinity, double.PositiveInfinity));
+            Btn4.Measure(new Size(double.PositiveInfinity, double.PositiveInfinity));
+            Btn3.Measure(new Size(double.PositiveInfinity, double.PositiveInfinity));
+            Btn5.Measure(new Size(double.PositiveInfinity, double.PositiveInfinity));
 
             double maxWidth = Math.Max(Btn2.DesiredSize.Width, Btn4.DesiredSize.Width);
             double minWidth = Math.Max(Btn3.DesiredSize.Width, Btn5.DesiredSize.Width);
 
             spmain.Width = maxWidth + minWidth + 50; // Adjust the constant based on your layout requirements
-            this.SizeToContent = SizeToContent.Width;
+
+            // Set the maximum width of the window
+            MaxWidth = 800; // Adjust this value based on your requirements
+            SizeToContent = SizeToContent.Width;
         }
+
+
 
 
         private static void KillBlitz()
         {
-            foreach (var proc in Process.GetProcessesByName("Blitz")) proc.Kill();
+            // Kill all Blitz processes
+            var blitzProcesses = Process.GetProcessesByName("Blitz");
+            foreach (var process in blitzProcesses)
+            {
+                process.Kill();
+            }
+
         }
 
 
@@ -576,14 +589,14 @@ namespace Blitz_Troubleshooter
             GetLang(dict, CbLang.SelectedValue.ToString());
             Resources.MergedDictionaries.Add(dict);
 
-            Btn2.Measure(new Size(Double.PositiveInfinity, Double.PositiveInfinity));
-            Btn4.Measure(new Size(Double.PositiveInfinity, Double.PositiveInfinity));
+            Btn2.Measure(new Size(double.PositiveInfinity, double.PositiveInfinity));
+            Btn4.Measure(new Size(double.PositiveInfinity, double.PositiveInfinity));
 
             double maxWidth = Math.Max(Btn2.DesiredSize.Width, Btn4.DesiredSize.Width);
             double minWidth = Math.Max(Btn3.DesiredSize.Width, Btn5.DesiredSize.Width);
 
             spmain.Width = maxWidth + minWidth + 50; // Adjust the constant based on your layout requirements
-            this.SizeToContent = SizeToContent.Width;
+            SizeToContent = SizeToContent.Width;
 
         }
 
@@ -602,6 +615,7 @@ namespace Blitz_Troubleshooter
                 Btn5.Background = BlueBGColor;
                 Btn6.Background = BlueBGColor;
                 Btn7.Background = BlueBGColor;
+                Btn8.Background = BlueBGColor;
             }
             else
             {
@@ -616,28 +630,10 @@ namespace Blitz_Troubleshooter
                 Btn5.Background = DarkBGColor;
                 Btn6.Background = DarkBGColor;
                 Btn7.Background = DarkBGColor;
+                Btn8.Background = DarkBGColor;
             }
         }
 
-
-        private static readonly HttpClient client = new HttpClient();
-
-        private async Task<List<string>> GetPortableFileNamesAsync()
-        {
-            var response = await client.GetAsync("https://api.github.com/repos/Ku-Tadao/IPostWeirdStuffHere/contents/Blitz.gg/Portable");
-            response.EnsureSuccessStatusCode();
-            var responseContent = await response.Content.ReadAsStringAsync();
-            var contents = JsonSerializer.Deserialize<List<GitHubContent>>(responseContent);
-            var fileNames = new List<string>();
-            foreach (var content in contents)
-            {
-                if (content.Type == "file")
-                {
-                    fileNames.Add(content.Name);
-                }
-            }
-            return fileNames;
-        }
 
         private class GitHubContent
         {
@@ -645,12 +641,8 @@ namespace Blitz_Troubleshooter
             public string Type { get; set; }
         }
 
-        
-
-
 
         private const string localAppDataPath = @"%localappdata%\programs\blitz";
-        private const string portableFileUrl = "https://github.com/Ku-Tadao/IPostWeirdStuffHere/raw/master/Blitz.gg/Portable/blitzportable.zip";
 
         private async Task DownloadAndExtractPortableFileAsync()
         {
@@ -669,7 +661,7 @@ namespace Blitz_Troubleshooter
 
 
 
-    private void EnsureBlitzFolderExists(object sender, RoutedEventArgs routedEventArgs)
+        private void EnsureBlitzFolderExists(object sender, RoutedEventArgs routedEventArgs)
         {
             if (!Directory.Exists(localAppDataPath))
             {
@@ -691,5 +683,5 @@ namespace Blitz_Troubleshooter
 
 
 
-}
+    }
 }

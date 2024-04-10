@@ -23,4 +23,5 @@
     <system:String x:Key="notinstalled">Blitz не найден в списке установленных приложений в данной системе</system:String>
     <system:String x:Key="gamesareopen">Следующие игры все еще открыты:</system:String>
     <system:String x:Key="closegames">Пожалуйста, закройте все игры перед тем, как продолжить.</system:String>
+    <system:String x:Key="manuallyInstallBlitz">Установить Blitz вручную</system:String>
 </ResourceDictionary>

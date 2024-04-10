@@ -23,4 +23,6 @@
     <system:String x:Key="notinstalled">Blitz bu sistemde kurulu değil</system:String>
     <system:String x:Key="gamesareopen">Aşağıdaki oyunlar hala açıktır:</system:String>
     <system:String x:Key="closegames">Lütfen devam etmeden önce tüm oyunları kapatın.</system:String>
+    <system:String x:Key="manuallyInstallBlitz">Blitz'i Manuel Olarak Yükleyin</system:String>
+
 </ResourceDictionary>

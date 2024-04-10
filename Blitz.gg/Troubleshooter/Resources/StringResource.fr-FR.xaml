@@ -23,4 +23,6 @@
     <system:String x:Key="notinstalled">Blitz n'est pas installé sur ce système</system:String>
     <system:String x:Key="gamesareopen">Les jeux suivants sont encore ouverts :</system:String>
     <system:String x:Key="closegames">Veuillez fermer tous les jeux avant de continuer.</system:String>
+    <system:String x:Key="manuallyInstallBlitz">Installer Blitz manuellement</system:String>
+
 </ResourceDictionary>
