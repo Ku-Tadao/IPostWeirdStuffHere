@@ -1,0 +1,52 @@
+.group-header {
+  background-color: #13151b !important;
+  margin-bottom: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+  border-radius: 8px;
+}
+
+.friend-requests {
+  background-color: #312d28;
+  color: #ba9b55;
+}
+
+.social-count-badge {
+  background-color: #2d171b;
+  color: #df3a3a;
+  align-items: center;
+  justify-content: center;
+  padding: 1px 8px;
+}
+
+.lol-social-sidebar {
+  background-color: #0e1015;
+}
+
+.lol-social-chat-window #chat-window-wrapper {
+  background-color: rgba(14, 16, 21, 0.88) !important;
+  border: thin solid #13151b !important;
+}
+
+.lol-social-actions-bar .friend-finder-button,
+.lol-social-actions-bar .folder-button,
+.lol-social-actions-bar .options-button,
+.lol-social-actions-bar .filter-button {
+  background-color: #7f8085;
+}
+
+.navbar_backdrop {
+  background-color: rgba(14, 16, 21, 0.85);
+}
+
+.their-bubble {
+  background-color: #132e31 !important;
+}
+
+.my-bubble {
+  background-color: #2d171b !important;
+}
+
+.lol-social-friend-request-modal {
+  background: #0e1015;
+}
