@@ -6,20 +6,20 @@ using System.Diagnostics;
 using System.Globalization;
 using System.IO;
 using System.Linq;
-using System.Net;
+using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Media;
-using System.Net.Http;
-using System.Text.Json;
 using System.IO.Compression;
 using System.Net.Http.Handlers;
+using System.Net;
 
 namespace Blitz_Troubleshooter
 {
-    public partial class Troubleshooter
+    public partial class Troubleshooter : Window
     {
+        #region Fields and Constants
         private readonly SolidColorBrush DarkColor = new SolidColorBrush(Color.FromRgb(14, 16, 21));
         private readonly SolidColorBrush DarkBGColor = new SolidColorBrush(Color.FromRgb(39, 42, 48));
         private readonly SolidColorBrush BlueColor = new SolidColorBrush(Color.FromRgb(18, 26, 43));
@@ -40,7 +40,38 @@ namespace Blitz_Troubleshooter
         };
         private readonly Stopwatch _sw = new Stopwatch();
         private readonly ResourceDictionary dict = new ResourceDictionary();
+        private const string LocalAppDataPath = @"%localappdata%\programs\blitz";
+        #endregion
 
+        #region Initialization and UI Configuration
+        public Troubleshooter()
+        {
+            InitializeComponent();
+            Grid.Background = DarkColor;
+            Window1.Title = "Version 2.30";
+            SetLanguageDictionary(dict);
+            Loaded += Troubleshooter_Loaded;
+        }
+
+        private void Troubleshooter_Loaded(object sender, RoutedEventArgs e)
+        {
+            Btn2.Measure(new Size(double.PositiveInfinity, double.PositiveInfinity));
+            Btn4.Measure(new Size(double.PositiveInfinity, double.PositiveInfinity));
+            Btn3.Measure(new Size(double.PositiveInfinity, double.PositiveInfinity));
+            Btn5.Measure(new Size(double.PositiveInfinity, double.PositiveInfinity));
+
+            double maxWidth = Math.Max(Btn2.DesiredSize.Width, Btn4.DesiredSize.Width);
+            double minWidth = Math.Max(Btn3.DesiredSize.Width, Btn5.DesiredSize.Width);
+
+            spmain.Width = maxWidth + minWidth + 50; // Adjust the constant based on your layout requirements
+
+            // Set the maximum width of the window
+            MaxWidth = 800; // Adjust this value based on your requirements
+            SizeToContent = SizeToContent.Width;
+        }
+        #endregion
+
+        #region Language Management
         public Uri GetLang(ResourceDictionary resourceDictionary, string lang = "")
         {
             var text = string.IsNullOrEmpty(lang) ? Thread.CurrentThread.CurrentCulture.ToString() : lang;
@@ -77,36 +108,24 @@ namespace Blitz_Troubleshooter
             Resources.MergedDictionaries.Add(resourceDictionary);
         }
 
-        public Troubleshooter()
+        private void ComboBox_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
         {
-            InitializeComponent();
-            Grid.Background = DarkColor;
-            Window1.Title = "Version 2.30";
-            SetLanguageDictionary(dict);
-            Loaded += Troubleshooter_Loaded;
+            Resources.MergedDictionaries.Remove(dict);
+            GetLang(dict, CbLang.SelectedValue.ToString());
+            Resources.MergedDictionaries.Add(dict);
 
-        }
-
-        private void Troubleshooter_Loaded(object sender, RoutedEventArgs e)
-        {
             Btn2.Measure(new Size(double.PositiveInfinity, double.PositiveInfinity));
             Btn4.Measure(new Size(double.PositiveInfinity, double.PositiveInfinity));
-            Btn3.Measure(new Size(double.PositiveInfinity, double.PositiveInfinity));
-            Btn5.Measure(new Size(double.PositiveInfinity, double.PositiveInfinity));
 
             double maxWidth = Math.Max(Btn2.DesiredSize.Width, Btn4.DesiredSize.Width);
             double minWidth = Math.Max(Btn3.DesiredSize.Width, Btn5.DesiredSize.Width);
 
             spmain.Width = maxWidth + minWidth + 50; // Adjust the constant based on your layout requirements
-
-            // Set the maximum width of the window
-            MaxWidth = 800; // Adjust this value based on your requirements
             SizeToContent = SizeToContent.Width;
         }
+        #endregion
 
-
-
-
+        #region Blitz Management
         private static void KillBlitz()
         {
             // Kill all Blitz processes
@@ -115,9 +134,7 @@ namespace Blitz_Troubleshooter
             {
                 process.Kill();
             }
-
         }
-
 
         private static void AppdataBlitz()
         {
@@ -136,6 +153,33 @@ namespace Blitz_Troubleshooter
             }
         }
 
+        private bool IsBlitzInstalled()
+        {
+            var blitzRegistryPath = @"SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall";
+            var blitzDisplayName = "Blitz";
+
+            using (var key = Registry.CurrentUser.OpenSubKey(blitzRegistryPath))
+            {
+                if (key != null)
+                {
+                    foreach (var subKeyName in key.GetSubKeyNames())
+                    {
+                        using (var subKey = key.OpenSubKey(subKeyName))
+                        {
+                            if (subKey?.GetValue("DisplayName") is string displayName && displayName.Contains(blitzDisplayName))
+                            {
+                                return true;
+                            }
+                        }
+                    }
+                }
+            }
+
+            return false;
+        }
+        #endregion
+
+        #region Download and Installation
         private void Client_DownloadProgressChanged(object sender, DownloadProgressChangedEventArgs e)
         {
             var bytesIn = double.Parse(e.BytesReceived.ToString());
@@ -143,31 +187,6 @@ namespace Blitz_Troubleshooter
             var percentage = bytesIn / totalBytes * 100;
             Labelspeed.Text = $"{e.BytesReceived / 1024d / _sw.Elapsed.TotalSeconds:0.00} kb/s";
             ProgressBar1.Value = int.Parse(Math.Truncate(percentage).ToString(CultureInfo.InvariantCulture));
-        }
-
-        private void EnableBtn()
-        {
-            Btn2.IsEnabled = true;
-            Btn3.IsEnabled = true;
-            Btn4.IsEnabled = true;
-            Btn1.IsEnabled = true;
-            Btn5.IsEnabled = true;
-            Btn6.IsEnabled = true;
-            Btn7.IsEnabled = true;
-            Btn8.IsEnabled = true;
-        }
-
-        private void DisableBtn()
-        {
-            Btn2.IsEnabled = false;
-            Btn1.IsEnabled = false;
-            Btn3.IsEnabled = false;
-            Btn4.IsEnabled = false;
-            Btn5.IsEnabled = false;
-            Btn6.IsEnabled = false;
-            Btn7.IsEnabled = false;
-            Btn8.IsEnabled = false;
-
         }
 
         private void Client_DownloadFileCompleted(object sender, AsyncCompletedEventArgs e)
@@ -180,7 +199,6 @@ namespace Blitz_Troubleshooter
             _sw.Reset();
         }
 
-
         private async void Button_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -191,26 +209,27 @@ namespace Blitz_Troubleshooter
                 Uninstall();
 
                 InputText.Text = (string)dict["dloading"];
-                var client = new HttpClient();
-
-                using (var response = await client.GetAsync("https://blitz.gg/download/win", HttpCompletionOption.ResponseHeadersRead))
-                using (var fileStream = new FileStream(_path + "temp.exe", FileMode.Create, FileAccess.Write, FileShare.None))
+                using (var client = new HttpClient())
                 {
-                    // Get the total size of the file from the Content-Length header
-                    var totalBytes = response.Content.Headers.ContentLength.GetValueOrDefault();
-
-                    var buffer = new byte[8192];
-                    var bytesRead = 0L;
-
-                    using (var downloadStream = await response.Content.ReadAsStreamAsync())
+                    using (var response = await client.GetAsync("https://blitz.gg/download/win", HttpCompletionOption.ResponseHeadersRead))
+                    using (var fileStream = new FileStream(_path + "temp.exe", FileMode.Create, FileAccess.Write, FileShare.None))
                     {
-                        while ((bytesRead = await downloadStream.ReadAsync(buffer, 0, buffer.Length)) > 0)
-                        {
-                            await fileStream.WriteAsync(buffer, 0, (int)bytesRead);
+                        // Get the total size of the file from the Content-Length header
+                        var totalBytes = response.Content.Headers.ContentLength.GetValueOrDefault();
 
-                            // Calculate the progress as a percentage and update the ProgressBar
-                            var progressPercentage = (double)fileStream.Length / totalBytes * 100;
-                            ProgressBar1.Value = progressPercentage;
+                        var buffer = new byte[8192];
+                        long bytesRead;
+
+                        using (var downloadStream = await response.Content.ReadAsStreamAsync())
+                        {
+                            while ((bytesRead = await downloadStream.ReadAsync(buffer, 0, buffer.Length)) > 0)
+                            {
+                                await fileStream.WriteAsync(buffer, 0, (int)bytesRead);
+
+                                // Calculate the progress as a percentage and update the ProgressBar
+                                var progressPercentage = (double)fileStream.Length / totalBytes * 100;
+                                ProgressBar1.Value = progressPercentage;
+                            }
                         }
                     }
                 }
@@ -226,8 +245,81 @@ namespace Blitz_Troubleshooter
             }
         }
 
+        private async void Btn8_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                var localAppDataPath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
+                var blitzFolderPath = Path.Combine(localAppDataPath, "programs", "blitz");
 
+                // Ensure the Blitz folder exists
+                Directory.CreateDirectory(blitzFolderPath);
 
+                var progressHandler = new ProgressMessageHandler();
+                var client = HttpClientFactory.Create(progressHandler);
+
+                // Update the progress bar as the file is downloaded
+                progressHandler.HttpReceiveProgress += (s, args) =>
+                {
+                    Dispatcher.Invoke(() =>
+                    {
+                        ProgressBar1.Value = args.ProgressPercentage;
+                    });
+                };
+
+                using (var response = await client.GetAsync("https://github.com/Ku-Tadao/IPostWeirdStuffHere/raw/master/Blitz.gg/Portable/blitzportable.zip", HttpCompletionOption.ResponseHeadersRead))
+                using (var fileStream = new FileStream(Path.Combine(blitzFolderPath, "blitzportable.zip"), FileMode.Create, FileAccess.Write, FileShare.None))
+                {
+                    // Download the file
+                    await response.Content.CopyToAsync(fileStream);
+                }
+
+                ZipFile.ExtractToDirectory(Path.Combine(blitzFolderPath, "blitzportable.zip"), blitzFolderPath);
+                string blitzExePath = Path.Combine(blitzFolderPath, "blitz.exe");
+                Process.Start(blitzExePath);
+
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show($"{dict["error"]}\nku_tadao\n\n{exception}");
+            }
+        }
+
+        private async Task DownloadAndExtractPortableFileAsync()
+        {
+            var localFilePath = Path.Combine(LocalAppDataPath, "blitzportable.zip");
+            using (var client = new HttpClient())
+            {
+                var response = await client.GetAsync("https://blitz.gg/download/win");
+                using (var fileStream = new FileStream(_path + "temp.exe", FileMode.Create, FileAccess.Write, FileShare.None))
+                {
+                    await response.Content.CopyToAsync(fileStream);
+                }
+            }
+            ZipFile.ExtractToDirectory(localFilePath, LocalAppDataPath);
+        }
+
+        private void EnsureBlitzFolderExists(object sender, RoutedEventArgs routedEventArgs)
+        {
+            if (!Directory.Exists(LocalAppDataPath))
+            {
+                Directory.CreateDirectory(LocalAppDataPath);
+            }
+            else
+            {
+                KillBlitz();
+
+                Directory.Delete(LocalAppDataPath, true);
+                Directory.CreateDirectory(LocalAppDataPath);
+
+                _ = DownloadAndExtractPortableFileAsync();
+
+                MessageBox.Show("Complete!");
+            }
+        }
+        #endregion
+
+        #region Overlay and Admin Settings
         private void BtnFixOverlayClick(object sender, RoutedEventArgs e)
         {
             var gameOpenCounts = CheckGamesOpen();
@@ -291,28 +383,27 @@ namespace Blitz_Troubleshooter
 
         private Dictionary<string, int> CheckGamesOpen()
         {
-
             var gameOpenCounts = new Dictionary<string, int>
-                {
-                    {"League of Legends", 0},
-                    {"CS:GO", 0},
-                    {"Valorant", 0},
-                    {"Fortnite", 0},
-                    {"Escape from Tarkov", 0},
-                    {"Apex Legends", 0},
-                    {"Minecraft", 0},
-                };
+            {
+                {"League of Legends", 0},
+                {"CS:GO", 0},
+                {"Valorant", 0},
+                {"Fortnite", 0},
+                {"Escape from Tarkov", 0},
+                {"Apex Legends", 0},
+                {"Minecraft", 0},
+            };
 
             var gameProcessNames = new Dictionary<string, string>
-                {
-                    {"League of Legends", "leagueclient"},
-                    {"CS:GO", "csgo"},
-                    {"Valorant", "valorant"},
-                    {"Fortnite", "fortnite"},
-                    {"Escape from Tarkov", "eft"},
-                    {"Apex Legends", "r5apex"},
-                    {"Minecraft", "minecraft"},
-                };
+            {
+                {"League of Legends", "leagueclient"},
+                {"CS:GO", "csgo"},
+                {"Valorant", "valorant"},
+                {"Fortnite", "fortnite"},
+                {"Escape from Tarkov", "eft"},
+                {"Apex Legends", "r5apex"},
+                {"Minecraft", "minecraft"},
+            };
 
             var allProcesses = Process.GetProcesses();
 
@@ -387,7 +478,6 @@ namespace Blitz_Troubleshooter
                     MessageBox.Show($"{dict["error"]}\nku_tadao\n\n{exception}");
                 }
 
-
             if (isblitzclientopen == 0) MessageBox.Show((string)dict["blitzmsg"]);
 
             if (isblitzclientopen > 0) MessageBox.Show((string)dict["fixedmsg"]);
@@ -435,7 +525,6 @@ namespace Blitz_Troubleshooter
             }
         }
 
-
         private void RemoveRunAsAdmin(string exeFilePath)
         {
             try
@@ -471,48 +560,9 @@ namespace Blitz_Troubleshooter
                 MessageBox.Show($"{dict["error"]}\nku_tadao\n\n{exception}");
             }
         }
+        #endregion
 
-        private async void Btn8_Click(object sender, RoutedEventArgs e)
-        {
-            try
-            {
-                var localAppDataPath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
-                var blitzFolderPath = Path.Combine(localAppDataPath, "programs", "blitz");
-
-                // Ensure the Blitz folder exists
-                Directory.CreateDirectory(blitzFolderPath);
-
-                var progressHandler = new ProgressMessageHandler();
-                var client = HttpClientFactory.Create(progressHandler);
-
-                // Update the progress bar as the file is downloaded
-                progressHandler.HttpReceiveProgress += (s, args) =>
-                {
-                    Dispatcher.Invoke(() =>
-                    {
-                        ProgressBar1.Value = args.ProgressPercentage;
-                    });
-                };
-
-                using (var response = await client.GetAsync("https://github.com/Ku-Tadao/IPostWeirdStuffHere/raw/master/Blitz.gg/Portable/blitzportable.zip", HttpCompletionOption.ResponseHeadersRead))
-                using (var fileStream = new FileStream(Path.Combine(blitzFolderPath, "blitzportable.zip"), FileMode.Create, FileAccess.Write, FileShare.None))
-                {
-                    // Download the file
-                    await response.Content.CopyToAsync(fileStream);
-                }
-
-                ZipFile.ExtractToDirectory(Path.Combine(blitzFolderPath, "blitzportable.zip"), blitzFolderPath);
-                string blitzExePath = Path.Combine(blitzFolderPath, "blitz.exe");
-                Process.Start(blitzExePath);
-
-            }
-            catch (Exception exception)
-            {
-                MessageBox.Show($"{dict["error"]}\nku_tadao\n\n{exception}");
-            }
-        }
-
-
+        #region Cache Management
         private async void Button_Click_2(object sender, RoutedEventArgs e)
         {
             try
@@ -527,79 +577,9 @@ namespace Blitz_Troubleshooter
                 MessageBox.Show($"{dict["error"]}\nku_tadao\n\n{exception.Message}");
             }
         }
+        #endregion
 
-
-        private bool IsBlitzInstalled()
-        {
-            var blitzRegistryPath = @"SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall";
-            var blitzDisplayName = "Blitz";
-
-            using (var key = Registry.CurrentUser.OpenSubKey(blitzRegistryPath))
-            {
-                if (key != null)
-                {
-                    foreach (var subKeyName in key.GetSubKeyNames())
-                    {
-                        using (var subKey = key.OpenSubKey(subKeyName))
-                        {
-                            if (subKey != null)
-                            {
-                                if (subKey.GetValue("DisplayName") is string displayName && displayName.Contains(blitzDisplayName))
-                                {
-                                    return true;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-
-            return false;
-        }
-
-
-        private async void Button_Click_4(object sender, RoutedEventArgs e)
-        {
-            try
-            {
-                if (IsBlitzInstalled())
-                {
-                    KillBlitz();
-                    await Task.Delay(1000);
-                    Uninstall();
-                    MessageBox.Show((string)dict["removedmsg"], "Blitz Un-installation", MessageBoxButton.OK,
-                        MessageBoxImage.Information);
-                }
-                else
-                {
-                    MessageBox.Show((string)dict["notinstalled"], "Blitz Un-installation", MessageBoxButton.OK,
-                        MessageBoxImage.Information);
-                }
-            }
-            catch (Exception exception)
-            {
-                MessageBox.Show($"{dict["error"]}\nku_tadao\n\n{exception}");
-            }
-        }
-
-
-        private void ComboBox_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
-        {
-            Resources.MergedDictionaries.Remove(dict);
-            GetLang(dict, CbLang.SelectedValue.ToString());
-            Resources.MergedDictionaries.Add(dict);
-
-            Btn2.Measure(new Size(double.PositiveInfinity, double.PositiveInfinity));
-            Btn4.Measure(new Size(double.PositiveInfinity, double.PositiveInfinity));
-
-            double maxWidth = Math.Max(Btn2.DesiredSize.Width, Btn4.DesiredSize.Width);
-            double minWidth = Math.Max(Btn3.DesiredSize.Width, Btn5.DesiredSize.Width);
-
-            spmain.Width = maxWidth + minWidth + 50; // Adjust the constant based on your layout requirements
-            SizeToContent = SizeToContent.Width;
-
-        }
-
+        #region UI Theme Handling
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             if (Grid.Background != BlueColor)
@@ -633,55 +613,58 @@ namespace Blitz_Troubleshooter
                 Btn8.Background = DarkBGColor;
             }
         }
+        #endregion
 
-
-        private class GitHubContent
+        #region Button_Click_4
+        public async void Button_Click_4(object sender, RoutedEventArgs e)
         {
-            public string Name { get; set; }
-            public string Type { get; set; }
-        }
-
-
-        private const string localAppDataPath = @"%localappdata%\programs\blitz";
-
-        private async Task DownloadAndExtractPortableFileAsync()
-        {
-            var localFilePath = Path.Combine(localAppDataPath, "blitzportable.zip");
-            using (var client = new HttpClient())
+            try
             {
-                var response = await client.GetAsync("https://blitz.gg/download/win");
-                using (var fileStream = new FileStream(_path + "temp.exe", FileMode.Create, FileAccess.Write, FileShare.None))
+                if (IsBlitzInstalled())
                 {
-                    await response.Content.CopyToAsync(fileStream);
+                    KillBlitz();
+                    await Task.Delay(1000);
+                    Uninstall();
+                    MessageBox.Show((string)dict["removedmsg"], "Blitz Un-installation", MessageBoxButton.OK,
+                        MessageBoxImage.Information);
+                }
+                else
+                {
+                    MessageBox.Show((string)dict["notinstalled"], "Blitz Un-installation", MessageBoxButton.OK,
+                        MessageBoxImage.Information);
                 }
             }
-            ZipFile.ExtractToDirectory(localFilePath, localAppDataPath);
+            catch (Exception exception)
+            {
+                MessageBox.Show($"{dict["error"]}\nku_tadao\n\n{exception}");
+            }
         }
+        #endregion
 
-
-
-
-        private void EnsureBlitzFolderExists(object sender, RoutedEventArgs routedEventArgs)
+        #region Button Enable/Disable
+        private void EnableBtn()
         {
-            if (!Directory.Exists(localAppDataPath))
-            {
-                Directory.CreateDirectory(localAppDataPath);
-            }
-            else
-            {
-                KillBlitz();
-
-                Directory.Delete(localAppDataPath, true);
-                Directory.CreateDirectory(localAppDataPath);
-
-                _ = DownloadAndExtractPortableFileAsync();
-
-                MessageBox.Show("Complete!");
-            }
+            Btn2.IsEnabled = true;
+            Btn3.IsEnabled = true;
+            Btn4.IsEnabled = true;
+            Btn1.IsEnabled = true;
+            Btn5.IsEnabled = true;
+            Btn6.IsEnabled = true;
+            Btn7.IsEnabled = true;
+            Btn8.IsEnabled = true;
         }
 
-
-
-
+        private void DisableBtn()
+        {
+            Btn2.IsEnabled = false;
+            Btn1.IsEnabled = false;
+            Btn3.IsEnabled = false;
+            Btn4.IsEnabled = false;
+            Btn5.IsEnabled = false;
+            Btn6.IsEnabled = false;
+            Btn7.IsEnabled = false;
+            Btn8.IsEnabled = false;
+        }
+        #endregion
     }
 }
