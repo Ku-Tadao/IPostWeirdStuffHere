@@ -81,13 +81,9 @@
   <PropertyGroup>
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
-    <UsingTask TaskName="ILRepack" AssemblyFile="$(NuGetPackageRoot)packages\ILRepack.Lib.MSBuild.Task.2.0.32\build\ILRepack.Lib.MSBuild.Task.dll" />
+	<Import Project="packages\ILRepack.Lib.MSBuild.Task.2.0.34.2\build\ILRepack.Lib.MSBuild.Task.targets" Condition="Exists('packages\ILRepack.Lib.MSBuild.Task.2.0.34.2\build\ILRepack.Lib.MSBuild.Task.targets')" />
   <Target Name="AfterBuild">
-    <ILRepack 
-      Parallel="true" 
-      DebugInfo="true" 
-      OutputFile="$(OutputPath)$(AssemblyName)-merged.exe" 
-      InputAssemblies="$(OutputPath)$(AssemblyName).exe;$(OutputPath)Microsoft.Bcl.AsyncInterfaces.dll;$(OutputPath)Newtonsoft.Json.dll;$(OutputPath)Newtonsoft.Json.Bson.dll;$(OutputPath)System.Buffers.dll;$(OutputPath)System.IO.Compression.ZipFile.dll;$(OutputPath)System.Memory.dll;$(OutputPath)System.Net.Http.Formatting.dll;$(OutputPath)System.Numerics.Vectors.dll;$(OutputPath)System.Runtime.CompilerServices.Unsafe.dll;$(OutputPath)System.Text.Encodings.Web.dll;$(OutputPath)System.Text.Json.dll;$(OutputPath)System.Threading.Tasks.Extensions.dll;$(OutputPath)System.ValueTuple.dll" />
+    <ILRepack Parallel="true" DebugInfo="true" OutputFile="$(OutputPath)$(AssemblyName)-merged.exe" InputAssemblies="$(OutputPath)$(AssemblyName).exe;$(OutputPath)Microsoft.Bcl.AsyncInterfaces.dll;$(OutputPath)Newtonsoft.Json.dll;$(OutputPath)Newtonsoft.Json.Bson.dll;$(OutputPath)System.Buffers.dll;$(OutputPath)System.IO.Compression.ZipFile.dll;$(OutputPath)System.Memory.dll;$(OutputPath)System.Net.Http.Formatting.dll;$(OutputPath)System.Numerics.Vectors.dll;$(OutputPath)System.Runtime.CompilerServices.Unsafe.dll;$(OutputPath)System.Text.Encodings.Web.dll;$(OutputPath)System.Text.Json.dll;$(OutputPath)System.Threading.Tasks.Extensions.dll;$(OutputPath)System.ValueTuple.dll" />
   </Target>
   <ItemGroup>
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
@@ -126,8 +122,8 @@
     <Reference Include="System.Text.Encodings.Web, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.Text.Encodings.Web.8.0.0\lib\net462\System.Text.Encodings.Web.dll</HintPath>
     </Reference>
-    <Reference Include="System.Text.Json, Version=8.0.0.3, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>packages\System.Text.Json.8.0.3\lib\net462\System.Text.Json.dll</HintPath>
+    <Reference Include="System.Text.Json, Version=8.0.0.4, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Text.Json.8.0.4\lib\net462\System.Text.Json.dll</HintPath>
     </Reference>
     <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
@@ -248,11 +244,11 @@
     <None Include="Todo.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Import Project="packages\ILRepack.Lib.MSBuild.Task.2.0.32\build\ILRepack.Lib.MSBuild.Task.targets" Condition="Exists('packages\ILRepack.Lib.MSBuild.Task.2.0.32\build\ILRepack.Lib.MSBuild.Task.targets')" />
+  <Import Project="packages\ILRepack.Lib.MSBuild.Task.2.0.34.2\build\ILRepack.Lib.MSBuild.Task.targets" Condition="Exists('packages\ILRepack.Lib.MSBuild.Task.2.0.34.2\build\ILRepack.Lib.MSBuild.Task.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('packages\ILRepack.Lib.MSBuild.Task.2.0.32\build\ILRepack.Lib.MSBuild.Task.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\ILRepack.Lib.MSBuild.Task.2.0.32\build\ILRepack.Lib.MSBuild.Task.targets'))" />
+    <Error Condition="!Exists('packages\ILRepack.Lib.MSBuild.Task.2.0.34.2\build\ILRepack.Lib.MSBuild.Task.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\ILRepack.Lib.MSBuild.Task.2.0.34.2\build\ILRepack.Lib.MSBuild.Task.targets'))" />
   </Target>
 </Project>
