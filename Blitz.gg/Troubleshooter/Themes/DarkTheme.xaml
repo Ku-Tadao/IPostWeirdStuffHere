@@ -1,0 +1,28 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Color x:Key="AppBackgroundColor">#FF0E1015</Color>
+    <Color x:Key="PanelBackgroundColor">#FF181A20</Color>
+    <Color x:Key="PanelHoverBackgroundColor">#FF22252E</Color>
+    <Color x:Key="TextColorColor">#FFEBECE9</Color>
+    <Color x:Key="HeaderTextColorColor">#FFFFFFFF</Color>
+    <Color x:Key="BorderColorColor">#FF3A3F4B</Color>
+    <Color x:Key="AccentColorColor">#FF00A8FF</Color>
+    <Color x:Key="AccentTextColorColor">#FFFFFFFF</Color>
+    <Color x:Key="DisabledForegroundColor">#FF6A6A6A</Color>
+    <Color x:Key="DisabledBackgroundColor">#FF2D2D2D</Color>
+
+    <SolidColorBrush x:Key="AppBackgroundBrush" Color="{StaticResource AppBackgroundColor}"/>
+    <SolidColorBrush x:Key="PanelBackgroundBrush" Color="{StaticResource PanelBackgroundColor}"/>
+    <SolidColorBrush x:Key="PanelHoverBackgroundBrush" Color="{StaticResource PanelHoverBackgroundColor}"/>
+    <SolidColorBrush x:Key="TextBrush" Color="{StaticResource TextColorColor}"/>
+    <SolidColorBrush x:Key="HeaderTextBrush" Color="{StaticResource HeaderTextColorColor}"/>
+    <SolidColorBrush x:Key="BorderBrush" Color="{StaticResource BorderColorColor}"/>
+    <SolidColorBrush x:Key="AccentBrush" Color="{StaticResource AccentColorColor}"/>
+    <SolidColorBrush x:Key="AccentTextBrush" Color="{StaticResource AccentTextColorColor}"/>
+    <SolidColorBrush x:Key="DisabledForegroundBrush" Color="{StaticResource DisabledForegroundColor}"/>
+    <SolidColorBrush x:Key="DisabledBackgroundBrush" Color="{StaticResource DisabledBackgroundColor}"/>
+
+    <FontFamily x:Key="AppFontFamily">./../Assets/Fonts/#Inter</FontFamily>
+  
+</ResourceDictionary>
