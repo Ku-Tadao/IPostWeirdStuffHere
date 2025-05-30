@@ -1,0 +1,122 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib">
+
+    
+    <system:String x:Key="windowTitle">Blitz Troubleshooter</system:String> 
+    <system:String x:Key="themeToggleButtonTooltipSwitchTo">Переключиться на </system:String> 
+    <system:String x:Key="themeToggleButtonTooltipTheme"> Тему</system:String> 
+    <system:String x:Key="themeNameDark">Темная</system:String> 
+    <system:String x:Key="themeNameBlue">Синяя</system:String> 
+
+    
+    <system:String x:Key="tabHeaderTroubleshooting">Устранение неполадок</system:String> 
+    <system:String x:Key="tabHeaderRunningGames">Запущенные игры</system:String> 
+
+    
+    <system:String x:Key="troubleshootingActionsHeader">Действия по устранению неполадок</system:String> 
+    <system:String x:Key="fixAllIssuesButtonContent">Устранить все существующие неполадки</system:String> 
+    <system:String x:Key="fixAllIssuesButtonTooltip">Завершить процессы, удалить и загрузить последнюю версию</system:String> 
+    <system:String x:Key="terminateProcessesButtonContent">Завершить процессы Blitz</system:String> 
+    <system:String x:Key="clearCacheButtonContent">Очистить кэш</system:String> 
+    <system:String x:Key="uninstallBlitzButtonContent">Удалить Blitz</system:String> 
+    <system:String x:Key="downloadPortableButtonContent">Скачать портативную версию</system:String> 
+    <system:String x:Key="blitzInstallationStatusHeader">Статус установки Blitz</system:String> 
+    <system:String x:Key="statusLabel">Статус: </system:String> 
+    <system:String x:Key="blitzStatusInstalled">Установлено</system:String> 
+    <system:String x:Key="blitzStatusCorrupted">Повреждено</system:String> 
+    <system:String x:Key="blitzStatusNotInstalled">Blitz не найден в списке установленных приложений в данной системе</system:String> 
+    <system:String x:Key="pathLabel">Путь: </system:String> 
+    <system:String x:Key="pathNotFoundFallback">Не найден</system:String> 
+    <system:String x:Key="versionLabel">Версия: </system:String> 
+    <system:String x:Key="versionNotAvailableFallback">Н/Д</system:String> 
+    <system:String x:Key="corruptedInstallationWarning1">⚠️ Обнаружены отсутствующие исполняемые файлы. </system:String> 
+    <system:String x:Key="corruptedInstallationWarning2">Используйте 'Устранить все существующие неполадки' для восстановления установки.</system:String> 
+    <system:String x:Key="refreshButtonContent">Обновить</system:String> 
+
+    
+    <system:String x:Key="currentlyRunningGamesHeader">Текущие запущенные игры</system:String> 
+    <system:String x:Key="noGamesRunning">Нет запущенных поддерживаемых игр</system:String> 
+    <system:String x:Key="checkRunningGamesButtonContent">Проверить запущенные игры</system:String> 
+
+    
+    <system:String x:Key="statusBarFallbackText">Статус...</system:String> 
+
+    
+    <system:String x:Key="statusReady">Готово</system:String> 
+    <system:String x:Key="statusErrorInitializing">Ошибка при инициализации</system:String> 
+    <system:String x:Key="statusCheckingBlitzInstallation">Проверка установки Blitz...</system:String> 
+    <system:String x:Key="statusBlitzInstalledAt">Blitz установлен в: {0}</system:String> 
+    <system:String x:Key="statusBlitzCorruptedMessage">Установка Blitz повреждена - файлы найдены, но основной исполняемый файл отсутствует</system:String> 
+    <system:String x:Key="statusBlitzNotDetected">Blitz не обнаружен</system:String> 
+    <system:String x:Key="statusUnknownInstallation">Неизвестный статус установки</system:String> 
+    <system:String x:Key="statusErrorCheckingBlitzInstallation">Ошибка проверки установки Blitz</system:String> 
+    <system:String x:Key="statusCheckingRunningGames">Проверка запущенных игр...</system:String> 
+    <system:String x:Key="statusRunningGamesList">Запущенные игры: {0}</system:String> 
+    <system:String x:Key="statusNoSupportedGamesRunning">Нет запущенных поддерживаемых игр</system:String> 
+    <system:String x:Key="statusErrorCheckingRunningGames">Ошибка проверки запущенных игр</system:String> 
+    <system:String x:Key="statusTerminatingProcesses">Завершение процессов Blitz...</system:String> 
+    <system:String x:Key="statusUninstallingExistingBlitz">Удаление существующей установки Blitz...</system:String> 
+    <system:String x:Key="statusDownloadingInstaller">Скачивание последней версии установщика Blitz...</system:String> 
+    <system:String x:Key="statusTroubleshootingComplete">Устранение неполадок успешно завершено</system:String> 
+    <system:String x:Key="statusFixAllSuccessForced">Все неполадки успешно устранены (принудительно)</system:String> 
+    <system:String x:Key="statusFixAllSuccess">Все неполадки успешно устранены</system:String> 
+    <system:String x:Key="statusProceedingDespiteGames">Продолжение устранения неполадок несмотря на запущенные игры...</system:String> 
+    <system:String x:Key="statusTroubleshootingCancelledCloseGames">Устранение неполадок отменено - сначала закройте запущенные игры</system:String> 
+    <system:String x:Key="statusOperationFinished">Операция завершена.</system:String> 
+    <system:String x:Key="statusFailedToTerminateProcessesGeneral">Не удалось завершить процессы</system:String> 
+    <system:String x:Key="statusErrorTerminatingProcesses">Ошибка при завершении процессов</system:String> 
+    <system:String x:Key="statusClearingCache">Очистка кэша Blitz...</system:String> 
+    <system:String x:Key="statusFailedToClearCacheGeneral">Не удалось очистить кэш</system:String> 
+    <system:String x:Key="statusErrorClearingCache">Ошибка при очистке кэша</system:String> 
+    <system:String x:Key="statusUninstallingBlitzProgress">Удаление Blitz...</system:String> 
+    <system:String x:Key="statusErrorUninstallingBlitz">Ошибка при удалении Blitz</system:String> 
+    <system:String x:Key="statusDownloadingPortable">Скачивание портативной версии Blitz...</system:String> 
+    <system:String x:Key="statusFailedToDownloadPortableGeneral">Не удалось скачать портативную версию Blitz</system:String> 
+    <system:String x:Key="statusErrorDownloadingPortable">Ошибка при скачивании портативной версии Blitz</system:String> 
+    <system:String x:Key="statusThemeSetTo">Тема установлена на {0}</system:String> 
+    <system:String x:Key="statusErrorApplyingTheme">Ошибка применения темы: {0}</system:String> 
+
+    
+    <system:String x:Key="titleSuccess">Успех</system:String> 
+    <system:String x:Key="titleError">Ошибка</system:String> 
+    <system:String x:Key="titleRunningGamesDetected">Обнаружены запущенные игры</system:String> 
+    <system:String x:Key="titleConfirmUninstall">Подтвердить удаление</system:String> 
+
+    
+    <system:String x:Key="promptRunningGamesDetectedMessage">Следующие игры в настоящее время запущены: {0}
+
+Пожалуйста, закройте эти игры перед продолжением устранения неполадок, чтобы избежать потери данных или конфликтов.
+
+Хотите продолжить?</system:String> 
+    <system:String x:Key="messageErrorPrefix">Ошибка: </system:String> 
+    <system:String x:Key="messageUnexpectedErrorPrefix">Неожиданная ошибка: </system:String> 
+    <system:String x:Key="promptConfirmUninstallMessage">Вы уверены, что хотите удалить Blitz? Это приведет к удалению всех файлов Blitz.</system:String> 
+
+    
+    <system:String x:Key="serviceTerminatedProcessesCount">Завершено {0} процессов.</system:String> 
+    <system:String x:Key="serviceFailedToTerminateProcesses">Не удалось завершить процессы.</system:String> 
+    <system:String x:Key="serviceBlitzIsNotInstalledMessage">Blitz не установлен.</system:String> 
+    <system:String x:Key="servicePartiallyRemovedBlitz">Частично удалено {0} (удалено {1} каталогов). Ошибки: {2}</system:String> 
+    <system:String x:Key="serviceSuccessfullyRemovedBlitz">Успешно удалено {0} (удалено {1} каталогов).</system:String> 
+    <system:String x:Key="serviceFailedToUninstallBlitzMessage">Не удалось удалить Blitz.</system:String> 
+    <system:String x:Key="serviceCacheClearedSuccessfullyCount">Кэш успешно очищен (удалено {0} папок).</system:String> 
+    <system:String x:Key="serviceNoCacheFoldersFound">Папки кэша для очистки не найдены.</system:String> 
+    <system:String x:Key="serviceFailedToClearCacheMessage">Не удалось очистить кэш.</system:String> 
+    <system:String x:Key="serviceInstallerLaunched">Установщик Blitz загружен и успешно запущен.</system:String> 
+    <system:String x:Key="serviceInstallationCancelledByUser">Установка отменена пользователем (запрос UAC отклонен).</system:String> 
+    <system:String x:Key="serviceFailedToDownloadInstallFull">Не удалось скачать и установить Blitz: {0}</system:String> 
+    <system:String x:Key="servicePortableDownloadedExtractedLaunchManually">Портативный Blitz загружен и извлечен в: {0}
+Доступные исполняемые файлы: {1}
+Пожалуйста, запустите вручную.</system:String> 
+    <system:String x:Key="servicePortableDownloadedExtractedLaunched">Портативный Blitz успешно загружен, извлечен и запущен.</system:String> 
+    <system:String x:Key="serviceFailedToDownloadPortableFull">Не удалось скачать портативный Blitz: {0}</system:String> 
+    <system:String x:Key="serviceFixAllSuccessForcedMessage">Все неполадки успешно устранены (принудительно).</system:String> 
+    <system:String x:Key="serviceFixAllSuccessMessage">Все неполадки успешно устранены.</system:String> 
+    <system:String x:Key="serviceFailedToFixAllIssues">Не удалось устранить все неполадки.</system:String> 
+
+    
+    <system:String x:Key="termCorruptedInstallation">поврежденная установка</system:String> 
+    <system:String x:Key="termInstallation">установка</system:String> 
+
+</ResourceDictionary>

@@ -1,0 +1,122 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib">
+
+    
+    <system:String x:Key="windowTitle">Blitz Sorun Giderici</system:String> 
+    <system:String x:Key="themeToggleButtonTooltipSwitchTo">Şuna geç: </system:String> 
+    <system:String x:Key="themeToggleButtonTooltipTheme"> Tema</system:String> 
+    <system:String x:Key="themeNameDark">Karanlık</system:String> 
+    <system:String x:Key="themeNameBlue">Mavi</system:String> 
+
+    
+    <system:String x:Key="tabHeaderTroubleshooting">Sorun Giderme</system:String> 
+    <system:String x:Key="tabHeaderRunningGames">Çalışan Oyunlar</system:String> 
+
+    
+    <system:String x:Key="troubleshootingActionsHeader">Sorun Giderme Eylemleri</system:String> 
+    <system:String x:Key="fixAllIssuesButtonContent">Tüm Genel Sorunları Düzeltin</system:String> 
+    <system:String x:Key="fixAllIssuesButtonTooltip">İşlemleri sonlandırın, kaldırın ve en son sürümü indirin</system:String> 
+    <system:String x:Key="terminateProcessesButtonContent">Blitz İşlemlerini Sonlandır</system:String> 
+    <system:String x:Key="clearCacheButtonContent">Önbelleği Temizle</system:String> 
+    <system:String x:Key="uninstallBlitzButtonContent">Blitz'i Kaldır</system:String> 
+    <system:String x:Key="downloadPortableButtonContent">Taşınabilir Sürümü İndir</system:String> 
+    <system:String x:Key="blitzInstallationStatusHeader">Blitz Kurulum Durumu</system:String> 
+    <system:String x:Key="statusLabel">Durum: </system:String> 
+    <system:String x:Key="blitzStatusInstalled">Kurulu</system:String> 
+    <system:String x:Key="blitzStatusCorrupted">Bozuk</system:String> 
+    <system:String x:Key="blitzStatusNotInstalled">Blitz bu sistemde kurulu değil</system:String> 
+    <system:String x:Key="pathLabel">Yol: </system:String> 
+    <system:String x:Key="pathNotFoundFallback">Bulunamadı</system:String> 
+    <system:String x:Key="versionLabel">Sürüm: </system:String> 
+    <system:String x:Key="versionNotAvailableFallback">N/A</system:String> 
+    <system:String x:Key="corruptedInstallationWarning1">⚠️ Eksik yürütülebilir dosyalar algılandı. </system:String> 
+    <system:String x:Key="corruptedInstallationWarning2">'Tüm Genel Sorunları Düzeltin' seçeneğini kullanarak kurulumu onarın.</system:String> 
+    <system:String x:Key="refreshButtonContent">Yenile</system:String> 
+
+    
+    <system:String x:Key="currentlyRunningGamesHeader">Şu Anda Çalışan Oyunlar</system:String> 
+    <system:String x:Key="noGamesRunning">Şu anda çalışan desteklenen oyun yok</system:String> 
+    <system:String x:Key="checkRunningGamesButtonContent">Çalışan Oyunları Kontrol Et</system:String> 
+
+    
+    <system:String x:Key="statusBarFallbackText">Durum...</system:String> 
+
+    
+    <system:String x:Key="statusReady">Hazır</system:String> 
+    <system:String x:Key="statusErrorInitializing">Başlatma sırasında hata</system:String> 
+    <system:String x:Key="statusCheckingBlitzInstallation">Blitz kurulumu kontrol ediliyor...</system:String> 
+    <system:String x:Key="statusBlitzInstalledAt">Blitz şuraya kurulu: {0}</system:String> 
+    <system:String x:Key="statusBlitzCorruptedMessage">Blitz kurulumu bozuk - dosyalar bulundu ancak ana yürütülebilir dosya eksik</system:String> 
+    <system:String x:Key="statusBlitzNotDetected">Blitz algılanmadı</system:String> 
+    <system:String x:Key="statusUnknownInstallation">Bilinmeyen kurulum durumu</system:String> 
+    <system:String x:Key="statusErrorCheckingBlitzInstallation">Blitz kurulumu kontrol edilirken hata</system:String> 
+    <system:String x:Key="statusCheckingRunningGames">Çalışan oyunlar kontrol ediliyor...</system:String> 
+    <system:String x:Key="statusRunningGamesList">Çalışan oyunlar: {0}</system:String> 
+    <system:String x:Key="statusNoSupportedGamesRunning">Şu anda çalışan desteklenen oyun yok</system:String> 
+    <system:String x:Key="statusErrorCheckingRunningGames">Çalışan oyunlar kontrol edilirken hata</system:String> 
+    <system:String x:Key="statusTerminatingProcesses">Blitz işlemleri sonlandırılıyor...</system:String> 
+    <system:String x:Key="statusUninstallingExistingBlitz">Mevcut Blitz kurulumu kaldırılıyor...</system:String> 
+    <system:String x:Key="statusDownloadingInstaller">En son Blitz yükleyicisi indiriliyor...</system:String> 
+    <system:String x:Key="statusTroubleshootingComplete">Sorun giderme başarıyla tamamlandı</system:String> 
+    <system:String x:Key="statusFixAllSuccessForced">Tüm sorunlar başarıyla düzeltildi (zorla)</system:String> 
+    <system:String x:Key="statusFixAllSuccess">Tüm sorunlar başarıyla düzeltildi</system:String> 
+    <system:String x:Key="statusProceedingDespiteGames">Çalışan oyunlara rağmen sorun gidermeye devam ediliyor...</system:String> 
+    <system:String x:Key="statusTroubleshootingCancelledCloseGames">Sorun giderme iptal edildi - lütfen önce çalışan oyunları kapatın</system:String> 
+    <system:String x:Key="statusOperationFinished">İşlem tamamlandı.</system:String> 
+    <system:String x:Key="statusFailedToTerminateProcessesGeneral">İşlemler sonlandırılamadı</system:String> 
+    <system:String x:Key="statusErrorTerminatingProcesses">İşlemler sonlandırılırken hata</system:String> 
+    <system:String x:Key="statusClearingCache">Blitz önbelleği temizleniyor...</system:String> 
+    <system:String x:Key="statusFailedToClearCacheGeneral">Önbellek temizlenemedi</system:String> 
+    <system:String x:Key="statusErrorClearingCache">Önbellek temizlenirken hata</system:String> 
+    <system:String x:Key="statusUninstallingBlitzProgress">Blitz kaldırılıyor...</system:String> 
+    <system:String x:Key="statusErrorUninstallingBlitz">Blitz kaldırılırken hata</system:String> 
+    <system:String x:Key="statusDownloadingPortable">Blitz taşınabilir sürümü indiriliyor...</system:String> 
+    <system:String x:Key="statusFailedToDownloadPortableGeneral">Blitz taşınabilir sürümü indirilemedi</system:String> 
+    <system:String x:Key="statusErrorDownloadingPortable">Blitz taşınabilir sürümü indirilirken hata</system:String> 
+    <system:String x:Key="statusThemeSetTo">Tema {0} olarak ayarlandı</system:String> 
+    <system:String x:Key="statusErrorApplyingTheme">Tema uygulanırken hata: {0}</system:String> 
+
+    
+    <system:String x:Key="titleSuccess">Başarılı</system:String> 
+    <system:String x:Key="titleError">Hata</system:String> 
+    <system:String x:Key="titleRunningGamesDetected">Çalışan Oyunlar Algılandı</system:String> 
+    <system:String x:Key="titleConfirmUninstall">Kaldırmayı Onayla</system:String> 
+
+    
+    <system:String x:Key="promptRunningGamesDetectedMessage">Aşağıdaki oyunlar şu anda çalışıyor: {0}
+
+Veri kaybını veya çakışmaları önlemek için sorun gidermeye devam etmeden önce lütfen bu oyunları kapatın.
+
+Yine de devam etmek istiyor musunuz?</system:String> 
+    <system:String x:Key="messageErrorPrefix">Hata: </system:String> 
+    <system:String x:Key="messageUnexpectedErrorPrefix">Beklenmeyen hata: </system:String> 
+    <system:String x:Key="promptConfirmUninstallMessage">Blitz'i kaldırmak istediğinizden emin misiniz? Bu, tüm Blitz dosyalarını kaldıracaktır.</system:String> 
+
+    
+    <system:String x:Key="serviceTerminatedProcessesCount">{0} işlem sonlandırıldı.</system:String> 
+    <system:String x:Key="serviceFailedToTerminateProcesses">İşlemler sonlandırılamadı.</system:String> 
+    <system:String x:Key="serviceBlitzIsNotInstalledMessage">Blitz kurulu değil.</system:String> 
+    <system:String x:Key="servicePartiallyRemovedBlitz">{0} kısmen kaldırıldı ({1} dizin silindi). Hatalar: {2}</system:String> 
+    <system:String x:Key="serviceSuccessfullyRemovedBlitz">{0} başarıyla kaldırıldı ({1} dizin silindi).</system:String> 
+    <system:String x:Key="serviceFailedToUninstallBlitzMessage">Blitz kaldırılamadı.</system:String> 
+    <system:String x:Key="serviceCacheClearedSuccessfullyCount">Önbellek başarıyla temizlendi ({0} klasör silindi).</system:String> 
+    <system:String x:Key="serviceNoCacheFoldersFound">Temizlenecek önbellek klasörü bulunamadı.</system:String> 
+    <system:String x:Key="serviceFailedToClearCacheMessage">Önbellek temizlenemedi.</system:String> 
+    <system:String x:Key="serviceInstallerLaunched">Blitz yükleyicisi indirildi ve başarıyla başlatıldı.</system:String> 
+    <system:String x:Key="serviceInstallationCancelledByUser">Kurulum kullanıcı tarafından iptal edildi (UAC istemi reddedildi).</system:String> 
+    <system:String x:Key="serviceFailedToDownloadInstallFull">Blitz indirilirken ve kurulurken hata oluştu: {0}</system:String> 
+    <system:String x:Key="servicePortableDownloadedExtractedLaunchManually">Blitz taşınabilir sürümü şuraya indirildi ve çıkarıldı: {0}
+Kullanılabilir yürütülebilir dosyalar: {1}
+Lütfen manuel olarak başlatın.</system:String> 
+    <system:String x:Key="servicePortableDownloadedExtractedLaunched">Blitz taşınabilir sürümü başarıyla indirildi, çıkarıldı ve başlatıldı.</system:String> 
+    <system:String x:Key="serviceFailedToDownloadPortableFull">Blitz taşınabilir sürümü indirilirken hata oluştu: {0}</system:String> 
+    <system:String x:Key="serviceFixAllSuccessForcedMessage">Tüm sorunlar başarıyla düzeltildi (zorla).</system:String> 
+    <system:String x:Key="serviceFixAllSuccessMessage">Tüm sorunlar başarıyla düzeltildi.</system:String> 
+    <system:String x:Key="serviceFailedToFixAllIssues">Tüm sorunlar düzeltilemedi.</system:String> 
+
+    
+    <system:String x:Key="termCorruptedInstallation">bozuk kurulum</system:String> 
+    <system:String x:Key="termInstallation">kurulum</system:String> 
+
+</ResourceDictionary>

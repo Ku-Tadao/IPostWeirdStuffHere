@@ -1,0 +1,112 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib">
+
+    <system:String x:Key="windowTitle">Blitz Troubleshooter</system:String>
+    <system:String x:Key="themeToggleButtonTooltipSwitchTo">Switch to </system:String>
+    <system:String x:Key="themeToggleButtonTooltipTheme"> Theme</system:String>
+    <system:String x:Key="themeNameDark">Dark</system:String>
+    <system:String x:Key="themeNameBlue">Blue</system:String>
+
+    <system:String x:Key="tabHeaderTroubleshooting">Troubleshooting</system:String>
+    <system:String x:Key="tabHeaderRunningGames">Running Games</system:String>
+
+    <system:String x:Key="troubleshootingActionsHeader">Troubleshooting Actions</system:String>
+    <system:String x:Key="fixAllIssuesButtonContent">Fix All Common Issues</system:String> 
+    <system:String x:Key="fixAllIssuesButtonTooltip">Terminate processes, uninstall, and download latest version</system:String>
+    <system:String x:Key="terminateProcessesButtonContent">Terminate Blitz Processes</system:String>
+    <system:String x:Key="clearCacheButtonContent">Clear Cache</system:String>
+    <system:String x:Key="uninstallBlitzButtonContent">Uninstall Blitz</system:String>
+    <system:String x:Key="downloadPortableButtonContent">Download Portable Version</system:String>
+    <system:String x:Key="blitzInstallationStatusHeader">Blitz Installation Status</system:String>
+    <system:String x:Key="statusLabel">Status: </system:String>
+    <system:String x:Key="blitzStatusInstalled">Installed</system:String>
+    <system:String x:Key="blitzStatusCorrupted">Corrupted</system:String>
+    <system:String x:Key="blitzStatusNotInstalled">Not Installed</system:String>
+    <system:String x:Key="pathLabel">Path: </system:String>
+    <system:String x:Key="pathNotFoundFallback">Not found</system:String>
+    <system:String x:Key="versionLabel">Version: </system:String>
+    <system:String x:Key="versionNotAvailableFallback">N/A</system:String>
+    <system:String x:Key="corruptedInstallationWarning1">⚠️ Missing executables detected. </system:String>
+    <system:String x:Key="corruptedInstallationWarning2">Use 'Fix All Common Issues' to repair the installation.</system:String>
+    <system:String x:Key="refreshButtonContent">Refresh</system:String>
+
+    <system:String x:Key="currentlyRunningGamesHeader">Currently Running Games</system:String>
+    <system:String x:Key="noGamesRunning">No supported games are currently running</system:String>
+    <system:String x:Key="checkRunningGamesButtonContent">Check Running Games</system:String>
+
+    <system:String x:Key="statusBarFallbackText">Status...</system:String>
+
+    <system:String x:Key="statusReady">Ready</system:String>
+    <system:String x:Key="statusErrorInitializing">Error during initialization</system:String>
+    <system:String x:Key="statusCheckingBlitzInstallation">Checking Blitz installation...</system:String>
+    <system:String x:Key="statusBlitzInstalledAt">Blitz installed at: {0}</system:String>
+    <system:String x:Key="statusBlitzCorruptedMessage">Blitz installation corrupted - files found but main executable missing</system:String>
+    <system:String x:Key="statusBlitzNotDetected">Blitz not detected</system:String>
+    <system:String x:Key="statusUnknownInstallation">Unknown installation status</system:String>
+    <system:String x:Key="statusErrorCheckingBlitzInstallation">Error checking Blitz installation</system:String>
+    <system:String x:Key="statusCheckingRunningGames">Checking running games...</system:String>
+    <system:String x:Key="statusRunningGamesList">Running games: {0}</system:String>
+    <system:String x:Key="statusNoSupportedGamesRunning">No supported games currently running</system:String> 
+    <system:String x:Key="statusErrorCheckingRunningGames">Error checking running games</system:String>
+    <system:String x:Key="statusTerminatingProcesses">Terminating Blitz processes...</system:String>
+    <system:String x:Key="statusUninstallingExistingBlitz">Uninstalling existing Blitz installation...</system:String>
+    <system:String x:Key="statusDownloadingInstaller">Downloading latest Blitz installer...</system:String> 
+    <system:String x:Key="statusTroubleshootingComplete">Troubleshooting completed successfully</system:String>
+    <system:String x:Key="statusFixAllSuccessForced">All issues fixed successfully (forced)</system:String>
+    <system:String x:Key="statusFixAllSuccess">All issues fixed successfully</system:String>
+    <system:String x:Key="statusProceedingDespiteGames">Proceeding with troubleshooting despite running games...</system:String>
+    <system:String x:Key="statusTroubleshootingCancelledCloseGames">Troubleshooting cancelled - please close running games first</system:String>
+    <system:String x:Key="statusOperationFinished">Operation finished.</system:String>
+    <system:String x:Key="statusFailedToTerminateProcessesGeneral">Failed to terminate processes</system:String>
+    <system:String x:Key="statusErrorTerminatingProcesses">Error terminating processes</system:String>
+    <system:String x:Key="statusClearingCache">Clearing Blitz cache...</system:String>
+    <system:String x:Key="statusFailedToClearCacheGeneral">Failed to clear cache</system:String>
+    <system:String x:Key="statusErrorClearingCache">Error clearing cache</system:String>
+    <system:String x:Key="statusUninstallingBlitzProgress">Uninstalling Blitz...</system:String>
+    <system:String x:Key="statusErrorUninstallingBlitz">Error uninstalling Blitz</system:String>
+    <system:String x:Key="statusDownloadingPortable">Downloading portable Blitz...</system:String>
+    <system:String x:Key="statusFailedToDownloadPortableGeneral">Failed to download portable Blitz</system:String>
+    <system:String x:Key="statusErrorDownloadingPortable">Error downloading portable Blitz</system:String>
+    <system:String x:Key="statusThemeSetTo">Theme set to {0}</system:String>
+    <system:String x:Key="statusErrorApplyingTheme">Error applying theme: {0}</system:String>
+
+    <system:String x:Key="titleSuccess">Success</system:String>
+    <system:String x:Key="titleError">Error</system:String> 
+    <system:String x:Key="titleRunningGamesDetected">Running Games Detected</system:String>
+    <system:String x:Key="titleConfirmUninstall">Confirm Uninstall</system:String>
+
+    <system:String x:Key="promptRunningGamesDetectedMessage">The following games are currently running: {0}
+
+Please close these games before proceeding with troubleshooting to avoid data loss or conflicts.
+
+Do you want to continue anyway?</system:String>
+    <system:String x:Key="messageErrorPrefix">Error: </system:String>
+    <system:String x:Key="messageUnexpectedErrorPrefix">Unexpected error: </system:String>
+    <system:String x:Key="promptConfirmUninstallMessage">Are you sure you want to uninstall Blitz? This will remove all Blitz files.</system:String>
+
+    <system:String x:Key="serviceTerminatedProcessesCount">Terminated {0} processes.</system:String>
+    <system:String x:Key="serviceFailedToTerminateProcesses">Failed to terminate processes.</system:String>
+    <system:String x:Key="serviceBlitzIsNotInstalledMessage">Blitz is not installed.</system:String>
+    <system:String x:Key="servicePartiallyRemovedBlitz">Partially removed {0} ({1} directories deleted). Errors: {2}</system:String>
+    <system:String x:Key="serviceSuccessfullyRemovedBlitz">Successfully removed {0} ({1} directories deleted).</system:String>
+    <system:String x:Key="serviceFailedToUninstallBlitzMessage">Failed to uninstall Blitz.</system:String>
+    <system:String x:Key="serviceCacheClearedSuccessfullyCount">Cache cleared successfully ({0} folders deleted).</system:String> <!-- Was cache -->
+    <system:String x:Key="serviceNoCacheFoldersFound">No cache folders found to clear.</system:String>
+    <system:String x:Key="serviceFailedToClearCacheMessage">Failed to clear cache.</system:String>
+    <system:String x:Key="serviceInstallerLaunched">Blitz installer downloaded and launched successfully.</system:String> <!-- Replaces dload/dloadcompleted -->
+    <system:String x:Key="serviceInstallationCancelledByUser">Installation cancelled by user (UAC prompt denied).</system:String>
+    <system:String x:Key="serviceFailedToDownloadInstallFull">Failed to download and install Blitz: {0}</system:String>
+    <system:String x:Key="servicePortableDownloadedExtractedLaunchManually">Portable Blitz downloaded and extracted to: {0}
+Available executables: {1}
+Please launch manually.</system:String>
+    <system:String x:Key="servicePortableDownloadedExtractedLaunched">Portable Blitz downloaded, extracted and launched successfully.</system:String>
+    <system:String x:Key="serviceFailedToDownloadPortableFull">Failed to download portable Blitz: {0}</system:String>
+    <system:String x:Key="serviceFixAllSuccessForcedMessage">All issues fixed successfully (forced).</system:String>
+    <system:String x:Key="serviceFixAllSuccessMessage">All issues fixed successfully.</system:String>
+    <system:String x:Key="serviceFailedToFixAllIssues">Failed to fix all issues.</system:String>
+
+    <system:String x:Key="termCorruptedInstallation">corrupted installation</system:String>
+    <system:String x:Key="termInstallation">installation</system:String>
+
+</ResourceDictionary>
