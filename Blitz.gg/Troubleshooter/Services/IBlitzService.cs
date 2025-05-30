@@ -1,0 +1,28 @@
+using BlitzTroubleshooter.Models;
+
+namespace BlitzTroubleshooter.Services;
+
+public interface IBlitzService
+{
+    Task<BlitzInstallation> GetInstallationInfoAsync();
+    Task<TroubleshootResult> TerminateProcessesAsync();
+    Task<TroubleshootResult> UninstallAsync();
+    Task<TroubleshootResult> ClearCacheAsync();
+    Task<TroubleshootResult> DownloadAndInstallAsync(
+        IProgress<double>? progress = null,
+        CancellationToken cancellationToken = default);
+    Task<TroubleshootResult> DownloadPortableAsync(
+        IProgress<double>? progress = null,
+        CancellationToken cancellationToken = default);
+    Task<TroubleshootResult> FixAllIssuesAsync(
+        IProgress<string>? statusProgress = null,
+        IProgress<double>? downloadProgress = null,
+        CancellationToken cancellationToken = default);
+
+    Task<TroubleshootResult> FixAllIssuesForceAsync(
+        IProgress<string>? statusProgress = null,
+        IProgress<double>? downloadProgress = null,
+        CancellationToken cancellationToken = default);
+
+    Task<List<string>> GetRunningGamesAsync();
+}
