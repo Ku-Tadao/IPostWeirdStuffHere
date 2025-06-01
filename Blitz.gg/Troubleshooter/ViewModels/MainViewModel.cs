@@ -18,7 +18,7 @@ namespace BlitzTroubleshooter.ViewModels
         // private readonly ILogger<MainViewModel> _logger; // Removed
 
         [ObservableProperty]
-        private string statusMessage = "Ready";
+        private string statusMessage = "Ready"; // Initial value is fine
 
         [ObservableProperty]
         private double progressValue = 0;
@@ -27,13 +27,24 @@ namespace BlitzTroubleshooter.ViewModels
         private bool isOperationInProgress = false;
 
         [ObservableProperty]
-        private BlitzInstallation blitzInstallation; // Nullable reference types not fully supported in C# 7.3 style, handle nulls explicitly
+        private BlitzInstallation blitzInstallation; // Will be initialized in LoadAsync or constructor
 
         [ObservableProperty]
         private ObservableCollection<string> runningGames = new ObservableCollection<string>();
 
-        [ObservableProperty]
-        private bool isDarkTheme = true;
+        private bool _isDarkTheme = true;
+        public bool IsDarkTheme
+        {
+            get => _isDarkTheme;
+            set
+            {
+                if (SetProperty(ref _isDarkTheme, value))
+                {
+                    SetTheme(_isDarkTheme);
+                    OnPropertyChanged(nameof(NextThemeDisplayName));
+                }
+            }
+        }
 
         public string WindowTitle { get; private set; }
 
@@ -51,10 +62,10 @@ namespace BlitzTroubleshooter.ViewModels
             _blitzService = blitzService;
             // _logger = logger; // Removed
 
-            StatusMessage = GetStringResource("statusReady");
-            WindowTitle = (GetStringResource("windowTitle") ?? "Blitz Troubleshooter") + " v3"; // Added null check for safety
+            statusMessage = GetStringResource("statusReady"); // Initialize directly
+            WindowTitle = (GetStringResource("windowTitle") ?? "Blitz Troubleshooter") + " v3";
 
-            ApplyTheme();
+            SetTheme(_isDarkTheme); // Initial theme setup
         }
 
         public async Task LoadAsync()
@@ -444,14 +455,14 @@ namespace BlitzTroubleshooter.ViewModels
         // and calls OnPropertyChanged(nameof(NextThemeDisplayName)) manually if not using source generator.
         // For C# 7.3, if ViewModelBase is ObservableObject from a compatible MVVM framework, it's fine.
         // Otherwise, manual implementation of INotifyPropertyChanged is needed.
-        partial void OnIsDarkThemeChanged(bool value)
-        {
-            ApplyTheme();
-            OnPropertyChanged(nameof(NextThemeDisplayName));
-        }
+        // partial void OnIsDarkThemeChanged(bool value) // Removed
+        // {
+        //     ApplyTheme();
+        //     OnPropertyChanged(nameof(NextThemeDisplayName));
+        // }
 
 
-        private void ApplyTheme()
+        private void SetTheme(bool isDark) // Renamed from ApplyTheme and takes parameter
         {
             if (Application.Current == null) return;
             var themeDictionaries = Application.Current.Resources.MergedDictionaries;
@@ -468,18 +479,19 @@ namespace BlitzTroubleshooter.ViewModels
                 themeDictionaries.Remove(oldTheme);
             }
 
-            string themeUriString = IsDarkTheme ? "Themes/DarkTheme.xaml" : "Themes/BlueTheme.xaml";
+            string themeUriString = isDark ? "Themes/DarkTheme.xaml" : "Themes/BlueTheme.xaml";
             try
             {
                 var newTheme = new ResourceDictionary { Source = new Uri(themeUriString, UriKind.RelativeOrAbsolute) };
                 themeDictionaries.Add(newTheme);
-                // _logger.LogInformation("Theme changed to: {ThemeName}", IsDarkTheme ? GetStringResource("themeNameDark") : GetStringResource("themeNameBlue"));
-                StatusMessage = GetFormattedStringResource("statusThemeSetTo", IsDarkTheme ? GetStringResource("themeNameDark") : GetStringResource("themeNameBlue"));
+                // _logger.LogInformation("Theme changed to: {ThemeName}", isDark ? GetStringResource("themeNameDark") : GetStringResource("themeNameBlue"));
+                StatusMessage = GetFormattedStringResource("statusThemeSetTo", isDark ? GetStringResource("themeNameDark") : GetStringResource("themeNameBlue"));
             }
-            catch (Exception /*ex*/)
+            catch (Exception ex)
             {
                 // _logger.LogError(ex, "Failed to apply theme: {ThemeUri}", themeUriString);
-                StatusMessage = GetFormattedStringResource("statusErrorApplyingTheme", themeUriString);
+                //StatusMessage = GetFormattedStringResource("statusErrorApplyingTheme", themeUriString);
+                MessageBox.Show(string.Format("Error applying theme '{0}': {1}", themeUriString, ex.Message), "Theme Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
     }

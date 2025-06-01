@@ -14,15 +14,15 @@ namespace BlitzTroubleshooter.Models
     public class BlitzInstallation
     {
         public BlitzInstallationStatus Status { get; }
-        public string? InstallPath { get; }
-        public string? Version { get; }
+        public string InstallPath { get; }
+        public string Version { get; }
         public List<string> DetectedPaths { get; }
         public List<string> MissingExecutables { get; }
 
         public BlitzInstallation(
             BlitzInstallationStatus status,
-            string? installPath,
-            string? version,
+            string installPath,
+            string version,
             List<string> detectedPaths,
             List<string> missingExecutables)
         {
@@ -43,13 +43,13 @@ namespace BlitzTroubleshooter.Models
         public string Name { get; }
         public string DisplayName { get; }
         public bool IsInstalled { get; }
-        public string? InstallPath { get; }
+        public string InstallPath { get; }
 
         public GameInfo(
             string name,
             string displayName,
             bool isInstalled,
-            string? installPath)
+            string installPath)
         {
             Name = name;
             DisplayName = displayName;
@@ -62,12 +62,12 @@ namespace BlitzTroubleshooter.Models
     {
         public bool IsSuccess { get; }
         public string Message { get; }
-        public Exception? Exception { get; }
+        public Exception Exception { get; }
 
         public TroubleshootResult(
             bool isSuccess,
             string message,
-            Exception? exception = null)
+            Exception exception = null)
         {
             IsSuccess = isSuccess;
             Message = message;
@@ -75,9 +75,9 @@ namespace BlitzTroubleshooter.Models
         }
 
         public static TroubleshootResult Success(string message = "Operation completed successfully") =>
-            new TroubleshootResult(true, message);
+            new TroubleshootResult(true, message, null); // Explicitly pass null for exception
 
-        public static TroubleshootResult Failure(string message, Exception? exception = null) =>
+        public static TroubleshootResult Failure(string message, Exception exception = null) =>
             new TroubleshootResult(false, message, exception);
     }
 }

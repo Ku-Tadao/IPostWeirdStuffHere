@@ -1,11 +1,12 @@
+using System;
 using System.Globalization;
 using System.Windows.Data;
 
-namespace BlitzTroubleshooter.Converters;
-
-public class InverseBooleanConverter : IValueConverter
+namespace BlitzTroubleshooter.Converters
 {
-    public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+    public class InverseBooleanConverter : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
     {
         if (value is bool boolValue)
         {
@@ -22,4 +23,5 @@ public class InverseBooleanConverter : IValueConverter
         }
         return false;
     }
+}
 }

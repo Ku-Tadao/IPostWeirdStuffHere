@@ -3,6 +3,7 @@
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>net48</TargetFramework>
+    <LangVersion>7.3</LangVersion>
     <UseWPF>true</UseWPF>
     <ApplicationIcon>Assets\BlitzIcon.ico</ApplicationIcon>
     <AssemblyTitle>Blitz Troubleshooter</AssemblyTitle>
@@ -52,6 +53,10 @@
     <None Update="appsettings.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="System.Net.Http" />
   </ItemGroup>
 
 </Project>
