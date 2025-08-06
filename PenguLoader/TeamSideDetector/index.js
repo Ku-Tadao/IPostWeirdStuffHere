@@ -1,139 +1,142 @@
-window.addEventListener('load', () => {
-  let isInChampSelect = false;
-  let currentTeam = null;
-  let notification = null;
-  
-  const style = document.createElement('style');
-  style.textContent = `
-    .team-side-notification {
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      padding: 20px 40px;
-      border-radius: 8px;
-      font-size: 24px;
-      font-weight: bold;
-      color: white;
-      z-index: 9999;
-      opacity: 0;
-      transition: opacity 0.2s;
-      pointer-events: none;
+/*
+ * @author Kubi
+ * @link https://github.com/Ku-Tadao/IPostWeirdStuffHere/tree/master/PenguLoader/TeamSideDetector
+ * @description Shows team side on screen when holding Ctrl+Shift in champion select.
+ */
+
+// --- Module-scoped variables ---
+let isInChampSelect = false;
+let currentTeam = null; // Can be 'BLUE' or 'RED'
+let notification = null; // The UI element
+
+// --- UI Helper Functions ---
+const showNotification = (team) => {
+  if (!notification) return;
+  notification.className = `team-side-notification ${team.toLowerCase()}`;
+  notification.textContent = `${team} Side`;
+  notification.classList.add('visible');
+};
+
+const hideNotification = () => {
+  if (notification) {
+    notification.classList.remove('visible');
+  }
+};
+
+// --- Logic & Event Handlers ---
+const determineTeamSide = async () => {
+  try {
+    const response = await fetch('./lol-champ-select/v1/session');
+    if (response.ok) {
+      const data = await response.json();
+      const localPlayer = data.myTeam.find(p => p.cellId === data.localPlayerCellId);
+      currentTeam = localPlayer?.team === 1 ? 'BLUE' : 'RED';
     }
-    
-    .team-side-notification.blue {
-      background: rgba(0, 48, 163, 0.9);
-      box-shadow: 0 0 20px rgba(0, 148, 255, 0.5);
-    }
-    
-    .team-side-notification.red {
-      background: rgba(163, 0, 0, 0.9);
-      box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
-    }
-    
-    .team-side-notification.visible {
-      opacity: 1;
-    }
-  `;
-  document.head.appendChild(style);
+  } catch (error) {
+    currentTeam = null;
+    console.error("TeamSideDetector Error: Failed to determine team side.", error);
+  }
+};
 
-  const createNotification = () => {
-    notification = document.createElement('div');
-    notification.className = 'team-side-notification';
-    document.body.appendChild(notification);
-    return notification;
-  };
+const onGameflowPhaseChange = (event) => {
+    const newPhase = event.data;
+    const wasInChampSelect = isInChampSelect;
+    isInChampSelect = (newPhase === 'ChampSelect');
 
-  const showNotification = (team) => {
-    if (!notification) notification = createNotification();
-    notification.className = `team-side-notification ${team.toLowerCase()}`;
-    notification.textContent = `${team} Side`;
-    notification.classList.add('visible');
-  };
-
-  const hideNotification = () => {
-    if (notification) {
-      notification.classList.remove('visible');
-    }
-  };
-
-  const determineTeamSide = (data) => {
-    const localPlayer = data.myTeam.find(player => player.cellId === data.localPlayerCellId);
-    return localPlayer?.team === 1 ? 'BLUE' : 'RED';
-  };
-
-  const checkChampSelect = async () => {
-    try {
-      const response = await fetch('./lol-champ-select/v1/session');
-      if (response.ok) {
-        const data = await response.json();
-        currentTeam = determineTeamSide(data);
-      }
-    } catch (error) {
-      currentTeam = null;
-    }
-  };
-
-  const checkGamePhase = async () => {
-    try {
-      const response = await fetch('./lol-gameflow/v1/gameflow-phase');
-      if (!response.ok) return;
-      
-      const phase = await response.text();
-      const wasInChampSelect = isInChampSelect;
-      isInChampSelect = phase === '"ChampSelect"';
-
-      if (isInChampSelect && !wasInChampSelect) {
-        await checkChampSelect();
-      } else if (!isInChampSelect && wasInChampSelect) {
+    if (isInChampSelect && !wasInChampSelect) {
+        determineTeamSide();
+    } else if (!isInChampSelect && wasInChampSelect) {
         currentTeam = null;
         hideNotification();
-      }
-    } catch (error) {
-      isInChampSelect = false;
-      currentTeam = null;
-      hideNotification();
     }
-  };
+};
 
-  const handleKeyState = (event) => {
-    if (event.ctrlKey && event.shiftKey && isInChampSelect && currentTeam) {
-      showNotification(currentTeam);
-    } else {
-      hideNotification();
-    }
-  };
+const handleKeyDown = (event) => {
+  if (event.ctrlKey && event.shiftKey && isInChampSelect && currentTeam) {
+    showNotification(currentTeam);
+  }
+};
 
-  document.addEventListener('keydown', handleKeyState);
-  document.addEventListener('keyup', handleKeyState);
+const handleKeyUp = (event) => {
+  // Hide the notification if either Control or Shift is released.
+  if (event.key === 'Control' || event.key === 'Shift') {
+    hideNotification();
+  }
+};
 
-  checkGamePhase();
-  
-  const ws = new WebSocket('wss://127.0.0.1:34243', 'wamp');
-  
-  ws.onopen = () => {
-    ws.send(JSON.stringify([5, 'OnJsonApiEvent_lol-gameflow_v1_gameflow-phase']));
-  };
-
-  ws.onmessage = async (message) => {
+// --- Initial State Check ---
+const checkInitialState = async () => {
     try {
-      const data = JSON.parse(message.data);
-      if (data[2]?.uri === '/lol-gameflow/v1/gameflow-phase') {
-        const phase = data[2].data;
-        const wasInChampSelect = isInChampSelect;
-        isInChampSelect = phase === 'ChampSelect';
-
-        if (isInChampSelect && !wasInChampSelect) {
-          await checkChampSelect();
-        } else if (!isInChampSelect && wasInChampSelect) {
-          currentTeam = null;
-          hideNotification();
+        const res = await fetch('/lol-gameflow/v1/gameflow-phase');
+        if (res.ok) {
+            const phase = await res.json();
+            if (phase === 'ChampSelect') {
+                isInChampSelect = true;
+                determineTeamSide();
+            }
         }
-      }
-    } catch (error) {
-      console.error('Error processing WebSocket message:', error);
-    }
-  };
+    } catch (e) { /* Fail silently on initial check */ }
+};
 
-  setInterval(checkGamePhase, 1000);
-});
+// --- PenguLoader Entry Points ---
+
+/**
+ * init() is used for core logic and LCU API subscriptions.
+ */
+export function init(context) {
+    context.socket.observe('/lol-gameflow/v1/gameflow-phase', onGameflowPhaseChange);
+    checkInitialState();
+}
+
+/**
+ * load() is used for creating UI elements and attaching DOM/window event listeners.
+ */
+export function load() {
+    // Use a MutationObserver to safely wait for the client's main UI root to appear.
+    const observer = new MutationObserver((mutations, obs) => {
+        const viewportRoot = document.getElementById('rcp-fe-viewport-root');
+        
+        // Once the viewport exists, inject the UI and stop observing.
+        if (viewportRoot) {
+            // 1. Inject CSS styles into the document's head.
+            const style = document.createElement('style');
+            style.textContent = `
+              .team-side-notification {
+                position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
+                padding: 20px 40px; border-radius: 8px; font-size: 24px; font-weight: bold;
+                color: white; z-index: 9999; opacity: 0; transition: opacity 0.2s;
+                pointer-events: none;
+              }
+              .team-side-notification.blue {
+                background: rgba(0, 48, 163, 0.9); box-shadow: 0 0 20px rgba(0, 148, 255, 0.5);
+              }
+              .team-side-notification.red {
+                background: rgba(163, 0, 0, 0.9); box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+              }
+              .team-side-notification.visible { opacity: 1; }
+            `;
+            document.head.appendChild(style);
+
+            // 2. Create the notification element and append it to the correct UI layer.
+            notification = document.createElement('div');
+            notification.className = 'team-side-notification';
+            viewportRoot.appendChild(notification);
+
+            // 3. Set up the keyboard listeners.
+            document.addEventListener('keydown', handleKeyDown);
+            document.addEventListener('keyup', handleKeyUp);
+            
+            // 4. Also hide the notification if the user clicks away from the window.
+            window.addEventListener('blur', hideNotification);
+
+            // 5. We're done, so disconnect the observer to save resources.
+            obs.disconnect();
+        }
+    });
+
+    // Start observing the document body for added child elements.
+    observer.observe(document.body, {
+        childList: true,
+        subtree: true
+    });
+}
