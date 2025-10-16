@@ -7,5 +7,6 @@ Polish = pl-PL<br/>
 Portuguese = pt-PT<br/>
 Turkish = tr-TR<br/>
 Russian = ru-RU<br/>
+Indonesian = id-ID<br/>
 
 feel free to contribute *DO NOT CHANGE KEY NAMES, ONLY THEIR CONTENTS*
