@@ -1,0 +1,114 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib">
+
+    <system:String x:Key="windowTitle">Blitz Troubleshooter</system:String>
+    <system:String x:Key="themeToggleButtonTooltipSwitchTo">Beralih ke </system:String>
+    <system:String x:Key="themeToggleButtonTooltipTheme"> Tema</system:String>
+    <system:String x:Key="themeNameDark">Gelap</system:String>
+    <system:String x:Key="themeNameBlue">Biru</system:String>
+
+    <system:String x:Key="tabHeaderTroubleshooting">Pemecahan Masalah</system:String>
+    <system:String x:Key="tabHeaderRunningGames">Game Berjalan</system:String>
+
+    <system:String x:Key="troubleshootingActionsHeader">Tindakan Pemecahan Masalah</system:String>
+    <system:String x:Key="fixAllIssuesButtonContent">Perbaiki Semua Masalah Umum</system:String>
+    <system:String x:Key="fixAllIssuesButtonTooltip">Hentikan proses, hapus instalan, dan unduh versi terbaru</system:String>
+    <system:String x:Key="terminateProcessesButtonContent">Hentikan Proses Blitz</system:String>
+    <system:String x:Key="clearCacheButtonContent">Hapus Cache</system:String>
+    <system:String x:Key="uninstallBlitzButtonContent">Copot Pemasangan Blitz</system:String>
+    <system:String x:Key="downloadPortableButtonContent">Unduh Versi Portabel</system:String>
+    <system:String x:Key="blitzInstallationStatusHeader">Status Instalasi Blitz</system:String>
+    <system:String x:Key="statusLabel">Status: </system:String>
+    <system:String x:Key="blitzStatusInstalled">Terpasang</system:String>
+    <system:String x:Key="blitzStatusCorrupted">Rusak</system:String>
+    <system:String x:Key="blitzStatusNotInstalled">Tidak Terpasang</system:String>
+    <system:String x:Key="pathLabel">Lokasi: </system:String>
+    <system:String x:Key="pathNotFoundFallback">Tidak ditemukan</system:String>
+    <system:String x:Key="versionLabel">Versi: </system:String>
+    <system:String x:Key="versionNotAvailableFallback">N/A</system:String>
+    <system:String x:Key="corruptedInstallationWarning1">⚠️ Terdeteksi file eksekusi yang hilang.</system:String>
+    <system:String x:Key="corruptedInstallationWarning2">Gunakan 'Perbaiki Semua Masalah Umum' untuk memperbaiki instalasi.</system:String>
+    <system:String x:Key="refreshButtonContent">Refresh</system:String>
+
+    <system:String x:Key="currentlyRunningGamesHeader">Game yang Sedang Berjalan</system:String>
+    <system:String x:Key="noGamesRunning">Tidak ada game yang didukung sedang berjalan</system:String>
+    <system:String x:Key="checkRunningGamesButtonContent">Periksa Game yang Berjalan</system:String>
+
+    <system:String x:Key="statusBarFallbackText">Status...</system:String>
+
+    <system:String x:Key="statusReady">Siap</system:String>
+    <system:String x:Key="statusErrorInitializing">Terjadi kesalahan saat inisialisasi</system:String>
+    <system:String x:Key="statusCheckingBlitzInstallation">Memeriksa instalasi Blitz...</system:String>
+    <system:String x:Key="statusBlitzInstalledAt">Blitz terpasang di: {0}</system:String>
+    <system:String x:Key="statusBlitzCorruptedMessage">Instalasi Blitz rusak - file ditemukan tetapi file eksekusi utama hilang</system:String>
+    <system:String x:Key="statusBlitzNotDetected">Blitz tidak terdeteksi</system:String>
+    <system:String x:Key="statusUnknownInstallation">Status instalasi tidak diketahui</system:String>
+    <system:String x:Key="statusErrorCheckingBlitzInstallation">Terjadi kesalahan saat memeriksa instalasi Blitz</system:String>
+    <system:String x:Key="statusCheckingRunningGames">Memeriksa game yang berjalan...</system:String>
+    <system:String x:Key="statusRunningGamesList">Game yang berjalan: {0}</system:String>
+    <system:String x:Key="statusNoSupportedGamesRunning">Tidak ada game yang didukung sedang berjalan</system:String>
+    <system:String x:Key="statusErrorCheckingRunningGames">Terjadi kesalahan saat memeriksa game yang berjalan</system:String>
+    <system:String x:Key="statusTerminatingProcesses">Menghentikan proses Blitz...</system:String>
+    <system:String x:Key="statusUninstallingExistingBlitz">Mencopot instalasi Blitz yang ada...</system:String>
+    <system:String x:Key="statusDownloadingInstaller">Mengunduh penginstal Blitz terbaru...</system:String>
+    <system:String x:Key="statusTroubleshootingComplete">Pemecahan masalah berhasil diselesaikan</system:String>
+    <system:String x:Key="statusFixAllSuccessForced">Semua masalah berhasil diperbaiki (paksa)</system:String>
+    <system:String x:Key="statusFixAllSuccess">Semua masalah berhasil diperbaiki</system:String>
+    <system:String x:Key="statusProceedingDespiteGames">Melanjutkan pemecahan masalah meskipun ada game yang berjalan...</system:String>
+    <system:String x:Key="statusTroubleshootingCancelledCloseGames">Pemecahan masalah dibatalkan - harap tutup game yang berjalan terlebih dahulu</system:String>
+    <system:String x:Key="statusOperationFinished">Operasi selesai.</system:String>
+    <system:String x:Key="statusFailedToTerminateProcessesGeneral">Gagal menghentikan proses</system:String>
+    <system:String x:Key="statusErrorTerminatingProcesses">Terjadi kesalahan saat menghentikan proses</system:String>
+    <system:String x:Key="statusClearingCache">Membersihkan cache Blitz...</system:String>
+    <system:String x:Key="statusFailedToClearCacheGeneral">Gagal membersihkan cache</system:String>
+    <system:String x:Key="statusErrorClearingCache">Terjadi kesalahan saat membersihkan cache</system:String>
+    <system:String x:Key="statusUninstallingBlitzProgress">Mencopot pemasangan Blitz...</system:String>
+    <system:String x:Key="statusErrorUninstallingBlitz">Terjadi kesalahan saat mencopot pemasangan Blitz</system:String>
+    <system:String x:Key="statusDownloadingPortable">Mengunduh Blitz portabel...</system:String>
+    <system:String x:Key="statusFailedToDownloadPortableGeneral">Gagal mengunduh Blitz portabel</system:String>
+    <system:String x:Key="statusErrorDownloadingPortable">Terjadi kesalahan saat mengunduh Blitz portabel</system:String>
+    <system:String x:Key="statusThemeSetTo">Tema diatur ke {0}</system:String>
+    <system:String x:Key="statusErrorApplyingTheme">Terjadi kesalahan saat menerapkan tema: {0}</system:String>
+
+    <system:String x:Key="titleSuccess">Sukses</system:String>
+    <system:String x:Key="titleError">Error</system:String>
+    <system:String x:Key="titleRunningGamesDetected">Game Berjalan Terdeteksi</system:String>
+    <system:String x:Key="titleConfirmUninstall">Konfirmasi Pencopotan</system:String>
+
+    <system:String x:Key="promptRunningGamesDetectedMessage">Game berikut sedang berjalan: {0}
+
+Harap tutup game ini sebelum melanjutkan pemecahan masalah untuk menghindari kehilangan data atau konflik.
+Apakah Anda tetap ingin melanjutkan?</system:String>
+    <system:String x:Key="messageErrorPrefix">Error: </system:String>
+    <system:String x:Key="messageUnexpectedErrorPrefix">Error tak terduga: </system:String>
+    <system:String x:Key="promptConfirmUninstallMessage">Apakah Anda yakin ingin mencopot pemasangan Blitz?
+Tindakan ini akan menghapus semua file Blitz.</system:String>
+
+    <system:String x:Key="serviceTerminatedProcessesCount">Menghentikan {0} proses.</system:String>
+    <system:String x:Key="serviceFailedToTerminateProcesses">Gagal menghentikan proses.</system:String>
+    <system:String x:Key="serviceBlitzIsNotInstalledMessage">Blitz tidak terpasang.</system:String>
+    <system:String x:Key="servicePartiallyRemovedBlitz">Sebagian menghapus {0} ({1} direktori dihapus).
+Error: {2}</system:String>
+    <system:String x:Key="serviceSuccessfullyRemovedBlitz">Berhasil menghapus {0} ({1} direktori dihapus).</system:String>
+    <system:String x:Key="serviceFailedToUninstallBlitzMessage">Gagal mencopot pemasangan Blitz.</system:String>
+    <system:String x:Key="serviceCacheClearedSuccessfullyCount">Cache berhasil dibersihkan ({0} folder dihapus).</system:String>
+    <system:String x:Key="serviceNoCacheFoldersFound">Tidak ada folder cache yang ditemukan untuk dibersihkan.</system:String>
+    <system:String x:Key="serviceFailedToClearCacheMessage">Gagal membersihkan cache.</system:String>
+    <system:String x:Key="serviceInstallerLaunched">Penginstal Blitz berhasil diunduh dan dijalankan.</system:String>
+    <system:String x:Key="serviceInstallationCancelledByUser">Instalasi dibatalkan oleh pengguna (prompt UAC ditolak).</system:String>
+    <system:String x:Key="serviceFailedToDownloadInstallFull">Gagal mengunduh dan menginstal Blitz: {0}</system:String>
+    <system:String x:Key="servicePortableDownloadedExtractedLaunchManually">Blitz portabel diunduh dan diekstrak ke: {0}
+Eksekusi yang tersedia: 
+{1}
+Harap jalankan secara manual.</system:String>
+    <system:String x:Key="servicePortableDownloadedExtractedLaunched">Blitz portabel berhasil diunduh, diekstrak, dan dijalankan.</system:String>
+    <system:String x:Key="serviceFailedToDownloadPortableFull">Gagal mengunduh Blitz portabel: {0}</system:String>
+    <system:String x:Key="serviceFixAllSuccessForcedMessage">Semua masalah berhasil diperbaiki (paksa).</system:String>
+    <system:String x:Key="serviceFixAllSuccessMessage">Semua masalah berhasil diperbaiki.</system:String>
+    <system:String x:Key="serviceFailedToFixAllIssues">Gagal memperbaiki semua masalah.</system:String>
+
+    <system:String x:Key="termCorruptedInstallation">instalasi rusak</system:String>
+    <system:String x:Key="termInstallation">instalasi</system:String>
+
+</ResourceDictionary>
