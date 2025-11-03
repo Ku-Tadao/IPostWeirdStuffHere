@@ -1,0 +1,131 @@
+name: Update Blitz Portable
+
+on:
+  schedule:
+    # Run every Monday at 2:00 AM UTC
+    - cron: '0 2 * * 1'
+  workflow_dispatch: # Allow manual trigger
+
+jobs:
+  update-blitz:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Download Blitz installer
+        shell: pwsh
+        run: |
+          Write-Host "Downloading Blitz installer..."
+          $url = "https://blitz.gg/download/win"
+          $output = "BlitzSetup.exe"
+
+          # Follow redirects and download the installer
+          Invoke-WebRequest -Uri $url -OutFile $output -UseBasicParsing
+
+          if (Test-Path $output) {
+            Write-Host "Downloaded successfully: $(Get-Item $output | Select-Object -ExpandProperty Length) bytes"
+          } else {
+            Write-Error "Failed to download Blitz installer"
+            exit 1
+          }
+
+      - name: Install Blitz
+        shell: pwsh
+        run: |
+          Write-Host "Installing Blitz..."
+          $installer = "BlitzSetup.exe"
+
+          # Run the installer silently
+          # Common silent install flags for Electron/Squirrel installers
+          Start-Process -FilePath $installer -ArgumentList "--silent" -Wait -NoNewWindow
+
+          Write-Host "Installation completed"
+
+          # Wait a bit for the installation to fully complete
+          Start-Sleep -Seconds 10
+
+      - name: Locate and verify Blitz installation
+        shell: pwsh
+        run: |
+          $blitzPath = "$env:LOCALAPPDATA\Programs\Blitz"
+
+          Write-Host "Checking for Blitz installation at: $blitzPath"
+
+          if (Test-Path $blitzPath) {
+            Write-Host "Blitz installation found!"
+            Write-Host "Contents:"
+            Get-ChildItem -Path $blitzPath -Recurse -Depth 1 | Select-Object FullName
+          } else {
+            Write-Error "Blitz installation not found at expected location"
+            Write-Host "Searching for Blitz installation..."
+            Get-ChildItem -Path "$env:LOCALAPPDATA\Programs" -Directory | Select-Object FullName
+            exit 1
+          }
+
+      - name: Create portable zip
+        shell: pwsh
+        run: |
+          $blitzPath = "$env:LOCALAPPDATA\Programs\Blitz"
+          $outputZip = "Blitz.gg\Portable\blitzportable.zip"
+
+          Write-Host "Creating portable zip from: $blitzPath"
+          Write-Host "Output: $outputZip"
+
+          # Remove old zip if it exists
+          if (Test-Path $outputZip) {
+            Remove-Item $outputZip -Force
+            Write-Host "Removed old zip file"
+          }
+
+          # Create new zip file
+          Compress-Archive -Path "$blitzPath\*" -DestinationPath $outputZip -CompressionLevel Optimal
+
+          if (Test-Path $outputZip) {
+            $zipSize = (Get-Item $outputZip).Length / 1MB
+            Write-Host "Zip file created successfully: $([math]::Round($zipSize, 2)) MB"
+          } else {
+            Write-Error "Failed to create zip file"
+            exit 1
+          }
+
+      - name: Check for changes
+        id: check_changes
+        shell: pwsh
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          git add Blitz.gg/Portable/blitzportable.zip
+
+          # Check if there are changes to commit
+          $changes = git diff --staged --quiet
+          if ($LASTEXITCODE -ne 0) {
+            Write-Host "Changes detected"
+            echo "has_changes=true" >> $env:GITHUB_OUTPUT
+          } else {
+            Write-Host "No changes detected"
+            echo "has_changes=false" >> $env:GITHUB_OUTPUT
+          }
+
+      - name: Commit and push changes
+        if: steps.check_changes.outputs.has_changes == 'true'
+        shell: pwsh
+        run: |
+          $date = Get-Date -Format "yyyy-MM-dd"
+
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          git commit -m "Update Blitz portable zip - $date"
+          git push
+
+          Write-Host "Changes committed and pushed successfully"
+
+      - name: No changes to commit
+        if: steps.check_changes.outputs.has_changes == 'false'
+        run: |
+          Write-Host "Blitz portable zip is already up to date"
