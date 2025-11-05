@@ -3,7 +3,7 @@ name: Update Blitz Portable
 on:
   schedule:
     # Run every Monday at 2:00 AM UTC
-    - cron: '0 2 * * 1'
+    - cron: "0 2 * * 1"
   workflow_dispatch: # Allow manual trigger
 
 jobs:
@@ -102,14 +102,17 @@ jobs:
           git add Blitz.gg/Portable/blitzportable.zip
 
           # Check if there are changes to commit
-          $changes = git diff --staged --quiet
+          git diff --staged --quiet
           if ($LASTEXITCODE -ne 0) {
             Write-Host "Changes detected"
-            echo "has_changes=true" >> $env:GITHUB_OUTPUT
+            "has_changes=true" | Out-File -FilePath $env:GITHUB_OUTPUT -Append
           } else {
             Write-Host "No changes detected"
-            echo "has_changes=false" >> $env:GITHUB_OUTPUT
+            "has_changes=false" | Out-File -FilePath $env:GITHUB_OUTPUT -Append
           }
+
+          # Exit successfully regardless of whether there are changes
+          exit 0
 
       - name: Commit and push changes
         if: steps.check_changes.outputs.has_changes == 'true'
