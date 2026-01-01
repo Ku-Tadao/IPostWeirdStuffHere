@@ -104,7 +104,7 @@
 
                             <StackPanel Grid.Row="0" Margin="0,0,0,30">
                                 <TextBlock Text="{DynamicResource tabHeaderTroubleshooting}" FontSize="28" FontWeight="Bold" Foreground="{DynamicResource HeaderTextBrush}"/>
-                                <TextBlock Text="Identify and resolve issues with your Blitz installation." FontSize="14" Foreground="{DynamicResource SubTextBrush}" Margin="0,5,0,0"/>
+                                <TextBlock Text="{DynamicResource appDescription}" FontSize="14" Foreground="{DynamicResource SubTextBrush}" Margin="0,5,0,0"/>
                             </StackPanel>
 
                             <!-- Installation Status Card -->
@@ -121,29 +121,29 @@
                                     </Border>
 
                                     <StackPanel Grid.Column="1" VerticalAlignment="Center">
-                                        <TextBlock Text="Blitz Installation Status" FontWeight="Bold" FontSize="16" Foreground="{DynamicResource HeaderTextBrush}"/>
+                                        <TextBlock Text="{DynamicResource blitzInstallationStatusHeader}" FontWeight="Bold" FontSize="16" Foreground="{DynamicResource HeaderTextBrush}"/>
                                         <TextBlock Margin="0,2,0,0">
-                                            <Run Text="Status: " Foreground="{DynamicResource SubTextBrush}"/>
+                                            <Run Text="{DynamicResource statusLabel}" Foreground="{DynamicResource SubTextBrush}"/>
                                             <Run FontWeight="SemiBold">
                                                 <Run.Style>
                                                     <Style TargetType="Run">
-                                                        <Setter Property="Text" Value="Not Installed" />
+                                                        <Setter Property="Text" Value="{DynamicResource blitzStatusNotInstalled}" />
                                                         <Setter Property="Foreground" Value="{DynamicResource SubTextBrush}" />
                                                         <Style.Triggers>
                                                             <DataTrigger Binding="{Binding BlitzInstallation.Status}" Value="Installed">
-                                                                <Setter Property="Text" Value="Installed" />
+                                                                <Setter Property="Text" Value="{DynamicResource blitzStatusInstalled}" />
                                                                 <Setter Property="Foreground" Value="{DynamicResource SuccessBrush}" />
                                                             </DataTrigger>
                                                             <DataTrigger Binding="{Binding BlitzInstallation.Status}" Value="Corrupted">
-                                                                <Setter Property="Text" Value="Corrupted" />
+                                                                <Setter Property="Text" Value="{DynamicResource blitzStatusCorrupted}" />
                                                                 <Setter Property="Foreground" Value="{DynamicResource WarningBrush}" />
                                                             </DataTrigger>
                                                         </Style.Triggers>
                                                     </Style>
                                                 </Run.Style>
                                             </Run>
-                                            <Run Text="  •  " Foreground="{DynamicResource BorderBrush}" />
-                                            <Run Text="Version: " Foreground="{DynamicResource SubTextBrush}"/>
+                                            <Run Text="{DynamicResource txtSeparator}" Foreground="{DynamicResource BorderBrush}" />
+                                            <Run Text="{DynamicResource versionLabel}" Foreground="{DynamicResource SubTextBrush}"/>
                                             <Run Text="{Binding BlitzInstallation.Version, FallbackValue='N/A'}" FontWeight="SemiBold" Foreground="{DynamicResource HeaderTextBrush}"/>
                                         </TextBlock>
                                         <TextBlock Text="{Binding BlitzInstallation.InstallPath}" FontSize="12" Foreground="{DynamicResource SubTextBrush}" Margin="0,4,0,0"
@@ -151,7 +151,7 @@
                                     </StackPanel>
 
                                     <Button Grid.Column="2" Content="{StaticResource Icon.Refresh}" Style="{StaticResource TitleBarButton}" 
-                                            Command="{Binding RefreshBlitzInstallationCommand}" ToolTip="Refresh Status"
+                                            Command="{Binding RefreshBlitzInstallationCommand}" ToolTip="{DynamicResource tooltipRefreshStatus}"
                                             VerticalAlignment="Center"/>
                                 </Grid>
                             </Border>
@@ -163,9 +163,9 @@
                                     <Border Style="{StaticResource ModernCard}" Width="280">
                                         <StackPanel>
                                             <Path Data="{StaticResource Icon.Check}" Fill="{DynamicResource SuccessBrush}" Width="32" Height="32" Stretch="Uniform" HorizontalAlignment="Left" Margin="0,0,0,15"/>
-                                            <TextBlock Text="Fix All Issues" FontSize="18" FontWeight="Bold" Foreground="{DynamicResource HeaderTextBrush}"/>
-                                            <TextBlock Text="Run all troubleshooting steps automatically to fix common problems." TextWrapping="Wrap" Margin="0,8,0,20" Height="40" Foreground="{DynamicResource SubTextBrush}"/>
-                                            <Button Content="Quick Fix" Style="{StaticResource ModernActionButton}" Command="{Binding FixAllIssuesCommand}" IsEnabled="{Binding IsOperationInProgress, Converter={StaticResource InverseBoolConverter}}"/>
+                                            <TextBlock Text="{DynamicResource hdrFixAllIssues}" FontSize="18" FontWeight="Bold" Foreground="{DynamicResource HeaderTextBrush}"/>
+                                            <TextBlock Text="{DynamicResource descFixAllIssues}" TextWrapping="Wrap" Margin="0,8,0,20" Height="40" Foreground="{DynamicResource SubTextBrush}"/>
+                                            <Button Content="{DynamicResource btnQuickFix}" Style="{StaticResource ModernActionButton}" Command="{Binding FixAllIssuesCommand}" IsEnabled="{Binding IsOperationInProgress, Converter={StaticResource InverseBoolConverter}}"/>
                                         </StackPanel>
                                     </Border>
 
@@ -173,9 +173,9 @@
                                     <Border Style="{StaticResource ModernCard}" Width="280">
                                         <StackPanel>
                                             <Path Data="{StaticResource Icon.Trash}" Fill="{DynamicResource WarningBrush}" Width="32" Height="32" Stretch="Uniform" HorizontalAlignment="Left" Margin="0,0,0,15"/>
-                                            <TextBlock Text="Clear Cache" FontSize="18" FontWeight="Bold" Foreground="{DynamicResource HeaderTextBrush}"/>
-                                            <TextBlock Text="Remove local temporary files and reset the application state." TextWrapping="Wrap" Margin="0,8,0,20" Height="40" Foreground="{DynamicResource SubTextBrush}"/>
-                                            <Button Content="Clean Cache" Style="{StaticResource ModernActionButton}" Command="{Binding ClearCacheCommand}" IsEnabled="{Binding IsOperationInProgress, Converter={StaticResource InverseBoolConverter}}"/>
+                                            <TextBlock Text="{DynamicResource hdrClearCache}" FontSize="18" FontWeight="Bold" Foreground="{DynamicResource HeaderTextBrush}"/>
+                                            <TextBlock Text="{DynamicResource descClearCache}" TextWrapping="Wrap" Margin="0,8,0,20" Height="40" Foreground="{DynamicResource SubTextBrush}"/>
+                                            <Button Content="{DynamicResource btnCleanCache}" Style="{StaticResource ModernActionButton}" Command="{Binding ClearCacheCommand}" IsEnabled="{Binding IsOperationInProgress, Converter={StaticResource InverseBoolConverter}}"/>
                                         </StackPanel>
                                     </Border>
 
@@ -183,9 +183,9 @@
                                     <Border Style="{StaticResource ModernCard}" Width="280">
                                         <StackPanel>
                                             <Path Data="{StaticResource Icon.Close}" Fill="{DynamicResource ErrorBrush}" Width="32" Height="32" Stretch="Uniform" HorizontalAlignment="Left" Margin="0,0,0,15"/>
-                                            <TextBlock Text="Kill Processes" FontSize="18" FontWeight="Bold" Foreground="{DynamicResource HeaderTextBrush}"/>
-                                            <TextBlock Text="Forcefully close all running Blitz and game related processes." TextWrapping="Wrap" Margin="0,8,0,20" Height="40" Foreground="{DynamicResource SubTextBrush}"/>
-                                            <Button Content="Terminate" Style="{StaticResource ModernActionButton}" Command="{Binding TerminateProcessesCommand}" IsEnabled="{Binding IsOperationInProgress, Converter={StaticResource InverseBoolConverter}}"/>
+                                            <TextBlock Text="{DynamicResource hdrKillProcesses}" FontSize="18" FontWeight="Bold" Foreground="{DynamicResource HeaderTextBrush}"/>
+                                            <TextBlock Text="{DynamicResource descKillProcesses}" TextWrapping="Wrap" Margin="0,8,0,20" Height="40" Foreground="{DynamicResource SubTextBrush}"/>
+                                            <Button Content="{DynamicResource btnTerminate}" Style="{StaticResource ModernActionButton}" Command="{Binding TerminateProcessesCommand}" IsEnabled="{Binding IsOperationInProgress, Converter={StaticResource InverseBoolConverter}}"/>
                                         </StackPanel>
                                     </Border>
 
@@ -193,9 +193,9 @@
                                     <Border Style="{StaticResource ModernCard}" Width="280">
                                         <StackPanel>
                                             <Path Data="{StaticResource Icon.Download}" Fill="{DynamicResource AccentBrush}" Width="32" Height="32" Stretch="Uniform" HorizontalAlignment="Left" Margin="0,0,0,15"/>
-                                            <TextBlock Text="Portable Version" FontSize="18" FontWeight="Bold" Foreground="{DynamicResource HeaderTextBrush}"/>
-                                            <TextBlock Text="Download a standalone version of Blitz that doesn't require installation." TextWrapping="Wrap" Margin="0,8,0,20" Height="40" Foreground="{DynamicResource SubTextBrush}"/>
-                                            <Button Content="Download" Style="{StaticResource ModernActionButton}" Command="{Binding DownloadPortableCommand}" IsEnabled="{Binding IsOperationInProgress, Converter={StaticResource InverseBoolConverter}}"/>
+                                            <TextBlock Text="{DynamicResource hdrPortableVersion}" FontSize="18" FontWeight="Bold" Foreground="{DynamicResource HeaderTextBrush}"/>
+                                            <TextBlock Text="{DynamicResource descPortableVersion}" TextWrapping="Wrap" Margin="0,8,0,20" Height="40" Foreground="{DynamicResource SubTextBrush}"/>
+                                            <Button Content="{DynamicResource btnDownload}" Style="{StaticResource ModernActionButton}" Command="{Binding DownloadPortableCommand}" IsEnabled="{Binding IsOperationInProgress, Converter={StaticResource InverseBoolConverter}}"/>
                                         </StackPanel>
                                     </Border>
                                 </WrapPanel>
@@ -214,7 +214,7 @@
 
                             <StackPanel Grid.Row="0" Margin="0,0,0,30">
                                 <TextBlock Text="{DynamicResource tabHeaderRunningGames}" FontSize="28" FontWeight="Bold" Foreground="{DynamicResource HeaderTextBrush}"/>
-                                <TextBlock Text="Detection of supported games currently running on your system." FontSize="14" Foreground="{DynamicResource SubTextBrush}" Margin="0,5,0,0"/>
+                                <TextBlock Text="{DynamicResource descRunningGames}" FontSize="14" Foreground="{DynamicResource SubTextBrush}" Margin="0,5,0,0"/>
                             </StackPanel>
 
                             <Border Grid.Row="1" Style="{StaticResource ModernCard}" Padding="0">
@@ -234,7 +234,7 @@
                                                         </Grid.ColumnDefinitions>
                                                         <Path Data="{StaticResource Icon.Games}" Fill="{DynamicResource SuccessBrush}" Width="20" Height="20" Stretch="Uniform" Margin="0,0,15,0"/>
                                                         <TextBlock Grid.Column="1" Text="{Binding}" FontSize="16" FontWeight="SemiBold" VerticalAlignment="Center"/>
-                                                        <TextBlock Grid.Column="2" Text="RUNNING" Foreground="{DynamicResource SuccessBrush}" FontWeight="Black" FontSize="10" VerticalAlignment="Center" Margin="10,0,0,0"/>
+                                                        <TextBlock Grid.Column="2" Text="{DynamicResource statusRunning}" Foreground="{DynamicResource SuccessBrush}" FontWeight="Black" FontSize="10" VerticalAlignment="Center" Margin="10,0,0,0"/>
                                                     </Grid>
                                                 </Border>
                                             </DataTemplate>
@@ -245,13 +245,13 @@
                                     <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center"
                                                 Visibility="{Binding RunningGames.Count, Converter={StaticResource CollectionEmptyToVisibilityConverter}}">
                                         <Path Data="{StaticResource Icon.Alert}" Fill="{DynamicResource BorderBrush}" Width="48" Height="48" Stretch="Uniform" Margin="0,0,0,15"/>
-                                        <TextBlock Text="No games detected" FontSize="18" FontWeight="Bold" Foreground="{DynamicResource SubTextBrush}" HorizontalAlignment="Center"/>
-                                        <TextBlock Text="Start a game to verify detection" Foreground="{DynamicResource SubTextBrush}" HorizontalAlignment="Center"/>
+                                        <TextBlock Text="{DynamicResource hdrNoGamesDetected}" FontSize="18" FontWeight="Bold" Foreground="{DynamicResource SubTextBrush}" HorizontalAlignment="Center"/>
+                                        <TextBlock Text="{DynamicResource descNoGamesDetected}" Foreground="{DynamicResource SubTextBrush}" HorizontalAlignment="Center"/>
                                     </StackPanel>
                                 </Grid>
                             </Border>
 
-                            <Button Grid.Row="2" Content="Scan for Games" Style="{StaticResource ModernActionButton}" 
+                            <Button Grid.Row="2" Content="{DynamicResource btnScanGames}" Style="{StaticResource ModernActionButton}" 
                                     Command="{Binding RefreshRunningGamesCommand}"
                                     HorizontalAlignment="Right" Margin="0,20,0,0"/>
                         </Grid>
