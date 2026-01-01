@@ -119,32 +119,34 @@ Lütfen manuel olarak başlatın.</system:String>
     <system:String x:Key="termCorruptedInstallation">bozuk kurulum</system:String> 
     <system:String x:Key="termInstallation">kurulum</system:String> 
 
-    <!-- New UI Resources -->
-    <system:String x:Key="appDescription">Identify and resolve issues with your Blitz installation.</system:String>
+            <!-- New UI Resources -->
+    <system:String x:Key="appDescription">Blitz kurulumunuzla ilgili sorunları belirleyin ve çözün.</system:String>
     <system:String x:Key="txtSeparator">  •  </system:String>
     
-    <system:String x:Key="hdrFixAllIssues">Fix All Issues</system:String>
-    <system:String x:Key="descFixAllIssues">Run all troubleshooting steps automatically to fix common problems.</system:String>
-    <system:String x:Key="btnQuickFix">Quick Fix</system:String>
+    <system:String x:Key="hdrFixAllIssues">Tüm Sorunları Düzelt</system:String>
+    <system:String x:Key="descFixAllIssues">Yaygın sorunları düzeltmek için tüm sorun giderme adımlarını otomatik olarak çalıştırın.</system:String>
+    <system:String x:Key="btnQuickFix">Hızlı Düzeltme</system:String>
     
-    <system:String x:Key="hdrClearCache">Clear Cache</system:String>
-    <system:String x:Key="descClearCache">Remove local temporary files and reset the application state.</system:String>
-    <system:String x:Key="btnCleanCache">Clean Cache</system:String>
+    <system:String x:Key="hdrClearCache">Önbelleği Temizle</system:String>
+    <system:String x:Key="descClearCache">Yerel geçici dosyaları kaldırın ve uygulama durumunu sıfırlayın.</system:String>
+    <system:String x:Key="btnCleanCache">Temizle</system:String>
     
-    <system:String x:Key="hdrKillProcesses">Kill Processes</system:String>
-    <system:String x:Key="descKillProcesses">Forcefully close all running Blitz and game related processes.</system:String>
-    <system:String x:Key="btnTerminate">Terminate</system:String>
+    <system:String x:Key="hdrKillProcesses">İşlemleri Sonlandır</system:String>
+    <system:String x:Key="descKillProcesses">Çalışan tüm Blitz ve oyunla ilgili işlemleri zorla kapatın.</system:String>
+    <system:String x:Key="btnTerminate">Sonlandır</system:String>
     
-    <system:String x:Key="hdrPortableVersion">Portable Version</system:String>
-    <system:String x:Key="descPortableVersion">Download a standalone version of Blitz that doesn't require installation.</system:String>
-    <system:String x:Key="btnDownload">Download</system:String>
+    <system:String x:Key="hdrPortableVersion">Taşınabilir Sürüm</system:String>
+    <system:String x:Key="descPortableVersion">Kurulum gerektirmeyen bağımsız bir Blitz sürümünü indirin.</system:String>
+    <system:String x:Key="btnDownload">İndir</system:String>
     
-    <system:String x:Key="descRunningGames">Detection of supported games currently running on your system.</system:String>
-    <system:String x:Key="statusRunning">RUNNING</system:String>
-    <system:String x:Key="hdrNoGamesDetected">No games detected</system:String>
-    <system:String x:Key="descNoGamesDetected">Start a game to verify detection</system:String>
-    <system:String x:Key="btnScanGames">Scan for Games</system:String>
-    <system:String x:Key="tooltipRefreshStatus">Refresh Status</system:String>
+    <system:String x:Key="descRunningGames">Sisteminizde çalışan desteklenen oyunların tespiti.</system:String>
+    <system:String x:Key="statusRunning">ÇALIŞIYOR</system:String>
+    <system:String x:Key="hdrNoGamesDetected">Oyun algılanmadı</system:String>
+    <system:String x:Key="descNoGamesDetected">Algılamayı doğrulamak için bir oyun başlatın</system:String>
+    <system:String x:Key="btnScanGames">Oyunları Tara</system:String>
+    <system:String x:Key="tooltipRefreshStatus">Durumu Yenile</system:String>
 
 </ResourceDictionary>
+
+
 

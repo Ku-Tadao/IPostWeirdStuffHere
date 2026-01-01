@@ -111,32 +111,34 @@ Harap jalankan secara manual.</system:String>
     <system:String x:Key="termCorruptedInstallation">instalasi rusak</system:String>
     <system:String x:Key="termInstallation">instalasi</system:String>
 
-    <!-- New UI Resources -->
-    <system:String x:Key="appDescription">Identify and resolve issues with your Blitz installation.</system:String>
+            <!-- New UI Resources -->
+    <system:String x:Key="appDescription">Identifikasi dan selesaikan masalah dengan instalasi Blitz Anda.</system:String>
     <system:String x:Key="txtSeparator">  •  </system:String>
     
-    <system:String x:Key="hdrFixAllIssues">Fix All Issues</system:String>
-    <system:String x:Key="descFixAllIssues">Run all troubleshooting steps automatically to fix common problems.</system:String>
-    <system:String x:Key="btnQuickFix">Quick Fix</system:String>
+    <system:String x:Key="hdrFixAllIssues">Perbaiki Semua Masalah</system:String>
+    <system:String x:Key="descFixAllIssues">Jalankan semua langkah pemecahan masalah secara otomatis untuk memperbaiki masalah umum.</system:String>
+    <system:String x:Key="btnQuickFix">Perbaikan Cepat</system:String>
     
-    <system:String x:Key="hdrClearCache">Clear Cache</system:String>
-    <system:String x:Key="descClearCache">Remove local temporary files and reset the application state.</system:String>
-    <system:String x:Key="btnCleanCache">Clean Cache</system:String>
+    <system:String x:Key="hdrClearCache">Bersihkan Cache</system:String>
+    <system:String x:Key="descClearCache">Hapus file sementara lokal dan atur ulang status aplikasi.</system:String>
+    <system:String x:Key="btnCleanCache">Bersihkan Cache</system:String>
     
-    <system:String x:Key="hdrKillProcesses">Kill Processes</system:String>
-    <system:String x:Key="descKillProcesses">Forcefully close all running Blitz and game related processes.</system:String>
-    <system:String x:Key="btnTerminate">Terminate</system:String>
+    <system:String x:Key="hdrKillProcesses">Hentikan Proses</system:String>
+    <system:String x:Key="descKillProcesses">Tutup paksa semua proses Blitz dan game yang sedang berjalan.</system:String>
+    <system:String x:Key="btnTerminate">Hentikan</system:String>
     
-    <system:String x:Key="hdrPortableVersion">Portable Version</system:String>
-    <system:String x:Key="descPortableVersion">Download a standalone version of Blitz that doesn't require installation.</system:String>
-    <system:String x:Key="btnDownload">Download</system:String>
+    <system:String x:Key="hdrPortableVersion">Versi Portabel</system:String>
+    <system:String x:Key="descPortableVersion">Unduh versi mandiri Blitz yang tidak memerlukan instalasi.</system:String>
+    <system:String x:Key="btnDownload">Unduh</system:String>
     
-    <system:String x:Key="descRunningGames">Detection of supported games currently running on your system.</system:String>
-    <system:String x:Key="statusRunning">RUNNING</system:String>
-    <system:String x:Key="hdrNoGamesDetected">No games detected</system:String>
-    <system:String x:Key="descNoGamesDetected">Start a game to verify detection</system:String>
-    <system:String x:Key="btnScanGames">Scan for Games</system:String>
-    <system:String x:Key="tooltipRefreshStatus">Refresh Status</system:String>
+    <system:String x:Key="descRunningGames">Deteksi game yang didukung yang sedang berjalan di sistem Anda.</system:String>
+    <system:String x:Key="statusRunning">BERJALAN</system:String>
+    <system:String x:Key="hdrNoGamesDetected">Tidak ada game terdeteksi</system:String>
+    <system:String x:Key="descNoGamesDetected">Mulai game untuk memverifikasi deteksi</system:String>
+    <system:String x:Key="btnScanGames">Pindai Game</system:String>
+    <system:String x:Key="tooltipRefreshStatus">Segarkan Status</system:String>
 
 </ResourceDictionary>
+
+
 

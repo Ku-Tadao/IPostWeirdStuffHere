@@ -119,32 +119,34 @@ Por favor, inicie manualmente.</system:String>
     <system:String x:Key="termCorruptedInstallation">instalação corrompida</system:String> 
     <system:String x:Key="termInstallation">instalação</system:String> 
 
-    <!-- New UI Resources -->
-    <system:String x:Key="appDescription">Identify and resolve issues with your Blitz installation.</system:String>
+            <!-- New UI Resources -->
+    <system:String x:Key="appDescription">Identifique e resolva problemas com a sua instalação do Blitz.</system:String>
     <system:String x:Key="txtSeparator">  •  </system:String>
     
-    <system:String x:Key="hdrFixAllIssues">Fix All Issues</system:String>
-    <system:String x:Key="descFixAllIssues">Run all troubleshooting steps automatically to fix common problems.</system:String>
-    <system:String x:Key="btnQuickFix">Quick Fix</system:String>
+    <system:String x:Key="hdrFixAllIssues">Corrigir Todos os Problemas</system:String>
+    <system:String x:Key="descFixAllIssues">Execute todas as etapas de resolução de problemas automaticamente para corrigir problemas comuns.</system:String>
+    <system:String x:Key="btnQuickFix">Correção Rápida</system:String>
     
-    <system:String x:Key="hdrClearCache">Clear Cache</system:String>
-    <system:String x:Key="descClearCache">Remove local temporary files and reset the application state.</system:String>
-    <system:String x:Key="btnCleanCache">Clean Cache</system:String>
+    <system:String x:Key="hdrClearCache">Limpar Cache</system:String>
+    <system:String x:Key="descClearCache">Remova ficheiros temporários locais e redefina o estado da aplicação.</system:String>
+    <system:String x:Key="btnCleanCache">Limpar Cache</system:String>
     
-    <system:String x:Key="hdrKillProcesses">Kill Processes</system:String>
-    <system:String x:Key="descKillProcesses">Forcefully close all running Blitz and game related processes.</system:String>
-    <system:String x:Key="btnTerminate">Terminate</system:String>
+    <system:String x:Key="hdrKillProcesses">Encerrar Processos</system:String>
+    <system:String x:Key="descKillProcesses">Feche forçosamente todos os processos do Blitz e relacionados com jogos em execução.</system:String>
+    <system:String x:Key="btnTerminate">Terminar</system:String>
     
-    <system:String x:Key="hdrPortableVersion">Portable Version</system:String>
-    <system:String x:Key="descPortableVersion">Download a standalone version of Blitz that doesn't require installation.</system:String>
-    <system:String x:Key="btnDownload">Download</system:String>
+    <system:String x:Key="hdrPortableVersion">Versão Portátil</system:String>
+    <system:String x:Key="descPortableVersion">Transfira uma versão autónoma do Blitz que não requer instalação.</system:String>
+    <system:String x:Key="btnDownload">Transferir</system:String>
     
-    <system:String x:Key="descRunningGames">Detection of supported games currently running on your system.</system:String>
-    <system:String x:Key="statusRunning">RUNNING</system:String>
-    <system:String x:Key="hdrNoGamesDetected">No games detected</system:String>
-    <system:String x:Key="descNoGamesDetected">Start a game to verify detection</system:String>
-    <system:String x:Key="btnScanGames">Scan for Games</system:String>
-    <system:String x:Key="tooltipRefreshStatus">Refresh Status</system:String>
+    <system:String x:Key="descRunningGames">Deteção de jogos suportados atualmente em execução no seu sistema.</system:String>
+    <system:String x:Key="statusRunning">A EXECUTAR</system:String>
+    <system:String x:Key="hdrNoGamesDetected">Nenhum jogo detetado</system:String>
+    <system:String x:Key="descNoGamesDetected">Inicie um jogo para verificar a deteção</system:String>
+    <system:String x:Key="btnScanGames">Procurar Jogos</system:String>
+    <system:String x:Key="tooltipRefreshStatus">Atualizar Estado</system:String>
 
 </ResourceDictionary>
+
+
 
