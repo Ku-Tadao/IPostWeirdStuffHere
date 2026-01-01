@@ -6,333 +6,280 @@
         xmlns:vm="clr-namespace:BlitzTroubleshooter.ViewModels"
         xmlns:converters="clr-namespace:BlitzTroubleshooter.Converters"
         mc:Ignorable="d"
-        Title="{Binding WindowTitle}"
-        Height="650"
-        Width="850"
-        MinHeight="500"
-        MinWidth="700"
+        Title="{Binding WindowTitle, Mode=OneWay}"
+        Height="800" Width="950"
         WindowStartupLocation="CenterScreen"
-        ResizeMode="CanResizeWithGrip"
         Style="{StaticResource MainWindowStyle}"
-    d:DataContext="{d:DesignInstance Type=vm:MainViewModel, IsDesignTimeCreatable=True}">
+        d:DataContext="{d:DesignInstance Type=vm:MainViewModel, IsDesignTimeCreatable=True}">
 
     <Window.Resources>
         <BooleanToVisibilityConverter x:Key="BoolToVisConverter"/>
         <converters:InverseBooleanConverter x:Key="InverseBoolConverter"/>
-
-        <Style TargetType="TextBlock" x:Key="HeaderText">
-            <Setter Property="FontSize" Value="18"/>
-            <Setter Property="FontWeight" Value="Bold"/>
-            <Setter Property="Foreground" Value="{DynamicResource HeaderTextBrush}"/>
-            <Setter Property="Margin" Value="0,10,0,5"/>
-        </Style>
-
-        <Style TargetType="TextBlock" x:Key="InfoText">
-            <Setter Property="FontSize" Value="12"/>
-            <Setter Property="Foreground" Value="{DynamicResource TextBrush}"/>
-            <Setter Property="TextWrapping" Value="Wrap"/>
-            <Setter Property="Margin" Value="0,2"/>
-        </Style>
-
-        <Style TargetType="{x:Type DataGrid}">
-            <Setter Property="Background" Value="{DynamicResource PanelBackgroundBrush}"/>
-            <Setter Property="Foreground" Value="{DynamicResource TextBrush}"/>
-            <Setter Property="BorderBrush" Value="{DynamicResource BorderBrush}"/>
-            <Setter Property="BorderThickness" Value="1"/>
-            <Setter Property="GridLinesVisibility" Value="Horizontal"/>
-            <Setter Property="HorizontalGridLinesBrush" Value="{DynamicResource BorderBrush}"/>
-            <Setter Property="HeadersVisibility" Value="Column"/>
-            <Setter Property="IsReadOnly" Value="True"/>
-            <Setter Property="AutoGenerateColumns" Value="False"/>
-            <Setter Property="CanUserAddRows" Value="False"/>
-            <Setter Property="CanUserDeleteRows" Value="False"/>
-            <Setter Property="CanUserResizeRows" Value="False"/>
-            <Setter Property="SelectionMode" Value="Single"/>
-            <Setter Property="SelectionUnit" Value="FullRow"/>
-        </Style>
-
-        <Style TargetType="{x:Type DataGridRow}">
-            <Setter Property="Background" Value="Transparent"/>
-            <Setter Property="Foreground" Value="{DynamicResource TextBrush}"/>
-            <Style.Triggers>
-                <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="Background" Value="{DynamicResource PanelHoverBackgroundBrush}"/>
-                </Trigger>
-                <Trigger Property="IsSelected" Value="True">
-                    <Setter Property="Background" Value="{DynamicResource AccentBrush}"/>
-                    <Setter Property="Foreground" Value="{DynamicResource AccentTextBrush}"/>
-                </Trigger>
-            </Style.Triggers>
-        </Style>
-
-        <Style TargetType="{x:Type DataGridCell}">
-            <Setter Property="Background" Value="Transparent"/>
-            <Setter Property="Foreground" Value="{DynamicResource TextBrush}"/>
-            <Setter Property="BorderThickness" Value="0"/>
-            <Setter Property="Padding" Value="8,5"/>
-            <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
-            <Style.Triggers>
-                <Trigger Property="IsSelected" Value="True">
-                    <Setter Property="Background" Value="Transparent"/>
-                    <Setter Property="Foreground" Value="{DynamicResource AccentTextBrush}"/>
-                </Trigger>
-            </Style.Triggers>
-        </Style>
-
-        <Style TargetType="{x:Type DataGridColumnHeader}">
-            <Setter Property="Background" Value="{DynamicResource PanelBackgroundBrush}"/>
-            <Setter Property="Foreground" Value="{DynamicResource HeaderTextBrush}"/>
-            <Setter Property="FontWeight" Value="SemiBold"/>
-            <Setter Property="Padding" Value="8,5"/>
-            <Setter Property="BorderThickness" Value="0,0,0,1"/>
-            <Setter Property="BorderBrush" Value="{DynamicResource BorderBrush}"/>
-            <Setter Property="HorizontalContentAlignment" Value="Left"/>
-        </Style>
-
-        <Style x:Key="DataGridCheckBoxStyle" TargetType="{x:Type CheckBox}">
-            <Setter Property="HorizontalAlignment" Value="Center"/>
-            <Setter Property="VerticalAlignment" Value="Center"/>
-            <Setter Property="Foreground" Value="{DynamicResource TextBrush}"/>
-        </Style>
-
     </Window.Resources>
 
-    <Grid Margin="15" Background="{DynamicResource AppBackgroundBrush}">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-        </Grid.RowDefinitions>
-
-        <Grid Grid.Row="0" Margin="0,0,0,15">
+    <Border Background="{DynamicResource AppBackgroundBrush}" 
+            BorderBrush="{DynamicResource BorderBrush}" 
+            BorderThickness="1"
+            CornerRadius="10"
+            ClipToBounds="True">
+        <Grid>
             <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="240"/>
                 <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="32"/> <!-- Custom Title Bar -->
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/> <!-- Status Bar -->
+            </Grid.RowDefinitions>
 
-            <StackPanel Grid.Column="0" VerticalAlignment="Center">
-                <TextBlock Text="{DynamicResource windowTitle}"
-                           FontSize="24"
-                           FontWeight="Bold"
-                           Foreground="{DynamicResource HeaderTextBrush}"/>
-                <TextBlock Text="Modern troubleshooting tool for Blitz.gg gaming platform"
-                           Style="{StaticResource InfoText}"/>
-            </StackPanel>
-
-            <Button Grid.Column="1"
-                    Command="{Binding ToggleThemeCommand}"
-                    Style="{StaticResource ModernButton}"
-                    Padding="8" MinWidth="40">
-                <Button.ToolTip>
-                    <TextBlock>
-                        <Run Text="{DynamicResource themeToggleButtonTooltipSwitchTo}"/>
-                        <Run Text="{Binding NextThemeDisplayName}"/>
-                        <Run Text="{DynamicResource themeToggleButtonTooltipTheme}"/>
-                    </TextBlock>
-                </Button.ToolTip>
-                <Button.ContentTemplate>
-                    <DataTemplate>
-                        
-                        <TextBlock Text="{Binding IsDarkTheme, ConverterParameter='☀️:🌙', Converter={StaticResource InverseBoolConverter}, FallbackValue='🌙'}" FontSize="16"/>
-                    </DataTemplate>
-                </Button.ContentTemplate>
-            </Button>
-        </Grid>
-
-        <TabControl Grid.Row="1">
-            <TabItem Header="{DynamicResource tabHeaderTroubleshooting}">
-                <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" Padding="5">
-                    <Grid Margin="5">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*" MinWidth="250"/>
-                            <ColumnDefinition Width="*" MinWidth="250"/>
-                        </Grid.ColumnDefinitions>
-
-                        <StackPanel Grid.Column="0" Margin="0,0,10,0">
-                            <TextBlock Text="{DynamicResource troubleshootingActionsHeader}" Style="{StaticResource HeaderText}"/>
-                            <Button Content="{DynamicResource fixAllIssuesButtonContent}"
-                                    Style="{StaticResource ModernButton}"
-                                    Command="{Binding FixAllIssuesCommand}"
-                                    IsEnabled="{Binding IsOperationInProgress, Converter={StaticResource InverseBoolConverter}}"
-                                    ToolTip="{DynamicResource fixAllIssuesButtonTooltip}"/>
-                            <Button Content="{DynamicResource terminateProcessesButtonContent}"
-                                    Style="{StaticResource ModernButton}"
-                                    Command="{Binding TerminateProcessesCommand}"
-                                    IsEnabled="{Binding IsOperationInProgress, Converter={StaticResource InverseBoolConverter}}"/>
-                            <Button Content="{DynamicResource clearCacheButtonContent}"
-                                    Style="{StaticResource ModernButton}"
-                                    Command="{Binding ClearCacheCommand}"
-                                    IsEnabled="{Binding IsOperationInProgress, Converter={StaticResource InverseBoolConverter}}"/>
-                            <Button Content="{DynamicResource uninstallBlitzButtonContent}"
-                                    Style="{StaticResource ModernButton}"
-                                    Command="{Binding UninstallCommand}"
-                                    IsEnabled="{Binding IsOperationInProgress, Converter={StaticResource InverseBoolConverter}}"/>
-                            <Button Content="{DynamicResource downloadPortableButtonContent}"
-                                    Style="{StaticResource ModernButton}"
-                                    Command="{Binding DownloadPortableCommand}"
-                                    IsEnabled="{Binding IsOperationInProgress, Converter={StaticResource InverseBoolConverter}}"/>
-                        </StackPanel>
-
-                        <StackPanel Grid.Column="1" Margin="10,0,0,0">
-                            <TextBlock Text="{DynamicResource blitzInstallationStatusHeader}" Style="{StaticResource HeaderText}"/>
-                            <Border Background="{DynamicResource PanelBackgroundBrush}"
-                                    BorderBrush="{DynamicResource BorderBrush}"
-                                    BorderThickness="1"
-                                    CornerRadius="5"
-                                    Padding="15"
-                                    Margin="0,5">
-                                <StackPanel>
-                                    <TextBlock Style="{StaticResource InfoText}">
-                                        <Run Text="{DynamicResource statusLabel}"/>
-                                        <Run FontWeight="SemiBold">
-                                            <Run.Style>
-                                                <Style TargetType="Run">
-                                                    <Setter Property="Text" Value="{DynamicResource blitzStatusNotInstalled}" />
-                                                    <Setter Property="Foreground" Value="Gray" />
-                                                    <Style.Triggers>
-                                                        <DataTrigger Binding="{Binding BlitzInstallation.Status}" Value="Installed">
-                                                            <Setter Property="Text" Value="{DynamicResource blitzStatusInstalled}" />
-                                                            <Setter Property="Foreground" Value="LimeGreen" />
-                                                        </DataTrigger>
-                                                        <DataTrigger Binding="{Binding BlitzInstallation.Status}" Value="Corrupted">
-                                                            <Setter Property="Text" Value="{DynamicResource blitzStatusCorrupted}" />
-                                                            <Setter Property="Foreground" Value="Orange" />
-                                                        </DataTrigger>
-                                                        <DataTrigger Binding="{Binding BlitzInstallation.Status}" Value="NotInstalled">
-                                                            <Setter Property="Text" Value="{DynamicResource blitzStatusNotInstalled}" />
-                                                            <Setter Property="Foreground" Value="Gray" />
-                                                        </DataTrigger>
-                                                    </Style.Triggers>
-                                                </Style>
-                                            </Run.Style>
-                                        </Run>
-                                    </TextBlock>
-                                    <TextBlock Style="{StaticResource InfoText}"
-                                               Visibility="{Binding BlitzInstallation.HasAnyFiles, Converter={StaticResource BoolToVisConverter}}">
-                                        <Run Text="{DynamicResource pathLabel}"/>
-                                        <Run Text="{Binding BlitzInstallation.InstallPath, FallbackValue='Not found'}"/>
-                                    </TextBlock>
-                                    <TextBlock Style="{StaticResource InfoText}"
-                                               Visibility="{Binding BlitzInstallation.IsInstalled, Converter={StaticResource BoolToVisConverter}}">
-                                        <Run Text="{DynamicResource versionLabel}"/>
-                                        <Run Text="{Binding BlitzInstallation.Version, FallbackValue='N/A'}" FontWeight="SemiBold"/>
-                                    </TextBlock>
-
-                                    <TextBlock Style="{StaticResource InfoText}"
-                                               Visibility="{Binding BlitzInstallation.IsCorrupted, Converter={StaticResource BoolToVisConverter}}"
-                                               Foreground="Orange"
-                                               TextWrapping="Wrap">
-                                        <Run Text="{DynamicResource corruptedInstallationWarning1}"/>
-                                        <Run Text="{DynamicResource corruptedInstallationWarning2}" FontStyle="Italic"/>
-                                    </TextBlock>
-
-                                    <Button Content="{DynamicResource refreshButtonContent}"
-                                            Style="{StaticResource ModernButton}"
-                                            Command="{Binding RefreshBlitzInstallationCommand}"
-                                            HorizontalAlignment="Right"
-                                            Margin="0,10,0,0"
-                                            IsEnabled="{Binding IsOperationInProgress, Converter={StaticResource InverseBoolConverter}}"/>
-                                </StackPanel>
-                            </Border>
-                        </StackPanel>
-                    </Grid>
-                </ScrollViewer>
-            </TabItem>
-
-           <TabItem Header="{DynamicResource tabHeaderRunningGames}">
-            <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" Padding="5">
-                <Grid Margin="5">
+            <!-- Sidebar -->
+            <Border Grid.Column="0" Grid.Row="0" Grid.RowSpan="3" 
+                    Background="{DynamicResource SidebarBackgroundBrush}"
+                    BorderBrush="{DynamicResource BorderBrush}"
+                    BorderThickness="0,0,1,0">
+                <Grid>
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="120"/>
                         <RowDefinition Height="*"/>
-                        <RowDefinition Height="Auto"/>
                     </Grid.RowDefinitions>
-                    <TextBlock Grid.Row="0"
-                               Text="{DynamicResource currentlyRunningGamesHeader}"
-                               Style="{StaticResource HeaderText}"/>
-                    <ListBox Grid.Row="1"
-                             ItemsSource="{Binding RunningGames}"
-                             Margin="0,10"
-                             MinHeight="200">
-                        <ListBox.ItemTemplate>
-                            <DataTemplate>
-                                <Grid Margin="5">
+
+                    <!-- App Logo/Header -->
+                    <StackPanel Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center">
+                        <Image Source="/Assets/Troubleshooter logo.png" Width="96" Height="96" RenderOptions.BitmapScalingMode="HighQuality"/>
+                    </StackPanel>
+
+                    <!-- Navigation -->
+                    <ListView x:Name="SidebarList" Grid.Row="1" 
+                              Background="Transparent" BorderThickness="0"
+                              SelectedIndex="0"
+                              SelectionMode="Single">
+                        <ListViewItem Style="{StaticResource SidebarButton}">
+                            <StackPanel Orientation="Horizontal">
+                                <Path Data="{StaticResource Icon.Troubleshoot}" Fill="{Binding Foreground, RelativeSource={RelativeSource AncestorType=ListViewItem}}" 
+                                      Width="18" Height="18" Stretch="Uniform" Margin="0,0,12,0"/>
+                                <TextBlock Text="{DynamicResource tabHeaderTroubleshooting}" VerticalAlignment="Center" FontSize="14" FontWeight="SemiBold"/>
+                            </StackPanel>
+                        </ListViewItem>
+                        <ListViewItem Style="{StaticResource SidebarButton}">
+                            <StackPanel Orientation="Horizontal">
+                                <Path Data="{StaticResource Icon.Games}" Fill="{Binding Foreground, RelativeSource={RelativeSource AncestorType=ListViewItem}}" 
+                                      Width="18" Height="18" Stretch="Uniform" Margin="0,0,12,0"/>
+                                <TextBlock Text="{DynamicResource tabHeaderRunningGames}" VerticalAlignment="Center" FontSize="14" FontWeight="SemiBold"/>
+                            </StackPanel>
+                        </ListViewItem>
+                    </ListView>
+                </Grid>
+            </Border>
+
+            <!-- Title Bar -->
+            <Border Grid.Column="1" Grid.Row="0" Background="Transparent" WindowChrome.IsHitTestVisibleInChrome="True">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top">
+                    <Button Content="{StaticResource Icon.Minimize}" Style="{StaticResource TitleBarButton}" Click="MinimizeButton_Click"/>
+                    <Button Content="{StaticResource Icon.Close}" Style="{StaticResource CloseTitleBarButton}" Click="CloseButton_Click"/>
+                </StackPanel>
+            </Border>
+
+            <!-- Main Content Area -->
+            <Grid Grid.Column="1" Grid.Row="1" Margin="30">
+                <TabControl Background="Transparent" BorderThickness="0" 
+                            SelectedIndex="{Binding SelectedIndex, ElementName=SidebarList}">
+                    <TabControl.Template>
+                        <ControlTemplate TargetType="TabControl">
+                            <ContentPresenter ContentSource="SelectedContent"/>
+                        </ControlTemplate>
+                    </TabControl.Template>
+
+                    <!-- Troubleshoot View -->
+                    <TabItem>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+
+                            <StackPanel Grid.Row="0" Margin="0,0,0,30">
+                                <TextBlock Text="{DynamicResource tabHeaderTroubleshooting}" FontSize="28" FontWeight="Bold" Foreground="{DynamicResource HeaderTextBrush}"/>
+                                <TextBlock Text="Identify and resolve issues with your Blitz installation." FontSize="14" Foreground="{DynamicResource SubTextBrush}" Margin="0,5,0,0"/>
+                            </StackPanel>
+
+                            <!-- Installation Status Card -->
+                            <Border Grid.Row="1" Style="{StaticResource ModernCard}" Margin="0,0,0,20">
+                                <Grid>
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="Auto"/>
                                         <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
                                     </Grid.ColumnDefinitions>
-                                    <Ellipse Grid.Column="0"
-                                             Width="8" Height="8"
-                                             Fill="LimeGreen"
-                                             Margin="0,0,10,0"
-                                             VerticalAlignment="Center"/>
-                                    <TextBlock Grid.Column="1"
-                                               Text="{Binding}"
-                                               VerticalAlignment="Center"
-                                               FontWeight="Medium"/>
+                                    
+                                    <Border Width="48" Height="48" CornerRadius="24" Background="{DynamicResource AccentGlowBrush}" Margin="0,0,20,0">
+                                        <Path Data="{StaticResource Icon.Shield}" Fill="{DynamicResource AccentBrush}" Width="24" Height="24" Stretch="Uniform"/>
+                                    </Border>
+
+                                    <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                                        <TextBlock Text="Blitz Installation Status" FontWeight="Bold" FontSize="16" Foreground="{DynamicResource HeaderTextBrush}"/>
+                                        <TextBlock Margin="0,2,0,0">
+                                            <Run Text="Status: " Foreground="{DynamicResource SubTextBrush}"/>
+                                            <Run FontWeight="SemiBold">
+                                                <Run.Style>
+                                                    <Style TargetType="Run">
+                                                        <Setter Property="Text" Value="Not Installed" />
+                                                        <Setter Property="Foreground" Value="{DynamicResource SubTextBrush}" />
+                                                        <Style.Triggers>
+                                                            <DataTrigger Binding="{Binding BlitzInstallation.Status}" Value="Installed">
+                                                                <Setter Property="Text" Value="Installed" />
+                                                                <Setter Property="Foreground" Value="{DynamicResource SuccessBrush}" />
+                                                            </DataTrigger>
+                                                            <DataTrigger Binding="{Binding BlitzInstallation.Status}" Value="Corrupted">
+                                                                <Setter Property="Text" Value="Corrupted" />
+                                                                <Setter Property="Foreground" Value="{DynamicResource WarningBrush}" />
+                                                            </DataTrigger>
+                                                        </Style.Triggers>
+                                                    </Style>
+                                                </Run.Style>
+                                            </Run>
+                                            <Run Text="  •  " Foreground="{DynamicResource BorderBrush}" />
+                                            <Run Text="Version: " Foreground="{DynamicResource SubTextBrush}"/>
+                                            <Run Text="{Binding BlitzInstallation.Version, FallbackValue='N/A'}" FontWeight="SemiBold" Foreground="{DynamicResource HeaderTextBrush}"/>
+                                        </TextBlock>
+                                        <TextBlock Text="{Binding BlitzInstallation.InstallPath}" FontSize="12" Foreground="{DynamicResource SubTextBrush}" Margin="0,4,0,0"
+                                                   Visibility="{Binding BlitzInstallation.HasAnyFiles, Converter={StaticResource BoolToVisConverter}}"/>
+                                    </StackPanel>
+
+                                    <Button Grid.Column="2" Content="{StaticResource Icon.Refresh}" Style="{StaticResource TitleBarButton}" 
+                                            Command="{Binding RefreshBlitzInstallationCommand}" ToolTip="Refresh Status"
+                                            VerticalAlignment="Center"/>
                                 </Grid>
-                            </DataTemplate>
-                        </ListBox.ItemTemplate>
-                        <ListBox.Style>
-                            <Style TargetType="ListBox">
-                                <Setter Property="Background" Value="Transparent"/>
-                                <Setter Property="BorderThickness" Value="1"/>
-                                <Setter Property="BorderBrush" Value="{DynamicResource BorderBrush}"/>
-                                <Setter Property="Padding" Value="10"/>
-                            </Style>
-                        </ListBox.Style>
-                    </ListBox>
-                    <TextBlock Grid.Row="1"
-                               Text="{DynamicResource noGamesRunning}"
-                               HorizontalAlignment="Center"
-                               VerticalAlignment="Center"
-                               FontStyle="Italic"
-                               Foreground="{DynamicResource TextBrush}">
-                        <TextBlock.Style>
-                            <Style TargetType="TextBlock">
-                                <Setter Property="Visibility" Value="Collapsed"/>
-                                <Style.Triggers>
-                                    <DataTrigger Binding="{Binding RunningGames.Count}" Value="0">
-                                        <Setter Property="Visibility" Value="Visible"/>
-                                    </DataTrigger>
-                                </Style.Triggers>
-                            </Style>
-                        </TextBlock.Style>
-                    </TextBlock>
+                            </Border>
 
-                    <Button Grid.Row="2"
-                            Content="{DynamicResource checkRunningGamesButtonContent}"
-                            Style="{StaticResource ModernButton}"
-                            Command="{Binding RefreshRunningGamesCommand}"
-                            HorizontalAlignment="Right"
-                            IsEnabled="{Binding IsOperationInProgress, Converter={StaticResource InverseBoolConverter}}"/>
+                            <!-- Action Cards -->
+                            <ScrollViewer Grid.Row="2" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+                                <WrapPanel Margin="-10">
+                                    <!-- Fix All Issues -->
+                                    <Border Style="{StaticResource ModernCard}" Width="280">
+                                        <StackPanel>
+                                            <Path Data="{StaticResource Icon.Check}" Fill="{DynamicResource SuccessBrush}" Width="32" Height="32" Stretch="Uniform" HorizontalAlignment="Left" Margin="0,0,0,15"/>
+                                            <TextBlock Text="Fix All Issues" FontSize="18" FontWeight="Bold" Foreground="{DynamicResource HeaderTextBrush}"/>
+                                            <TextBlock Text="Run all troubleshooting steps automatically to fix common problems." TextWrapping="Wrap" Margin="0,8,0,20" Height="40" Foreground="{DynamicResource SubTextBrush}"/>
+                                            <Button Content="Quick Fix" Style="{StaticResource ModernActionButton}" Command="{Binding FixAllIssuesCommand}" IsEnabled="{Binding IsOperationInProgress, Converter={StaticResource InverseBoolConverter}}"/>
+                                        </StackPanel>
+                                    </Border>
+
+                                    <!-- Clear Cache -->
+                                    <Border Style="{StaticResource ModernCard}" Width="280">
+                                        <StackPanel>
+                                            <Path Data="{StaticResource Icon.Trash}" Fill="{DynamicResource WarningBrush}" Width="32" Height="32" Stretch="Uniform" HorizontalAlignment="Left" Margin="0,0,0,15"/>
+                                            <TextBlock Text="Clear Cache" FontSize="18" FontWeight="Bold" Foreground="{DynamicResource HeaderTextBrush}"/>
+                                            <TextBlock Text="Remove local temporary files and reset the application state." TextWrapping="Wrap" Margin="0,8,0,20" Height="40" Foreground="{DynamicResource SubTextBrush}"/>
+                                            <Button Content="Clean Cache" Style="{StaticResource ModernActionButton}" Command="{Binding ClearCacheCommand}" IsEnabled="{Binding IsOperationInProgress, Converter={StaticResource InverseBoolConverter}}"/>
+                                        </StackPanel>
+                                    </Border>
+
+                                    <!-- Terminate Processes -->
+                                    <Border Style="{StaticResource ModernCard}" Width="280">
+                                        <StackPanel>
+                                            <Path Data="{StaticResource Icon.Close}" Fill="{DynamicResource ErrorBrush}" Width="32" Height="32" Stretch="Uniform" HorizontalAlignment="Left" Margin="0,0,0,15"/>
+                                            <TextBlock Text="Kill Processes" FontSize="18" FontWeight="Bold" Foreground="{DynamicResource HeaderTextBrush}"/>
+                                            <TextBlock Text="Forcefully close all running Blitz and game related processes." TextWrapping="Wrap" Margin="0,8,0,20" Height="40" Foreground="{DynamicResource SubTextBrush}"/>
+                                            <Button Content="Terminate" Style="{StaticResource ModernActionButton}" Command="{Binding TerminateProcessesCommand}" IsEnabled="{Binding IsOperationInProgress, Converter={StaticResource InverseBoolConverter}}"/>
+                                        </StackPanel>
+                                    </Border>
+
+                                    <!-- Download Portable -->
+                                    <Border Style="{StaticResource ModernCard}" Width="280">
+                                        <StackPanel>
+                                            <Path Data="{StaticResource Icon.Download}" Fill="{DynamicResource AccentBrush}" Width="32" Height="32" Stretch="Uniform" HorizontalAlignment="Left" Margin="0,0,0,15"/>
+                                            <TextBlock Text="Portable Version" FontSize="18" FontWeight="Bold" Foreground="{DynamicResource HeaderTextBrush}"/>
+                                            <TextBlock Text="Download a standalone version of Blitz that doesn't require installation." TextWrapping="Wrap" Margin="0,8,0,20" Height="40" Foreground="{DynamicResource SubTextBrush}"/>
+                                            <Button Content="Download" Style="{StaticResource ModernActionButton}" Command="{Binding DownloadPortableCommand}" IsEnabled="{Binding IsOperationInProgress, Converter={StaticResource InverseBoolConverter}}"/>
+                                        </StackPanel>
+                                    </Border>
+                                </WrapPanel>
+                            </ScrollViewer>
+                        </Grid>
+                    </TabItem>
+
+                    <!-- Games View -->
+                    <TabItem>
+                         <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+
+                            <StackPanel Grid.Row="0" Margin="0,0,0,30">
+                                <TextBlock Text="{DynamicResource tabHeaderRunningGames}" FontSize="28" FontWeight="Bold" Foreground="{DynamicResource HeaderTextBrush}"/>
+                                <TextBlock Text="Detection of supported games currently running on your system." FontSize="14" Foreground="{DynamicResource SubTextBrush}" Margin="0,5,0,0"/>
+                            </StackPanel>
+
+                            <Border Grid.Row="1" Style="{StaticResource ModernCard}" Padding="0">
+                                <Grid>
+                                    <ListView ItemsSource="{Binding RunningGames}" 
+                                              Background="Transparent" BorderThickness="0"
+                                              Padding="10">
+                                        <ListView.ItemTemplate>
+                                            <DataTemplate>
+                                                <Border Background="{DynamicResource PanelHoverBackgroundBrush}" 
+                                                        Margin="5" Padding="15,10" CornerRadius="6">
+                                                    <Grid>
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition Width="Auto"/>
+                                                            <ColumnDefinition Width="*"/>
+                                                            <ColumnDefinition Width="Auto"/>
+                                                        </Grid.ColumnDefinitions>
+                                                        <Path Data="{StaticResource Icon.Games}" Fill="{DynamicResource SuccessBrush}" Width="20" Height="20" Stretch="Uniform" Margin="0,0,15,0"/>
+                                                        <TextBlock Grid.Column="1" Text="{Binding}" FontSize="16" FontWeight="SemiBold" VerticalAlignment="Center"/>
+                                                        <TextBlock Grid.Column="2" Text="RUNNING" Foreground="{DynamicResource SuccessBrush}" FontWeight="Black" FontSize="10" VerticalAlignment="Center"/>
+                                                    </Grid>
+                                                </Border>
+                                            </DataTemplate>
+                                        </ListView.ItemTemplate>
+                                    </ListView>
+
+                                    <!-- Empty State -->
+                                    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center"
+                                                Visibility="{Binding RunningGames.Count, Converter={StaticResource InverseBoolConverter}, ConverterParameter=0}">
+                                        <Path Data="{StaticResource Icon.Alert}" Fill="{DynamicResource BorderBrush}" Width="48" Height="48" Stretch="Uniform" Margin="0,0,0,15"/>
+                                        <TextBlock Text="No games detected" FontSize="18" FontWeight="Bold" Foreground="{DynamicResource SubTextBrush}" HorizontalAlignment="Center"/>
+                                        <TextBlock Text="Start a game to verify detection" Foreground="{DynamicResource SubTextBrush}" HorizontalAlignment="Center"/>
+                                    </StackPanel>
+                                </Grid>
+                            </Border>
+
+                            <Button Grid.Row="2" Content="Scan for Games" Style="{StaticResource ModernActionButton}" 
+                                    Command="{Binding RefreshRunningGamesCommand}"
+                                    HorizontalAlignment="Right" Margin="0,20,0,0"/>
+                        </Grid>
+                    </TabItem>
+                </TabControl>
+            </Grid>
+
+            <!-- Status & Progress -->
+            <Border Grid.Column="1" Grid.Row="2" Background="{DynamicResource SidebarBackgroundBrush}" 
+                    BorderBrush="{DynamicResource BorderBrush}" BorderThickness="0,1,0,0" Padding="20,10">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="200"/>
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                        <Path Data="{StaticResource Icon.Info}" Fill="{DynamicResource SubTextBrush}" Width="14" Height="14" Stretch="Uniform" Margin="0,0,10,0"/>
+                        <TextBlock Text="{Binding StatusMessage}" FontSize="12" Foreground="{DynamicResource SubTextBrush}" VerticalAlignment="Center"/>
+                    </StackPanel>
+
+                    <ProgressBar Grid.Column="1" Height="6" VerticalAlignment="Center"
+                                 Value="{Binding ProgressValue}"
+                                 Visibility="{Binding IsOperationInProgress, Converter={StaticResource BoolToVisConverter}}"
+                                 Style="{StaticResource {x:Type ProgressBar}}"
+                                 Background="{DynamicResource PanelBackgroundBrush}"
+                                 Foreground="{DynamicResource AccentBrush}"
+                                 BorderThickness="0"/>
                 </Grid>
-            </ScrollViewer>
-        </TabItem>
+            </Border>
+        </Grid>
+    </Border>
 
-        </TabControl>
-
-        <ProgressBar Grid.Row="2"
-                     Height="8"
-                     Value="{Binding ProgressValue}"
-                     Margin="0,10,0,5"
-                     Background="{DynamicResource PanelBackgroundBrush}"
-                     BorderBrush="{DynamicResource BorderBrush}"
-                     BorderThickness="1"
-                     Foreground="{DynamicResource AccentBrush}"
-                     Visibility="{Binding IsOperationInProgress, Converter={StaticResource BoolToVisConverter}}"/>
-
-        <Border Grid.Row="3"
-                Background="{DynamicResource PanelBackgroundBrush}"
-                BorderBrush="{DynamicResource BorderBrush}"
-                BorderThickness="1"
-                CornerRadius="3"
-                Padding="10,5">
-            <TextBlock Text="{Binding StatusMessage, FallbackValue='Status...'}"
-                       Style="{StaticResource InfoText}"
-                       HorizontalAlignment="Left"
-                       VerticalAlignment="Center"/>
-        </Border>
-    </Grid>
 </Window>

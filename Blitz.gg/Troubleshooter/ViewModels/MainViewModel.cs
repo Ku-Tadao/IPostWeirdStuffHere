@@ -32,12 +32,7 @@ namespace BlitzTroubleshooter.ViewModels
         [ObservableProperty]
         private ObservableCollection<string> runningGames = new();
 
-        [ObservableProperty]
-        private bool isDarkTheme = true;
-
         public string WindowTitle { get; private set; }
-
-        public string NextThemeDisplayName => IsDarkTheme ? GetStringResource("themeNameBlue") : GetStringResource("themeNameDark");
 
         public MainViewModel(
             IBlitzService blitzService,
@@ -48,8 +43,21 @@ namespace BlitzTroubleshooter.ViewModels
 
             StatusMessage = GetStringResource("statusReady");
             WindowTitle = GetStringResource("windowTitle") + " v3";
+            
+            // Start auto-refresh loop
+            _ = StartAutoRefreshAsync();
+        }
 
-            ApplyTheme();
+        private async Task StartAutoRefreshAsync()
+        {
+            var timer = new PeriodicTimer(TimeSpan.FromSeconds(1));
+            while (await timer.WaitForNextTickAsync())
+            {
+                if (!IsOperationInProgress)
+                {
+                    await RefreshBlitzInstallationAsync();
+                }
+            }
         }
 
         public async Task LoadAsync()
@@ -392,48 +400,5 @@ namespace BlitzTroubleshooter.ViewModels
             }
         }
 
-        [RelayCommand]
-        private void ToggleTheme()
-        {
-            IsDarkTheme = !IsDarkTheme;
-        }
-
-        partial void OnIsDarkThemeChanged(bool value)
-        {
-            ApplyTheme();
-            OnPropertyChanged(nameof(NextThemeDisplayName));
-        }
-
-        private void ApplyTheme()
-        {
-            if (Application.Current == null) return;
-            var themeDictionaries = Application.Current.Resources.MergedDictionaries;
-            if (themeDictionaries == null) return;
-
-            var oldThemes = themeDictionaries.Where(
-                dict => dict.Source != null &&
-                        (dict.Source.OriginalString.EndsWith("DarkTheme.xaml") ||
-                         dict.Source.OriginalString.EndsWith("BlueTheme.xaml"))
-            ).ToList();
-
-            foreach (var oldTheme in oldThemes)
-            {
-                themeDictionaries.Remove(oldTheme);
-            }
-
-            string themeUriString = IsDarkTheme ? "Themes/DarkTheme.xaml" : "Themes/BlueTheme.xaml";
-            try
-            {
-                var newTheme = new ResourceDictionary { Source = new Uri(themeUriString, UriKind.RelativeOrAbsolute) };
-                themeDictionaries.Add(newTheme);
-                _logger.LogInformation("Theme changed to: {ThemeName}", IsDarkTheme ? GetStringResource("themeNameDark") : GetStringResource("themeNameBlue"));
-                StatusMessage = GetFormattedStringResource("statusThemeSetTo", IsDarkTheme ? GetStringResource("themeNameDark") : GetStringResource("themeNameBlue"));
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "Failed to apply theme: {ThemeUri}", themeUriString);
-                StatusMessage = GetFormattedStringResource("statusErrorApplyingTheme", themeUriString);
-            }
-        }
     }
 }

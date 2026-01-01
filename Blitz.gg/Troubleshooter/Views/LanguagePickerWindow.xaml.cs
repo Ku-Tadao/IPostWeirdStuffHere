@@ -1,6 +1,7 @@
 using BlitzTroubleshooter.Models;
 using System.Collections.Generic;
 using System.Windows;
+using System.Windows.Input;
 using System.Linq;
 using System.Diagnostics;
 
@@ -62,6 +63,12 @@ namespace BlitzTroubleshooter.Views
             else
             {
             }
+        }
+
+        private void Window_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ChangedButton == MouseButton.Left)
+                this.DragMove();
         }
     }
 }
