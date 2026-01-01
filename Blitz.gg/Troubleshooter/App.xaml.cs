@@ -26,10 +26,19 @@ namespace BlitzTroubleshooter
         {
             this.ShutdownMode = ShutdownMode.OnExplicitShutdown;
 
-            Configuration = new ConfigurationBuilder()
-                .SetBasePath(Directory.GetCurrentDirectory())
-                .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
-                .Build();
+            var assembly = System.Reflection.Assembly.GetExecutingAssembly();
+            // Resource name pattern: Namespace.Folder.Filename (folders use dots)
+            // Since it's in the root of the project, it should be Namespace.Filename
+            using var stream = assembly.GetManifestResourceStream("BlitzTroubleshooter.appsettings.json");
+
+            var builder = new ConfigurationBuilder();
+            
+            if (stream != null)
+            {
+                builder.AddJsonStream(stream);
+            }
+            
+            Configuration = builder.Build();
 
             Log.Logger = new LoggerConfiguration()
                 .ReadFrom.Configuration(Configuration)
