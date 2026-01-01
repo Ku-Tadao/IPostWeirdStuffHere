@@ -9,12 +9,15 @@
         Title="{Binding WindowTitle, Mode=OneWay}"
         Height="800" Width="950"
         WindowStartupLocation="CenterScreen"
+        AllowsTransparency="True"
+        Background="Transparent"
         Style="{StaticResource MainWindowStyle}"
         d:DataContext="{d:DesignInstance Type=vm:MainViewModel, IsDesignTimeCreatable=True}">
 
     <Window.Resources>
         <BooleanToVisibilityConverter x:Key="BoolToVisConverter"/>
         <converters:InverseBooleanConverter x:Key="InverseBoolConverter"/>
+        <converters:CollectionEmptyToVisibilityConverter x:Key="CollectionEmptyToVisibilityConverter"/>
     </Window.Resources>
 
     <Border Background="{DynamicResource AppBackgroundBrush}" 
@@ -231,7 +234,7 @@
                                                         </Grid.ColumnDefinitions>
                                                         <Path Data="{StaticResource Icon.Games}" Fill="{DynamicResource SuccessBrush}" Width="20" Height="20" Stretch="Uniform" Margin="0,0,15,0"/>
                                                         <TextBlock Grid.Column="1" Text="{Binding}" FontSize="16" FontWeight="SemiBold" VerticalAlignment="Center"/>
-                                                        <TextBlock Grid.Column="2" Text="RUNNING" Foreground="{DynamicResource SuccessBrush}" FontWeight="Black" FontSize="10" VerticalAlignment="Center"/>
+                                                        <TextBlock Grid.Column="2" Text="RUNNING" Foreground="{DynamicResource SuccessBrush}" FontWeight="Black" FontSize="10" VerticalAlignment="Center" Margin="10,0,0,0"/>
                                                     </Grid>
                                                 </Border>
                                             </DataTemplate>
@@ -240,7 +243,7 @@
 
                                     <!-- Empty State -->
                                     <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center"
-                                                Visibility="{Binding RunningGames.Count, Converter={StaticResource InverseBoolConverter}, ConverterParameter=0}">
+                                                Visibility="{Binding RunningGames.Count, Converter={StaticResource CollectionEmptyToVisibilityConverter}}">
                                         <Path Data="{StaticResource Icon.Alert}" Fill="{DynamicResource BorderBrush}" Width="48" Height="48" Stretch="Uniform" Margin="0,0,0,15"/>
                                         <TextBlock Text="No games detected" FontSize="18" FontWeight="Bold" Foreground="{DynamicResource SubTextBrush}" HorizontalAlignment="Center"/>
                                         <TextBlock Text="Start a game to verify detection" Foreground="{DynamicResource SubTextBrush}" HorizontalAlignment="Center"/>
