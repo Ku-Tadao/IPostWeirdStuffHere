@@ -150,31 +150,31 @@
         </Style>
     </Window.Resources>
 
-    <Grid Margin="20">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            
-            <RowDefinition Height="Auto"/>
-            
-            <RowDefinition Height="Auto"/>
-            
-            <RowDefinition Height="Auto"/>
-            
-            <RowDefinition Height="*"/>
-            
-        </Grid.RowDefinitions>
+    <Border Background="{DynamicResource AppBackgroundBrush}" 
+            BorderBrush="{DynamicResource BorderBrush}" 
+            BorderThickness="1"
+            CornerRadius="10">
+        <Grid Margin="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
 
-        <TextBlock Grid.Row="0" Text="Welcome!" FontSize="18" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,5"/>
-        
-        <TextBlock Grid.Row="1" Text="Please select your preferred language:" HorizontalAlignment="Center" Margin="0,0,0,10"/>
-        
+            <StackPanel Grid.Row="0" Margin="0,0,0,20" MouseLeftButtonDown="Window_MouseLeftButtonDown">
+                <TextBlock Text="Welcome!" FontSize="22" FontWeight="Bold" Foreground="{DynamicResource HeaderTextBrush}" HorizontalAlignment="Center"/>
+                <TextBlock Text="Please select your preferred language" FontSize="14" Foreground="{DynamicResource SubTextBrush}" HorizontalAlignment="Center" Margin="0,5,0,0"/>
+            </StackPanel>
+            
+            <ComboBox Grid.Row="2" x:Name="LanguageComboBox" VerticalAlignment="Center" Margin="0,5,0,20" MinHeight="40" 
+                      DisplayMemberPath="DisplayName"
+                      SelectedValuePath="CultureCode"
+                      ItemsSource="{Binding AvailableLanguages}"/>
 
-        <ComboBox Grid.Row="2" x:Name="LanguageComboBox" VerticalAlignment="Center" Margin="0,5,0,10" MinHeight="30" 
-            DisplayMemberPath="DisplayName"
-                  SelectedValuePath="CultureCode"
-                  ItemsSource="{Binding AvailableLanguages}"/>
-
-            <Button Grid.Row="3" Content="Confirm" HorizontalAlignment="Center" Width="120" Click="ConfirmButton_Click" Margin="0,10,0,0" 
-                Style="{StaticResource ModernButton}" Padding="10,7"/>
-    </Grid>
+            <Button Grid.Row="3" Content="Confirm" HorizontalAlignment="Center" Width="160" Click="ConfirmButton_Click" 
+                    Style="{StaticResource ModernActionButton}" Padding="10,10"/>
+        </Grid>
+    </Border>
 </Window>

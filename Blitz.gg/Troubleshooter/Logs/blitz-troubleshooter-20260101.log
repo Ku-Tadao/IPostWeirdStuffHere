@@ -1,0 +1,662 @@
+2026-01-01 21:01:34.298 +01:00 [INF] Application UI culture set to: en-US
+2026-01-01 21:01:34.319 +01:00 [INF] Successfully loaded language resource: Resources/Localization/StringResource.xaml
+2026-01-01 21:01:34.359 +01:00 [INF] Theme changed to: Dark
+2026-01-01 21:06:24.026 +01:00 [INF] Application UI culture set to: en-US
+2026-01-01 21:06:24.048 +01:00 [INF] Successfully loaded language resource: Resources/Localization/StringResource.xaml
+2026-01-01 21:06:24.086 +01:00 [INF] Theme changed to: Dark
+2026-01-01 21:08:07.189 +01:00 [INF] Application UI culture set to: en-US
+2026-01-01 21:08:07.208 +01:00 [INF] Successfully loaded language resource: Resources/Localization/StringResource.xaml
+2026-01-01 21:08:07.242 +01:00 [INF] Theme changed to: Dark
+2026-01-01 21:08:07.383 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:08:07.387 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:08:07.390 +01:00 [INF] Checking for running games
+2026-01-01 21:08:07.410 +01:00 [INF] Found 0 running games
+2026-01-01 21:10:07.423 +01:00 [INF] Application UI culture set to: en-US
+2026-01-01 21:10:07.441 +01:00 [INF] Successfully loaded language resource: Resources/Localization/StringResource.xaml
+2026-01-01 21:10:07.475 +01:00 [INF] Theme changed to: Dark
+2026-01-01 21:10:07.604 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:10:07.607 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:10:07.610 +01:00 [INF] Checking for running games
+2026-01-01 21:10:07.631 +01:00 [INF] Found 0 running games
+2026-01-01 21:10:14.930 +01:00 [INF] Starting comprehensive Blitz troubleshooting (skipGameCheck: false)
+2026-01-01 21:10:14.930 +01:00 [INF] Checking for running games
+2026-01-01 21:10:14.948 +01:00 [INF] Found 0 running games
+2026-01-01 21:10:14.948 +01:00 [INF] Terminating Blitz processes
+2026-01-01 21:10:14.951 +01:00 [INF] Terminated process: Blitz (PID: 25000)
+2026-01-01 21:10:14.951 +01:00 [INF] Terminated process: Blitz (PID: 26076)
+2026-01-01 21:10:14.952 +01:00 [INF] Terminated process: Blitz (PID: 26496)
+2026-01-01 21:10:14.952 +01:00 [INF] Terminated process: Blitz (PID: 26288)
+2026-01-01 21:10:14.952 +01:00 [INF] Terminated process: Blitz (PID: 1664)
+2026-01-01 21:10:14.957 +01:00 [INF] Terminated 5 processes
+2026-01-01 21:10:16.960 +01:00 [INF] Uninstalling Blitz
+2026-01-01 21:10:16.960 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:10:16.961 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:10:16.961 +01:00 [INF] Terminating Blitz processes before uninstall
+2026-01-01 21:10:16.961 +01:00 [INF] Terminating Blitz processes
+2026-01-01 21:10:16.967 +01:00 [INF] Terminated 0 processes
+2026-01-01 21:10:19.041 +01:00 [INF] Deleted directory: C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:10:19.043 +01:00 [INF] Deleted directory: C:\Users\user\AppData\Local\blitz-updater
+2026-01-01 21:10:19.089 +01:00 [INF] Deleted directory: C:\Users\user\AppData\Local\Programs\blitz-delta-updater
+2026-01-01 21:10:19.096 +01:00 [INF] Deleted directory: C:\Users\user\AppData\Local\gg.blitz
+2026-01-01 21:10:20.641 +01:00 [INF] Deleted directory: C:\Users\user\AppData\Roaming\Blitz
+2026-01-01 21:10:20.643 +01:00 [INF] Deleted directory: C:\Users\user\AppData\Roaming\gg.blitz
+2026-01-01 21:10:20.643 +01:00 [INF] Clearing Blitz cache
+2026-01-01 21:10:20.644 +01:00 [INF] Cache clear operation: 0 folders deleted.
+2026-01-01 21:10:20.644 +01:00 [INF] Successfully removed termInstallation (6 dirs)
+2026-01-01 21:10:20.646 +01:00 [INF] Downloading and installing Blitz
+2026-01-01 21:10:20.646 +01:00 [INF] Downloading Blitz installer to: C:\Users\user\AppData\Local\Temp\BlitzInstaller.exe
+2026-01-01 21:10:22.684 +01:00 [INF] Download completed. File size: 131474504 bytes
+2026-01-01 21:10:23.188 +01:00 [INF] Launching installer: C:\Users\user\AppData\Local\Temp\BlitzInstaller.exe
+2026-01-01 21:10:24.536 +01:00 [INF] Blitz installer launched successfully with PID: 6996
+2026-01-01 21:10:26.903 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:10:26.904 +01:00 [WRN] Blitz installation: Corrupted - files exist but main executable missing
+2026-01-01 21:10:26.904 +01:00 [WRN] Missing executables: C:\Users\user\AppData\Local\Programs\Blitz\Blitz.exe, C:\Users\user\AppData\Local\Programs\Blitz\blitz.exe, C:\Users\user\AppData\Local\Programs\Blitz\BlitzDesktop.exe
+2026-01-01 21:10:26.905 +01:00 [WRN] Corrupted Blitz installation detected. Missing executables: C:\Users\user\AppData\Local\Programs\Blitz\Blitz.exe, C:\Users\user\AppData\Local\Programs\Blitz\blitz.exe, C:\Users\user\AppData\Local\Programs\Blitz\BlitzDesktop.exe
+2026-01-01 21:11:44.969 +01:00 [INF] Application UI culture set to: en-US
+2026-01-01 21:11:44.992 +01:00 [INF] Successfully loaded language resource: Resources/Localization/StringResource.xaml
+2026-01-01 21:11:45.028 +01:00 [INF] Theme changed to: Dark
+2026-01-01 21:11:45.114 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:11:45.117 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:11:45.120 +01:00 [INF] Checking for running games
+2026-01-01 21:11:45.143 +01:00 [INF] Found 0 running games
+2026-01-01 21:11:54.412 +01:00 [INF] Starting comprehensive Blitz troubleshooting (skipGameCheck: false)
+2026-01-01 21:11:54.412 +01:00 [INF] Checking for running games
+2026-01-01 21:11:54.431 +01:00 [INF] Found 0 running games
+2026-01-01 21:11:54.432 +01:00 [INF] Terminating Blitz processes
+2026-01-01 21:11:54.435 +01:00 [INF] Terminated process: Blitz (PID: 23392)
+2026-01-01 21:11:54.435 +01:00 [INF] Terminated process: Blitz (PID: 23128)
+2026-01-01 21:11:54.436 +01:00 [INF] Terminated process: Blitz (PID: 4892)
+2026-01-01 21:11:54.436 +01:00 [INF] Terminated process: Blitz (PID: 2112)
+2026-01-01 21:11:54.436 +01:00 [INF] Terminated process: Blitz (PID: 26052)
+2026-01-01 21:11:54.440 +01:00 [INF] Terminated 5 processes
+2026-01-01 21:11:56.452 +01:00 [INF] Uninstalling Blitz
+2026-01-01 21:11:56.452 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:11:56.453 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:11:56.453 +01:00 [INF] Terminating Blitz processes before uninstall
+2026-01-01 21:11:56.453 +01:00 [INF] Terminating Blitz processes
+2026-01-01 21:11:56.459 +01:00 [INF] Terminated 0 processes
+2026-01-01 21:11:58.525 +01:00 [INF] Deleted directory: C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:11:58.535 +01:00 [INF] Deleted directory: C:\Users\user\AppData\Local\blitz-updater
+2026-01-01 21:11:58.586 +01:00 [INF] Deleted directory: C:\Users\user\AppData\Local\Programs\blitz-delta-updater
+2026-01-01 21:11:58.621 +01:00 [INF] Deleted directory: C:\Users\user\AppData\Roaming\Blitz
+2026-01-01 21:11:58.622 +01:00 [INF] Clearing Blitz cache
+2026-01-01 21:11:58.623 +01:00 [INF] Cache clear operation: 0 folders deleted.
+2026-01-01 21:11:58.623 +01:00 [INF] Successfully removed termInstallation (4 dirs)
+2026-01-01 21:11:58.624 +01:00 [INF] Downloading and installing Blitz
+2026-01-01 21:11:58.633 +01:00 [INF] Deleted existing temp file
+2026-01-01 21:11:58.633 +01:00 [INF] Downloading Blitz installer to: C:\Users\user\AppData\Local\Temp\BlitzInstaller.exe
+2026-01-01 21:12:00.757 +01:00 [INF] Download completed. File size: 131474504 bytes
+2026-01-01 21:12:01.259 +01:00 [INF] Launching installer: C:\Users\user\AppData\Local\Temp\BlitzInstaller.exe
+2026-01-01 21:12:02.394 +01:00 [INF] Blitz installer launched successfully with PID: 29308
+2026-01-01 21:12:04.199 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:12:04.200 +01:00 [WRN] Blitz installation: Corrupted - files exist but main executable missing
+2026-01-01 21:12:04.200 +01:00 [WRN] Missing executables: C:\Users\user\AppData\Local\Programs\Blitz\Blitz.exe, C:\Users\user\AppData\Local\Programs\Blitz\blitz.exe, C:\Users\user\AppData\Local\Programs\Blitz\BlitzDesktop.exe
+2026-01-01 21:12:04.201 +01:00 [WRN] Corrupted Blitz installation detected. Missing executables: C:\Users\user\AppData\Local\Programs\Blitz\Blitz.exe, C:\Users\user\AppData\Local\Programs\Blitz\blitz.exe, C:\Users\user\AppData\Local\Programs\Blitz\BlitzDesktop.exe
+2026-01-01 21:12:15.494 +01:00 [INF] Theme changed to: Blue
+2026-01-01 21:12:16.909 +01:00 [INF] Theme changed to: Dark
+2026-01-01 21:12:17.605 +01:00 [INF] Theme changed to: Blue
+2026-01-01 21:12:19.568 +01:00 [INF] Theme changed to: Dark
+2026-01-01 21:12:58.792 +01:00 [INF] Theme changed to: Blue
+2026-01-01 21:13:00.974 +01:00 [INF] Theme changed to: Dark
+2026-01-01 21:13:02.159 +01:00 [INF] Theme changed to: Blue
+2026-01-01 21:13:02.472 +01:00 [INF] Theme changed to: Dark
+2026-01-01 21:13:08.588 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:13:08.589 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:13:09.316 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:13:09.317 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:13:09.633 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:13:09.634 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:18:25.371 +01:00 [INF] Application UI culture set to: en-US
+2026-01-01 21:18:25.391 +01:00 [INF] Successfully loaded language resource: Resources/Localization/StringResource.xaml
+2026-01-01 21:18:25.496 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:18:25.501 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:18:25.505 +01:00 [INF] Checking for running games
+2026-01-01 21:18:25.526 +01:00 [INF] Found 0 running games
+2026-01-01 21:18:26.436 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:18:26.437 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:18:27.435 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:18:27.436 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:18:28.429 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:18:28.431 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:18:29.425 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:18:29.426 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:18:30.426 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:18:30.427 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:18:31.429 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:18:31.430 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:18:32.429 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:18:32.430 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:18:33.424 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:18:33.425 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:18:34.435 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:18:34.436 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:18:35.433 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:18:35.434 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:18:36.432 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:18:36.433 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:18:37.435 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:18:37.436 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:18:38.433 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:18:38.434 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:18:39.432 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:18:39.433 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:18:40.427 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:18:40.428 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:18:41.435 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:18:41.436 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:18:42.433 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:18:42.435 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:18:43.430 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:18:43.431 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:18:44.419 +01:00 [INF] Starting comprehensive Blitz troubleshooting (skipGameCheck: false)
+2026-01-01 21:18:44.419 +01:00 [INF] Checking for running games
+2026-01-01 21:18:44.442 +01:00 [INF] Found 0 running games
+2026-01-01 21:18:44.443 +01:00 [INF] Terminating Blitz processes
+2026-01-01 21:18:44.446 +01:00 [INF] Terminated process: Blitz (PID: 8644)
+2026-01-01 21:18:44.446 +01:00 [INF] Terminated process: Blitz (PID: 12824)
+2026-01-01 21:18:44.447 +01:00 [INF] Terminated process: Blitz (PID: 26124)
+2026-01-01 21:18:44.447 +01:00 [INF] Terminated process: Blitz (PID: 24036)
+2026-01-01 21:18:44.447 +01:00 [INF] Terminated process: Blitz (PID: 10036)
+2026-01-01 21:18:44.452 +01:00 [INF] Terminated 5 processes
+2026-01-01 21:18:46.464 +01:00 [INF] Uninstalling Blitz
+2026-01-01 21:18:46.464 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:18:46.465 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:18:46.465 +01:00 [INF] Terminating Blitz processes before uninstall
+2026-01-01 21:18:46.465 +01:00 [INF] Terminating Blitz processes
+2026-01-01 21:18:46.472 +01:00 [INF] Terminated 0 processes
+2026-01-01 21:18:48.534 +01:00 [INF] Deleted directory: C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:18:48.543 +01:00 [INF] Deleted directory: C:\Users\user\AppData\Local\blitz-updater
+2026-01-01 21:18:48.593 +01:00 [INF] Deleted directory: C:\Users\user\AppData\Local\Programs\blitz-delta-updater
+2026-01-01 21:18:48.629 +01:00 [INF] Deleted directory: C:\Users\user\AppData\Roaming\Blitz
+2026-01-01 21:18:48.630 +01:00 [INF] Clearing Blitz cache
+2026-01-01 21:18:48.631 +01:00 [INF] Cache clear operation: 0 folders deleted.
+2026-01-01 21:18:48.631 +01:00 [INF] Successfully removed termInstallation (4 dirs)
+2026-01-01 21:18:48.632 +01:00 [INF] Downloading and installing Blitz
+2026-01-01 21:18:48.640 +01:00 [INF] Deleted existing temp file
+2026-01-01 21:18:48.640 +01:00 [INF] Downloading Blitz installer to: C:\Users\user\AppData\Local\Temp\BlitzInstaller.exe
+2026-01-01 21:18:49.969 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:18:49.970 +01:00 [INF] Blitz installation: Not installed
+2026-01-01 21:18:50.638 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:18:50.639 +01:00 [INF] Blitz installation: Not installed
+2026-01-01 21:18:50.809 +01:00 [INF] Download completed. File size: 131474504 bytes
+2026-01-01 21:18:51.316 +01:00 [INF] Launching installer: C:\Users\user\AppData\Local\Temp\BlitzInstaller.exe
+2026-01-01 21:18:51.952 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:18:51.952 +01:00 [INF] Blitz installation: Not installed
+2026-01-01 21:18:52.447 +01:00 [INF] Blitz installer launched successfully with PID: 8052
+2026-01-01 21:18:53.686 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:18:53.687 +01:00 [WRN] Blitz installation: Corrupted - files exist but main executable missing
+2026-01-01 21:18:53.687 +01:00 [WRN] Missing executables: C:\Users\user\AppData\Local\Programs\Blitz\Blitz.exe, C:\Users\user\AppData\Local\Programs\Blitz\blitz.exe, C:\Users\user\AppData\Local\Programs\Blitz\BlitzDesktop.exe
+2026-01-01 21:18:53.687 +01:00 [WRN] Corrupted Blitz installation detected. Missing executables: C:\Users\user\AppData\Local\Programs\Blitz\Blitz.exe, C:\Users\user\AppData\Local\Programs\Blitz\blitz.exe, C:\Users\user\AppData\Local\Programs\Blitz\BlitzDesktop.exe
+2026-01-01 21:18:54.432 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:18:54.433 +01:00 [WRN] Blitz installation: Corrupted - files exist but main executable missing
+2026-01-01 21:18:54.433 +01:00 [WRN] Missing executables: C:\Users\user\AppData\Local\Programs\Blitz\Blitz.exe, C:\Users\user\AppData\Local\Programs\Blitz\blitz.exe, C:\Users\user\AppData\Local\Programs\Blitz\BlitzDesktop.exe
+2026-01-01 21:18:54.433 +01:00 [WRN] Corrupted Blitz installation detected. Missing executables: C:\Users\user\AppData\Local\Programs\Blitz\Blitz.exe, C:\Users\user\AppData\Local\Programs\Blitz\blitz.exe, C:\Users\user\AppData\Local\Programs\Blitz\BlitzDesktop.exe
+2026-01-01 21:18:55.426 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:18:55.427 +01:00 [WRN] Blitz installation: Corrupted - files exist but main executable missing
+2026-01-01 21:18:55.427 +01:00 [WRN] Missing executables: C:\Users\user\AppData\Local\Programs\Blitz\Blitz.exe, C:\Users\user\AppData\Local\Programs\Blitz\blitz.exe, C:\Users\user\AppData\Local\Programs\Blitz\BlitzDesktop.exe
+2026-01-01 21:18:55.427 +01:00 [WRN] Corrupted Blitz installation detected. Missing executables: C:\Users\user\AppData\Local\Programs\Blitz\Blitz.exe, C:\Users\user\AppData\Local\Programs\Blitz\blitz.exe, C:\Users\user\AppData\Local\Programs\Blitz\BlitzDesktop.exe
+2026-01-01 21:18:56.428 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:18:56.429 +01:00 [WRN] Blitz installation: Corrupted - files exist but main executable missing
+2026-01-01 21:18:56.429 +01:00 [WRN] Missing executables: C:\Users\user\AppData\Local\Programs\Blitz\Blitz.exe, C:\Users\user\AppData\Local\Programs\Blitz\blitz.exe, C:\Users\user\AppData\Local\Programs\Blitz\BlitzDesktop.exe
+2026-01-01 21:18:56.429 +01:00 [WRN] Corrupted Blitz installation detected. Missing executables: C:\Users\user\AppData\Local\Programs\Blitz\Blitz.exe, C:\Users\user\AppData\Local\Programs\Blitz\blitz.exe, C:\Users\user\AppData\Local\Programs\Blitz\BlitzDesktop.exe
+2026-01-01 21:18:57.424 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:18:57.424 +01:00 [WRN] Blitz installation: Corrupted - files exist but main executable missing
+2026-01-01 21:18:57.424 +01:00 [WRN] Missing executables: C:\Users\user\AppData\Local\Programs\Blitz\Blitz.exe, C:\Users\user\AppData\Local\Programs\Blitz\blitz.exe, C:\Users\user\AppData\Local\Programs\Blitz\BlitzDesktop.exe
+2026-01-01 21:18:57.424 +01:00 [WRN] Corrupted Blitz installation detected. Missing executables: C:\Users\user\AppData\Local\Programs\Blitz\Blitz.exe, C:\Users\user\AppData\Local\Programs\Blitz\blitz.exe, C:\Users\user\AppData\Local\Programs\Blitz\BlitzDesktop.exe
+2026-01-01 21:18:58.422 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:18:58.423 +01:00 [WRN] Blitz installation: Corrupted - files exist but main executable missing
+2026-01-01 21:18:58.423 +01:00 [WRN] Missing executables: C:\Users\user\AppData\Local\Programs\Blitz\Blitz.exe, C:\Users\user\AppData\Local\Programs\Blitz\blitz.exe, C:\Users\user\AppData\Local\Programs\Blitz\BlitzDesktop.exe
+2026-01-01 21:18:58.423 +01:00 [WRN] Corrupted Blitz installation detected. Missing executables: C:\Users\user\AppData\Local\Programs\Blitz\Blitz.exe, C:\Users\user\AppData\Local\Programs\Blitz\blitz.exe, C:\Users\user\AppData\Local\Programs\Blitz\BlitzDesktop.exe
+2026-01-01 21:18:59.427 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:18:59.560 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:19:00.426 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:19:00.427 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:19:01.428 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:19:01.428 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:19:02.426 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:19:02.427 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:19:03.436 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:19:03.437 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:19:04.436 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:19:04.437 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:19:05.427 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:19:05.428 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:19:06.427 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:19:06.428 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:19:07.436 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:19:07.808 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:19:08.425 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:19:08.426 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:19:09.426 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:19:09.427 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:19:10.424 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:19:10.425 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:19:11.435 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:19:11.437 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:19:12.455 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:19:12.455 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:19:13.050 +01:00 [INF] Terminating Blitz processes
+2026-01-01 21:19:13.057 +01:00 [INF] Terminated process: Blitz (PID: 28016)
+2026-01-01 21:19:13.058 +01:00 [INF] Terminated process: Blitz (PID: 23544)
+2026-01-01 21:19:13.058 +01:00 [INF] Terminated process: Blitz (PID: 8680)
+2026-01-01 21:19:13.059 +01:00 [INF] Terminated process: Blitz (PID: 24676)
+2026-01-01 21:19:13.059 +01:00 [INF] Terminated process: Blitz (PID: 25856)
+2026-01-01 21:19:13.065 +01:00 [INF] Terminated 5 processes
+2026-01-01 21:19:14.434 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:19:14.435 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:19:15.432 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:19:15.433 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:19:16.434 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:19:16.435 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:19:17.432 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:19:17.433 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:19:18.425 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:19:18.426 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:19:19.434 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:19:19.435 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:19:20.436 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:19:20.437 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:19:21.435 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:19:21.436 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:19:22.434 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:19:22.435 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:19:23.432 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:19:23.433 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:19:24.432 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:19:24.433 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:19:25.433 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:19:25.434 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:19:26.436 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:19:26.437 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:19:27.436 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:19:27.437 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:19:28.436 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:19:28.437 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:19:29.433 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:19:29.434 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:19:30.430 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:19:30.432 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:19:31.432 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:19:31.433 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:19:32.432 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:19:32.433 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:19:33.432 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:19:33.433 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:19:34.431 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:19:34.431 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:19:35.432 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:19:35.433 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:19:36.430 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:19:36.432 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:19:37.431 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:19:37.432 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:19:38.430 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:19:38.431 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:19:39.426 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:19:39.427 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:19:40.429 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:19:40.430 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:19:41.426 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:19:41.426 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:19:42.425 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:19:42.426 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:19:43.426 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:19:43.427 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:19:44.422 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:19:44.424 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:19:45.422 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:19:45.423 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:19:46.437 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:19:46.438 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:19:47.434 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:19:47.435 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:19:48.432 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:19:48.434 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:19:49.434 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:19:49.435 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:19:50.433 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:19:50.433 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:19:51.431 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:19:51.432 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:19:52.433 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:19:52.434 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:19:53.430 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:19:53.431 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:19:54.431 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:19:54.432 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:19:55.429 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:19:55.430 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:19:56.428 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:19:56.429 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:19:57.428 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:19:57.429 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:19:58.425 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:19:58.426 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:19:59.427 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:19:59.428 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:20:00.429 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:20:00.430 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:20:01.429 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:20:01.430 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:20:02.426 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:20:02.427 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:20:03.426 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:20:03.427 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:20:04.424 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:20:04.425 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:20:05.432 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:20:05.433 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:20:06.429 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:20:06.430 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:20:07.429 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:20:07.431 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:20:08.432 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:20:08.433 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:20:09.430 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:20:09.431 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:20:10.426 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:20:10.427 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:20:11.426 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:20:11.427 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:20:12.429 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:20:12.430 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:20:13.429 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:20:13.430 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:20:14.425 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:20:14.426 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:20:15.438 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:20:15.439 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:20:16.425 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:20:16.426 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:20:17.427 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:20:17.428 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:20:18.433 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:20:18.434 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:20:19.436 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:20:19.437 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:20:20.436 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:20:20.437 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:20:21.429 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:20:21.430 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:20:22.430 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:20:22.431 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:20:23.428 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:20:23.429 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:20:24.435 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:20:24.436 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:20:25.433 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:20:25.434 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:20:26.432 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:20:26.433 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:20:27.428 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:20:27.429 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:20:28.428 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:20:28.429 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:20:29.424 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:20:29.425 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:20:30.438 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:20:30.439 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:20:31.430 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:20:31.431 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:20:32.425 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:20:32.426 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:20:33.433 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:20:33.434 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:20:34.432 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:20:34.433 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:20:35.422 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:20:35.423 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:20:36.435 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:20:36.435 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:20:37.436 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:20:37.437 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:20:38.436 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:20:38.437 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:20:39.437 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:20:39.438 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:20:40.426 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:20:40.427 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:20:41.429 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:20:41.430 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:20:42.429 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:20:42.430 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:20:43.423 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:20:43.424 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:20:44.434 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:20:44.435 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:20:45.435 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:20:45.436 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:20:46.436 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:20:46.437 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:20:47.433 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:20:47.434 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:20:48.432 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:20:48.433 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:20:49.435 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:20:49.436 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:20:50.431 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:20:50.432 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:20:51.423 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:20:51.424 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:20:52.435 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:20:52.436 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:20:53.432 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:20:53.433 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:20:54.433 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:20:54.434 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:20:55.431 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:20:55.432 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:20:56.436 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:20:56.438 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:20:57.422 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:20:57.424 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:20:58.436 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:20:58.437 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:20:59.428 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:20:59.430 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:21:00.438 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:21:00.439 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:21:01.433 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:21:01.434 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:21:02.431 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:21:02.432 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:21:03.432 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:21:03.433 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:21:04.433 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:21:04.434 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:21:05.428 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:21:05.429 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:21:06.436 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:21:06.436 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:21:07.429 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:21:07.430 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:21:08.422 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:21:08.423 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:21:09.434 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:21:09.435 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:21:10.434 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:21:10.435 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:21:11.428 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:21:11.429 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:21:12.430 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:21:12.431 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:21:13.430 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:21:13.431 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:21:14.428 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:21:14.429 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:21:15.426 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:21:15.427 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:21:16.435 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:21:16.436 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:21:17.426 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:21:17.427 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:21:18.438 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:21:18.439 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:21:19.423 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:21:19.424 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:21:20.426 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:21:20.427 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:21:21.438 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:21:21.439 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:21:22.434 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:21:22.435 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:21:23.424 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:21:23.426 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:21:24.435 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:21:24.436 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:21:25.431 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:21:25.432 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:21:26.424 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:21:26.426 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:21:27.435 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:21:27.436 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:21:28.433 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:21:28.434 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:21:29.430 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:21:29.431 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:21:30.431 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:21:30.432 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:21:31.427 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:21:31.428 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:21:49.235 +01:00 [INF] Application UI culture set to: en-US
+2026-01-01 21:21:49.254 +01:00 [INF] Successfully loaded language resource: Resources/Localization/StringResource.xaml
+2026-01-01 21:21:49.349 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:21:49.354 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:21:49.357 +01:00 [INF] Checking for running games
+2026-01-01 21:21:49.378 +01:00 [INF] Found 0 running games
+2026-01-01 21:21:50.294 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:21:50.295 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:21:51.292 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:21:51.293 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:21:52.294 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:21:52.295 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:21:53.291 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:21:53.292 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:21:54.283 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:21:54.284 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:21:55.295 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:21:55.296 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:21:56.290 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:21:56.291 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:21:57.284 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:21:57.286 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:21:58.283 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:21:58.284 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:21:59.284 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:21:59.285 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:22:00.284 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:22:00.285 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:22:01.286 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:22:01.287 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:22:02.285 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:22:02.286 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:22:03.294 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:22:03.296 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:22:04.291 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:22:04.292 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:22:05.287 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:22:05.288 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:22:06.284 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:22:06.285 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:22:07.286 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:22:07.287 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:22:08.284 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:22:08.285 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:22:09.295 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:22:09.296 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:22:10.292 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:22:10.293 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:22:11.290 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:22:11.291 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:22:12.290 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:22:12.291 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:22:13.288 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:22:13.289 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:22:14.287 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:22:14.288 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:22:15.289 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:22:15.290 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:22:16.294 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:22:16.295 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:22:17.291 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:22:17.292 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:22:18.281 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:22:18.282 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:22:19.284 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:22:19.285 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:22:20.285 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:22:20.286 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:22:21.283 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:22:21.284 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:22:22.283 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:22:22.284 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:22:23.282 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:22:23.283 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:22:24.296 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:22:24.297 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:22:25.294 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:22:25.295 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:22:26.295 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:22:26.296 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:22:27.293 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:22:27.294 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:22:28.294 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:22:28.295 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:22:29.294 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:22:29.294 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:22:30.292 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:22:30.293 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:22:31.291 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:22:31.293 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:22:32.292 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:22:32.293 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:22:33.296 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:22:33.297 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:22:34.296 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:22:34.305 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:22:35.294 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:22:35.296 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:22:36.291 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:22:36.292 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:22:37.295 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:22:37.295 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:23:15.574 +01:00 [INF] Application UI culture set to: en-US
+2026-01-01 21:23:15.592 +01:00 [INF] Successfully loaded language resource: Resources/Localization/StringResource.xaml
+2026-01-01 21:23:15.689 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:23:15.695 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:23:15.698 +01:00 [INF] Checking for running games
+2026-01-01 21:23:15.718 +01:00 [INF] Found 0 running games
+2026-01-01 21:23:16.620 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:23:16.621 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:23:17.633 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:23:17.634 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:23:18.632 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:23:18.633 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:23:19.619 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:23:19.620 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:23:20.633 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:23:20.643 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:23:21.633 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:23:21.634 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:23:22.629 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:23:22.630 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:23:23.629 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:23:23.630 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:23:24.627 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:23:24.627 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:23:25.627 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:23:25.628 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:23:26.625 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:23:26.626 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:23:27.622 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:23:27.623 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:23:28.622 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:23:28.624 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:23:29.622 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:23:29.624 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:23:30.620 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:23:30.621 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:23:31.632 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:23:31.633 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
+2026-01-01 21:23:32.623 +01:00 [INF] Detecting Blitz installation
+2026-01-01 21:23:32.623 +01:00 [INF] Blitz installation: Installed at C:\Users\user\AppData\Local\Programs\Blitz
