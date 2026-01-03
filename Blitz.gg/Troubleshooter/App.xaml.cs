@@ -152,18 +152,21 @@ namespace BlitzTroubleshooter
             ResourceDictionary newLangDict = new ResourceDictionary();
             string resourcePath;
 
+            // Use Pack URI for reliable resource loading in single-file apps
+            string packUriPrefix = "pack://application:,,,/";
+
             if (cultureName.Equals("en-US", StringComparison.OrdinalIgnoreCase))
             {
-                resourcePath = "Resources/Localization/StringResource.xaml";
+                resourcePath = packUriPrefix + "Resources/Localization/StringResource.xaml";
             }
             else
             {
-                resourcePath = $"Resources/Localization/StringResource.{cultureName}.xaml";
+                resourcePath = packUriPrefix + $"Resources/Localization/StringResource.{cultureName}.xaml";
             }
 
             try
             {
-                newLangDict.Source = new Uri(resourcePath, UriKind.RelativeOrAbsolute);
+                newLangDict.Source = new Uri(resourcePath, UriKind.Absolute);
                 currentDictionaries.Add(newLangDict);
                 Log.Information("Successfully loaded language resource: {ResourcePath}", resourcePath);
             }
@@ -177,7 +180,7 @@ namespace BlitzTroubleshooter
                     {
                         var defaultLangDict = new ResourceDictionary
                         {
-                            Source = new Uri("Resources/Localization/StringResource.xaml", UriKind.RelativeOrAbsolute)
+                            Source = new Uri(packUriPrefix + "Resources/Localization/StringResource.xaml", UriKind.Absolute)
                         };
                         currentDictionaries.Add(defaultLangDict);
                         Log.Information("Fallback: Loaded default English language dictionary (StringResource.xaml).");
