@@ -14,6 +14,7 @@ using System.Linq;
 using System.Threading;
 using BlitzTroubleshooter.Views;
 using System.Diagnostics;
+using Serilog.Settings.Configuration;
 
 namespace BlitzTroubleshooter
 {
@@ -40,8 +41,13 @@ namespace BlitzTroubleshooter
             
             Configuration = builder.Build();
 
+            // Fix for single-file publishing: Explicitly load Serilog assemblies
+            var options = new ConfigurationReaderOptions(
+                typeof(Serilog.FileLoggerConfigurationExtensions).Assembly
+            );
+
             Log.Logger = new LoggerConfiguration()
-                .ReadFrom.Configuration(Configuration)
+                .ReadFrom.Configuration(Configuration, options)
                 .CreateLogger();
 
             var services = new ServiceCollection();
