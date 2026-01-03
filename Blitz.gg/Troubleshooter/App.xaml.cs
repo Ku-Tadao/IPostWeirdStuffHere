@@ -54,8 +54,10 @@ namespace BlitzTroubleshooter
 
             services.Configure<BlitzConfiguration>(Configuration.GetSection("Blitz"));
 
-            services.AddHttpClient();
-            services.AddSingleton<IBlitzService, BlitzService>();
+            services.AddHttpClient<IBlitzService, BlitzService>(client =>
+            {
+                client.DefaultRequestHeaders.UserAgent.ParseAdd("BlitzTroubleshooter/1.0");
+            });
 
             services.AddSingleton<MainViewModel>();
             services.AddSingleton<MainWindow>();

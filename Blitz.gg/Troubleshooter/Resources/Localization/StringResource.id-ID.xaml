@@ -1,4 +1,4 @@
-<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:system="clr-namespace:System;assembly=mscorlib">
 
@@ -80,8 +80,8 @@
 
 Harap tutup game ini sebelum melanjutkan pemecahan masalah untuk menghindari kehilangan data atau konflik.
 Apakah Anda tetap ingin melanjutkan?</system:String>
-    <system:String x:Key="messageErrorPrefix">Error: </system:String>
-    <system:String x:Key="messageUnexpectedErrorPrefix">Error tak terduga: </system:String>
+    <system:String x:Key="messageErrorPrefix">Error: {0}</system:String>
+    <system:String x:Key="messageUnexpectedErrorPrefix">Unexpected error: {0}</system:String>
     <system:String x:Key="promptConfirmUninstallMessage">Apakah Anda yakin ingin mencopot pemasangan Blitz?
 Tindakan ini akan menghapus semua file Blitz.</system:String>
 
@@ -97,13 +97,13 @@ Error: {2}</system:String>
     <system:String x:Key="serviceFailedToClearCacheMessage">Gagal membersihkan cache.</system:String>
     <system:String x:Key="serviceInstallerLaunched">Penginstal Blitz berhasil diunduh dan dijalankan.</system:String>
     <system:String x:Key="serviceInstallationCancelledByUser">Instalasi dibatalkan oleh pengguna (prompt UAC ditolak).</system:String>
-    <system:String x:Key="serviceFailedToDownloadInstallFull">Gagal mengunduh dan menginstal Blitz: {0}</system:String>
+    <system:String x:Key="serviceFailedToDownloadInstallFull">Failed to download and install Blitz. Check your internet connection and try again.</system:String>
     <system:String x:Key="servicePortableDownloadedExtractedLaunchManually">Blitz portabel diunduh dan diekstrak ke: {0}
 Eksekusi yang tersedia: 
 {1}
 Harap jalankan secara manual.</system:String>
     <system:String x:Key="servicePortableDownloadedExtractedLaunched">Blitz portabel berhasil diunduh, diekstrak, dan dijalankan.</system:String>
-    <system:String x:Key="serviceFailedToDownloadPortableFull">Gagal mengunduh Blitz portabel: {0}</system:String>
+    <system:String x:Key="serviceFailedToDownloadPortableFull">Failed to download portable Blitz. Check your internet connection and try again.</system:String>
     <system:String x:Key="serviceFixAllSuccessForcedMessage">Semua masalah berhasil diperbaiki (paksa).</system:String>
     <system:String x:Key="serviceFixAllSuccessMessage">Semua masalah berhasil diperbaiki.</system:String>
     <system:String x:Key="serviceFailedToFixAllIssues">Gagal memperbaiki semua masalah.</system:String>
@@ -139,6 +139,9 @@ Harap jalankan secara manual.</system:String>
     <system:String x:Key="tooltipRefreshStatus">Segarkan Status</system:String>
 
 </ResourceDictionary>
+
+
+
 
 
 

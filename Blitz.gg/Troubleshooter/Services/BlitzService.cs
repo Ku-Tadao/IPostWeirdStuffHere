@@ -170,7 +170,7 @@ public class BlitzService : IBlitzService
             }
 
             _logger.LogInformation("Terminated {Count} processes", terminatedCount);
-            return TroubleshootResult.Success("serviceTerminatedProcessesCount"); 
+            return TroubleshootResult.Success($"serviceTerminatedProcessesCount|{terminatedCount}"); 
         }
         catch (Exception ex)
         {
@@ -250,6 +250,7 @@ public class BlitzService : IBlitzService
         try
         {
             var deletedCount = 0;
+            var failedCount = 0;
             var foldersToDelete = new[]
             {
                 Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Blitz"),
@@ -261,25 +262,64 @@ public class BlitzService : IBlitzService
                 Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Blitz-helpers")
             };
 
-            foreach (var folderPath in foldersToDelete)
+            // Helper function to attempt deletion
+            async Task<bool> TryDeleteFoldersAsync()
             {
-                if (Directory.Exists(folderPath))
+                var anyFailed = false;
+                foreach (var folderPath in foldersToDelete)
                 {
-                    try
+                    if (Directory.Exists(folderPath))
                     {
-                        Directory.Delete(folderPath, true);
-                        deletedCount++;
-                        _logger.LogInformation("Cleared cache directory: {Path}", folderPath);
-                    }
-                    catch (Exception ex)
-                    {
-                        _logger.LogWarning(ex, "Failed to delete cache directory: {Path}", folderPath);
+                        try
+                        {
+                            Directory.Delete(folderPath, true);
+                            deletedCount++;
+                            _logger.LogInformation("Cleared cache directory: {Path}", folderPath);
+                        }
+                        catch (Exception ex)
+                        {
+                            anyFailed = true;
+                            _logger.LogWarning(ex, "Failed to delete cache directory: {Path}", folderPath);
+                        }
                     }
                 }
+                return !anyFailed;
             }
-            _logger.LogInformation("Cache clear operation: {Count} folders deleted.", deletedCount);
+
+            // First attempt
+            if (!await TryDeleteFoldersAsync())
+            {
+                _logger.LogInformation("Initial cache clear failed. Attempting to terminate processes and retry.");
+                
+                // Try to kill processes if deletion failed
+                await TerminateProcessesAsync();
+                await Task.Delay(1000); // Give OS time to release locks
+
+                // Reset counts for retry (only count successful deletions once)
+                // Actually, we should only retry the ones that exist. 
+                // The helper checks Directory.Exists, so if it was deleted in first pass, it won't be retried.
+                // But deletedCount would be double counted if we don't be careful.
+                // Let's just reset deletedCount and try again? No, some might be gone.
+                // We can just call it again. The Exists check handles it.
+                // But deletedCount will increment again? No, because Exists will be false.
+                // Wait, if I deleted it, Exists is false. So deletedCount won't increment.
+                // Correct.
+
+                if (!await TryDeleteFoldersAsync())
+                {
+                    failedCount++; // Mark as failed if second attempt also fails
+                }
+            }
+
+            _logger.LogInformation("Cache clear operation: {Count} folders deleted. {Failed} failed.", deletedCount, failedCount);
+
+            if (failedCount > 0)
+            {
+                return TroubleshootResult.Failure("serviceCacheClearFailedLocked");
+            }
+
             return deletedCount > 0
-                ? TroubleshootResult.Success("serviceCacheClearedSuccessfullyCount")
+                ? TroubleshootResult.Success($"serviceCacheClearedSuccessfullyCount|{deletedCount}")
                 : TroubleshootResult.Success("serviceNoCacheFoldersFound");
         }
         catch (Exception ex)
@@ -347,8 +387,7 @@ public class BlitzService : IBlitzService
         catch (Exception ex)
         {
             _logger.LogError(ex, "Error downloading and installing Blitz");
-            return TroubleshootResult.Failure("serviceFailedToDownloadInstallFullKey"); 
-                                                                                 
+            return TroubleshootResult.Failure($"serviceFailedToDownloadInstallFull|{ex.Message}");
         }
     }
 
@@ -360,7 +399,7 @@ public class BlitzService : IBlitzService
         try
         {
             var localAppData = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
-            var blitzPortablePath = Path.Combine(localAppData, "Programs", "BlitzPortable");
+            var blitzPortablePath = Path.Combine(localAppData, "Programs", "Blitz");
             var zipPath = Path.Combine(blitzPortablePath, "blitzportable.zip");
 
             if (Directory.Exists(blitzPortablePath))
@@ -427,7 +466,7 @@ public class BlitzService : IBlitzService
         catch (Exception ex)
         {
             _logger.LogError(ex, "Error downloading portable Blitz");
-            return TroubleshootResult.Failure("serviceFailedToDownloadPortableFullKey"); 
+            return TroubleshootResult.Failure($"serviceFailedToDownloadPortableFull|{ex.Message}");
         }
     }
 
@@ -478,7 +517,11 @@ public class BlitzService : IBlitzService
 
             statusProgress?.Report("statusUninstallingExistingBlitz"); 
             var uninstallResult = await UninstallAsync();
-            if (!uninstallResult.IsSuccess) return uninstallResult; 
+            if (!uninstallResult.IsSuccess)
+            {
+                _logger.LogWarning("Uninstall failed but proceeding with installation (Best Effort): {Message}", uninstallResult.Message);
+            }
+            // Proceed even if uninstall fails (Best Effort)
 
             statusProgress?.Report("statusDownloadingInstaller");
             var downloadResult = await DownloadAndInstallAsync(downloadProgress, cancellationToken);

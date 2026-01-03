@@ -213,8 +213,7 @@ namespace BlitzTroubleshooter.ViewModels
                         }
                         else
                         {
-                            MessageBox.Show(GetFormattedStringResource("messageErrorPrefix", GetStringResource(forceResult.Message)), GetStringResource("titleError"),
-                                MessageBoxButton.OK, MessageBoxImage.Error);
+                            ShowError(forceResult.Message);
                         }
                     }
                     else
@@ -224,8 +223,7 @@ namespace BlitzTroubleshooter.ViewModels
                 }
                 else
                 {
-                    MessageBox.Show(GetFormattedStringResource("messageErrorPrefix", GetStringResource(result.Message)), GetStringResource("titleError"),
-                        MessageBoxButton.OK, MessageBoxImage.Error);
+                    ShowError(result.Message);
                 }
             }
             catch (Exception ex)
@@ -242,6 +240,32 @@ namespace BlitzTroubleshooter.ViewModels
             }
         }
 
+        private void ShowError(string message)
+        {
+            string displayMessage;
+            string technicalDetails = "";
+
+            if (message.Contains("|"))
+            {
+                var parts = message.Split('|', 2);
+                displayMessage = GetStringResource(parts[0]);
+                technicalDetails = parts[1];
+            }
+            else
+            {
+                displayMessage = GetStringResource(message);
+            }
+
+            var fullMessage = GetFormattedStringResource("messageErrorPrefix", displayMessage);
+
+            if (!string.IsNullOrEmpty(technicalDetails))
+            {
+                fullMessage += $"\n\nTechnical Details:\n{technicalDetails}";
+            }
+
+            MessageBox.Show(fullMessage, GetStringResource("titleError"), MessageBoxButton.OK, MessageBoxImage.Error);
+        }
+
         [RelayCommand]
         private async Task TerminateProcessesAsync()
         {
@@ -252,10 +276,10 @@ namespace BlitzTroubleshooter.ViewModels
                 StatusMessage = GetStringResource("statusTerminatingProcesses");
 
                 var result = await _blitzService.TerminateProcessesAsync();
-                var messageToShow = GetStringResource(result.Message);
 
                 if (result.IsSuccess)
                 {
+                    var messageToShow = GetSuccessMessage(result.Message);
                     StatusMessage = messageToShow;
                     MessageBox.Show(messageToShow, GetStringResource("titleSuccess"),
                         MessageBoxButton.OK, MessageBoxImage.Information);
@@ -263,14 +287,15 @@ namespace BlitzTroubleshooter.ViewModels
                 else
                 {
                     StatusMessage = GetStringResource("statusFailedToTerminateProcessesGeneral");
-                    MessageBox.Show(GetFormattedStringResource("messageErrorPrefix", messageToShow), GetStringResource("titleError"),
-                        MessageBoxButton.OK, MessageBoxImage.Error);
+                    ShowError(result.Message);
                 }
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Error terminating processes");
                 StatusMessage = GetStringResource("statusErrorTerminatingProcesses");
+                MessageBox.Show(GetFormattedStringResource("messageUnexpectedErrorPrefix", ex.Message), GetStringResource("titleError"),
+                    MessageBoxButton.OK, MessageBoxImage.Error);
             }
             finally
             {
@@ -288,10 +313,10 @@ namespace BlitzTroubleshooter.ViewModels
                 StatusMessage = GetStringResource("statusClearingCache");
 
                 var result = await _blitzService.ClearCacheAsync();
-                var messageToShow = GetStringResource(result.Message);
 
                 if (result.IsSuccess)
                 {
+                    var messageToShow = GetSuccessMessage(result.Message);
                     StatusMessage = messageToShow;
                     MessageBox.Show(messageToShow, GetStringResource("titleSuccess"),
                         MessageBoxButton.OK, MessageBoxImage.Information);
@@ -299,14 +324,15 @@ namespace BlitzTroubleshooter.ViewModels
                 else
                 {
                     StatusMessage = GetStringResource("statusFailedToClearCacheGeneral");
-                    MessageBox.Show(GetFormattedStringResource("messageErrorPrefix", messageToShow), GetStringResource("titleError"),
-                        MessageBoxButton.OK, MessageBoxImage.Error);
+                    ShowError(result.Message);
                 }
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Error clearing cache");
                 StatusMessage = GetStringResource("statusErrorClearingCache");
+                MessageBox.Show(GetFormattedStringResource("messageUnexpectedErrorPrefix", ex.Message), GetStringResource("titleError"),
+                    MessageBoxButton.OK, MessageBoxImage.Error);
             }
             finally
             {
@@ -332,11 +358,10 @@ namespace BlitzTroubleshooter.ViewModels
                 StatusMessage = GetStringResource("statusUninstallingBlitzProgress");
 
                 var uninstallResult = await _blitzService.UninstallAsync();
-                var messageToShow = GetStringResource(uninstallResult.Message);
-
 
                 if (uninstallResult.IsSuccess)
                 {
+                    var messageToShow = GetStringResource(uninstallResult.Message);
                     StatusMessage = messageToShow;
                     MessageBox.Show(messageToShow, GetStringResource("titleSuccess"),
                         MessageBoxButton.OK, MessageBoxImage.Information);
@@ -345,14 +370,15 @@ namespace BlitzTroubleshooter.ViewModels
                 else
                 {
                     StatusMessage = GetStringResource("statusErrorUninstallingBlitz");
-                    MessageBox.Show(GetFormattedStringResource("messageErrorPrefix", messageToShow), GetStringResource("titleError"),
-                        MessageBoxButton.OK, MessageBoxImage.Error);
+                    ShowError(uninstallResult.Message);
                 }
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Error uninstalling Blitz");
                 StatusMessage = GetStringResource("statusErrorUninstallingBlitz");
+                MessageBox.Show(GetFormattedStringResource("messageUnexpectedErrorPrefix", ex.Message), GetStringResource("titleError"),
+                    MessageBoxButton.OK, MessageBoxImage.Error);
             }
             finally
             {
@@ -372,10 +398,10 @@ namespace BlitzTroubleshooter.ViewModels
 
                 var downloadProgress = new Progress<double>(progress => ProgressValue = progress);
                 var result = await _blitzService.DownloadPortableAsync(downloadProgress);
-                var messageToShow = GetStringResource(result.Message);
 
                 if (result.IsSuccess)
                 {
+                    var messageToShow = GetStringResource(result.Message);
                     StatusMessage = messageToShow;
                     MessageBox.Show(messageToShow, GetStringResource("titleSuccess"),
                         MessageBoxButton.OK, MessageBoxImage.Information);
@@ -383,14 +409,15 @@ namespace BlitzTroubleshooter.ViewModels
                 else
                 {
                     StatusMessage = GetStringResource("statusFailedToDownloadPortableGeneral");
-                    MessageBox.Show(GetFormattedStringResource("messageErrorPrefix", messageToShow), GetStringResource("titleError"),
-                        MessageBoxButton.OK, MessageBoxImage.Error);
+                    ShowError(result.Message);
                 }
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Error downloading portable Blitz");
                 StatusMessage = GetStringResource("statusErrorDownloadingPortable");
+                MessageBox.Show(GetFormattedStringResource("messageUnexpectedErrorPrefix", ex.Message), GetStringResource("titleError"),
+                    MessageBoxButton.OK, MessageBoxImage.Error);
             }
             finally
             {
@@ -398,6 +425,16 @@ namespace BlitzTroubleshooter.ViewModels
                 ProgressValue = 0;
                 StatusMessage = GetStringResource("statusOperationFinished");
             }
+        }
+
+        private string GetSuccessMessage(string message)
+        {
+            if (message.Contains("|"))
+            {
+                var parts = message.Split('|', 2);
+                return GetFormattedStringResource(parts[0], parts[1]);
+            }
+            return GetStringResource(message);
         }
 
     }

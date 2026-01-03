@@ -81,8 +81,8 @@
 Please close these games before proceeding with troubleshooting to avoid data loss or conflicts.
 
 Do you want to continue anyway?</system:String>
-    <system:String x:Key="messageErrorPrefix">Error: </system:String>
-    <system:String x:Key="messageUnexpectedErrorPrefix">Unexpected error: </system:String>
+    <system:String x:Key="messageErrorPrefix">Error: {0}</system:String>
+    <system:String x:Key="messageUnexpectedErrorPrefix">Unexpected error: {0}</system:String>
     <system:String x:Key="promptConfirmUninstallMessage">Are you sure you want to uninstall Blitz? This will remove all Blitz files.</system:String>
 
     <system:String x:Key="serviceTerminatedProcessesCount">Terminated {0} processes.</system:String>
@@ -94,14 +94,15 @@ Do you want to continue anyway?</system:String>
     <system:String x:Key="serviceCacheClearedSuccessfullyCount">Cache cleared successfully ({0} folders deleted).</system:String> <!-- Was cache -->
     <system:String x:Key="serviceNoCacheFoldersFound">No cache folders found to clear.</system:String>
     <system:String x:Key="serviceFailedToClearCacheMessage">Failed to clear cache.</system:String>
+    <system:String x:Key="serviceCacheClearFailedLocked">Failed to clear some cache folders. Please ensure Blitz is closed.</system:String>
     <system:String x:Key="serviceInstallerLaunched">Blitz installer downloaded and launched successfully.</system:String> <!-- Replaces dload/dloadcompleted -->
     <system:String x:Key="serviceInstallationCancelledByUser">Installation cancelled by user (UAC prompt denied).</system:String>
-    <system:String x:Key="serviceFailedToDownloadInstallFull">Failed to download and install Blitz: {0}</system:String>
+    <system:String x:Key="serviceFailedToDownloadInstallFull">Failed to download and install Blitz. Check your internet connection and try again.</system:String>
     <system:String x:Key="servicePortableDownloadedExtractedLaunchManually">Portable Blitz downloaded and extracted to: {0}
 Available executables: {1}
 Please launch manually.</system:String>
     <system:String x:Key="servicePortableDownloadedExtractedLaunched">Portable Blitz downloaded, extracted and launched successfully.</system:String>
-    <system:String x:Key="serviceFailedToDownloadPortableFull">Failed to download portable Blitz: {0}</system:String>
+    <system:String x:Key="serviceFailedToDownloadPortableFull">Failed to download portable Blitz. Check your internet connection and try again.</system:String>
     <system:String x:Key="serviceFixAllSuccessForcedMessage">All issues fixed successfully (forced).</system:String>
     <system:String x:Key="serviceFixAllSuccessMessage">All issues fixed successfully.</system:String>
     <system:String x:Key="serviceFailedToFixAllIssues">Failed to fix all issues.</system:String>
