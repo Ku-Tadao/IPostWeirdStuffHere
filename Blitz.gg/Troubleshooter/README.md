@@ -1,5 +1,8 @@
 # Blitz Troubleshooter
 
+> **⚠️ Notice: This project is no longer actively maintained.**
+> I am no longer with Swift Media Entertainment (Blitz.gg) as of February 2026 and will not be providing updates or fixes going forward. The tool should still work for its intended purposes, but use it at your own discretion. Community contributions via pull requests are welcome if anyone wants to keep it going.
+
 ![Blitz.gg Logo](https://i.imgur.com/q7t8fzT.png)
 
 This is a troubleshooter for [Blitz.gg](https://blitz.gg/). It is a utility designed to resolve common issues with the Blitz application.
